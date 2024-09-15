@@ -1,0 +1,19 @@
+<button mat-menu-item>
+  <div class="first-row">
+    <app-avatar initials="RA" size="small" />
+    <div class="right-child">
+      <span>Arya, Raubinsh (Partner)</span>
+      <span>Last Login Sept-14-2024 06:19:49 AM</span>
+    </div>
+  </div>
+</button>
+<mat-divider></mat-divider>
+<button mat-menu-item (click)="logout()">
+  <div class="second-row">
+    <div class="left-child">
+      <mat-icon>power_settings_new</mat-icon>
+      <span>Sign Out</span>
+    </div>
+    <mat-icon>chevron_right</mat-icon>
+  </div>
+</button>

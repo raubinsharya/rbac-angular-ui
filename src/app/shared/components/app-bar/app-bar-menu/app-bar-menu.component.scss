@@ -1,0 +1,28 @@
+.first-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  .right-child {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: small;
+      line-height: normal;
+      letter-spacing: normal;
+    }
+    & span:nth-child(2) {
+      font-weight: 400;
+      white-space: nowrap;
+    }
+  }
+}
+
+.second-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .left-child {
+    display: flex;
+    align-items: center;
+  }
+}

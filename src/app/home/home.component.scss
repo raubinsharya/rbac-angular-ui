@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2rem;
+  span {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .inner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+    width: 90%;
+    margin-inline: auto;
+    h1 {
+      font-weight: 500;
+    }
+    .contract-grid {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 1rem;
+      .contract,
+      .order {
+        width: 100%;
+        height: 30rem;
+        background-color: rgb(36, 110, 147);
+        border-radius: 0.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 3rem;
+        gap: 0.5rem;
+        .mat-icon {
+          font-size: 10rem;
+          width: unset;
+          height: unset;
+        }
+      }
+    }
+  }
+}

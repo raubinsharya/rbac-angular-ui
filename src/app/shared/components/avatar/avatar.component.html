@@ -1,0 +1,17 @@
+<div
+  class="avatar"
+  [ngClass]="{
+    circle: shape === 'circle',
+    square: shape === 'square',
+    small: size === 'small',
+    medium: size === 'medium',
+    large: size === 'large'
+  }"
+>
+  <ng-container *ngIf="imageUrl; else initialsTemplate">
+    <img [src]="imageUrl" alt="Avatar" />
+  </ng-container>
+  <ng-template #initialsTemplate>
+    <span [ngStyle]="{ color: fontColor }">{{ initials }}</span>
+  </ng-template>
+</div>

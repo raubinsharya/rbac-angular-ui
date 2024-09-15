@@ -3,6 +3,7 @@ import {
   APP_INITIALIZER,
   NgModule,
   provideZoneChangeDetection,
+  isDevMode,
 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
@@ -10,7 +11,6 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import {
   MsalModule,
   MsalService,
-  MsalGuard,
   MsalBroadcastService,
   MsalRedirectComponent,
 } from '@azure/msal-angular';
@@ -18,10 +18,21 @@ import { InteractionType } from '@azure/msal-browser';
 
 import { AppComponent } from './app.component';
 import { msalInstance } from '../config/auth.config';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from './services/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import RequestInterceptorService from '../interceptors/request';
 import ResponseInterceptorService from '../interceptors/response';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { MsalGuard } from './guards/msal.guard';
+import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './shared/shared.module';
 
 export function initializeAuthService(
   authService: AuthService
@@ -34,9 +45,10 @@ export function initializeAuthService(
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
     MsalModule.forRoot(
       msalInstance,
@@ -55,6 +67,17 @@ export function initializeAuthService(
         ]),
       }
     ),
+    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+    }),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    StoreRouterConnectingModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [
     provideHttpClient(
@@ -72,6 +95,7 @@ export function initializeAuthService(
       deps: [AuthService],
       multi: true,
     },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent, MsalRedirectComponent],
 })

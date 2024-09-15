@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <div class="left-child">
+    <a routerLink="/">
+      <mat-icon
+        svgIcon="philips-icon"
+        aria-hidden="false"
+        aria-label="Example thumbs up SVG icons" 
+      />
+    </a>
+    <span>Philips Order and Contract Manger</span>
+  </div>
+  <span class="spacer"></span>
+  <div class="right-child">
+    <span>EN</span>
+    <mat-divider vertical></mat-divider>
+    <button
+      mat-icon-button
+      class="profile-btn"
+      disableRipple
+      [matMenuTriggerFor]="menu"
+    >
+      <app-avatar initials="RA" size="small" shape="circle" />
+      Arya, Raubinsh (Partner)
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu" xPosition="before">
+  <app-app-bar-menu />
+</mat-menu>

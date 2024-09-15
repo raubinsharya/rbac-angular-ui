@@ -1,0 +1,24 @@
+.login-container {
+  background: radial-gradient(circle, #164776 20%, #05294a 70%, #05294a 100%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 5rem;
+
+  .mat-icon[svgicon] {
+    width: 10rem;
+    height: unset;
+    fill: white;
+  }
+
+  .sign-in-btn {
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    border-radius: 0.4rem;
+  }
+}

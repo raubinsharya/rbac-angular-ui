@@ -1,0 +1,52 @@
+.mat-toolbar {
+  background-color: #164776;
+  color: white;
+  box-shadow: 0 0.125rem 0.25rem rgb(123, 123, 123);
+  height: unset !important;
+  padding-block: 0.25rem;
+  position: sticky;
+  top: 0;
+
+  .left-child,
+  .right-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .mat-icon[svgicon] {
+      width: 6rem;
+      height: 2rem;
+    }
+  }
+
+  .right-child {
+    .mat-divider-vertical {
+      height: 1.5rem;
+      border-color: white;
+    }
+    .profile-btn {
+      display: flex;
+      align-items: center;
+      width: unset;
+      color: white;
+      gap: 0.5rem;
+      font-size: 1rem;
+      border-radius: 0.25rem;
+      background-color: #1b5388;
+      box-shadow: 0 0.125rem 0.25rem #0c365c;
+      &:hover {
+        background-color: rgb(33, 87, 138);
+      }
+      &:active {
+        background-color: #185894;
+      }
+      ::ng-deep .mat-mdc-button-persistent-ripple {
+        display: none !important;
+      }
+    }
+  }
+
+  .mat-icon {
+    color: white;
+  }
+}

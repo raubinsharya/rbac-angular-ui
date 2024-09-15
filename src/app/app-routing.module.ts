@@ -1,14 +1,28 @@
 import { RouterModule, Routes } from '@angular/router';
-import { MsalGuard } from '@azure/msal-angular';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { MsalGuard } from './guards/msal.guard';
+import { LoginComponent } from './login/login.component';
+import { AuthRedirectGuard } from './guards/auth-redirect.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: HomeComponent,
     canActivate: [MsalGuard],
   },
+  {
+    path: 'contract',
+    loadChildren: () =>
+      import('./contract/contract.module').then((m) => m.ContractModule),
+    canActivate: [MsalGuard],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [AuthRedirectGuard],
+  },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

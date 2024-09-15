@@ -1,13 +1,40 @@
+@import "ag-grid-community/styles/ag-theme-quartz.css";
+@import "ngx-toastr/toastr";
+
 html,
 body {
   height: 100%;
 }
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: rgb(233, 233, 233);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
 }

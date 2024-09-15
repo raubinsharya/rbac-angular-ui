@@ -14,7 +14,7 @@ import {
   RedirectRequest,
 } from '@azure/msal-browser';
 import { filter, takeUntil } from 'rxjs/operators';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { Subject } from 'rxjs';
 
 @Injectable({
