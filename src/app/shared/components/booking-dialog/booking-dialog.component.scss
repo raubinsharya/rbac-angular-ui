@@ -3,8 +3,7 @@
 }
 
 .dialog-title {
-  background-color: rgb(55, 130, 167);
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,43 +11,31 @@
   padding: unset;
   padding-block: 0.7rem;
   padding-inline: 1.25rem;
-
-  &.success {
-    background-color: rgb(59, 141, 186);
-  }
-
-  &.failed {
-    background-color: rgb(211, 86, 52);
-  }
-
-  &.pending {
-    background-color: rgb(62, 147, 162);
-  }
+  font-weight: 500;
 
   button {
-    color: white;
+    color: black;
   }
   &::before {
     display: none;
   }
 }
 .mat-mdc-dialog-content {
-  padding: unset;
-}
-
-table {
-  width: 100%;
-}
-
-.status-cell {
+  padding-inline: 1.25rem;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  &.success {
-    color: green;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  & p {
+    color: #337fbf;
+    font-size: 0.7rem;
+    font-weight: 500;
   }
-  &.failed {
-    color: red;
+  & h6 {
+    font-weight: 500;
+  }
+  ::ng-deep mat-checkbox label {
+    font-weight: 500;
+    font-weight: 1rem;
   }
 }
 

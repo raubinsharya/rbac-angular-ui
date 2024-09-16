@@ -2,13 +2,24 @@
   <app-loading></app-loading>
 </div>
 
-<div class="duelist-container" *ngIf="!loading$">
+<div class="duelist-container mat-elevation-z8" *ngIf="!loading$">
   <div class="heading-text">
     <h6>Contract Listing</h6>
+    <button
+      mat-icon-button
+      class="book-contract-btn"
+      [disabled]="!selectedRows.length"
+      (click)="handleBooking()"
+    >
+      <mat-icon>task</mat-icon>
+      Book Contract
+    </button>
   </div>
 
   <ag-grid-table
     [rowData]="dueLists$"
     [colDefs]="colDefs"
+    (selectedRows)="handleSelectedRows($event)"
+    rowSelection="single"
   />
 </div>

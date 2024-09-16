@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { AgGridTableComponent } from './components/grid-table/grid-table.component';
 import { AgGridAngular } from 'ag-grid-angular';
+import { BookingDialogComponent } from './components/booking-dialog/booking-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { AgGridAngular } from 'ag-grid-angular';
     AppBarMenuComponent,
     BreadcrumbsComponent,
     AgGridTableComponent,
+    BookingDialogComponent,
   ],
   imports: [
     CommonModule,
     SharedMaterialModule,
     RouterModule.forChild([]),
     AgGridAngular,
+    FormsModule,
   ],
   exports: [
     AvatarComponent,
@@ -32,6 +36,7 @@ import { AgGridAngular } from 'ag-grid-angular';
     SharedMaterialModule,
     BreadcrumbsComponent,
     AgGridTableComponent,
+    BookingDialogComponent,
   ],
 })
 export class SharedModule {}

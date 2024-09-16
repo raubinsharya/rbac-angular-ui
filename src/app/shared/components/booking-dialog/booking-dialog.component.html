@@ -1,0 +1,28 @@
+<span mat-dialog-title class="dialog-title">
+  Booking Confirmation
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</span>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <h6>I Confirm</h6>
+  <mat-checkbox [(ngModel)]="cfdChecked"
+    >CFD validated with contract details</mat-checkbox
+  >
+  <mat-checkbox [(ngModel)]="poChecked">Customer PO acknowledged</mat-checkbox>
+  <p>*Terms & conditions apply</p>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button
+    cdkFocusInitial
+    class="mat-elevation-z1"
+    mat-flat-button
+    (click)="onConfirm()"
+    [disabled]="isDisabled"
+  >
+    Agree
+  </button>
+</mat-dialog-actions>

@@ -9,7 +9,7 @@
   font-weight: 500;
 
   & a {
-    color: rgb(19, 11, 176);
+    color: rgb(55, 108, 165);
     &:active {
       color: rgb(19, 132, 177);
     }
@@ -17,7 +17,7 @@
 
   .icon-wrapper {
     .mat-icon {
-      color: black;
+      color: inherit;
       margin-bottom: 0.1rem;
     }
   }

@@ -4,8 +4,9 @@
   class="ag-theme-quartz"
   suppressCellFocus
   suppressRowClickSelection
-  rowSelection="multiple"
+  [rowSelection]="rowSelection"
   [defaultColDef]="defaultColDef"
   pagination
-  [components]="components"
+  (gridReady)="onGridReady($event)"
+  (selectionChanged)="onSelectionChanged()"
 />

@@ -12,9 +12,14 @@
   margin-top: 1rem;
   border-radius: 0.2rem;
 
-  .heading-text h6 {
+  .heading-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
-    font-size: 1.2rem;;
+    h6 {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -23,4 +28,29 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+}
+
+.book-contract-btn {
+  display: flex;
+  align-items: center;
+  width: unset;
+  color: white;
+  gap: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  background-color: #1b5388;
+  padding-inline: 1rem;
+  box-shadow: 0 0.125rem 0.25rem #0c365c;
+  &:hover {
+    background-color: rgb(33, 87, 138);
+  }
+  &:active {
+    background-color: #185894;
+  }
+  ::ng-deep .mat-mdc-button-persistent-ripple {
+    display: none !important;
+  }
+  &:disabled {
+    background-color: gray;
+  }
 }

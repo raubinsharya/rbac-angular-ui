@@ -1,5 +1,5 @@
 <span mat-dialog-title class="dialog-title" [ngClass]="data.status.className">
-  Basic Validation Check: {{ data.status.text }}
+  Basic Validation Check: {{ data.status.text | titlecase }}
   <button mat-icon-button mat-dialog-close>
     <mat-icon>close</mat-icon>
   </button>
@@ -36,3 +36,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+</mat-dialog-actions>

@@ -15,6 +15,7 @@ import { ContractstatusRenderComponent } from './custom-cell/contractstatus/cont
 import { BasicvalCheckRenderComponent } from './custom-cell/basicval/basicval.component';
 import { BasicValcheckDialogComponent } from '../basic-valcheck-dialog/basic-valcheck-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { BookingDialogComponent } from '../../../../shared/components/booking-dialog/booking-dialog.component';
 
 @Component({
   selector: 'contract-duelist-grid',
@@ -25,6 +26,7 @@ export class ContractDuelistGridComponent {
   dueLists$!: DueList[];
   loading$!: boolean;
   error$!: any;
+  selectedRows: DueList[] = [];
 
   colDefs: ColDef[] = [
     {
@@ -100,12 +102,14 @@ export class ContractDuelistGridComponent {
       headerName: 'Sales Org',
       minWidth: 140,
       filter: true,
+      cellRenderer: ({ value }: { value: string }) => value.toUpperCase(),
     },
     {
       field: 'contractType',
       headerName: 'Contract Type',
       minWidth: 170,
       filter: true,
+      cellRenderer: ({ value }: { value: string }) => value.toUpperCase(),
     },
     {
       field: 'salesDocType',
@@ -113,6 +117,7 @@ export class ContractDuelistGridComponent {
       minWidth: 180,
       editable: false,
       filter: true,
+      cellRenderer: ({ value }: { value: string }) => value.toUpperCase(),
     },
     {
       field: 'accountManagerName',
@@ -134,6 +139,7 @@ export class ContractDuelistGridComponent {
       minWidth: 140,
       editable: false,
       filter: true,
+      cellRenderer: ({ value }: { value: string }) => value.toUpperCase(),
     },
     {
       field: 'contractCreationStatus',
@@ -152,7 +158,7 @@ export class ContractDuelistGridComponent {
     },
   ];
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private dialog: MatDialog) {
     this.store
       .select(selectDueLists)
       .subscribe((dueLists) => (this.dueLists$ = dueLists));
@@ -166,5 +172,21 @@ export class ContractDuelistGridComponent {
 
   ngOnInit(): void {
     this.store.dispatch(fetchDueLists());
+  }
+
+  handleSelectedRows(selectedRows: any[]) {
+    this.selectedRows = selectedRows;
+  }
+
+  handleBooking() {
+    const dialogRef = this.dialog.open(BookingDialogComponent, {
+      minWidth: '500px',
+      minHeight: '300px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.info('Confirmed');
+      }
+    });
   }
 }

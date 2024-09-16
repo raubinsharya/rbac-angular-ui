@@ -43,6 +43,9 @@
       ::ng-deep .mat-mdc-button-persistent-ripple {
         display: none !important;
       }
+      &:disabled {
+        background-color: gray;
+      }
     }
   }
 

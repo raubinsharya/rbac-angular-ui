@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ColDef, IsFullWidthRowParams } from 'ag-grid-community';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ColDef, GridApi } from 'ag-grid-community';
 
 @Component({
   selector: 'ag-grid-table',
@@ -7,14 +7,24 @@ import { ColDef, IsFullWidthRowParams } from 'ag-grid-community';
   styleUrl: './grid-table.component.scss',
 })
 export class AgGridTableComponent {
+  public gridApi!: GridApi;
+
   @Input() rowData!: any[];
   @Input() colDefs!: ColDef[];
-  @Input() components!: {
-    [p: string]: any;
-  };
+  @Input() rowSelection: 'single' | 'multiple' = 'single';
+  @Output() selectedRows = new EventEmitter<any[]>();
 
   defaultColDef: ColDef = {
     flex: 1,
     minWidth: 100,
   };
+
+  onGridReady(params: any) {
+    this.gridApi = params.api;
+  }
+
+  onSelectionChanged() {
+    const selectedRows = this.gridApi.getSelectedRows();
+    this.selectedRows.emit(selectedRows);
+  }
 }
