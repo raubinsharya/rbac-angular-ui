@@ -1,1 +1,11 @@
-<!-- <p>grid-table works!</p> -->
+<ag-grid-angular
+  [rowData]="rowData"
+  [columnDefs]="colDefs"
+  class="ag-theme-quartz"
+  suppressCellFocus
+  suppressRowClickSelection
+  rowSelection="multiple"
+  [defaultColDef]="defaultColDef"
+  pagination
+  [components]="components"
+/>

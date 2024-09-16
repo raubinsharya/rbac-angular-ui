@@ -6,4 +6,9 @@
   <div class="heading-text">
     <h6>Contract Listing</h6>
   </div>
+
+  <ag-grid-table
+    [rowData]="dueLists$"
+    [colDefs]="colDefs"
+  />
 </div>

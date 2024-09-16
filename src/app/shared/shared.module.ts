@@ -8,6 +8,7 @@ import { SharedMaterialModule } from '../material.module';
 import { RouterModule } from '@angular/router';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { AgGridTableComponent } from './components/grid-table/grid-table.component';
+import { AgGridAngular } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,12 @@ import { AgGridTableComponent } from './components/grid-table/grid-table.compone
     BreadcrumbsComponent,
     AgGridTableComponent,
   ],
-  imports: [CommonModule, SharedMaterialModule, RouterModule.forChild([])],
+  imports: [
+    CommonModule,
+    SharedMaterialModule,
+    RouterModule.forChild([]),
+    AgGridAngular,
+  ],
   exports: [
     AvatarComponent,
     AppBarComponent,

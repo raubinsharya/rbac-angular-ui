@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContractHomeComponent } from './components/home/home.component';
 import { ContractOverviewMainComponent } from './components/overview/main/main.component';
 import { ContractDuelistGridComponent } from './components/duelist/duelistgrid/duelistgrid.component';
+import { ContractItemDetailsMainComponent } from './components/item-detail/main/main.component';
 
 const routes: Routes = [
   {
@@ -16,9 +17,16 @@ const routes: Routes = [
         data: { breadcrumb: '', show: false },
       },
       {
-        path: 'overview',
+        path: 'overview/:id',
         component: ContractOverviewMainComponent,
         data: { breadcrumb: 'Overview' },
+        children: [
+          {
+            path: 'items/:id',
+            component: ContractItemDetailsMainComponent,
+            data: { breadcrumb: 'Items' },
+          },
+        ],
       },
     ],
   },

@@ -1,0 +1,53 @@
+::ng-deep .mat-mdc-dialog-surface {
+  border-radius: 0.2rem;
+}
+
+.dialog-title {
+  background-color: rgb(55, 130, 167);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: unset;
+  padding-block: 0.7rem;
+  padding-inline: 1.25rem;
+
+  &.success {
+    background-color: rgb(59, 141, 186);
+  }
+
+  &.failed {
+    background-color: rgb(211, 86, 52);
+  }
+
+  &.pending {
+    background-color: rgb(62, 147, 162);
+  }
+
+  button {
+    color: white;
+  }
+  &::before {
+    display: none;
+  }
+}
+.mat-mdc-dialog-content {
+  padding: unset;
+}
+
+table {
+  width: 100%;
+}
+
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  &.success {
+    color: green;
+  }
+  &.failed {
+    color: red;
+  }
+}
