@@ -18,13 +18,17 @@ const routes: Routes = [
       },
       {
         path: 'overview/:id',
-        component: ContractOverviewMainComponent,
-        data: { breadcrumb: 'Overview' },
+        data: { breadcrumb: 'Contract Overview' },
         children: [
+          {
+            path: '',
+            component: ContractOverviewMainComponent,
+            data: { breadcrumb: '', show: false },
+          },
           {
             path: 'items/:id',
             component: ContractItemDetailsMainComponent,
-            data: { breadcrumb: 'Items' },
+            data: { breadcrumb: 'Items Details' },
           },
         ],
       },

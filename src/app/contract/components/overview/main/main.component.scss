@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.overview-container {
+  height: 100%;
+  background-color: white;
+  margin-top: 1rem;
+  border-radius: 0.2rem;
+  .header-section {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding-block: 2rem;
+    padding-inline: 1rem;
+    .left-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      & h6 {
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        span {
+          color: rgb(60, 113, 156);
+          font-weight: 500;
+        }
+      }
+      .lang {
+        font-size: 0.9rem;
+        align-self: flex-end;
+        margin-bottom: 3px;
+        color: rgb(60, 113, 156);
+      }
+      .contract-status {
+        color: white;
+        background-color: gray;
+        padding-inline: 1rem;
+        padding-block: 0.2rem;
+        border-radius: 0.2rem;
+        font-weight: 500;
+
+        &.listing {
+          color: #cc9b00;
+        }
+        &.failed {
+          color: #c2231f;
+        }
+        &.progress {
+          color: #696969;
+        }
+        &.tech-error {
+          color: #de2f2c;
+        }
+      }
+      .child-left {
+        display: inherit;
+        gap: 0.4rem;
+      }
+    }
+  }
+}

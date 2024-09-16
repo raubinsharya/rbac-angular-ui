@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { MsalService } from '@azure/msal-angular'; // MSAL service for authentication
+import { MsalService } from '@azure/msal-angular';
 
 @Injectable({
   providedIn: 'root',

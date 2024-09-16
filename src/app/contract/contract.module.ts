@@ -12,6 +12,7 @@ import { ContractHomeComponent } from './components/home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { HyperlinkcellrenderComponent } from './components/duelist/duelistgrid/custom-cell/hyperlinkcellrender/hyperlinkcellrender.component';
 import { BasicValcheckDialogComponent } from './components/duelist/basic-valcheck-dialog/basic-valcheck-dialog.component';
+import { ContractOverviewMainComponent } from './components/overview/main/main.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BasicValcheckDialogComponent } from './components/duelist/basic-valchec
     ContractHomeComponent,
     HyperlinkcellrenderComponent,
     BasicValcheckDialogComponent,
+    ContractOverviewMainComponent,
   ],
   imports: [
     CommonModule,

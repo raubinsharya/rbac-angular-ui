@@ -13,7 +13,6 @@ import moment from 'moment';
 import { HyperlinkcellrenderComponent } from './custom-cell/hyperlinkcellrender/hyperlinkcellrender.component';
 import { ContractstatusRenderComponent } from './custom-cell/contractstatus/contractstatus.component';
 import { BasicvalCheckRenderComponent } from './custom-cell/basicval/basicval.component';
-import { BasicValcheckDialogComponent } from '../basic-valcheck-dialog/basic-valcheck-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { BookingDialogComponent } from '../../../../shared/components/booking-dialog/booking-dialog.component';
 
@@ -23,9 +22,9 @@ import { BookingDialogComponent } from '../../../../shared/components/booking-di
   styleUrl: './duelistgrid.component.scss',
 })
 export class ContractDuelistGridComponent {
-  dueLists$!: DueList[];
-  loading$!: boolean;
-  error$!: any;
+  dueLists!: DueList[];
+  loading!: boolean;
+  error!: any;
   selectedRows: DueList[] = [];
 
   colDefs: ColDef[] = [
@@ -158,16 +157,20 @@ export class ContractDuelistGridComponent {
     },
   ];
 
-  constructor(private store: Store, private dialog: MatDialog) {
+  constructor(
+    private store: Store,
+    private dialog: MatDialog,
+    private notification: NotificationService
+  ) {
     this.store
       .select(selectDueLists)
-      .subscribe((dueLists) => (this.dueLists$ = dueLists));
+      .subscribe((dueLists) => (this.dueLists = dueLists));
     this.store
       .select(selectDueListLoading)
-      .subscribe((value) => (this.loading$ = value));
+      .subscribe((value) => (this.loading = value));
     this.store
       .select(selectDueListError)
-      .subscribe((error) => (this.error$ = error));
+      .subscribe((error) => (this.error = error));
   }
 
   ngOnInit(): void {
@@ -185,8 +188,17 @@ export class ContractDuelistGridComponent {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        console.info('Confirmed');
+        this.selectedRows = [];
+        this.store.dispatch(fetchDueLists());
+        this.notification.showSuccess('Contract Sent to SAP');
       }
     });
   }
+
+  isRowSelectable = (node: any) => {
+    return (
+      node.data.basicValCheck === 'VAL_SUCCESS' &&
+      node.data.contractCreationStatus === 'VALIDATION'
+    );
+  };
 }

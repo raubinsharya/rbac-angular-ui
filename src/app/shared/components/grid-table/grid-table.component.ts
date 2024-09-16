@@ -11,6 +11,7 @@ export class AgGridTableComponent {
 
   @Input() rowData!: any[];
   @Input() colDefs!: ColDef[];
+  @Input() isRowSelectable!: (node: any) => boolean;
   @Input() rowSelection: 'single' | 'multiple' = 'single';
   @Output() selectedRows = new EventEmitter<any[]>();
 

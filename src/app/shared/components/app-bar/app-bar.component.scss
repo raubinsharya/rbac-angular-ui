@@ -1,11 +1,14 @@
+:host {
+  position: sticky;
+  top: 0;
+}
+
 .mat-toolbar {
   background-color: #164776;
   color: white;
   box-shadow: 0 0.125rem 0.25rem rgb(123, 123, 123);
   height: unset !important;
   padding-block: 0.25rem;
-  position: sticky;
-  top: 0;
 
   .left-child,
   .right-child {

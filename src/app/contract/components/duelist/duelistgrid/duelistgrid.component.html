@@ -1,8 +1,8 @@
-<div class="loading-container" *ngIf="loading$">
+<div class="loading-container" *ngIf="loading">
   <app-loading></app-loading>
 </div>
 
-<div class="duelist-container mat-elevation-z8" *ngIf="!loading$">
+<div class="duelist-container mat-elevation-z8" *ngIf="!loading">
   <div class="heading-text">
     <h6>Contract Listing</h6>
     <button
@@ -17,9 +17,10 @@
   </div>
 
   <ag-grid-table
-    [rowData]="dueLists$"
+    [rowData]="dueLists"
     [colDefs]="colDefs"
     (selectedRows)="handleSelectedRows($event)"
     rowSelection="single"
+    [isRowSelectable]="isRowSelectable"
   />
 </div>
