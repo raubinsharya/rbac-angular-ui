@@ -5,7 +5,9 @@
 }
 
 .overview-container {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   background-color: white;
   margin-top: 1rem;
   border-radius: 0.2rem;
@@ -13,6 +15,7 @@
     display: flex;
     align-items: center;
     align-content: center;
+    justify-content: space-between;
     padding-block: 2rem;
     padding-inline: 1rem;
     .left-section {
@@ -44,22 +47,70 @@
         font-weight: 500;
 
         &.listing {
-          color: #cc9b00;
+          background: #dc4f0d;
         }
         &.failed {
-          color: #c2231f;
+          background: #c2231f;
         }
         &.progress {
-          color: #696969;
+          background: #696969;
         }
         &.tech-error {
-          color: #de2f2c;
+          background: #de2f2c;
         }
       }
+
       .child-left {
         display: inherit;
-        gap: 0.4rem;
+        gap: 1rem;
+      }
+    }
+    .right-section {
+      display: flex;
+      gap: 0.5rem;
+      .contract-btn {
+        display: flex;
+        align-items: center;
+        width: unset;
+        color: white;
+        gap: 0.5rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        background-color: #1b5388;
+        padding-inline: 1rem;
+        box-shadow: 0 0.125rem 0.25rem #0c365c;
+        &:hover {
+          background-color: rgb(33, 87, 138);
+        }
+        &:active {
+          background-color: #185894;
+        }
+        ::ng-deep .mat-mdc-button-persistent-ripple {
+          display: none !important;
+        }
+        &:disabled {
+          background-color: gray;
+        }
       }
     }
   }
+  .section-container {
+    padding-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
+.loading-container {
+  height: 100%;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  color: rgb(217, 90, 48);
 }

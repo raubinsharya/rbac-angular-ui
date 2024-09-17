@@ -174,7 +174,9 @@ export class ContractDuelistGridComponent {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(fetchDueLists());
+    this.store.dispatch(
+      fetchDueLists({ salesOrgIdList: ['NZ90', 'AU90', 'US93'] })
+    );
   }
 
   handleSelectedRows(selectedRows: any[]) {
@@ -189,7 +191,9 @@ export class ContractDuelistGridComponent {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.selectedRows = [];
-        this.store.dispatch(fetchDueLists());
+        this.store.dispatch(
+          fetchDueLists({ salesOrgIdList: ['NZ90', 'AU90', 'US93'] })
+        );
         this.notification.showSuccess('Contract Sent to SAP');
       }
     });

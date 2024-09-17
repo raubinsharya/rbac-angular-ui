@@ -1,6 +1,6 @@
 @import "ngx-toastr/toastr";
-@import 'ag-grid-community/styles/ag-grid.css';
-@import 'ag-grid-community/styles/ag-theme-quartz.css';
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-quartz.css";
 
 html,
 body {
@@ -38,4 +38,38 @@ span {
 
 a {
   text-decoration: none;
+}
+
+.form-field-custom-style .mat-mdc-form-field-flex {
+  display: flex !important;
+  align-items: center !important;
+  height: 40px !important;
+}
+
+.form-field-custom-style .mdc-text-field--outlined {
+  all: unset !important;
+}
+
+.mat-mdc-form-field-flex {
+  display: flex !important;
+  align-items: center !important;
+  height: 2.5rem;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  & .mat-mdc-form-field-infix {
+    width: unset !important;
+    min-width: 50px;
+  }
+}
+
+.custom-select {
+  all: unset !important;
+  & * {
+    all: unset !important;
+  }
 }

@@ -11,6 +11,9 @@ import { AgGridTableComponent } from './components/grid-table/grid-table.compone
 import { AgGridAngular } from 'ag-grid-angular';
 import { BookingDialogComponent } from './components/booking-dialog/booking-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { EditableInputFieldDirective } from './directives/input-field-style.directive';
+import { EditableSelectFieldDirective } from './directives/select-field-style.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { FormsModule } from '@angular/forms';
     BreadcrumbsComponent,
     AgGridTableComponent,
     BookingDialogComponent,
+    EditableInputFieldDirective,
+    EditableSelectFieldDirective,
   ],
   imports: [
     CommonModule,
@@ -37,6 +42,9 @@ import { FormsModule } from '@angular/forms';
     BreadcrumbsComponent,
     AgGridTableComponent,
     BookingDialogComponent,
+    EditableInputFieldDirective,
+    EditableSelectFieldDirective,
   ],
+  providers: [provideNativeDateAdapter()],
 })
 export class SharedModule {}

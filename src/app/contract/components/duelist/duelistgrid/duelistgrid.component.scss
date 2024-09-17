@@ -54,3 +54,12 @@
     background-color: gray;
   }
 }
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  color: rgb(217, 90, 48);
+}

@@ -8,22 +8,27 @@ import {
   fetchDueListsFailure,
 } from '../actions/duelist.action';
 import { ContractService } from '../../services/contract.service';
+import {
+  fetchContractOverview,
+  fetchContractOverviewFailure,
+  fetchContractOverviewSuccess,
+} from '../actions/contract-overview.action';
 
 @Injectable()
-export class DueListEffects {
+export class ContractOverViewEffect {
   constructor(
     private actions$: Actions,
     private contractService: ContractService
   ) {}
 
-  loadDueLists$ = createEffect(() =>
+  loadContractOverview$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(fetchDueLists),
-      mergeMap(({ salesOrgIdList }) =>
-        this.contractService.getDueLists({ salesOrgIdList }).pipe(
-          map((dueLists) => fetchDueListsSuccess({ dueLists })),
+      ofType(fetchContractOverview),
+      mergeMap(({ sourceSystemHeaderId }) =>
+        this.contractService.getContractOverivew(sourceSystemHeaderId).pipe(
+          map((overview) => fetchContractOverviewSuccess({ overview })),
           catchError((error) =>
-            of(fetchDueListsFailure({ error: error.message }))
+            of(fetchContractOverviewFailure({ error: error.message }))
           )
         )
       )

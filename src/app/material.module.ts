@@ -18,6 +18,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 
 @NgModule({
   declarations: [],
@@ -39,6 +42,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatSelectModule,
     MatProgressSpinnerModule,
     MatDividerModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    CdkAccordionModule,
   ],
 })
 export class SharedMaterialModule {}

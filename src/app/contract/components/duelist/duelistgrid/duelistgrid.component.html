@@ -2,6 +2,7 @@
   <app-loading></app-loading>
 </div>
 
+@if(!error){
 <div class="duelist-container mat-elevation-z8" *ngIf="!loading">
   <div class="heading-text">
     <h6>Contract Listing</h6>
@@ -24,3 +25,8 @@
     [isRowSelectable]="isRowSelectable"
   />
 </div>
+}@else {
+<div class="error-container">
+  <h6>{{ error }}</h6>
+</div>
+}
