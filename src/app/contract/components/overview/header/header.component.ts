@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ContractOverviewHeaderComponent {
   public isExpanded: boolean = true;
+  today = new Date();
 
   isEditMode: boolean = false;
 

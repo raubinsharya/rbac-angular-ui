@@ -23,27 +23,8 @@
   <div class="header-grid-container">
     <div class="header-item">
       <div class="label">Contract Number</div>
-      <mat-form-field appearance="outline" [editableInputField]="!isEditMode">
-        <input matInput value="12345" />
-      </mat-form-field>
-    </div>
-    <div class="header-item">
-      <div class="label">PO Number</div>
-      <mat-form-field appearance="outline" [editableInputField]="!isEditMode">
-        <input matInput value="12345" />
-      </mat-form-field>
-    </div>
-    <div class="header-item">
-      <div class="label">Payment Terms</div>
-      <mat-form-field appearance="outline" [editableSelectField]="!isEditMode">
-        <mat-select
-          placeholder="Division"
-          value="option1"
-          [disabled]="!isEditMode"
-        >
-          <mat-option value="option1">Yes</mat-option>
-          <mat-option value="option2">No </mat-option>
-        </mat-select>
+      <mat-form-field appearance="outline">
+        <input matInput value="12345" [disabled]="!isEditMode" />
       </mat-form-field>
     </div>
   </div>

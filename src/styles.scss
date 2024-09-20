@@ -40,36 +40,65 @@ a {
   text-decoration: none;
 }
 
-.form-field-custom-style .mat-mdc-form-field-flex {
-  display: flex !important;
-  align-items: center !important;
-  height: 40px !important;
-}
-
-.form-field-custom-style .mdc-text-field--outlined {
+.custom-select {
   all: unset !important;
-}
-
-.mat-mdc-form-field-flex {
   display: flex !important;
   align-items: center !important;
-  height: 2.5rem;
-}
-
-.mat-mdc-form-field-subscript-wrapper {
-  display: none !important;
-}
-
-.mat-mdc-text-field-wrapper {
-  & .mat-mdc-form-field-infix {
+  & * {
+    color: black !important;
     width: unset !important;
-    min-width: 50px;
+    padding: unset !important;
+    border: unset !important;
+    display: flex !important;
+    align-items: center !important;
+
+    .mat-mdc-select-arrow-wrapper {
+      display: none !important;
+    }
   }
 }
 
-.custom-select {
-  all: unset !important;
-  & * {
+.header-item:has(input[disabled]) {
+  .mat-mdc-form-field-flex {
+    display: flex !important;
+    align-items: center !important;
+    height: 40px !important;
+    color: black !important;
+  }
+
+  .mdc-text-field--outlined {
     all: unset !important;
+  }
+
+  * {
+    color: black !important;
+  }
+
+  .mat-mdc-form-field-icon-suffix {
+    display: none !important;
+  }
+
+  .mat-mdc-form-field-flex {
+    display: flex !important;
+    align-items: center !important;
+    height: 2.5rem;
+    color: black !important;
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    // display: none !important;
+    padding: unset !important;
+    height: unset !important;
+    & * {
+      padding: unset !important;
+      height: unset !important;
+    }
+  }
+
+  .mat-mdc-text-field-wrapper {
+    & .mat-mdc-form-field-infix {
+      width: unset !important;
+      min-width: 50px;
+    }
   }
 }
