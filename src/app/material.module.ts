@@ -21,6 +21,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [],
@@ -45,6 +46,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
     MatExpansionModule,
     MatDatepickerModule,
     CdkAccordionModule,
+    MatTabsModule,
   ],
 })
 export class SharedMaterialModule {}

@@ -1,7 +1,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 
 .header-container {
@@ -32,7 +31,7 @@
   .header-grid-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    column-gap: 1rem;
+    gap: 1rem;
   }
 }
 
@@ -40,12 +39,23 @@
   font-weight: 500;
 }
 
-.contract-value {
+.header-item {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  span {
-    font-weight: 600;
-    color: green;
+}
+
+.sales-area {
+  display: flex;
+  flex-direction: column;
+
+  .sales-area-content {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
   }
+}
+
+.totalContractValue {
+  -webkit-text-fill-color: green;
+  font-weight: 700 !important;
 }

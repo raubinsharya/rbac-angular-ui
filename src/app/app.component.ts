@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-root',

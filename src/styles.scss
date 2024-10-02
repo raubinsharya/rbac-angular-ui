@@ -40,65 +40,88 @@ a {
   text-decoration: none;
 }
 
-.custom-select {
-  all: unset !important;
+.mat-mdc-text-field-wrapper,
+.mat-mdc-form-field-flex {
   display: flex !important;
   align-items: center !important;
-  & * {
-    color: black !important;
-    width: unset !important;
+  max-height: 40px !important;
+  color: black !important;
+}
+
+mat-form-field.mat-form-field-disabled {
+  input:placeholder-shown {
+    display: none !important;
+  }
+
+  .mdc-text-field--outlined {
     padding: unset !important;
-    border: unset !important;
-    display: flex !important;
-    align-items: center !important;
+    color: black !important;
+    -webkit-text-fill-color: black !important;
+    & div {
+      border: none !important;
+      opacity: unset !important;
+    }
 
     .mat-mdc-select-arrow-wrapper {
+      display: none !important;
+    }
+
+    .mat-mdc-form-field-icon-suffix {
       display: none !important;
     }
   }
 }
 
-.header-item:has(input[disabled]) {
-  .mat-mdc-form-field-flex {
-    display: flex !important;
-    align-items: center !important;
-    height: 40px !important;
-    color: black !important;
-  }
+mat-form-field::before {
+  content: attr(label);
+  font-weight: 500;
+}
 
-  .mdc-text-field--outlined {
-    all: unset !important;
-  }
+.mat-mdc-form-field-infix {
+  display: flex !important;
+  align-items: center !important;
+}
 
-  * {
-    color: black !important;
-  }
+.mat-mdc-form-field-hint-wrapper {
+  padding: unset !important;
+  position: absolute !important;
+  top: 0 !important;
+}
 
-  .mat-mdc-form-field-icon-suffix {
-    display: none !important;
-  }
+.mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
+.ag-cell-value {
+  font-size: 1rem !important;
+}
 
-  .mat-mdc-form-field-flex {
-    display: flex !important;
-    align-items: center !important;
-    height: 2.5rem;
-    color: black !important;
-  }
+.ag-cell mat-form-field {
+  height: 100%; /* Make sure the form field fits the cell height */
+  display: flex; /* Ensure proper flexbox layout */
+  align-items: center; /* Align vertically */
+  margin: 0; /* Remove extra margin */
+}
 
-  .mat-mdc-form-field-subscript-wrapper {
-    // display: none !important;
-    padding: unset !important;
-    height: unset !important;
-    & * {
-      padding: unset !important;
-      height: unset !important;
-    }
-  }
+.ag-cell mat-select {
+  height: 100%; /* Set the dropdown to fit the cell */
+  display: flex;
+  align-items: center;
+  line-height: normal;
+}
 
-  .mat-mdc-text-field-wrapper {
-    & .mat-mdc-form-field-infix {
-      width: unset !important;
-      min-width: 50px;
-    }
-  }
+.ag-cell .mat-form-field-infix {
+  height: 100%; /* Ensure the internal infix element fits the height */
+  display: flex;
+  align-items: center;
+}
+
+.mat-select-trigger {
+  height: 100%; /* Ensure the dropdown trigger fits the height */
+  display: flex;
+  align-items: center;
+}
+
+.editable-cell {
+  background-color: white;
+  box-shadow: 0px 0px 4px rgb(164, 164, 164);
 }

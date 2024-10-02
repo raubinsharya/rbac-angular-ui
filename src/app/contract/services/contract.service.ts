@@ -4,6 +4,8 @@ import { DueList } from '../models/duelist.model';
 import { ApiService } from '../../services/api.service';
 import { NotificationService } from '../../services/notification.service';
 import { QuoteDetailsType } from '../models/contract-overview.model';
+import { PartnerPayload } from '../store/actions/contract-overview.action';
+import { PartnerResponseType } from '../models/partner-response.model';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +29,16 @@ export class ContractService {
     return this.api
       .postData('/qqoperator/quotedetails', {
         sourceSystemHeaderId: sourceSystemHeaderId,
+      })
+      .pipe(catchError(this.handleError));
+  }
+
+  public getPartnerData(
+    payload: PartnerPayload
+  ): Observable<PartnerResponseType[]> {
+    return this.api
+      .postData('/daasqq/partner', {
+        ...payload,
       })
       .pipe(catchError(this.handleError));
   }

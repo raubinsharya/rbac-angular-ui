@@ -1,0 +1,10 @@
+.editable-input-container * {
+  max-width: 100% !important;
+}
+.input {
+  width: 100% !important;
+}
+
+:host {
+  display: block !important;
+}

@@ -1,0 +1,39 @@
+<span mat-dialog-title class="dialog-title">
+  {{ payload.title }}
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</span>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <mat-tab-group>
+    @for (tab of payload.tabs; track $index; let idx = $index;) {
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon color="primary" class="tab-icon">{{ tab.icon }}</mat-icon>
+        {{ tab.name }}
+      </ng-template>
+      <mat-form-field class="full-width" appearance="outline">
+        <textarea
+          matInput
+          rows="6"
+          [value]="formatText(payload.data[idx]?.[tab.fieldName])"
+          (input)="onTextChange($event, idx)"
+        ></textarea>
+      </mat-form-field>
+    </mat-tab>
+    }
+  </mat-tab-group>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button
+    cdkFocusInitial
+    class="mat-elevation-z1"
+    mat-flat-button
+    (click)="onConfirm()"
+    [disabled]="isDisabled"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

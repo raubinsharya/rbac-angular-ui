@@ -16,7 +16,7 @@ export class BookingDialogComponent {
   readonly cfdChecked = model(false);
   readonly poChecked = model(false);
 
-  readonly dialogRef = inject(MatDialogRef<BookingDialogComponent>);
+  private readonly dialogRef = inject(MatDialogRef<BookingDialogComponent>);
 
   get isDisabled(): boolean {
     return !this.cfdChecked() || !this.poChecked();

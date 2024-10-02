@@ -15,6 +15,11 @@ import { BasicValcheckDialogComponent } from './components/duelist/basic-valchec
 import { ContractOverviewMainComponent } from './components/overview/main/main.component';
 import { ContractOverViewEffect } from './store/effects/contract-overview.effects';
 import { ContractOverviewHeaderComponent } from './components/overview/header/header.component';
+import { ContractOverviewPartnersComponent } from './components/overview/partners/partners.component';
+import { ContractItemDetailsComponent } from './components/overview/item-details/item-details.component';
+import { BuildAndUpdateEffect } from './store/effects/build-update.effects';
+import { GridTextCellRendererComponent } from './components/overview/item-details/grid/text-cell-renderer/text-cell-renderer.component';
+import { GridItemNumberRendererComponent } from './components/overview/item-details/grid/item-number-renderer/item-number-renderer.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +29,21 @@ import { ContractOverviewHeaderComponent } from './components/overview/header/he
     BasicValcheckDialogComponent,
     ContractOverviewMainComponent,
     ContractOverviewHeaderComponent,
+    ContractOverviewPartnersComponent,
+    ContractItemDetailsComponent,
+    GridTextCellRendererComponent,
+    GridItemNumberRendererComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     ContractRoutingModule,
     StoreModule.forFeature('contractFeature', contractFeatureReducers),
-    EffectsModule.forFeature([DueListEffects, ContractOverViewEffect]),
+    EffectsModule.forFeature([
+      DueListEffects,
+      ContractOverViewEffect,
+      BuildAndUpdateEffect,
+    ]),
   ],
   providers: [ContractService],
 })

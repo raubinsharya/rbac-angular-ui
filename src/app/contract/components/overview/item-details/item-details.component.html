@@ -1,0 +1,13 @@
+<div class="item-container mat-elevation-z4">
+  <span>Item Details</span>
+</div>
+
+<div class="item-grid">
+  <ag-grid-table
+    [rowData]="linesData"
+    [colDefs]="colDefs"
+    rowSelection="multiple"
+    animateRows="true"
+    (cellValueChangedEvent)="onCellValueChanged()"
+  ></ag-grid-table>
+</div>

@@ -26,9 +26,9 @@ const routes: Routes = [
             data: { breadcrumb: '', show: false },
           },
           {
-            path: 'items/:id',
+            path: ':id',
             component: ContractItemDetailsMainComponent,
-            data: { breadcrumb: 'Items Details' },
+            data: { breadcrumb: 'Item Detail' },
           },
         ],
       },

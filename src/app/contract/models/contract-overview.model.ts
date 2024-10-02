@@ -1,103 +1,114 @@
 export interface QuoteDetailsType {
-  isUpdated: null | 'Yes';
+  isUpdated: string | 'Yes';
   commercialContract: CommercialContractType;
   rsmDetails: any[];
   APIHeader: APIHeaderType;
 }
 
+export type NestedKeyOf<ObjectType extends object> = {
+  [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
+    ? `${Key}` | `${Key}.${NestedKeyOf<ObjectType[Key]>}`
+    : `${Key}`;
+}[keyof ObjectType & (string | number)];
+
+export type NestedQuoteDetailsType = NestedKeyOf<QuoteDetailsType>;
+
 export interface APIHeaderType {
-  correlationID: string;
+  correlationId: string;
   recordName: string;
-  recordID: string;
-  consumer: null;
+  recordId: string;
+  consumer: string;
   provider: string;
-  consumerTimestamp: null;
-  testMode: null;
-  info1: null;
-  info2: null;
+  consumerTimestamp: string;
+  testMode: string;
+  info1: string;
+  info2: string;
   info3: string;
-  itemCategory: null;
-  reasonForRejection: null;
+  itemCategory: string;
+  reasonForRejection: string;
   poType: string;
-  poSubType: null;
+  poSubType: string;
 }
 
 export interface CommercialContractType {
-  isDivisionUpdated: null;
-  isCustomerPurchaseOrderNumberUpdated: null;
-  isBillingBlockUpdated: null;
-  isBillingBlockDescUpdated: null;
-  bookedBy: null;
-  isBookedByUpdated: null;
-  bookedTimestamp: null;
-  isCfdValidated: null | 'Yes';
-  isPoAcknowledged: null | 'Yes';
-  isHeaderUpdated: null | 'Yes';
+  poType: string;
+  isDivisionUpdated: string;
+  isCustomerPurchaseOrderNumberUpdated: string;
+  isBillingBlockUpdated: string;
+  isBillingBlockDescUpdated: string;
+  bookedBy: string;
+  isBookedByUpdated: string;
+  bookedTimestamp: string;
+  isCfdValidated: string | 'Yes';
+  isPoAcknowledged: string | 'Yes';
+  isHeaderUpdated: string | 'Yes';
   contractNumber: string;
   description: string;
   fileName: string;
   quoteReferenceNumber: string;
   displayOnUi: string;
-  salesOrgID: string;
+  salesOrgId: string;
   division: string;
   poDate: string;
   customerPurchaseOrderNumber: string;
+  isPoTypeUpdated: string | null;
   accountCountry: string;
   currency: string;
   netValueOfContract: string;
   customerAcceptanceDate: string;
   contractStartDate: string;
-  isContractStartDateUpdated: null;
+  isContractStartDateUpdated: string;
   contractEndDate: string;
-  isContractEndDateUpdated: null;
+  isContractEndDateUpdated: string;
   paymentTerms: string;
-  isPaymentTermsUpdated: null;
+  isPaymentTermsUpdated: string;
   indicator: string;
   salesDocType: string;
   contractType: string;
   contractSource: string;
   idpValStatus: string;
-  idpValDesc: null;
+  idpValDesc: string;
   basicValStatus: string;
   basicValDesc: string;
-  isTextsUpdated: null;
+  isTextsUpdated: string;
   texts: any[];
   approverName: string;
   approverEmail: string;
   billingBlock: string;
   billingBlockDesc: string;
   businessPartnerRole: BusinessPartnerRoleType[];
+  isBusinessPartnerRoleUpdated: string | null;
   contractLineItems: ContractLineItemType[];
   contractCreationStatus: string;
   distributionChannel: string;
   sourceSystemHeaderId: string;
   version: string;
-  updatedBy: null;
+  updatedBy: string;
   dateFormat: string;
   currencyFormat: string;
   csbrNumber: string;
   customerGroups: any[];
   conditionGroups: any[];
   isSimulation: string;
-  simulationStatus: null;
-  simulationErrorLogs: null;
-  simulationTimestamp: null;
-  simulationVersion: null;
+  simulationStatus: string;
+  simulationErrorLogs: string;
+  simulationTimestamp: string;
+  simulationVersion: string;
 }
 
 export interface BusinessPartnerRoleType {
-  businessPartnerID: string;
-  businessPartnerRoleID: string;
+  businessPartnerId: string;
+  businessPartnerRoleId: string;
   businessPartnerDescription: string;
   address: AddressType;
-  timezone: null;
+  timezone: string;
   version: string;
-  isBusinessPartnerUpdated: null;
+  isBusinessPartnerUpdated: string;
 }
 
 export interface AddressType {
-  isStreet1Updated: null;
-  isTelephoneNumberUpdated: null;
+  isStreet1Updated: string;
+  isTelephoneNumberUpdated: string;
   businessPartnerName: string;
   street1: string;
   city: string;
@@ -110,48 +121,48 @@ export interface AddressType {
 
 export interface ContractLineItemType {
   customerPurchaseOrderNumber: string;
-  isCustomerPurchaseOrderNumberUpdated: null;
+  isCustomerPurchaseOrderNumberUpdated: string;
   lineType: string;
-  isBillingPeriodUpdated: null;
-  isBillingBlockUpdated: null;
-  isBillingDescUpdated: null;
+  isBillingPeriodUpdated: string;
+  isBillingBlockUpdated: string;
+  isBillingDescUpdated: string;
   sapBusinessHoursName: string;
   sapBusinessHoursCode: string;
-  sapPmBusinessHoursName: null;
-  sapPmBusinessHoursCode: null;
-  sapPriorityBusinessHoursName: null;
-  sapPriorityBusinessHoursCode: null;
+  sapPmBusinessHoursName: string;
+  sapPmBusinessHoursCode: string;
+  sapPriorityBusinessHoursName: string;
+  sapPriorityBusinessHoursCode: string;
   sapPlannedMaintenanceName: string;
   sapPlannedMaintenanceCode: string;
   sapAdditionalPmVisitsName: string;
   sapAdditionalPmVisitsCode: string;
-  sapUptimeName: null;
-  sapUptimeCode: null;
-  sapPartsDeliveryName: null;
-  sapPartsDeliveryCode: null;
-  sapServiceLevelAgreementName: null;
-  sapServiceLevelAgreementCode: null;
-  isPoTypeUpdated: null;
-  isLineItemUpdated: null;
+  sapUptimeName: string;
+  sapUptimeCode: string;
+  sapPartsDeliveryName: string;
+  sapPartsDeliveryCode: string;
+  sapServiceLevelAgreementName: string;
+  sapServiceLevelAgreementCode: string;
+  isPoTypeUpdated: string;
+  isLineItemUpdated: string;
   isHigherLevelItem: string;
   higherLevelItemNumber: string;
   productType: string;
   businessPartnerRole: BusinessPartnerRoleType[];
   productDescription: string;
   totalValueContractLineItem: string;
-  productID: string;
-  featureID: string;
+  productId: string;
+  featureId: string;
   contractLineItemNumber: string;
   sourceSystemHeaderId: string;
   sourceSystemLineItemId: string;
-  isTechnicalObjectsUpdated: null;
+  isTechnicalObjectsUpdated: string;
   technicalObjects: TechnicalObjectType[];
   currency: string;
-  profitCenter: null;
+  profitCenter: string;
   contractLineStartDate: string;
-  isContractStartDateUpdated: null;
+  isContractStartDateUpdated: string;
   contractLineEndDate: string;
-  isContractEndDateUpdated: null;
+  isContractEndDateUpdated: string;
   customerAcceptanceDateLineItem: Date;
   uom: string;
   quantity: string;
@@ -159,7 +170,7 @@ export interface ContractLineItemType {
   price: string;
   priceType: string;
   contractLineItemRefNumber: string;
-  isPaymentTermsUpdated: null;
+  isPaymentTermsUpdated: string;
   paymentTerms: string;
   billingPlanType: string;
   billingPeriod: string;
@@ -169,13 +180,13 @@ export interface ContractLineItemType {
   lineRejection: boolean;
   reasonForRejection: string;
   rejectionDescription: string;
-  contractNumber: null;
+  contractNumber: string;
   featureName: string;
-  featureOptionID: string;
+  featureOptionId: string;
   featureOptionName: string;
   itemCategory: string;
   indexation: IndexationType;
-  isTextsUpdated: null;
+  isTextsUpdated: string;
   texts: any[];
   materialGroups: any[];
   conditionGroups: any[];
@@ -184,8 +195,8 @@ export interface ContractLineItemType {
   businessHoursCode: string;
   pmBusinessHoursName: string;
   pmBusinessHoursCode: string;
-  priorityBusinessHoursName: null;
-  priorityBusinessHoursCode: null;
+  priorityBusinessHoursName: string;
+  priorityBusinessHoursCode: string;
   renewalTermName: string;
   renewalTermCode: string;
   plannedMaintenanceName: string;
@@ -206,25 +217,25 @@ export interface ContractLineItemType {
 }
 
 export interface CharacteristicConfigurationType {
-  featureName: null;
-  featureCode: null;
+  featureName: string;
+  featureCode: string;
   characteristicName: string;
-  characteristicValue: null;
+  characteristicValue: string;
   characteristicCode: string;
 }
 
 export interface IndexationType {
   isIndexationApplicable: boolean;
-  indexUpliftStartDate: null;
-  indexType: null;
-  indexFormula: null;
-  indexMonth: null;
-  indexCustomerAcceptance: null;
-  indexNoticePeriod: null;
-  indexFixedDate: null;
-  indexNotifyCustomer: null;
-  indexInclLetter: null;
-  indexCustConfirmation: null;
+  indexUpliftStartDate: string;
+  indexType: string;
+  indexFormula: string;
+  indexMonth: string;
+  indexCustomerAcceptance: string;
+  indexNoticePeriod: string;
+  indexFixedDate: string;
+  indexNotifyCustomer: string;
+  indexInclLetter: string;
+  indexCustConfirmation: string;
   sourceSystemHeaderId: string;
   sourceSystemLineItemId: string;
 }
@@ -238,9 +249,9 @@ export interface IncludedServiceType {
   sapIncludedServiceName: SapIncludedServiceNameType;
   sapIncludedServiceCode: string;
   serviceValue: string;
-  includedServiceCode: null;
-  isDeleted: null;
-  serviceType: null;
+  includedServiceCode: string;
+  isDeleted: string;
+  serviceType: string;
   serviceName: string;
 }
 
@@ -251,10 +262,10 @@ export enum SapIncludedServiceNameType {
 }
 
 export interface PartsDiscountType {
-  partsDiscount: null;
-  partsDiscountCode: null;
+  partsDiscount: string;
+  partsDiscountCode: string;
   discountDescription: string;
-  isDeleted: null;
+  isDeleted: string;
   discountValue: string;
 }
 

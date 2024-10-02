@@ -6,8 +6,10 @@
   suppressRowClickSelection
   [rowSelection]="rowSelection"
   [defaultColDef]="defaultColDef"
-  pagination
+  [pagination]="pagination"
   (gridReady)="onGridReady($event)"
   (selectionChanged)="onSelectionChanged()"
+  (cellValueChanged)="onCellValueChanged($event)"
   [isRowSelectable]="isRowSelectable"
+  (cellEditingStopped)="onCellEditingStopped($event)"
 />
