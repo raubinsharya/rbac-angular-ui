@@ -91,9 +91,30 @@ export interface CommercialContractType {
   conditionGroups: any[];
   isSimulation: string;
   simulationStatus: string;
-  simulationErrorLogs: string;
+  simulationErrorLogs: SimulationErrorLogs;
   simulationTimestamp: string;
   simulationVersion: string;
+}
+
+export interface SimulationErrorLogs {
+  successLogs: Log[];
+  errorLogs: Log[];
+  warningLogs: Log[];
+  infoLogs: Log[];
+}
+
+export interface Log {
+  TYPE: string;
+  ID: string;
+  NUMBER: number;
+  MESSAGE: string;
+  MESSAGE_V1: null | string;
+  PARAMETER: null | string;
+  SYSTEM: null | string;
+  MESSAGE_V2: null | string;
+  ROW: number;
+  MESSAGE_V3: null;
+  MESSAGE_V4: null;
 }
 
 export interface BusinessPartnerRoleType {

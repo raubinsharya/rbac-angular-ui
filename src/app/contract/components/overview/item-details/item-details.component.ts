@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { ContractLineItemType } from '../../../models/contract-overview.model';
 import { Store } from '@ngrx/store';
 import { selectContractOverviewcontractLineItems } from '../../../store/selectors/contract-overview.selector';
-import { LineItemcolDefs } from './colDefs';
 import { ColDef } from 'ag-grid-community';
 import { updateOverview } from '../../../store/actions/contract-overview.action';
+import { ItemDetailsColDefs } from './colDefs.service';
 
 @Component({
   selector: 'contract-item-details',
@@ -13,9 +13,15 @@ import { updateOverview } from '../../../store/actions/contract-overview.action'
 })
 export class ContractItemDetailsComponent {
   public linesData!: ContractLineItemType[];
-  public colDefs: ColDef[] = LineItemcolDefs;
+  public colDefs!: ColDef[];
 
-  constructor(private store: Store) {
+  constructor(
+    private store: Store,
+    public itemDetailsColDefs: ItemDetailsColDefs
+  ) {
+    itemDetailsColDefs
+      .getColDefs()
+      .subscribe((colDefs) => (this.colDefs = colDefs));
     this.store
       .select(selectContractOverviewcontractLineItems)
       .subscribe(

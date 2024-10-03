@@ -38,6 +38,9 @@ export const fetchPartnerDetailsFailed = createAction(
   '[CONTRACT][OVERVIEW][FETCH][PARTNER][FAILED] FETCH PARTNER FAILED',
   props<{ error: string }>()
 );
+export const fetchPartnerDetailsCancel = createAction(
+  '[CONTRACT][OVERVIEW][FETCH][PARTNER][CANCEL] FETCH PARTNER CANCEL'
+);
 
 export const updateOverview = createAction(
   '[CONTRACT][OVERVIEW][UPDATE][HEADER] UPDATE HEADER',

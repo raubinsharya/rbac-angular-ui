@@ -18,6 +18,7 @@ import { EditableDatePickerComponent } from './components/editable-date-picker/e
 import { NumberFormatterPipe } from './pipes/number-formatter.pipe';
 import { CustomDropDownComponent } from './components/grid/custom-drop-down/custom-drop-down.component';
 import { MessageDialogComponent } from './components/message-dialog/message-dialog.component';
+import { SimulatioLogsComponent } from './components/simulatio-logs/simulatio-logs.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MessageDialogComponent } from './components/message-dialog/message-dial
     EditableSelectComponent,
     CustomDropDownComponent,
     EditableDatePickerComponent,
+    SimulatioLogsComponent,
   ],
   imports: [
     FormsModule,
@@ -59,6 +61,7 @@ import { MessageDialogComponent } from './components/message-dialog/message-dial
     EditableSelectComponent,
     CustomDropDownComponent,
     EditableDatePickerComponent,
+    SimulatioLogsComponent,
   ],
   providers: [provideNativeDateAdapter()],
 })

@@ -6,6 +6,7 @@ import {
   fetchContractOverviewFailure,
   fetchContractOverviewSuccess,
   fetchPartnerDetails,
+  fetchPartnerDetailsCancel,
   fetchPartnerDetailsFailed,
   fetchPartnerDetailsSuccess,
   resetOverview,
@@ -80,6 +81,10 @@ export const contractOverviewReducer = createImmerReducer(
   on(fetchPartnerDetailsFailed, (state, { error }) => {
     state.partnerLoading = false;
     state.partnerFetchError = error;
+    return state;
+  }),
+  on(fetchPartnerDetailsCancel, (state) => {
+    state.partnerLoading = false;
     return state;
   })
 );

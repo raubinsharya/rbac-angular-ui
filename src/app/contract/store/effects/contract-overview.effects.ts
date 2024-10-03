@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, delay, exhaustMap, map, mergeMap } from 'rxjs/operators';
+import {
+  catchError,
+  exhaustMap,
+  map,
+  mergeMap,
+  switchMap,
+  takeUntil,
+} from 'rxjs/operators';
 import { of } from 'rxjs';
 import { ContractService } from '../../services/contract.service';
 import {
@@ -8,9 +15,9 @@ import {
   fetchContractOverviewFailure,
   fetchContractOverviewSuccess,
   fetchPartnerDetails,
+  fetchPartnerDetailsCancel,
   fetchPartnerDetailsFailed,
   fetchPartnerDetailsSuccess,
-  resetOverview,
   resetPartnerField,
   updateOverview,
   updatetPartnerField,
@@ -29,7 +36,7 @@ export class ContractOverViewEffect {
   loadContractOverview$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fetchContractOverview),
-      mergeMap(({ sourceSystemHeaderId }) =>
+      exhaustMap(({ sourceSystemHeaderId }) =>
         this.contractService.getContractOverivew(sourceSystemHeaderId).pipe(
           map((overview) => fetchContractOverviewSuccess({ overview })),
           catchError((error) =>
@@ -42,7 +49,7 @@ export class ContractOverViewEffect {
   fetchPartner$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fetchPartnerDetails),
-      exhaustMap((action) =>
+      switchMap((action) =>
         this.contractService.getPartnerData(action.payload).pipe(
           mergeMap((partner) => {
             if (isEmpty(partner)) {
@@ -102,7 +109,8 @@ export class ContractOverViewEffect {
                 query: `$[?(@.businessPartnerRoleId == '${action.payload.businessPartnerRoleId}')]`,
               })
             )
-          )
+          ),
+          takeUntil(this.actions$.pipe(ofType(fetchPartnerDetailsCancel)))
         )
       )
     )

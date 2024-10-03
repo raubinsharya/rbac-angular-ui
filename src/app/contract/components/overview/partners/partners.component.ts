@@ -12,9 +12,11 @@ import {
   selectContractOverviewIsBusinesspartnerroleUpdated,
   selectContractOverviewPartners,
 } from '../../../store/selectors/contract-overview.selector';
-import { getHeaderPartnerColDefs } from './colDefs';
+
 import { NotificationService } from '../../../../services/notification.service';
 import {
+  fetchPartnerDetailsCancel,
+  fetchPartnerDetailsSuccess,
   resetOverview,
   resetPartnerField,
   updateOverview,
@@ -23,6 +25,7 @@ import {
 import { filter, firstValueFrom, takeUntil } from 'rxjs';
 import { Actions, ofType } from '@ngrx/effects';
 import { queryAndResetJSON, queryAndUpdateJSON } from '../../../../../utils';
+import { HeaderPartnerColDefs } from './colDefs.service';
 
 @Component({
   selector: 'contract-overview-partners',
@@ -44,7 +47,8 @@ export class ContractOverviewPartnersComponent {
   constructor(
     private store: Store,
     private notification: NotificationService,
-    private actions$: Actions
+    private actions$: Actions,
+    private colDefsService: HeaderPartnerColDefs
   ) {
     this.store
       .select(selectContractOverviewPartners)
@@ -89,12 +93,10 @@ export class ContractOverviewPartnersComponent {
   }
 
   updateColDefs() {
-    this.colDefs = getHeaderPartnerColDefs(
-      this.isEditMode,
-      this.notification,
-      this.store,
+    this.colDefs = this.colDefsService.getColDefs(
       this.contractOverview,
-      this.soldTo
+      this.soldTo,
+      this.isEditMode
     );
   }
 
@@ -122,8 +124,8 @@ export class ContractOverviewPartnersComponent {
 
   async cancelEditMode() {
     this.isEditMode = false;
-    this.parternLoading = false;
     this.partnerLoadingMessage = '';
+    this.store.dispatch(fetchPartnerDetailsCancel());
     this.partnersData = structuredClone(
       await firstValueFrom(this.store.select(selectContractOverviewPartners))
     );

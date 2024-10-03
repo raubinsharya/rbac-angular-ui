@@ -7,6 +7,7 @@
       matTooltip="Reset Data"
       matTooltipPosition="above"
       matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
       *ngIf="isHeaderUpdated"
     >
       <mat-icon>restart_alt</mat-icon>
@@ -18,6 +19,7 @@
       matTooltip="Edit Data"
       matTooltipPosition="above"
       matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
     >
       <mat-icon> edit</mat-icon>
     </button>
@@ -27,6 +29,7 @@
       *ngIf="isEditMode"
       matTooltip="Save Changes"
       matTooltipPosition="above"
+      matTooltipShowDelay="200"
       matTooltipShowDelay="200"
     >
       <mat-icon>save</mat-icon>
@@ -38,16 +41,40 @@
       matTooltip="Cancel Edit"
       matTooltipPosition="above"
       matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
     >
       <mat-icon>cancel</mat-icon>
     </button>
-    <button mat-icon-button (click)="openHeaderText()">
+    <button
+      mat-icon-button
+      (click)="openHeaderText()"
+      matTooltip="Header Text"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+    >
       <mat-icon>chat</mat-icon>
     </button>
-    <button mat-icon-button>
+    @if (commercialContract.simulationErrorLogs &&
+    (commercialContract.simulationErrorLogs.errorLogs ||
+    commercialContract.simulationErrorLogs.warningLogs ||
+    commercialContract.simulationErrorLogs.infoLogs ||
+    commercialContract.simulationErrorLogs.successLogs)) {
+    <button
+      mat-icon-button
+      (click)="openSimulationDialog()"
+      matTooltip="Simulation Logs"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+    >
       <mat-icon>difference</mat-icon>
     </button>
-    <button mat-icon-button>
+    }
+    <button
+      mat-icon-button
+      matTooltip="Attachments"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+    >
       <mat-icon>attach_file</mat-icon>
     </button>
   </div>

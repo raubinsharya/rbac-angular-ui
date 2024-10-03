@@ -27,6 +27,7 @@ import {
   updateOverview,
 } from '../../../store/actions/contract-overview.action';
 import moment from 'moment';
+import { SimulatioLogsComponent } from '../../../../shared/components/simulatio-logs/simulatio-logs.component';
 
 @Component({
   selector: 'contract-overview-header',
@@ -207,6 +208,17 @@ export class ContractOverviewHeaderComponent implements OnInit {
           })
         );
       }
+    });
+  }
+
+  openSimulationDialog() {
+    this.dialog.open(SimulatioLogsComponent, {
+      minWidth: '50vw',
+      data: {
+        simulationLogs: this.commercialContract.simulationErrorLogs,
+        simulationStatus: this.commercialContract.simulationStatus,
+        isSimulation: this.commercialContract.isSimulation,
+      },
     });
   }
 }
