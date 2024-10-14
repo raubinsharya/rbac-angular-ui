@@ -19,10 +19,6 @@ export const paymentTerms = [
     value: 'ZFLX',
     description: 'Payment made via prepaid Flex Fund',
   },
-  {
-    value: 'ZFLXX',
-    description: 'Payment made via prepaid Flex Fund',
-  },
 ];
 export const divisions = [
   {
@@ -109,3 +105,16 @@ export const mergeApplicable = [
   { value: 'true', description: 'Yes' },
   { value: 'false', description: 'No' },
 ];
+
+export const constractStatusMapping: { [k: string]: string } = {
+  VALIDATION: 'LISTING',
+  FAILED: 'FAILED',
+  TEC_ERROR: 'TECH ERROR',
+};
+
+export const classNameMapping: { [k: string]: string } = {
+  VALIDATION: 'listing',
+  FAILED: 'failed',
+  TEC_ERROR: 'tech-error',
+  IN_PROGRESS: 'progress',
+};

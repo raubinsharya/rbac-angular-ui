@@ -28,6 +28,8 @@ import {
 } from '../../../store/actions/contract-overview.action';
 import moment from 'moment';
 import { SimulatioLogsComponent } from '../../../../shared/components/simulatio-logs/simulatio-logs.component';
+import { dateRangeValidator } from './validator/startDateEndDate';
+import { isEmpty } from 'lodash';
 
 @Component({
   selector: 'contract-overview-header',
@@ -64,21 +66,26 @@ export class ContractOverviewHeaderComponent implements OnInit {
       .subscribe((isUpdated) => (this.isHeaderUpdated = isUpdated));
   }
   ngOnInit(): void {
-    this.overviewForm = this.fb.group({
-      division: [{ value: '', disabled: true }, Validators.required],
-      poType: [{ value: '', disabled: true }, Validators.required],
-      customerPurchaseOrderNumber: [
-        { value: '', disabled: true },
-        [
-          Validators.required,
-          Validators.minLength(8),
-          Validators.maxLength(12),
+    this.overviewForm = this.fb.group(
+      {
+        division: [{ value: '', disabled: true }, Validators.required],
+        poType: [{ value: '', disabled: true }, Validators.required],
+        customerPurchaseOrderNumber: [
+          { value: '', disabled: true },
+          [
+            Validators.required,
+            Validators.minLength(8),
+            Validators.maxLength(12),
+          ],
         ],
-      ],
-      contractStartDate: [{ value: '', disabled: true }, Validators.required],
-      contractEndDate: [{ value: '', disabled: true }, Validators.required],
-      paymentTerms: [{ value: '', disabled: true }, Validators.required],
-    });
+        contractStartDate: [{ value: '', disabled: true }, Validators.required],
+        contractEndDate: [{ value: '', disabled: true }, Validators.required],
+        paymentTerms: [{ value: '', disabled: true }, Validators.required],
+      },
+      {
+        validator: dateRangeValidator('contractStartDate', 'contractEndDate'),
+      }
+    );
     this.setFormValues(this.commercialContract);
   }
 
@@ -111,11 +118,6 @@ export class ContractOverviewHeaderComponent implements OnInit {
   }
 
   toggleEditMode() {
-    this.getFormValidationErrors().forEach((error) => {
-      this.notification.showError(`${error.field} ${error.keyError} error`);
-      const field = error.field as keyof CommercialContractType;
-      this.overviewForm.get(field)?.reset(this.commercialContract[field]);
-    });
     this.toggleEditForm();
   }
 
@@ -125,8 +127,15 @@ export class ContractOverviewHeaderComponent implements OnInit {
   }
 
   stopEditMode() {
-    this.toggleEditMode();
-    this.isEditMode = false;
+    const errors = this.getFormValidationErrors().some((error) => {
+      this.notification.showError(`${error.field} ${error.keyError}`);
+      const field = error.field as keyof CommercialContractType;
+      this.overviewForm.get(field)?.reset(this.commercialContract[field]);
+      return !isEmpty(error);
+    });
+
+    if (errors) return;
+
     const targetFields = Object.keys(this.overviewForm.value).map((key) => {
       let value = this.overviewForm.value[key];
       if (value instanceof Date) value = moment(value).format('yyyy-MM-DD');
@@ -142,10 +151,13 @@ export class ContractOverviewHeaderComponent implements OnInit {
         targetFields: targetFields,
       })
     );
+    this.toggleEditMode();
+    this.isEditMode = false;
   }
 
   async cancelEditMode() {
     this.toggleEditMode();
+    this.setFormValues(this.commercialContract);
     this.isEditMode = false;
   }
 
@@ -157,7 +169,7 @@ export class ContractOverviewHeaderComponent implements OnInit {
     });
   }
 
-  getFormValidationErrors() {
+  private getFormValidationErrors() {
     const errors: Array<{ field: string; keyError: string }> = [];
     Object.keys(this.overviewForm.controls).forEach((key) => {
       const controlErrors: ValidationErrors = this.overviewForm.get(key)
@@ -171,6 +183,14 @@ export class ContractOverviewHeaderComponent implements OnInit {
         });
       }
     });
+    const formErrors = this.overviewForm.errors as any;
+    if (!isEmpty(formErrors))
+      Object.keys(formErrors).forEach((key) => {
+        errors.push({
+          field: key,
+          keyError: formErrors[key],
+        });
+      });
     return errors;
   }
 

@@ -2,8 +2,8 @@
   [rowData]="rowData"
   [columnDefs]="colDefs"
   class="ag-theme-quartz"
-  suppressCellFocus
-  suppressRowClickSelection
+  [suppressCellFocus]="true"
+  [suppressRowClickSelection]="true"
   [rowSelection]="rowSelection"
   [defaultColDef]="defaultColDef"
   [pagination]="pagination"
@@ -12,4 +12,7 @@
   (cellValueChanged)="onCellValueChanged($event)"
   [isRowSelectable]="isRowSelectable"
   (cellEditingStopped)="onCellEditingStopped($event)"
+  [tooltipShowDelay]="0"
+  [tooltipHideDelay]="0"
+  [enableBrowserTooltips]="true"
 />

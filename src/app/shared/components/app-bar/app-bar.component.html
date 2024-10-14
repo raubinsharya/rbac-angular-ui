@@ -4,7 +4,7 @@
       <mat-icon
         svgIcon="philips-icon"
         aria-hidden="false"
-        aria-label="Example thumbs up SVG icons" 
+        aria-label="Example thumbs up SVG icons"
       />
     </a>
     <span>Philips Order and Contract Manager</span>
@@ -19,9 +19,13 @@
       disableRipple
       [matMenuTriggerFor]="menu"
     >
-      <app-avatar initials="RA" size="small" shape="circle" />
-      Arya, Raubinsh (Partner)
+      @if (loading) {
+      <span class="spinner"></span>
+      } @else {
+      <app-avatar [initials]="initialName" size="small" shape="circle" />
+      {{ userName }}
       <mat-icon>arrow_drop_down</mat-icon>
+      }
     </button>
   </div>
 </mat-toolbar>

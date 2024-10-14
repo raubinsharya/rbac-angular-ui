@@ -4,6 +4,7 @@ import { ContractHomeComponent } from './components/home/home.component';
 import { ContractOverviewMainComponent } from './components/overview/main/main.component';
 import { ContractDuelistGridComponent } from './components/duelist/duelistgrid/duelistgrid.component';
 import { ContractItemDetailsMainComponent } from './components/item-detail/main/main.component';
+import { ngxPermissionsGuard } from 'ngx-permissions';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
         data: { breadcrumb: '', show: false },
       },
       {
-        path: 'overview/:id',
+        path: 'overview/:source',
         data: { breadcrumb: 'Contract Overview' },
         children: [
           {
@@ -26,9 +27,15 @@ const routes: Routes = [
             data: { breadcrumb: '', show: false },
           },
           {
-            path: ':id',
+            path: ':idx',
             component: ContractItemDetailsMainComponent,
-            data: { breadcrumb: 'Item Detail' },
+            // canActivate: [ngxPermissionsGuard],
+            data: {
+              breadcrumb: 'Item Detail',
+              permissions: {
+                only: ['system_admin_it_NL90'],
+              },
+            },
           },
         ],
       },

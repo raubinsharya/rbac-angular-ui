@@ -169,6 +169,7 @@ export interface ContractLineItemType {
   higherLevelItemNumber: string;
   productType: string;
   businessPartnerRole: BusinessPartnerRoleType[];
+  isBusinessPartnerRoleUpdated: string;
   productDescription: string;
   totalValueContractLineItem: string;
   productId: string;

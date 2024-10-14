@@ -19,9 +19,8 @@ export class ContractItemDetailsComponent {
     private store: Store,
     public itemDetailsColDefs: ItemDetailsColDefs
   ) {
-    itemDetailsColDefs
-      .getColDefs()
-      .subscribe((colDefs) => (this.colDefs = colDefs));
+    this.colDefs = itemDetailsColDefs.getColDefs();
+
     this.store
       .select(selectContractOverviewcontractLineItems)
       .subscribe(
@@ -31,6 +30,7 @@ export class ContractItemDetailsComponent {
   }
 
   onCellValueChanged(): void {
+    console.info('here we go')
     this.store.dispatch(
       updateOverview({
         query: '$.commercialContract',

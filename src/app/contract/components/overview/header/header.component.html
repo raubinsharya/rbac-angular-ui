@@ -211,7 +211,12 @@
         [placeholder]="overviewForm.get('paymentTerms')?.value"
       >
         @for (paymentTerm of paymentTerms; track $index) {
-        <mat-option value="{{ paymentTerm.value }}">
+        <mat-option
+          value="{{ paymentTerm.value }}"
+          [matTooltip]="paymentTerm.description"
+          matTooltipPosition="above"
+          matTooltipShowDelay="200"
+        >
           {{ paymentTerm.value }}
         </mat-option>
         }

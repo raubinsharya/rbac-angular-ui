@@ -1,0 +1,24 @@
+[
+  {
+    "bookedBy": "micheal.john@philips.com",
+    "sapContractNumber": "12345",
+    "bookedDate": "2024-04-22",
+    "fileName": "eZCQ_Template_v1.71_DEVTEST_2404221244.xlsx",
+    "csbrNumber": null,
+    "date": "2024-04-22",
+    "poNumber": "EZ2404221244",
+    "quoteRefNumber": "",
+    "sourceSystemHeaderId": null,
+    "poDate": "2023-11-06",
+    "salesOrg": "AU90",
+    "salesDocType": "ZCQ",
+    "contractType": "POS",
+    "totalPrice": "24000",
+    "currency": "AUD",
+    "idpCheck": "VAL_SUCCESS",
+    "basicValCheck": "VAL_FAILED",
+    "basicValCheckLogs": "[{\"checkName\":\"Material Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"PO Number or Quote Reference Number Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Business Partner Role Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Approver Name Validation\",\"status\":false,\"errorMessage\":\"Approver Name Validation failed, the Approver name is Blank\"},{\"checkName\":\"Quantity Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Technical Objects Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Annual Price Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Billing Period Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Billing Plan Rule Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Payment Terms Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"System Modality Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Contract Start and End Date Validation\",\"status\":true,\"errorMessage\":null}]",
+    "contractCreationStatus": "FAILED",
+    "contractCreationErrorLogs": null
+  }
+]

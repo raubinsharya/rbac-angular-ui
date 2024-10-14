@@ -1,6 +1,31 @@
 import { JSONPath } from 'jsonpath-plus';
 import { isEmpty, set } from 'lodash';
 
+export function extractInitials(fullName: string) {
+  const names = fullName.trim().split(/\s+/);
+
+  let firstInitial = '';
+  let lastInitial = '';
+
+  if (names.length > 0) {
+    firstInitial = names[0].charAt(0).toUpperCase();
+  }
+
+  if (names.length > 1) {
+    let lastNameIndex = names.length - 1;
+
+    for (let i = names.length - 1; i > 0; i--) {
+      if (names[i].charAt(0) === '(') {
+        lastNameIndex = i - 1;
+        break;
+      }
+    }
+    lastInitial = names[lastNameIndex].charAt(0).toUpperCase();
+  }
+
+  return `${lastInitial}${firstInitial}`;
+}
+
 export function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -184,4 +209,8 @@ function jsonPathToLodashPath(jsonPath: string) {
     .replace(/^\$/, '')
     .split(/\.|\['|'\]|\[|\]/)
     .filter(Boolean);
+}
+
+export function removeLeadingZeros(value: string) {
+  return value?.replace(/^0+/, '');
 }

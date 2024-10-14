@@ -2,13 +2,16 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { fetchContractOverview } from '../../../store/actions/contract-overview.action';
 import { ActivatedRoute } from '@angular/router';
-import { ContractOverViewEffect } from '../../../store/effects/contract-overview.effects';
 import { QuoteDetailsType } from '../../../models/contract-overview.model';
 import {
   selectContractOverview,
   selectContractOverviewError,
   selectContractOverviewLoading,
 } from '../../../store/selectors/contract-overview.selector';
+import {
+  classNameMapping,
+  constractStatusMapping,
+} from '../../../../shared/constants';
 
 @Component({
   selector: 'app-main',
@@ -20,26 +23,13 @@ export class ContractOverviewMainComponent {
   public loading!: boolean;
   public error!: any;
 
-  private constractStatusMapping: { [k: string]: string } = {
-    VALIDATION: 'LISTING',
-    FAILED: 'FAILED',
-    TEC_ERROR: 'TECH ERROR',
-  };
-
-  private classNameMapping: { [k: string]: string } = {
-    VALIDATION: 'listing',
-    FAILED: 'failed',
-    TEC_ERROR: 'tech-error',
-    IN_PROGRESS: 'progress',
-  };
-
   get contractStatus(): string {
-    return this.constractStatusMapping[
+    return constractStatusMapping[
       this.overview?.commercialContract.contractCreationStatus as string
     ];
   }
   get contractStatusClass(): string {
-    return this.classNameMapping[
+    return classNameMapping[
       this.overview?.commercialContract.contractCreationStatus as string
     ];
   }
@@ -60,7 +50,7 @@ export class ContractOverviewMainComponent {
     this.route.paramMap.subscribe((params) => {
       this.store.dispatch(
         fetchContractOverview({
-          sourceSystemHeaderId: params.get('id') as string,
+          sourceSystemHeaderId: params.get('source') as string,
         })
       );
     });

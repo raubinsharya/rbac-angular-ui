@@ -1,0 +1,52 @@
+{
+  "shipToChanges": [
+    {
+      "isHeader": true,
+      "contractLineItemNumber": "10",
+      "sourceSystemHeaderId": null,
+      "sourceSystemLineItemId": "SP",
+      "salesOrgID": "US93",
+      "timezone": "HAWs",
+      "postalCode": "96813-4306",
+      "businessHoursName": "HELLO",
+      "businessHoursCode": null,
+      "pmBusinessHoursName": "pm name",
+      "pmBusinessHoursCode": null,
+      "priorityBusinessHoursName": "priority name",
+      "priorityBusinessHoursCode": 1234,
+      "characteristicConfigurations": [
+        {
+          "featureName": null,
+          "featureCode": null,
+          "characteristicName": "SERVICE_PROFILE_CM",
+          "characteristicValue": null,
+          "characteristicCode": "W01"
+        }
+      ]
+    },
+    {
+      "isHeader": true,
+      "contractLineItemNumber": "20",
+      "sourceSystemHeaderId": null,
+      "sourceSystemLineItemId": "SP",
+      "salesOrgID": "US93",
+      "timezone": "HAWs",
+      "postalCode": "96813-4306",
+      "businessHoursName": null,
+      "businessHoursCode": null,
+      "pmBusinessHoursName": null,
+      "pmBusinessHoursCode": null,
+      "priorityBusinessHoursName": null,
+      "priorityBusinessHoursCode": null,
+      "characteristicConfigurations": [
+        {
+          "featureName": null,
+          "featureCode": null,
+          "characteristicName": "SERVICE_PROFILE_CM",
+          "characteristicValue": null,
+          "characteristicCode": "W01"
+        }
+      ]
+    }
+  ]
+}

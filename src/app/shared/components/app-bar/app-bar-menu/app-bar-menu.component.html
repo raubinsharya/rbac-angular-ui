@@ -1,9 +1,9 @@
 <button mat-menu-item>
   <div class="first-row">
-    <app-avatar initials="RA" size="small" />
+    <app-avatar [initials]="initialName" size="small" />
     <div class="right-child">
-      <span>Arya, Raubinsh (Partner)</span>
-      <span>Last Login Sept-14-2024 06:19:49 AM</span>
+      <span>{{ userName }}</span>
+      <span>Last Login: {{ lastLoggedIn }} </span>
     </div>
   </div>
 </button>

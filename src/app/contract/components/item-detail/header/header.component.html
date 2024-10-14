@@ -1,0 +1,273 @@
+<div class="header-container mat-elevation-z4">
+  <div class="left-section">
+    <span>Item Details</span>
+    <button
+      mat-icon-button
+      matTooltip="Previous Line"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
+      disabled="true"
+    >
+      <mat-icon>arrow_backward</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Next Line"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
+    >
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+  <div class="right-section">
+    <button
+      mat-icon-button
+      matTooltip="Reset Data"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
+    >
+      <mat-icon>restart_alt</mat-icon>
+    </button>
+    <button
+      (click)="startEditMode()"
+      *ngIf="!isEditMode"
+      mat-icon-button
+      matTooltip="Edit Data"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
+    >
+      <mat-icon> edit</mat-icon>
+    </button>
+    <button
+      (click)="stopEditMode()"
+      *ngIf="isEditMode"
+      mat-icon-button
+      matTooltip="Save Changes"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
+    >
+      <mat-icon>save</mat-icon>
+    </button>
+    <button
+      *ngIf="isEditMode"
+      mat-icon-button
+      matTooltip="Cancel Edit"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+      matTooltipShowDelay="200"
+      (click)="cancelEditMode()"
+    >
+      <mat-icon>cancel</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Header Text"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+      (click)="openMessageDialog()"
+    >
+      <mat-icon>chat</mat-icon>
+    </button>
+    <button
+      class="equipment-btn mat-elevation-z4"
+      mat-icon-button
+      matTooltip="View All Eqipments"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+      (click)="openEquipmentDialog()"
+    >
+      <mat-icon>build</mat-icon>
+      Equipments
+    </button>
+  </div>
+</div>
+
+<div class="expandable-container">
+  <form class="header-grid-container" [formGroup]="lineItemForm">
+    <mat-form-field appearance="outline" label="Higher Level No.">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.higherLevelItemNumber"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Product Code">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.productId"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Description">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.productDescription"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Quantity">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.quantity"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="UOM">
+      <input matInput type="text" disabled [value]="contractLineItem?.uom" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" label="Currency">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.currency | uppercase"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Total Contract Value">
+      <input
+        type="text"
+        disabled
+        matInput
+        [value]="
+          contractLineItem?.totalValueContractLineItem
+            | currency : contractLineItem?.currency
+        "
+        class="totalContractValue"
+      />
+    </mat-form-field>
+    <mat-form-field label="Start Date" appearance="outline">
+      <input
+        matInput
+        [matDatepicker]="clStart"
+        formControlName="contractLineStartDate"
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="clStart"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #clStart> </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field label="End Date" appearance="outline">
+      <input
+        matInput
+        [matDatepicker]="clEnd"
+        formControlName="contractLineEndDate"
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="clEnd"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #clEnd> </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="PO Type">
+      <mat-select
+        formControlName="poType"
+        [placeholder]="lineItemForm.get('poType')?.value"
+      >
+        @for (poType of poTypes; track $index) {
+        <mat-option value="{{ poType.value }}">{{
+          poType.description
+        }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="PO No.">
+      <input
+        matInput
+        type="text"
+        formControlName="customerPurchaseOrderNumber"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="No. of Equipment(s)">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.technicalObjects?.length"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Payment Terms">
+      <mat-select
+        value="option1"
+        formControlName="paymentTerms"
+        [placeholder]="lineItemForm.get('paymentTerms')?.value"
+      >
+        @for (paymentTerm of paymentTerms; track $index) {
+        <mat-option
+          [matTooltip]="paymentTerm.description"
+          matTooltipPosition="above"
+          matTooltipShowDelay="200"
+          value="{{ paymentTerm.value }}"
+        >
+          {{ paymentTerm.value }}
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Billing Period">
+      <mat-select
+        value="option1"
+        formControlName="billingPeriod"
+        [placeholder]="lineItemForm.get('billingPeriod')?.value"
+      >
+        @for (period of billingPeriod; track $index) {
+        <mat-option value="{{ period.value }}">
+          {{ period.description }}
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Billing Plan Type">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.billingPlanType"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Billing Plan Rule">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.billingPlanRule"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Billing Block">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.billingBlock"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Contract Type">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.lineType | uppercase"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" label="Product Type">
+      <input
+        matInput
+        type="text"
+        disabled
+        [value]="contractLineItem?.productType | uppercase"
+      />
+    </mat-form-field>
+  </form>
+</div>
+
+<!-- {{ contractLineItem | json }} -->

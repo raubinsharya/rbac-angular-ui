@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 
 import { ContractRoutingModule } from './contract-routing.module';
 import { StoreModule } from '@ngrx/store';
@@ -20,6 +20,16 @@ import { ContractItemDetailsComponent } from './components/overview/item-details
 import { BuildAndUpdateEffect } from './store/effects/build-update.effects';
 import { GridTextCellRendererComponent } from './components/overview/item-details/grid/text-cell-renderer/text-cell-renderer.component';
 import { GridItemNumberRendererComponent } from './components/overview/item-details/grid/item-number-renderer/item-number-renderer.component';
+import { ItemDetailsColDefs } from './components/overview/item-details/colDefs.service';
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { ContractItemDetailsMainComponent } from './components/item-detail/main/main.component';
+import { ItemDetailHeaderComponent } from './components/item-detail/header/header.component';
+import { ContractLinePartnerComponent } from './components/item-detail/partners/partner.component';
+import { ServiceEntitlementMainComponent } from './components/item-detail/service-entitlements/main/main.component';
+import { ServiceEntitlementsComponent } from './components/item-detail/service-entitlements/entitlements/service-entitlements.component';
+import { LineRsmComponent } from './components/item-detail/service-entitlements/line-rsm/line-rsm.component';
+import { PartDiscountRendererComponent } from './components/item-detail/service-entitlements/entitlements/grid/part-discount-renderer/part-discount-renderer.component';
+import { IncludedServicesRendererComponent } from './components/item-detail/service-entitlements/entitlements/grid/included-services-renderer/included-services-renderer.component';
 
 @NgModule({
   declarations: [
@@ -33,18 +43,27 @@ import { GridItemNumberRendererComponent } from './components/overview/item-deta
     ContractItemDetailsComponent,
     GridTextCellRendererComponent,
     GridItemNumberRendererComponent,
+    ContractItemDetailsMainComponent,
+    ItemDetailHeaderComponent,
+    ContractLinePartnerComponent,
+    ServiceEntitlementMainComponent,
+    ServiceEntitlementsComponent,
+    LineRsmComponent,
+    PartDiscountRendererComponent,
+    IncludedServicesRendererComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     ContractRoutingModule,
     StoreModule.forFeature('contractFeature', contractFeatureReducers),
+    NgxPermissionsModule.forChild({}),
     EffectsModule.forFeature([
       DueListEffects,
       ContractOverViewEffect,
       BuildAndUpdateEffect,
     ]),
   ],
-  providers: [ContractService],
+  providers: [ContractService, ItemDetailsColDefs, CurrencyPipe],
 })
 export class ContractModule {}

@@ -1,0 +1,47 @@
+::ng-deep .mat-mdc-dialog-surface {
+  border-radius: 0.2rem;
+}
+
+.dialog-title {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: unset;
+  padding-block: 0.7rem;
+  padding-inline: 1.25rem;
+  font-weight: 500;
+
+  button {
+    color: black;
+  }
+  &::before {
+    display: none;
+  }
+}
+.mat-mdc-dialog-content {
+  padding-inline: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  & p {
+    color: #337fbf;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  & h6 {
+    font-weight: 500;
+  }
+  ::ng-deep mat-checkbox label {
+    font-weight: 500;
+    font-weight: 1rem;
+  }
+}
+
+:host {
+  mat-dialog-actions button {
+    border-radius: 0.2rem;
+    height: 2rem;
+  }
+}

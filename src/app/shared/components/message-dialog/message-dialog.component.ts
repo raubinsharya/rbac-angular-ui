@@ -1,9 +1,5 @@
-import { Component, inject, ViewEncapsulation } from '@angular/core';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogRef,
-} from '@angular/material/dialog';
+import { Component, inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 export interface MeMessageDialogComponentParams {
   title: string;

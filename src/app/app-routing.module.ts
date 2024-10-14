@@ -16,6 +16,12 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./contract/contract.module').then((m) => m.ContractModule),
     canActivate: [MsalGuard],
+    data: {
+      permissions: {
+        only: ['system_admin_it_NL90'],
+        redirectTo: '/',
+      },
+    },
   },
   {
     path: 'login',

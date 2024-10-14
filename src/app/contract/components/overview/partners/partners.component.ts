@@ -6,11 +6,11 @@ import {
   QuoteDetailsType,
 } from '../../../models/contract-overview.model';
 import {
-  fetchPartnerLoading,
   selectContractOverview,
   selectContractOverviewHeaderPartnerSoldTo,
   selectContractOverviewIsBusinesspartnerroleUpdated,
   selectContractOverviewPartners,
+  selectPartnerLoading,
 } from '../../../store/selectors/contract-overview.selector';
 
 import { NotificationService } from '../../../../services/notification.service';
@@ -46,7 +46,6 @@ export class ContractOverviewPartnersComponent {
 
   constructor(
     private store: Store,
-    private notification: NotificationService,
     private actions$: Actions,
     private colDefsService: HeaderPartnerColDefs
   ) {
@@ -68,7 +67,7 @@ export class ContractOverviewPartnersComponent {
     this.store
       .select(selectContractOverviewHeaderPartnerSoldTo)
       .subscribe((soldTo) => (this.soldTo = soldTo));
-    this.store.select(fetchPartnerLoading).subscribe((loading) => {
+    this.store.select(selectPartnerLoading).subscribe((loading) => {
       this.parternLoading = loading;
       this.partnerLoadingMessage = 'Fetching Partner...';
     });

@@ -1,1 +1,3 @@
-<router-outlet></router-outlet>
+@if (userRoleError) {
+<div class="error-msg">{{ userRoleError }}</div>
+}@else {<router-outlet></router-outlet>}

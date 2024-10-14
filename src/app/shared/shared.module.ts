@@ -19,6 +19,8 @@ import { NumberFormatterPipe } from './pipes/number-formatter.pipe';
 import { CustomDropDownComponent } from './components/grid/custom-drop-down/custom-drop-down.component';
 import { MessageDialogComponent } from './components/message-dialog/message-dialog.component';
 import { SimulatioLogsComponent } from './components/simulatio-logs/simulatio-logs.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { EquipmentDialogComponent } from './components/equipment-dialog/equipment-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { SimulatioLogsComponent } from './components/simulatio-logs/simulatio-lo
     EditableSelectComponent,
     CustomDropDownComponent,
     EditableDatePickerComponent,
+    ConfirmationDialogComponent,
     SimulatioLogsComponent,
+    EquipmentDialogComponent,
   ],
   imports: [
     FormsModule,
@@ -60,8 +64,9 @@ import { SimulatioLogsComponent } from './components/simulatio-logs/simulatio-lo
     MessageDialogComponent,
     EditableSelectComponent,
     CustomDropDownComponent,
-    EditableDatePickerComponent,
     SimulatioLogsComponent,
+    EquipmentDialogComponent,
+    EditableDatePickerComponent,
   ],
   providers: [provideNativeDateAdapter()],
 })

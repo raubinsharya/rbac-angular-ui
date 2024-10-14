@@ -1,0 +1,72 @@
+[
+  {
+    "checkName": "Material Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "PO Number or Quote Reference Number Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Business Partner Role Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Approver Name Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Quantity Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Technical Objects Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Annual Price Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Billing Period Validation",
+    "status": false,
+    "errorMessage": "Billing Period Validation failed for lines: 10,20"
+  },
+  {
+    "checkName": "Billing Plan Rule Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Payment Terms Validation",
+    "status": true,
+    "errorMessage": "Payment Terms Validation failed for lines: 10,20,30"
+  },
+  {
+    "checkName": "System Modality Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Contract Start and End Date Validation",
+    "status": true,
+    "errorMessage": "failed"
+  },
+  {
+    "checkName": "Service Plan Validation",
+    "status": true,
+    "errorMessage": null
+  },
+  {
+    "checkName": "Net Value Validation",
+    "status": true,
+    "errorMessage": null
+  }
+]

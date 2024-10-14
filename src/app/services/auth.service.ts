@@ -16,6 +16,8 @@ import {
 import { filter, takeUntil } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { Subject } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { fetchUserRoles } from '../store/actions/user-management.action';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +29,8 @@ export class AuthService {
     @Inject(MSAL_GUARD_CONFIG)
     private msalGuardConfig: MsalGuardConfiguration,
     private msalBroadcastService: MsalBroadcastService,
-    private authService: MsalService
+    private authService: MsalService,
+    private store: Store
   ) {
     this.msalBroadcastService.inProgress$
       .pipe(
@@ -58,8 +61,11 @@ export class AuthService {
           .acquireTokenSilent({
             scopes: [environment.APP_SCOPE],
           })
-          .then(({ accessToken }) => {
+          .then(({ accessToken, account }) => {
             localStorage.setItem('token', accessToken);
+            this.store.dispatch(
+              fetchUserRoles({ email: account.username, name: account.name })
+            );
             return accessToken;
           })
           .catch((error) => {

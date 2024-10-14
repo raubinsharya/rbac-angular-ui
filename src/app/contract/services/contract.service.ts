@@ -6,6 +6,7 @@ import { NotificationService } from '../../services/notification.service';
 import { QuoteDetailsType } from '../models/contract-overview.model';
 import { PartnerPayload } from '../store/actions/contract-overview.action';
 import { PartnerResponseType } from '../models/partner-response.model';
+import { EquipmentType } from '../models/equipment.model';
 
 @Injectable({
   providedIn: 'root',
@@ -40,6 +41,13 @@ export class ContractService {
       .postData('/daasqq/partner', {
         ...payload,
       })
+      .pipe(catchError(this.handleError));
+  }
+  public getEquipmentData(
+    equipmentNumber: string
+  ): Observable<EquipmentType[]> {
+    return this.api
+      .getData(`/daasqq/equipment?equipmentNumber=${equipmentNumber}`)
       .pipe(catchError(this.handleError));
   }
 

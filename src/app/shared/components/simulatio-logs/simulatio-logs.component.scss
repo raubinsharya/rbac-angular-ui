@@ -103,8 +103,11 @@
 .log-item {
   display: flex;
   column-gap: 0.3rem;
+  & p {
+    font-size: 1rem;
+  }
 }
 
 .log-content {
-  padding-block: 1rem;
+  padding-top: 1rem;
 }

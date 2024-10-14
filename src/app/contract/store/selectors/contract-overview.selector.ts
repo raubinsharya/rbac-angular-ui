@@ -35,9 +35,14 @@ export const selectContractOverviewHeaderPartnerSoldTo = createSelector(
   }
 );
 
-export const fetchPartnerLoading = createSelector(
+export const selectPartnerLoading = createSelector(
   selectContractState,
   (state) => state.overview.partnerLoading
+);
+
+export const selectEquipmentLoading = createSelector(
+  selectContractState,
+  (state) => state.overview.equipmentLoading
 );
 
 export const selectContractOverviewIsBusinesspartnerroleUpdated =
@@ -61,3 +66,32 @@ export const selectContractOverviewIsHeaderUpdated = createSelector(
       'Yes' ||
     state.overview.overview?.commercialContract?.isPaymentTermsUpdated === 'Yes'
 );
+
+export const selectContractOverviewLineItem = (idx: number) =>
+  createSelector(selectContractState, (state) =>
+    state.overview.overview.commercialContract?.contractLineItems?.at(idx)
+  );
+export const selectContractOverviewLineItemPartner = (idx: number) =>
+  createSelector(
+    selectContractState,
+    (state) =>
+      state.overview.overview.commercialContract?.contractLineItems?.at(idx)
+        ?.businessPartnerRole
+  );
+
+export const selectContractOverviewLineIsBusinesspartnerRoleUpdated = (
+  idx: number
+) =>
+  createSelector(
+    selectContractState,
+    (state) =>
+      state.overview.overview.commercialContract?.contractLineItems?.at(idx)
+        ?.isBusinessPartnerRoleUpdated === 'Yes'
+  );
+
+export const selectContractOverviewLinePartnerSoldTo = (idx: number) =>
+  createSelector(selectContractOverviewLineItemPartner(idx), (partners) => {
+    const [soldToPartyNo] =
+      partners?.filter((item) => item.businessPartnerRoleId === 'SP') || [];
+    return soldToPartyNo;
+  });

@@ -1,0 +1,1457 @@
+{
+  "commercialContract": {
+    "distributionChannel": "US",
+    "smaxCurrency": "USD",
+    "smaxNetValueOfContract": "0.000000000000000000",
+    "poType": "APT",
+    "smaxPoType": null,
+    "smaxPaymentTerms": null,
+    "smaxSalesDocType": "ZCSP",
+    "smaxContractHeaderId": "a4D78000000IoAiEAK",
+    "contractNumber": "0052810966",
+    "smaxContractNumber": "CH-381146",
+    "description": null,
+    "fileName": null,
+    "quoteReferenceNumber": "AO-00036356",
+    "displayOnUi": null,
+    "salesOrgID": "US90",
+    "division": "MS",
+    "poDate": "2024-08-28",
+    "customerPurchaseOrderNumber": "Test2808_002",
+    "smaxCustomerPurchaseOrderNumber": null,
+    "accountCountry": "United States",
+    "currency": "USD",
+    "netValueOfContract": "6394.440000000000000000",
+    "customerAcceptanceDate": "2024-08-29",
+    "contractStartDate": "2024-08-29",
+    "smaxContractStartDate": "2024-08-29",
+    "contractEndDate": "2029-08-28",
+    "smaxContractEndDate": "2029-08-28",
+    "paymentTerms": "Within 30 Days Due Net",
+    "indicator": null,
+    "salesDocType": "ZCQ",
+    "contractType": "POS",
+    "smaxContractType": "ZCSP",
+    "contractSource": "ADL",
+    "idpValStatus": null,
+    "idpValDesc": null,
+    "basicValStatus": null,
+    "basicValDesc": null,
+    "texts": [
+      {
+        "longTextID": "",
+        "itemText": null,
+        "language": null
+      }
+    ],
+    "approverName": null,
+    "approverEmail": null,
+    "businessPartnerRole": [
+      {
+        "smaxBusinessPartnerId": "",
+        "businessPartnerID": "10600000",
+        "businessPartnerRoleID": "Y1",
+        "businessPartnerDescription": "Main Project Manager",
+        "address": {
+          "smaxBusinessPartnerName": null,
+          "smaxSteet1": null,
+          "smaxCity": null,
+          "smaxRegion": "",
+          "smaxCountry": null,
+          "smaxPostalCode": null,
+          "smaxTelephoneNumber": null,
+          "businessPartnerName": null,
+          "street1": null,
+          "city": null,
+          "region": null,
+          "country": null,
+          "postalCode": null,
+          "telephoneNumber": null
+        }
+      },
+      {
+        "smaxBusinessPartnerId": "",
+        "businessPartnerID": "01060705",
+        "businessPartnerRoleID": "Y9",
+        "businessPartnerDescription": "Order Fulfill. Admin",
+        "address": {
+          "smaxBusinessPartnerName": null,
+          "smaxSteet1": null,
+          "smaxCity": null,
+          "smaxRegion": "",
+          "smaxCountry": null,
+          "smaxPostalCode": null,
+          "smaxTelephoneNumber": null,
+          "businessPartnerName": null,
+          "street1": null,
+          "city": null,
+          "region": null,
+          "country": null,
+          "postalCode": null,
+          "telephoneNumber": null
+        }
+      },
+      {
+        "smaxBusinessPartnerId": "",
+        "businessPartnerID": "SMAPP",
+        "businessPartnerRoleID": "ZS",
+        "businessPartnerDescription": "Account Manager",
+        "address": {
+          "smaxBusinessPartnerName": null,
+          "smaxSteet1": null,
+          "smaxCity": null,
+          "smaxRegion": "",
+          "smaxCountry": null,
+          "smaxPostalCode": null,
+          "smaxTelephoneNumber": null,
+          "businessPartnerName": "GTM H/A",
+          "street1": "3000 Minuteman Rd",
+          "city": "ANDOVER",
+          "region": "",
+          "country": "US",
+          "postalCode": "01810-1032",
+          "telephoneNumber": ""
+        }
+      },
+      {
+        "smaxBusinessPartnerId": "",
+        "businessPartnerID": "0094698450",
+        "businessPartnerRoleID": "ZO",
+        "businessPartnerDescription": "Owner",
+        "address": {
+          "smaxBusinessPartnerName": null,
+          "smaxSteet1": null,
+          "smaxCity": null,
+          "smaxRegion": "",
+          "smaxCountry": null,
+          "smaxPostalCode": null,
+          "smaxTelephoneNumber": null,
+          "businessPartnerName": "University Of Alaska Anchorage",
+          "street1": "3211 Providence Dr",
+          "city": "ANCHORAGE",
+          "region": "",
+          "country": "US",
+          "postalCode": "99508-4645",
+          "telephoneNumber": "907-786-6936"
+        }
+      },
+      {
+        "smaxBusinessPartnerId": "0094698450",
+        "businessPartnerID": "0094698450",
+        "businessPartnerRoleID": "WE",
+        "businessPartnerDescription": "Ship-to party",
+        "address": {
+          "smaxBusinessPartnerName": null,
+          "smaxSteet1": "Providence Dr 3211",
+          "smaxCity": "Anchorage",
+          "smaxRegion": "",
+          "smaxCountry": "US",
+          "smaxPostalCode": "99508-4645",
+          "smaxTelephoneNumber": "907-786-6936",
+          "businessPartnerName": "University Of Alaska Anchorage",
+          "street1": "3211 Providence Dr",
+          "city": "ANCHORAGE",
+          "region": "",
+          "country": "US",
+          "postalCode": "99508-4645",
+          "telephoneNumber": "907-786-6936"
+        }
+      },
+      {
+        "smaxBusinessPartnerId": "0094698450",
+        "businessPartnerID": "0094698450",
+        "businessPartnerRoleID": "RE",
+        "businessPartnerDescription": "Bill-to party",
+        "address": {
+          "smaxBusinessPartnerName": null,
+          "smaxSteet1": "Providence Dr 3211",
+          "smaxCity": "Anchorage",
+          "smaxRegion": "",
+          "smaxCountry": "US",
+          "smaxPostalCode": "99508-4645",
+          "smaxTelephoneNumber": "907-786-6936",
+          "businessPartnerName": "University Of Alaska Anchorage",
+          "street1": "3211 Providence Dr",
+          "city": "ANCHORAGE",
+          "region": "",
+          "country": "US",
+          "postalCode": "99508-4645",
+          "telephoneNumber": "907-786-6936"
+        }
+      },
+      {
+        "smaxBusinessPartnerId": "0094698450",
+        "businessPartnerID": "0094698450",
+        "businessPartnerRoleID": "RG",
+        "businessPartnerDescription": "Payer",
+        "address": {
+          "smaxBusinessPartnerName": null,
+          "smaxSteet1": "Providence Dr 3211",
+          "smaxCity": "Anchorage",
+          "smaxRegion": "",
+          "smaxCountry": "US",
+          "smaxPostalCode": "99508-4645",
+          "smaxTelephoneNumber": "907-786-6936",
+          "businessPartnerName": "University Of Alaska Anchorage",
+          "street1": "3211 Providence Dr",
+          "city": "ANCHORAGE",
+          "region": "",
+          "country": "US",
+          "postalCode": "99508-4645",
+          "telephoneNumber": "907-786-6936"
+        }
+      },
+      {
+        "smaxBusinessPartnerId": "0094698450",
+        "businessPartnerID": "0094698450",
+        "businessPartnerRoleID": "AG",
+        "businessPartnerDescription": "Sold-to party",
+        "address": {
+          "smaxBusinessPartnerName": null,
+          "smaxSteet1": "Providence Dr 3211",
+          "smaxCity": "Anchorage",
+          "smaxRegion": "",
+          "smaxCountry": "US",
+          "smaxPostalCode": "99508-4645",
+          "smaxTelephoneNumber": "907-786-6936",
+          "businessPartnerName": "University Of Alaska Anchorage",
+          "street1": "3211 Providence Dr",
+          "city": "ANCHORAGE",
+          "region": "",
+          "country": "US",
+          "postalCode": "99508-4645",
+          "telephoneNumber": "907-786-6936"
+        }
+      }
+    ],
+    "contractLineItems": [
+      {
+        "smaxTotalValueContractLineItem": "0.000000000000000000",
+        "higherLevelItemNumber": "001000",
+        "smaxCurrency": "USD",
+        "itemDiscount": "2",
+        "smaxContractLineStartDate": "2024-08-29",
+        "smaxContractLineEndDate": "2029-08-28",
+        "smaxPrice": "0.010000000000000000",
+        "smaxPaymentTerms": null,
+        "smaxBillingPlanType": "Periodic",
+        "smaxLineRejection": "1",
+        "smaxItemCategory": "YCSZ",
+        "sapBusinessHoursName": "",
+        "sapBusinessHoursCode": "",
+        "sapPmBusinessHoursName": "",
+        "sapPmBusinessHoursCode": "",
+        "sapPriorityBusinessHoursName": "",
+        "sapPriorityBusinessHoursCode": "",
+        "sapPlannedMaintenanceName": "",
+        "sapPlannedMaintenanceCode": "",
+        "sapAdditionalPmVisitsName": "",
+        "sapAdditionalPmVisitsCode": "",
+        "sapUptimeName": "",
+        "sapUptimeCode": "",
+        "sapPartsDeliveryName": "",
+        "sapPartsDeliveryCode": "",
+        "sapServiceLevelAgreementName": "",
+        "sapServiceLevelAgreementCode": "",
+        "businessPartnerRole": [
+          {
+            "smaxBusinessPartnerId": "",
+            "businessPartnerID": "01060705",
+            "businessPartnerRoleID": "Y9",
+            "businessPartnerDescription": "Order Fulfill. Admin",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": null,
+              "smaxCity": null,
+              "smaxRegion": "",
+              "smaxCountry": null,
+              "smaxPostalCode": null,
+              "smaxTelephoneNumber": null,
+              "businessPartnerName": null,
+              "street1": null,
+              "city": null,
+              "region": null,
+              "country": null,
+              "postalCode": null,
+              "telephoneNumber": null
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "",
+            "businessPartnerID": "10600000",
+            "businessPartnerRoleID": "Y1",
+            "businessPartnerDescription": "Main Project Manager",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": null,
+              "smaxCity": null,
+              "smaxRegion": "",
+              "smaxCountry": null,
+              "smaxPostalCode": null,
+              "smaxTelephoneNumber": null,
+              "businessPartnerName": null,
+              "street1": null,
+              "city": null,
+              "region": null,
+              "country": null,
+              "postalCode": null,
+              "telephoneNumber": null
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "0094698450",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "RE",
+            "businessPartnerDescription": "Bill-to party",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": "Providence Dr 3211",
+              "smaxCity": "Anchorage",
+              "smaxRegion": "",
+              "smaxCountry": "US",
+              "smaxPostalCode": "99508-4645",
+              "smaxTelephoneNumber": "907-786-6936",
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "",
+            "businessPartnerID": "SMAPP",
+            "businessPartnerRoleID": "ZS",
+            "businessPartnerDescription": "Account Manager",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": null,
+              "smaxCity": null,
+              "smaxRegion": "",
+              "smaxCountry": null,
+              "smaxPostalCode": null,
+              "smaxTelephoneNumber": null,
+              "businessPartnerName": "GTM H/A",
+              "street1": "3000 Minuteman Rd",
+              "city": "ANDOVER",
+              "region": "",
+              "country": "US",
+              "postalCode": "01810-1032",
+              "telephoneNumber": ""
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "0094698450",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "RG",
+            "businessPartnerDescription": "Payer",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": "Providence Dr 3211",
+              "smaxCity": "Anchorage",
+              "smaxRegion": "",
+              "smaxCountry": "US",
+              "smaxPostalCode": "99508-4645",
+              "smaxTelephoneNumber": "907-786-6936",
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "ZO",
+            "businessPartnerDescription": "Owner",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": null,
+              "smaxCity": null,
+              "smaxRegion": "",
+              "smaxCountry": null,
+              "smaxPostalCode": null,
+              "smaxTelephoneNumber": null,
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "0094698450",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "AG",
+            "businessPartnerDescription": "Sold-to party",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": "Providence Dr 3211",
+              "smaxCity": "Anchorage",
+              "smaxRegion": "",
+              "smaxCountry": "US",
+              "smaxPostalCode": "99508-4645",
+              "smaxTelephoneNumber": "907-786-6936",
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "0094698450",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "WE",
+            "businessPartnerDescription": "Ship-to party",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": "Providence Dr 3211",
+              "smaxCity": "Anchorage",
+              "smaxRegion": "",
+              "smaxCountry": "US",
+              "smaxPostalCode": "99508-4645",
+              "smaxTelephoneNumber": "907-786-6936",
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          }
+        ],
+        "productDescription": "UL Service Plan Balanced",
+        "totalValueContractLineItem": "6394.440000000000000000",
+        "productID": "CS_792016",
+        "featureID": "",
+        "contractLineItemNumber": "001010",
+        "sapContractLineNumber": null,
+        "sapLineNumber": null,
+        "technicalObjects": [
+          {
+            "smaxEquipmentNumber": "000000000107548092",
+            "equipmentNumber": "000000000107548092",
+            "materialCode": "000000000000795218",
+            "smaxMaterialCode": "795218",
+            "materialDescription": "Affiniti 30 Ultrasound System",
+            "smaxMaterialDescription": "Affiniti 30 Ultrasound System",
+            "serialNumber": "",
+            "smaxSerialNumber": null,
+            "smaxCoverProduct": "000000000107548092"
+          },
+          {
+            "smaxEquipmentNumber": "",
+            "equipmentNumber": "000000000107548093",
+            "materialCode": "000000000000795210",
+            "smaxMaterialCode": null,
+            "materialDescription": "Affiniti 70 Ultrasound System",
+            "smaxMaterialDescription": null,
+            "serialNumber": "",
+            "smaxSerialNumber": null,
+            "smaxCoverProduct": ""
+          }
+        ],
+        "currency": "USD",
+        "contractLineStartDate": "2024-08-29",
+        "contractLineEndDate": "2029-08-28",
+        "customerAcceptanceDateLineItem": "2024-08-29",
+        "uom": "PCE",
+        "quantity": "1.000000000000000000",
+        "pricingModel": null,
+        "price": null,
+        "priceType": null,
+        "contractLineItemRefNumber": "",
+        "paymentTerms": "Within 30 Days Due Net",
+        "billingPlanType": "ZX",
+        "billingPeriod": "54",
+        "billingPlanRule": "Z2",
+        "lineRejection": null,
+        "reasonForRejection": "",
+        "rejectionDescription": "",
+        "contractNumber": null,
+        "sapContractNumber": "0052810966",
+        "smaxContractNumber": "CON0852426",
+        "featureName": "",
+        "featureOptionID": "",
+        "featureOptionName": "",
+        "itemCategory": "YV52",
+        "indexation": {
+          "isIndexationApplicable": false,
+          "indexUpliftStartDate": "00000000",
+          "indexType": " ",
+          "indexFormula": " ",
+          "indexMonth": "00",
+          "indexCustomerAcceptance": " ",
+          "indexNoticePeriod": "000"
+        },
+        "texts": [
+          {
+            "longTextID": "",
+            "itemText": null,
+            "language": null
+          }
+        ],
+        "servicePlan": "Balanced",
+        "businessHoursName": "ESMX-USC-GMT-09:00-08:00-17:00 M-F",
+        "businessHoursCode": "CM_LIM58-5",
+        "pmBusinessHoursName": "ESMX-USC-GMT-09:00-08:00-17:00 M-F",
+        "pmBusinessHoursCode": "CS_PM_LIM58-5",
+        "priorityBusinessHoursName": "ESMX-USC-GMT-09:00-08:00-17:00 M-F",
+        "priorityBusinessHoursCode": "CS_PM_LIM58-5",
+        "renewalTermName": "",
+        "renewalTermCode": "",
+        "plannedMaintenanceName": "100",
+        "plannedMaintenanceCode": "",
+        "additionalPmVisitsName": "0",
+        "additionalPmVisitsCode": "",
+        "customerExperienceNotes": null,
+        "uptimeName": null,
+        "uptimeCode": null,
+        "partsDeliveryName": "Next bus. day delivery time",
+        "partsDeliveryCode": "CS_ZNAM_PDT_STD_IN",
+        "serviceLevelAgreementName": "SLA for 1 hr initial response time and onsite Nest Day",
+        "serviceLevelAgreementCode": "IN1-OSND",
+        "serviceContract": {
+          "partsDiscounts": [
+            {
+              "partsDiscount": "Yes",
+              "smaxPartsDiscountName": "045 - Mechanical Replacements",
+              "partsDiscountCode": "CS_MPC_BAS",
+              "discountDescription": "045 - Mechanical Replacements",
+              "isDeleted": null,
+              "discountValue": "100"
+            },
+            {
+              "partsDiscount": "Yes",
+              "smaxPartsDiscountName": "050 - Monitors",
+              "partsDiscountCode": "CS_MPC_BAS",
+              "discountDescription": "050 - Monitors",
+              "isDeleted": null,
+              "discountValue": "100"
+            },
+            {
+              "partsDiscount": "Yes",
+              "smaxPartsDiscountName": "060 - MR gradient coils",
+              "partsDiscountCode": "CBMRCOIL_IN",
+              "discountDescription": "060 - MR gradient coils",
+              "isDeleted": null,
+              "discountValue": "100"
+            },
+            {
+              "partsDiscount": "Yes",
+              "smaxPartsDiscountName": "110 - High tension cables",
+              "partsDiscountCode": "CS_MPC_BAS",
+              "discountDescription": "110 - High tension cables",
+              "isDeleted": null,
+              "discountValue": "100"
+            },
+            {
+              "partsDiscount": "Yes",
+              "smaxPartsDiscountName": "250 - Replacable product",
+              "partsDiscountCode": "CS_MPC_BAS",
+              "discountDescription": "250 - Replacable product",
+              "isDeleted": null,
+              "discountValue": "100"
+            },
+            {
+              "partsDiscount": "Yes",
+              "smaxPartsDiscountName": "220 - Software updates",
+              "partsDiscountCode": "CS_SHU_HH_IN",
+              "discountDescription": "220 - Software updates",
+              "isDeleted": null,
+              "discountValue": "100"
+            },
+            {
+              "partsDiscount": "Yes",
+              "smaxPartsDiscountName": "010 - Normal spareparts",
+              "partsDiscountCode": "APPSUP_HW_CUP",
+              "discountDescription": "010 - Normal spareparts",
+              "isDeleted": null,
+              "discountValue": "100"
+            }
+          ],
+          "includedServices": [
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_MPC_BAS",
+              "isDeleted": null,
+              "serviceType": "a3l4W000001kRaMQAU",
+              "serviceName": "100",
+              "smaxServiceName": "Software Updates"
+            },
+            {
+              "serviceValue": "25",
+              "includedServiceCode": "CS_LSCD_25_IN",
+              "isDeleted": null,
+              "serviceType": "a3l78000000ergsAAA",
+              "serviceName": "25",
+              "smaxServiceName": "Lifecycle Solutions Catalog Discount"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_LATCMT_TEE_IN",
+              "isDeleted": null,
+              "serviceType": "a3lE0000000blUKIAY",
+              "serviceName": "100",
+              "smaxServiceName": "Incident Work Time"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_LATCMT_TEE_IN",
+              "isDeleted": null,
+              "serviceType": "a3l0L000000Pr9uQAC",
+              "serviceName": "100",
+              "smaxServiceName": "Travel Time"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_LATPM_HH_IN",
+              "isDeleted": null,
+              "serviceType": "a3lE0000000blULIAY",
+              "serviceName": "100",
+              "smaxServiceName": "Predictive / Preventative Work Time"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_CM_PREFR_LT_IN",
+              "isDeleted": null,
+              "serviceType": "a3l78000000ergnAAA",
+              "serviceName": "100",
+              "smaxServiceName": "Preferred Rate for Labor and Travel"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CEAP_UL_IN",
+              "isDeleted": null,
+              "serviceType": "a3l0L000000Pr9fQAC",
+              "serviceName": "100",
+              "smaxServiceName": "Remote Service"
+            }
+          ]
+        },
+        "systemModality": null,
+        "poType": "APT",
+        "characteristicConfigurations": []
+      },
+      {
+        "smaxTotalValueContractLineItem": "0.000000000000000000",
+        "higherLevelItemNumber": "001000",
+        "smaxCurrency": "USD",
+        "smaxContractLineStartDate": "2024-08-29",
+        "smaxContractLineEndDate": "2028-08-28",
+        "itemDiscount": "5",
+        "smaxPrice": "0.010000000000000000",
+        "smaxPaymentTerms": null,
+        "smaxBillingPlanType": "Periodic",
+        "smaxLineRejection": "1",
+        "smaxItemCategory": "YCSZ",
+        "sapBusinessHoursName": "",
+        "sapBusinessHoursCode": "",
+        "sapPmBusinessHoursName": "",
+        "sapPmBusinessHoursCode": "",
+        "sapPriorityBusinessHoursName": "",
+        "sapPriorityBusinessHoursCode": "",
+        "sapPlannedMaintenanceName": "",
+        "sapPlannedMaintenanceCode": "",
+        "sapAdditionalPmVisitsName": "",
+        "sapAdditionalPmVisitsCode": "",
+        "sapUptimeName": "",
+        "sapUptimeCode": "",
+        "sapPartsDeliveryName": "",
+        "sapPartsDeliveryCode": "",
+        "sapServiceLevelAgreementName": "",
+        "sapServiceLevelAgreementCode": "",
+        "businessPartnerRole": [
+          {
+            "smaxBusinessPartnerId": "",
+            "businessPartnerID": "10600000",
+            "businessPartnerRoleID": "Y1",
+            "businessPartnerDescription": "Main Project Manager",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": null,
+              "smaxCity": null,
+              "smaxRegion": "",
+              "smaxCountry": null,
+              "smaxPostalCode": null,
+              "smaxTelephoneNumber": null,
+              "businessPartnerName": null,
+              "street1": null,
+              "city": null,
+              "region": null,
+              "country": null,
+              "postalCode": null,
+              "telephoneNumber": null
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "",
+            "businessPartnerID": "01060705",
+            "businessPartnerRoleID": "Y9",
+            "businessPartnerDescription": "Order Fulfill. Admin",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": null,
+              "smaxCity": null,
+              "smaxRegion": "",
+              "smaxCountry": null,
+              "smaxPostalCode": null,
+              "smaxTelephoneNumber": null,
+              "businessPartnerName": null,
+              "street1": null,
+              "city": null,
+              "region": null,
+              "country": null,
+              "postalCode": null,
+              "telephoneNumber": null
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "ZO",
+            "businessPartnerDescription": "Owner",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": null,
+              "smaxCity": null,
+              "smaxRegion": "",
+              "smaxCountry": null,
+              "smaxPostalCode": null,
+              "smaxTelephoneNumber": null,
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "0094698450",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "AG",
+            "businessPartnerDescription": "Sold-to party",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": "Providence Dr 3211",
+              "smaxCity": "Anchorage",
+              "smaxRegion": "",
+              "smaxCountry": "US",
+              "smaxPostalCode": "99508-4645",
+              "smaxTelephoneNumber": "907-786-6936",
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "0094698450",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "RE",
+            "businessPartnerDescription": "Bill-to party",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": "Providence Dr 3211",
+              "smaxCity": "Anchorage",
+              "smaxRegion": "",
+              "smaxCountry": "US",
+              "smaxPostalCode": "99508-4645",
+              "smaxTelephoneNumber": "907-786-6936",
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "0094698450",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "RG",
+            "businessPartnerDescription": "Payer",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": "Providence Dr 3211",
+              "smaxCity": "Anchorage",
+              "smaxRegion": "",
+              "smaxCountry": "US",
+              "smaxPostalCode": "99508-4645",
+              "smaxTelephoneNumber": "907-786-6936",
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "0094698450",
+            "businessPartnerID": "0094698450",
+            "businessPartnerRoleID": "WE",
+            "businessPartnerDescription": "Ship-to party",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": "Providence Dr 3211",
+              "smaxCity": "Anchorage",
+              "smaxRegion": "",
+              "smaxCountry": "US",
+              "smaxPostalCode": "99508-4645",
+              "smaxTelephoneNumber": "907-786-6936",
+              "businessPartnerName": "University Of Alaska Anchorage",
+              "street1": "3211 Providence Dr",
+              "city": "ANCHORAGE",
+              "region": "",
+              "country": "US",
+              "postalCode": "99508-4645",
+              "telephoneNumber": "907-786-6936"
+            }
+          },
+          {
+            "smaxBusinessPartnerId": "",
+            "businessPartnerID": "SMAPP",
+            "businessPartnerRoleID": "ZS",
+            "businessPartnerDescription": "Account Manager",
+            "address": {
+              "smaxBusinessPartnerName": null,
+              "smaxSteet1": null,
+              "smaxCity": null,
+              "smaxRegion": "",
+              "smaxCountry": null,
+              "smaxPostalCode": null,
+              "smaxTelephoneNumber": null,
+              "businessPartnerName": "GTM H/A",
+              "street1": "3000 Minuteman Rd",
+              "city": "ANDOVER",
+              "region": "",
+              "country": "US",
+              "postalCode": "01810-1032",
+              "telephoneNumber": ""
+            }
+          }
+        ],
+        "productDescription": "UL Service Plan Balanced",
+        "totalValueContractLineItem": "0.000000000000000000",
+        "productID": "CS_792016",
+        "featureID": "",
+        "contractLineItemNumber": "001020",
+        "sapContractLineNumber": null,
+        "sapLineNumber": null,
+        "technicalObjects": [
+          {
+            "smaxEquipmentNumber": "000000000107548093",
+            "equipmentNumber": "000000000107548093",
+            "materialCode": "000000000000795210",
+            "smaxMaterialCode": "795210",
+            "materialDescription": "Affiniti 70 Ultrasound System",
+            "smaxMaterialDescription": "Affiniti 70 Ultrasound System",
+            "serialNumber": "",
+            "smaxSerialNumber": null,
+            "smaxCoverProduct": "000000000107548093"
+          },
+          {
+            "smaxEquipmentNumber": "",
+            "equipmentNumber": "000000000107548092",
+            "materialCode": "000000000000795218",
+            "smaxMaterialCode": null,
+            "materialDescription": "Affiniti 30 Ultrasound System",
+            "smaxMaterialDescription": null,
+            "serialNumber": "",
+            "smaxSerialNumber": null,
+            "smaxCoverProduct": ""
+          }
+        ],
+        "currency": "USD",
+        "contractLineStartDate": "2024-08-29",
+        "contractLineEndDate": "2028-08-28",
+        "customerAcceptanceDateLineItem": "2024-08-29",
+        "uom": "PCE",
+        "quantity": "1.000000000000000000",
+        "pricingModel": null,
+        "price": null,
+        "priceType": null,
+        "contractLineItemRefNumber": "",
+        "paymentTerms": "Within 30 Days Due Net",
+        "billingPlanType": "ZX",
+        "billingPeriod": "54",
+        "billingPlanRule": "Z2",
+        "lineRejection": null,
+        "reasonForRejection": "",
+        "rejectionDescription": "",
+        "contractNumber": null,
+        "sapContractNumber": "0052810966",
+        "smaxContractNumber": "CON0852427",
+        "featureName": "",
+        "featureOptionID": "",
+        "featureOptionName": "",
+        "itemCategory": "YV52",
+        "indexation": {
+          "isIndexationApplicable": false,
+          "indexUpliftStartDate": "00000000",
+          "indexType": " ",
+          "indexFormula": " ",
+          "indexMonth": "00",
+          "indexCustomerAcceptance": " ",
+          "indexNoticePeriod": "000"
+        },
+        "texts": [
+          {
+            "longTextID": "",
+            "itemText": null,
+            "language": null
+          }
+        ],
+        "servicePlan": "Balanced",
+        "businessHoursName": "ESMX-USC-GMT-09:00-08:00-17:00 M-F",
+        "businessHoursCode": "CM_LIM58-5",
+        "pmBusinessHoursName": "ESMX-USC-GMT-09:00-08:00-17:00 M-F",
+        "pmBusinessHoursCode": "CS_PM_LIM58-5",
+        "priorityBusinessHoursName": "ESMX-USC-GMT-09:00-08:00-17:00 M-F",
+        "priorityBusinessHoursCode": "CS_PM_LIM58-5",
+        "renewalTermName": "",
+        "renewalTermCode": "",
+        "plannedMaintenanceName": "100",
+        "plannedMaintenanceCode": "",
+        "additionalPmVisitsName": "0",
+        "additionalPmVisitsCode": "",
+        "customerExperienceNotes": null,
+        "uptimeName": null,
+        "uptimeCode": null,
+        "partsDeliveryName": "Next bus. day delivery time",
+        "partsDeliveryCode": "CS_ZNAM_PDT_STD_IN",
+        "serviceLevelAgreementName": "SLA for 1 hr initial response time and onsite Nest Day",
+        "serviceLevelAgreementCode": "IN1-OSND",
+        "serviceContract": {
+          "partsDiscounts": [
+            {
+              "partsDiscount": "Yes",
+              "smaxPartsDiscountName": "220 - Software updates",
+              "partsDiscountCode": "CS_SHU_HH_IN",
+              "discountDescription": "220 - Software updates",
+              "isDeleted": null,
+              "discountValue": "100"
+            }
+          ],
+          "includedServices": [
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CEAP_UL_IN",
+              "isDeleted": null,
+              "serviceType": "a3l0L000000Pr9fQAC",
+              "serviceName": "100",
+              "smaxServiceName": "Remote Service"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_LATCMT_TEE_IN",
+              "isDeleted": null,
+              "serviceType": "a3l0L000000Pr9uQAC",
+              "serviceName": "100",
+              "smaxServiceName": "Travel Time"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_CM_PREFR_LT_IN",
+              "isDeleted": null,
+              "serviceType": "a3l78000000ergnAAA",
+              "serviceName": "100",
+              "smaxServiceName": "Preferred Rate for Labor and Travel"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CEAP_UL_IN",
+              "isDeleted": null,
+              "serviceType": "a3lE0000000blUJIAY",
+              "serviceName": "100",
+              "smaxServiceName": "Clinical Application Support"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_LATCMT_TEE_IN",
+              "isDeleted": null,
+              "serviceType": "a3lE0000000blUKIAY",
+              "serviceName": "100",
+              "smaxServiceName": "Incident Work Time"
+            },
+            {
+              "serviceValue": "25",
+              "includedServiceCode": "CS_LSCD_25_IN",
+              "isDeleted": null,
+              "serviceType": "a3l78000000ergsAAA",
+              "serviceName": "25",
+              "smaxServiceName": "Lifecycle Solutions Catalog Discount"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_MPC_BAS",
+              "isDeleted": null,
+              "serviceType": "a3l4W000001kRaMQAU",
+              "serviceName": "100",
+              "smaxServiceName": "Software Updates"
+            },
+            {
+              "serviceValue": "100",
+              "includedServiceCode": "CS_LATPM_HH_IN",
+              "isDeleted": null,
+              "serviceType": "a3lE0000000blULIAY",
+              "serviceName": "100",
+              "smaxServiceName": "Predictive / Preventative Work Time"
+            }
+          ]
+        },
+        "systemModality": null,
+        "poType": "APT",
+        "characteristicConfigurations": []
+      }
+    ],
+    "contractCreationStatus": null
+  },
+  "rsmDetails": [
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001010",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2026-08-29",
+      "rsmEndDate": "2027-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2025-08-29",
+      "rsmEndDate": "2026-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001010",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2025-08-29",
+      "rsmEndDate": "2026-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": true,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Bank of Parts",
+      "rsmStartDate": "2024-08-29",
+      "rsmEndDate": "2025-08-28",
+      "rsmSequence": "Secondary",
+      "thresholdAmount": "6933.00",
+      "thresholdQuantity": null,
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "010 - Normal spareparts",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "045 - Mechanical Replacements",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "050 - Monitors",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "110 - High tension cables",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "250 - Replacable product",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001010",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2027-08-29",
+      "rsmEndDate": "2028-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2024-08-29",
+      "rsmEndDate": "2025-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": true,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Bank of Parts",
+      "rsmStartDate": "2028-08-29",
+      "rsmEndDate": "2029-08-28",
+      "rsmSequence": "Secondary",
+      "thresholdAmount": "6933.00",
+      "thresholdQuantity": null,
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "010 - Normal spareparts",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "045 - Mechanical Replacements",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "050 - Monitors",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "110 - High tension cables",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "250 - Replacable product",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001010",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2024-08-29",
+      "rsmEndDate": "2025-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2027-08-29",
+      "rsmEndDate": "2028-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": true,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Bank of Parts",
+      "rsmStartDate": "2025-08-29",
+      "rsmEndDate": "2026-08-28",
+      "rsmSequence": "Secondary",
+      "thresholdAmount": "6933.00",
+      "thresholdQuantity": null,
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "010 - Normal spareparts",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "045 - Mechanical Replacements",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "050 - Monitors",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "110 - High tension cables",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "250 - Replacable product",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": true,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Bank of Parts",
+      "rsmStartDate": "2026-08-29",
+      "rsmEndDate": "2027-08-28",
+      "rsmSequence": "Secondary",
+      "thresholdAmount": "6933.00",
+      "thresholdQuantity": null,
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "010 - Normal spareparts",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "045 - Mechanical Replacements",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "050 - Monitors",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "110 - High tension cables",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "250 - Replacable product",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2026-08-29",
+      "rsmEndDate": "2027-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": true,
+      "contractLineItemNumber": "001020",
+      "rsmType": "Bank of Parts",
+      "rsmStartDate": "2027-08-29",
+      "rsmEndDate": "2028-08-28",
+      "rsmSequence": "Secondary",
+      "thresholdAmount": "6933.00",
+      "thresholdQuantity": null,
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "010 - Normal spareparts",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "045 - Mechanical Replacements",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "050 - Monitors",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "110 - High tension cables",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "250 - Replacable product",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    },
+    {
+      "isHeaderRsm": false,
+      "contractLineItemNumber": "001010",
+      "rsmType": "Block of Parts",
+      "rsmStartDate": "2028-08-29",
+      "rsmEndDate": "2029-08-28",
+      "rsmSequence": "Primary",
+      "thresholdAmount": null,
+      "thresholdQuantity": "1.000000000000000000",
+      "includedServices": [
+        {
+          "includedService": ""
+        }
+      ],
+      "partsLine": [
+        {
+          "partsDiscount": "070 - Transducers,Standard",
+          "smaxPartsDiscountName": null
+        },
+        {
+          "partsDiscount": "071 - Transducers, Special",
+          "smaxPartsDiscountName": null
+        }
+      ]
+    }
+  ],
+  "APIHeader": {
+    "correlationID": null,
+    "recordName": null,
+    "recordID": null,
+    "consumer": null,
+    "provider": "ADL",
+    "consumerTimestamp": null,
+    "testMode": null,
+    "info1": null,
+    "info2": null,
+    "info3": "ZCQ",
+    "itemCategory": null,
+    "reasonForRejection": null,
+    "poType": "APT",
+    "poSubType": null
+  }
+}

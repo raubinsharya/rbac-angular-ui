@@ -5,6 +5,9 @@ import {
   fetchContractOverview,
   fetchContractOverviewFailure,
   fetchContractOverviewSuccess,
+  fetchEquipment,
+  fetchEquipmentSuccess,
+  fetchLinePartnerDetails,
   fetchPartnerDetails,
   fetchPartnerDetailsCancel,
   fetchPartnerDetailsFailed,
@@ -25,6 +28,8 @@ export interface ContractOverviewState {
   error: string | null;
   loading: boolean;
   partnerLoading: boolean;
+  equipmentLoading: boolean;
+  equipmentFetchError: string | null;
   partnerFetchError: string | null;
 }
 
@@ -34,7 +39,9 @@ export const initialState: ContractOverviewState = {
   error: null,
   loading: false,
   partnerLoading: false,
+  equipmentLoading: false,
   partnerFetchError: null,
+  equipmentFetchError: null,
 };
 
 export const contractOverviewReducer = createImmerReducer(
@@ -70,11 +77,11 @@ export const contractOverviewReducer = createImmerReducer(
     ) as QuoteDetailsType;
     return state;
   }),
-  on(fetchPartnerDetails, (state) => {
+  on(fetchPartnerDetails, fetchLinePartnerDetails, (state) => {
     state.partnerLoading = true;
     return state;
   }),
-  on(fetchPartnerDetailsSuccess, (state, { partner }) => {
+  on(fetchPartnerDetailsSuccess, (state) => {
     state.partnerLoading = false;
     return state;
   }),
@@ -85,6 +92,23 @@ export const contractOverviewReducer = createImmerReducer(
   }),
   on(fetchPartnerDetailsCancel, (state) => {
     state.partnerLoading = false;
+    return state;
+  }),
+  on(fetchEquipment, fetchLinePartnerDetails, (state) => {
+    state.equipmentLoading = true;
+    return state;
+  }),
+  on(fetchEquipmentSuccess, (state) => {
+    state.equipmentLoading = false;
+    return state;
+  }),
+  on(fetchPartnerDetailsFailed, (state, { error }) => {
+    state.equipmentLoading = false;
+    state.equipmentFetchError = error;
+    return state;
+  }),
+  on(fetchPartnerDetailsCancel, (state) => {
+    state.equipmentLoading = false;
     return state;
   })
 );

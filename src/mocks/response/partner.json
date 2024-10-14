@@ -1,0 +1,20 @@
+[
+  {
+    "customer": "0094049381",
+    "country": "US test",
+    "businessPartnerRoleId": "SP",
+    "salesOrg": "US93",
+    "soldTo": "0094049380",
+    "distributionChannel": "US",
+    "division": "20",
+    "name1": "Hawaii Pacific Health test",
+    "street": "55 Merchant St test",
+    "city1": "HONOLULU test",
+    "city2": "Honolulu County test",
+    "postCode1": "96813-4306-00000",
+    "region": "HI test",
+    "timeZone": "HAWs test",
+    "adlsLoadedDate": "2024-07-23 07:04:56.252000000",
+    "lastUpdatedDate": "2024-07-23 07:04:56.252000000"
+  }
+]

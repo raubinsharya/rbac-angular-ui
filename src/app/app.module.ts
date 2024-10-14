@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 import {
   MsalModule,
@@ -24,7 +25,7 @@ import RequestInterceptorService from '../interceptors/request';
 import ResponseInterceptorService from '../interceptors/response';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
@@ -33,6 +34,7 @@ import { LoginComponent } from './login/login.component';
 import { MsalGuard } from './guards/msal.guard';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared/shared.module';
+import { UserManagementEffect } from './store/effects/user-management.effect';
 
 export function initializeAuthService(
   authService: AuthService
@@ -67,17 +69,17 @@ export function initializeAuthService(
         ]),
       }
     ),
-    StoreModule.forRoot({}, {}),
     StoreModule.forRoot(reducers, {
       metaReducers,
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([UserManagementEffect]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     StoreRouterConnectingModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
+    NgxPermissionsModule.forRoot(),
   ],
   providers: [
     provideHttpClient(
