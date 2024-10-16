@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { MsalGuard } from './guards/msal.guard';
 import { LoginComponent } from './login/login.component';
 import { AuthRedirectGuard } from './guards/auth-redirect.guard';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { UnauthorizedComponent } from './shared/components/unauthorized/unauthorized.component';
 
 export const routes: Routes = [
   {
@@ -15,11 +17,12 @@ export const routes: Routes = [
     path: 'contract',
     loadChildren: () =>
       import('./contract/contract.module').then((m) => m.ContractModule),
+    // canActivate: [MsalGuard, PermissionsGuardWithRoles],
     canActivate: [MsalGuard],
     data: {
       permissions: {
-        only: ['system_admin_it_NL90'],
-        redirectTo: '/',
+        only: ['system_admin_its', 'account_manager'],
+        redirectTo: '/unauthorized',
       },
     },
   },
@@ -28,7 +31,15 @@ export const routes: Routes = [
     component: LoginComponent,
     canActivate: [AuthRedirectGuard],
   },
-  { path: '**', redirectTo: '' },
+  {
+    path: 'unauthorized',
+    component: UnauthorizedComponent,
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+  },
+  { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({

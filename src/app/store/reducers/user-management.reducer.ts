@@ -30,17 +30,25 @@ export const userRolesReducer = createReducer(
     ...state,
     loading: true,
   })),
-  on(fetchUserRolesSuccess, (state, { userRoles, name }) => ({
-    ...state,
-    name: name,
-    userRoles,
-    roles: userRoles.map((userRole) => userRole.employeeRole),
-    loading: false,
-    error: null,
-    salesOrg: Array.from(
-      new Set(userRoles.map((role) => role.employeeRole?.split('_')?.at(-1)))
-    ) as Array<string>,
-  })),
+  on(fetchUserRolesSuccess, (state, { userRoles, name }) => {
+    const roles = new Set();
+    const salesOrgs = new Set();
+    for (let role of userRoles) {
+      const arr = role.employeeRole.split('_');
+      const org = arr.pop();
+      salesOrgs.add(org);
+      roles.add(arr.join('_'));
+    }
+    return {
+      ...state,
+      name: name,
+      userRoles,
+      roles: Array.from(roles) as string[],
+      loading: false,
+      error: null,
+      salesOrg: Array.from(salesOrgs) as string[],
+    };
+  }),
   on(fetchUserRolesFailed, (state, { error, name }) => ({
     ...state,
     name,

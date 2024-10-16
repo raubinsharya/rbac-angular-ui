@@ -30,6 +30,7 @@ import moment from 'moment';
 import { SimulatioLogsComponent } from '../../../../shared/components/simulatio-logs/simulatio-logs.component';
 import { dateRangeValidator } from './validator/startDateEndDate';
 import { isEmpty } from 'lodash';
+import { UploadAttachmentsComponent } from '../upload-attachments/upload-attachments.component';
 
 @Component({
   selector: 'contract-overview-header',
@@ -45,7 +46,7 @@ export class ContractOverviewHeaderComponent implements OnInit {
   divisions = divisions;
   poTypes = poTypes;
   paymentTerms = paymentTerms;
-  soldTo!: BusinessPartnerRoleType;
+  soldTo!: BusinessPartnerRoleType | null;
   overviewForm!: FormGroup;
 
   constructor(
@@ -107,7 +108,7 @@ export class ContractOverviewHeaderComponent implements OnInit {
 
   private setFormValues(contract: CommercialContractType) {
     this.overviewForm?.patchValue({
-      soldTo: this.soldTo.businessPartnerId,
+      soldTo: this.soldTo?.businessPartnerId,
       division: contract.division,
       poType: contract.poType,
       customerPurchaseOrderNumber: contract.customerPurchaseOrderNumber,
@@ -239,6 +240,13 @@ export class ContractOverviewHeaderComponent implements OnInit {
         simulationStatus: this.commercialContract.simulationStatus,
         isSimulation: this.commercialContract.isSimulation,
       },
+    });
+  }
+
+  public openUploadAttachments() {
+    this.dialog.open(UploadAttachmentsComponent, {
+      minWidth: 550,
+      minHeight: 300,
     });
   }
 }

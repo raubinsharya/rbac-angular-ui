@@ -35,6 +35,7 @@ import { MsalGuard } from './guards/msal.guard';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared/shared.module';
 import { UserManagementEffect } from './store/effects/user-management.effect';
+import { UnauthorizedComponent } from './shared/components/unauthorized/unauthorized.component';
 
 export function initializeAuthService(
   authService: AuthService
@@ -74,7 +75,7 @@ export function initializeAuthService(
     }),
     EffectsModule.forRoot([UserManagementEffect]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    StoreRouterConnectingModule.forRoot(),
+    // StoreRouterConnectingModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       preventDuplicates: true,

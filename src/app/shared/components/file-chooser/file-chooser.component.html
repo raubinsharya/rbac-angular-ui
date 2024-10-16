@@ -1,0 +1,50 @@
+<div class="file-upload-wrapper">
+  <div
+    class="file-drop-area"
+    (drop)="onDrop($event)"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave($event)"
+  >
+    <mat-icon>cloud_upload</mat-icon>
+    <p>Drag & Drop your files here</p>
+    <input
+      type="file"
+      #fileInput
+      multiple
+      (change)="fileBrowseHandler($event)"
+      hidden
+    />
+    <button mat-raised-button color="primary" (click)="fileInput.click()">
+      Select Files
+    </button>
+  </div>
+
+  <div class="clear-files-button">
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="clearAllFiles()"
+      *ngIf="files.length > 0"
+    >
+      Clear All Files
+    </button>
+  </div>
+
+  <!-- File List -->
+  <div class="file-list" *ngIf="files.length">
+    <div class="file-item" *ngFor="let file of files; let i = index">
+      <mat-icon>insert_drive_file</mat-icon>
+      <p
+        [matTooltip]="file.name"
+        matTooltipPosition="above"
+        matTooltipShowDelay="200"
+      >
+        {{ formatFileName(file.name) }}
+      </p>
+      <span>{{ (file.size / 1024).toFixed(2) }} KB</span>
+      <button mat-icon-button color="warn" (click)="removeFile(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

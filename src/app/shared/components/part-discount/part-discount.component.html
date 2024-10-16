@@ -1,0 +1,45 @@
+<span mat-dialog-title class="dialog-title">
+  <span>
+    Part Discount: <span class="line-number">{{ payload.lineNumber }}</span>
+  </span>
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</span>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <div class="input-area">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input
+        [formControl]="partsDiscountForm"
+        type="text"
+        matInput
+        [disabled]="true"
+        placeholder="Enter Part Discount(s)"
+      />
+    </mat-form-field>
+
+    <button mat-flat-button class="equipment-btn mat-elevation-z1" disabled>
+      Add
+    </button>
+    <button mat-flat-button class="equipment-btn mat-elevation-z1" disabled>
+      Delete
+    </button>
+  </div>
+  <div class="grid-container">
+    <ag-grid-table [colDefs]="colDefs" [rowData]="partsDiscount">
+    </ag-grid-table>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    cdkFocusInitial
+    class="mat-elevation-z1"
+    mat-flat-button
+    mat-dialog-close
+    disabled
+  >
+    Save
+  </button>
+</mat-dialog-actions>

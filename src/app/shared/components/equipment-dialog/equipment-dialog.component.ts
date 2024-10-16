@@ -46,6 +46,7 @@ export class EquipmentDialogComponent {
       this.equipmentError = '';
       if (isEmpty(action.equipments)) {
         this.equipmentError = 'No Equipment found!';
+        return;
       }
       const technicalObject = action.equipments.at(0);
       const equipmentToAdd = {

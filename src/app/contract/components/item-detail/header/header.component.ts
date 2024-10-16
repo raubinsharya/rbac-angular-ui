@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContractLineItemType } from '../../../models/contract-overview.model';
 import { Store } from '@ngrx/store';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { isEmpty } from 'lodash';
-import { selectContractOverviewLineItem } from '../../../store/selectors/contract-overview.selector';
+import {
+  selectContractOverview,
+  selectContractOverviewLineItem,
+} from '../../../store/selectors/contract-overview.selector';
 import {
   billingPeriods,
   paymentTerms,
@@ -31,13 +34,19 @@ export class ItemDetailHeaderComponent {
   lineItemForm!: FormGroup;
   public contractLineItem!: ContractLineItemType | undefined;
   public idx!: number;
+  public totalLines!: number;
 
   constructor(
     private fb: FormBuilder,
     private store: Store,
     private route: ActivatedRoute,
+    private router: Router,
     private dialog: MatDialog
-  ) {}
+  ) {
+    this.store.select(selectContractOverview).subscribe((overview) => {
+      this.totalLines = overview.commercialContract?.contractLineItems?.length;
+    });
+  }
 
   ngOnInit(): void {
     this.lineItemForm = this.fb.group({
@@ -146,7 +155,7 @@ export class ItemDetailHeaderComponent {
         minWidth: '700px',
         minHeight: '300px',
         data: {
-          lineNumber: 1000,
+          lineNumber: this.contractLineItem?.contractLineItemNumber,
           technicalObjects: structuredClone(
             this.contractLineItem?.technicalObjects
           ),
@@ -163,5 +172,20 @@ export class ItemDetailHeaderComponent {
           );
         }
       });
+  }
+
+  public goToNextLine() {
+    this.navigateToLine(1);
+  }
+
+  public goToPreviousLine() {
+    this.navigateToLine(-1);
+  }
+
+  private navigateToLine(step: number) {
+    const id = this.route.snapshot.paramMap.get('source');
+    let idx = parseInt(this.route.snapshot.paramMap.get('idx') as string, 10);
+    idx = Math.max(0, Math.min(idx + step, this.totalLines - 1));
+    this.router.navigate([`/contract/overview/${id}/${idx}`]);
   }
 }

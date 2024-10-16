@@ -30,6 +30,8 @@ import { ServiceEntitlementsComponent } from './components/item-detail/service-e
 import { LineRsmComponent } from './components/item-detail/service-entitlements/line-rsm/line-rsm.component';
 import { PartDiscountRendererComponent } from './components/item-detail/service-entitlements/entitlements/grid/part-discount-renderer/part-discount-renderer.component';
 import { IncludedServicesRendererComponent } from './components/item-detail/service-entitlements/entitlements/grid/included-services-renderer/included-services-renderer.component';
+import { NumberOfEquipmentsCellRenderer } from './components/overview/item-details/grid/number-of-equipments/number-of-equipments.component';
+import { UploadAttachmentsComponent } from './components/overview/upload-attachments/upload-attachments.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { IncludedServicesRendererComponent } from './components/item-detail/serv
     LineRsmComponent,
     PartDiscountRendererComponent,
     IncludedServicesRendererComponent,
+    NumberOfEquipmentsCellRenderer,
+    UploadAttachmentsComponent
   ],
   imports: [
     CommonModule,

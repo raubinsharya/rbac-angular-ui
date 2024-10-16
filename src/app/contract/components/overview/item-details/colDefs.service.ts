@@ -21,6 +21,7 @@ import {
 } from '../../../models/contract-overview.model';
 import { Store } from '@ngrx/store';
 import { updateOverview } from '../../../store/actions/contract-overview.action';
+import { NumberOfEquipmentsCellRenderer } from './grid/number-of-equipments/number-of-equipments.component';
 
 export const booleanFormatter = (params: any) => {
   return params.value ? 'Yes' : 'No';
@@ -36,8 +37,7 @@ export class ItemDetailsColDefs {
   constructor(
     private matDialog: MatDialog,
     private currencyPipe: CurrencyPipe,
-    private store: Store,
-   
+    private store: Store
   ) {}
 
   private openConfirmationDialog({
@@ -232,7 +232,7 @@ export class ItemDetailsColDefs {
         filter: true,
         editable: false,
         minWidth: 210,
-        valueFormatter: arrayFormatter,
+        cellRenderer: NumberOfEquipmentsCellRenderer,
       },
       {
         field: 'contractLineStartDate',

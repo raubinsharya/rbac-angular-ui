@@ -7,7 +7,8 @@
       matTooltipPosition="above"
       matTooltipShowDelay="200"
       matTooltipShowDelay="200"
-      disabled="true"
+      [disabled]="idx <= 0"
+      (click)="goToPreviousLine()"
     >
       <mat-icon>arrow_backward</mat-icon>
     </button>
@@ -17,6 +18,8 @@
       matTooltipPosition="above"
       matTooltipShowDelay="200"
       matTooltipShowDelay="200"
+      [disabled]="idx >= totalLines - 1"
+      (click)="goToNextLine()"
     >
       <mat-icon>arrow_forward</mat-icon>
     </button>

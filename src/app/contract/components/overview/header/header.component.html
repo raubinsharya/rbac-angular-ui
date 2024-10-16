@@ -74,6 +74,7 @@
       matTooltip="Attachments"
       matTooltipPosition="above"
       matTooltipShowDelay="200"
+      (click)="openUploadAttachments()"
     >
       <mat-icon>attach_file</mat-icon>
     </button>
@@ -87,7 +88,7 @@
         matInput
         type="text"
         [disabled]="true"
-        [value]="soldTo.businessPartnerId | numberFormatter"
+        [value]="soldTo?.businessPartnerId | numberFormatter"
       />
     </mat-form-field>
     <div class="sales-area">

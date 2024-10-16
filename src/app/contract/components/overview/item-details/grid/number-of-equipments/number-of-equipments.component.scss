@@ -1,0 +1,8 @@
+.no-of-equipments {
+  color: rgb(23, 107, 216);
+  font-weight: 500;
+  cursor: pointer;
+  & :hover {
+    color: rgb(5, 48, 105);
+  }
+}

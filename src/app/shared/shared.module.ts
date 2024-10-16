@@ -21,6 +21,11 @@ import { MessageDialogComponent } from './components/message-dialog/message-dial
 import { SimulatioLogsComponent } from './components/simulatio-logs/simulatio-logs.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { EquipmentDialogComponent } from './components/equipment-dialog/equipment-dialog.component';
+import { PartDiscountComponent } from './components/part-discount/part-discount.component';
+import { IncludedServicesComponent } from './components/included-services/included-services.component';
+import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FileChooserComponent } from './components/file-chooser/file-chooser.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +45,11 @@ import { EquipmentDialogComponent } from './components/equipment-dialog/equipmen
     ConfirmationDialogComponent,
     SimulatioLogsComponent,
     EquipmentDialogComponent,
+    PartDiscountComponent,
+    IncludedServicesComponent,
+    UnauthorizedComponent,
+    NotFoundComponent,
+    FileChooserComponent,
   ],
   imports: [
     FormsModule,
@@ -67,6 +77,11 @@ import { EquipmentDialogComponent } from './components/equipment-dialog/equipmen
     SimulatioLogsComponent,
     EquipmentDialogComponent,
     EditableDatePickerComponent,
+    PartDiscountComponent,
+    IncludedServicesComponent,
+    UnauthorizedComponent,
+    NotFoundComponent,
+    FileChooserComponent,
   ],
   providers: [provideNativeDateAdapter()],
 })
