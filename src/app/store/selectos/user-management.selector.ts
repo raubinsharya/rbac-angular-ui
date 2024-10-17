@@ -24,3 +24,7 @@ export const selectUserRolesLoading = createSelector(
   selectUserRoleState,
   (state) => state.loading
 );
+export const selectUserEmail = createSelector(
+  selectUserRoleState,
+  (state) => state.email
+);

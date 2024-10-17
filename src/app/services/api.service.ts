@@ -42,13 +42,16 @@ export class ApiService {
 
   // Error handling
   private handleError(error: HttpErrorResponse) {
+    console.info(error);
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {
       // Client-side error
       errorMessage = `Error: ${error.error.message}`;
     } else {
       // Server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Error Code: ${error.status}\nMessage: ${
+        error.error?.errorDesc ?? 'Internal Server error...'
+      }`;
     }
     return throwError(() => new Error(errorMessage));
   }

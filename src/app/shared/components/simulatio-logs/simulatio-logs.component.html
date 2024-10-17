@@ -10,75 +10,80 @@
   } @else if (!successLogs && !infoLogs && !warningLogs && !errorLogs) {
   <h6 style="padding: 1rem">No Logs Found...</h6>
   }
+  <div class="accordian">
+    <mat-accordion
+      *ngIf="
+        successLogs.length ||
+        infoLogs.length ||
+        warningLogs.length ||
+        errorLogs.length
+      "
+    >
+      <mat-expansion-panel>
+        <mat-expansion-panel-header
+          class="success-logs"
+          *ngIf="successLogs.length"
+        >
+          <mat-panel-title>
+            Success ({{ successLogs.length }})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="log-content">
+          @for (item of successLogs; track $index) {
+          <span class="log-item">
+            <mat-icon style="color: #47824a">verified</mat-icon>
+            <p>{{ item.MESSAGE }}</p>
+          </span>
+          }
+        </div>
+      </mat-expansion-panel>
 
-  <mat-accordion
-    *ngIf="
-      successLogs.length ||
-      infoLogs.length ||
-      warningLogs.length ||
-      errorLogs.length
-    "
-  >
-    <mat-expansion-panel>
-      <mat-expansion-panel-header
-        class="success-logs"
-        *ngIf="successLogs.length"
-      >
-        <mat-panel-title> Success ({{ successLogs.length }}) </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="log-content">
-        @for (item of successLogs; track $index) {
-        <span class="log-item">
-          <mat-icon style="color: #47824a">verified</mat-icon>
-          <p>{{ item.MESSAGE }}</p>
-        </span>
-        }
-      </div>
-    </mat-expansion-panel>
+      <mat-expansion-panel *ngIf="infoLogs.length">
+        <mat-expansion-panel-header class="info-logs">
+          <mat-panel-title> Info ({{ infoLogs.length }}) </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="log-content">
+          @for (item of infoLogs; track $index) {
+          <span class="log-item">
+            <mat-icon style="color: #1c7fac">info</mat-icon>
+            <p>{{ item.MESSAGE }}</p>
+          </span>
+          }
+        </div>
+      </mat-expansion-panel>
 
-    <mat-expansion-panel *ngIf="infoLogs.length">
-      <mat-expansion-panel-header class="info-logs">
-        <mat-panel-title> Info ({{ infoLogs.length }}) </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="log-content">
-        @for (item of infoLogs; track $index) {
-        <span class="log-item">
-          <mat-icon style="color: #1c7fac">info</mat-icon>
-          <p>{{ item.MESSAGE }}</p>
-        </span>
-        }
-      </div>
-    </mat-expansion-panel>
+      <mat-expansion-panel *ngIf="warningLogs.length">
+        <mat-expansion-panel-header class="warning-logs">
+          <mat-panel-title>
+            Warning ({{ warningLogs.length }})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="log-content">
+          @for (item of warningLogs; track $index) {
+          <span class="log-item">
+            <mat-icon style="color: #b28d1c">warning</mat-icon>
+            <p>{{ item.MESSAGE }}</p>
+          </span>
 
-    <mat-expansion-panel *ngIf="warningLogs.length">
-      <mat-expansion-panel-header class="warning-logs">
-        <mat-panel-title> Warning ({{ warningLogs.length }}) </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="log-content">
-        @for (item of warningLogs; track $index) {
-        <span class="log-item">
-          <mat-icon style="color: #b28d1c">warning</mat-icon>
-          <p>{{ item.MESSAGE }}</p>
-        </span>
+          }
+        </div>
+      </mat-expansion-panel>
 
-        }
-      </div>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel *ngIf="errorLogs.length">
-      <mat-expansion-panel-header class="error-logs">
-        <mat-panel-title> Error ({{ errorLogs.length }}) </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="log-content">
-        @for (item of errorLogs; track $index) {
-        <span class="log-item">
-          <mat-icon color="warn">dangerous</mat-icon>
-          <p>{{ item.MESSAGE }}</p>
-        </span>
-        }
-      </div>
-    </mat-expansion-panel>
-  </mat-accordion>
+      <mat-expansion-panel *ngIf="errorLogs.length">
+        <mat-expansion-panel-header class="error-logs">
+          <mat-panel-title> Error ({{ errorLogs.length }}) </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="log-content">
+          @for (item of errorLogs; track $index) {
+          <span class="log-item">
+            <mat-icon color="warn">dangerous</mat-icon>
+            <p>{{ item.MESSAGE }}</p>
+          </span>
+          }
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close cdkFocusInitial>Close</button>

@@ -3,7 +3,7 @@ import { ICellRendererParams } from 'ag-grid-community';
 import { SharedMaterialModule } from '../../../../../../material.module';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
-import { BasicValcheckDialogComponent } from '../../../basic-valcheck-dialog/basic-valcheck-dialog.component';
+import { BasicValcheckDialogComponent } from '../../../../../../shared/components/basic-valcheck-dialog/basic-valcheck-dialog.component';
 
 @Component({
   selector: 'app-basicval',

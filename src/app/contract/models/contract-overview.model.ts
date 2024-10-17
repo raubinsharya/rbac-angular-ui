@@ -94,6 +94,7 @@ export interface CommercialContractType {
   simulationErrorLogs: SimulationErrorLogs;
   simulationTimestamp: string;
   simulationVersion: string;
+  simulatedBy: string;
 }
 
 export interface SimulationErrorLogs {
@@ -182,9 +183,9 @@ export interface ContractLineItemType {
   currency: string;
   profitCenter: string;
   contractLineStartDate: string;
-  isContractStartDateUpdated: string;
+  isContractLineStartDateUpdated: string;
   contractLineEndDate: string;
-  isContractEndDateUpdated: string;
+  isContractLineEndDateUpdated: string;
   customerAcceptanceDateLineItem: Date;
   uom: string;
   quantity: string;

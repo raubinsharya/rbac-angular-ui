@@ -8,6 +8,7 @@ import {
 
 export interface UserManagementState {
   name: string | undefined;
+  email: string;
   userRoles: UserRoleInterface[];
   roles: Array<string>;
   error: string | null;
@@ -17,6 +18,7 @@ export interface UserManagementState {
 
 export const initialState: UserManagementState = {
   name: '',
+  email: '',
   userRoles: [],
   roles: [],
   error: null,
@@ -30,7 +32,7 @@ export const userRolesReducer = createReducer(
     ...state,
     loading: true,
   })),
-  on(fetchUserRolesSuccess, (state, { userRoles, name }) => {
+  on(fetchUserRolesSuccess, (state, { userRoles, name, email }) => {
     const roles = new Set();
     const salesOrgs = new Set();
     for (let role of userRoles) {
@@ -42,6 +44,7 @@ export const userRolesReducer = createReducer(
     return {
       ...state,
       name: name,
+      email,
       userRoles,
       roles: Array.from(roles) as string[],
       loading: false,

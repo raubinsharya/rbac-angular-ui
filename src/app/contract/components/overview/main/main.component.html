@@ -18,7 +18,16 @@
       >
     </div>
     <div class="right-section">
-      <button mat-icon-button class="contract-btn">Simulate</button>
+      <button
+        mat-icon-button
+        class="contract-btn"
+        (click)="simulateContract()"
+        [disabled]="simulationLoading"
+      >
+        @if (simulationLoading) {
+        <span class="spinner"></span>} @else {<mat-icon>rebase_edit</mat-icon>}
+        Simulate
+      </button>
       <button mat-icon-button class="contract-btn">
         <mat-icon>task</mat-icon>
         Book Contract

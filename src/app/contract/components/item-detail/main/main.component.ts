@@ -13,9 +13,13 @@ import {
   selectContractOverviewError,
   selectContractOverviewLineItem,
   selectContractOverviewLoading,
+  selectSimulationLoading,
 } from '../../../store/selectors/contract-overview.selector';
 import { ActivatedRoute } from '@angular/router';
-import { fetchContractOverview } from '../../../store/actions/contract-overview.action';
+import {
+  fetchContractOverview,
+  requestSimulation,
+} from '../../../store/actions/contract-overview.action';
 import { isEmpty } from 'lodash';
 
 @Component({
@@ -26,6 +30,7 @@ import { isEmpty } from 'lodash';
 export class ContractItemDetailsMainComponent {
   public overview!: QuoteDetailsType | null;
   public contractLineItem!: ContractLineItemType | undefined;
+  public simulationLoading!: boolean;
   public loading!: boolean;
   public error!: any;
 
@@ -39,6 +44,9 @@ export class ContractItemDetailsMainComponent {
     this.store
       .select(selectContractOverviewError)
       .subscribe((result) => (this.error = result));
+    this.store
+      .select(selectSimulationLoading)
+      .subscribe((loading) => (this.simulationLoading = loading));
   }
 
   ngOnInit() {
@@ -65,5 +73,15 @@ export class ContractItemDetailsMainComponent {
     return classNameMapping[
       this.overview?.commercialContract?.contractCreationStatus as string
     ];
+  }
+
+  public simulateContract() {
+    this.store.dispatch(
+      requestSimulation({
+        payload: {
+          payload: this.overview as QuoteDetailsType,
+        },
+      })
+    );
   }
 }

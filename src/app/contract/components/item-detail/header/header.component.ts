@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ContractLineItemType } from '../../../models/contract-overview.model';
+import {
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
+import {
+  CommercialContractType,
+  ContractLineItemType,
+} from '../../../models/contract-overview.model';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { isEmpty } from 'lodash';
 import {
   selectContractOverview,
+  selectContractOverviewLineIsHeaderUpdated,
   selectContractOverviewLineItem,
 } from '../../../store/selectors/contract-overview.selector';
 import {
@@ -18,8 +27,14 @@ import {
   MeMessageDialogComponentParams,
   MessageDialogComponent,
 } from '../../../../shared/components/message-dialog/message-dialog.component';
-import { updateOverview } from '../../../store/actions/contract-overview.action';
+import {
+  resetOverview,
+  updateOverview,
+} from '../../../store/actions/contract-overview.action';
 import { EquipmentDialogComponent } from '../../../../shared/components/equipment-dialog/equipment-dialog.component';
+import { SimulatioLogsComponent } from '../../../../shared/components/simulatio-logs/simulatio-logs.component';
+import moment from 'moment';
+import { NotificationService } from '../../../../services/notification.service';
 
 @Component({
   selector: 'item-detail-header',
@@ -27,6 +42,7 @@ import { EquipmentDialogComponent } from '../../../../shared/components/equipmen
   styleUrl: './header.component.scss',
 })
 export class ItemDetailHeaderComponent {
+  commercialContract!: CommercialContractType;
   isEditMode: boolean = false;
   poTypes = poTypes;
   paymentTerms = paymentTerms;
@@ -35,17 +51,27 @@ export class ItemDetailHeaderComponent {
   public contractLineItem!: ContractLineItemType | undefined;
   public idx!: number;
   public totalLines!: number;
+  public isLineHeaderUpdated!: boolean;
 
   constructor(
     private fb: FormBuilder,
     private store: Store,
     private route: ActivatedRoute,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private notification: NotificationService
   ) {
+    this.store.select(selectContractOverview).subscribe((overview) => {
+      this.commercialContract = overview?.commercialContract;
+    });
     this.store.select(selectContractOverview).subscribe((overview) => {
       this.totalLines = overview.commercialContract?.contractLineItems?.length;
     });
+    this.store
+      .select(selectContractOverviewLineIsHeaderUpdated(this.idx))
+      .subscribe((isLineHeaderUpdated) => {
+        this.isLineHeaderUpdated = isLineHeaderUpdated;
+      });
   }
 
   ngOnInit(): void {
@@ -90,18 +116,64 @@ export class ItemDetailHeaderComponent {
     });
   }
 
-  startEditMode() {
+  toggleEditMode() {
     this.toggleEditForm();
+  }
+
+  startEditMode() {
+    this.toggleEditMode();
     this.isEditMode = true;
   }
 
   stopEditMode() {
-    this.toggleEditForm();
+    const errors = this.getFormValidationErrors().some((error) => {
+      this.notification.showError(`${error.field} ${error.keyError}`);
+      const field = error.field as keyof CommercialContractType;
+      this.lineItemForm.get(field)?.reset(this.commercialContract[field]);
+      return !isEmpty(error);
+    });
+
+    if (errors) return;
+
+    const targetFields = Object.keys(this.lineItemForm.value).map((key) => {
+      let value = this.lineItemForm.value[key];
+      if (value instanceof Date) value = moment(value).format('yyyy-MM-DD');
+      return {
+        field: key,
+        value: value,
+      };
+    });
+
+    this.store.dispatch(
+      updateOverview({
+        query: `$.commercialContract.contractLineItems[${this.idx}]`,
+        targetFields: targetFields,
+      })
+    );
+    this.toggleEditMode();
     this.isEditMode = false;
   }
 
-  cancelEditMode() {
-    this.toggleEditForm();
+  handleReset() {
+    this.store.dispatch(
+      resetOverview({
+        query: `$.commercialContract.contractLineItems[${this.idx}]`,
+        fields: [
+          'division',
+          'poType',
+          'customerPurchaseOrderNumber',
+          'contractLineStartDate',
+          'contractLineEndDate',
+          'paymentTerms',
+          'billingPeriod',
+        ],
+      })
+    );
+  }
+
+  async cancelEditMode() {
+    this.toggleEditMode();
+    this.setFormValues(this.contractLineItem as ContractLineItemType);
     this.isEditMode = false;
   }
 
@@ -111,6 +183,31 @@ export class ItemDetailHeaderComponent {
       if (control?.disabled) control.enable({ onlySelf: true });
       else control?.disable({ onlySelf: true });
     });
+  }
+
+  private getFormValidationErrors() {
+    const errors: Array<{ field: string; keyError: string }> = [];
+    Object.keys(this.lineItemForm.controls).forEach((key) => {
+      const controlErrors: ValidationErrors = this.lineItemForm.get(key)
+        ?.errors as ValidationErrors;
+      if (controlErrors != null) {
+        Object.keys(controlErrors).forEach((keyError) => {
+          errors.push({
+            field: key,
+            keyError: keyError,
+          });
+        });
+      }
+    });
+    const formErrors = this.lineItemForm.errors as any;
+    if (!isEmpty(formErrors))
+      Object.keys(formErrors).forEach((key) => {
+        errors.push({
+          field: key,
+          keyError: formErrors[key],
+        });
+      });
+    return errors;
   }
 
   public openMessageDialog() {
@@ -172,6 +269,17 @@ export class ItemDetailHeaderComponent {
           );
         }
       });
+  }
+
+  openSimulationDialog() {
+    this.dialog.open(SimulatioLogsComponent, {
+      minWidth: '50vw',
+      data: {
+        simulationLogs: this.commercialContract.simulationErrorLogs,
+        simulationStatus: this.commercialContract.simulationStatus,
+        isSimulation: this.commercialContract.isSimulation,
+      },
+    });
   }
 
   public goToNextLine() {

@@ -22,6 +22,7 @@ import {
 import { Store } from '@ngrx/store';
 import { updateOverview } from '../../../store/actions/contract-overview.action';
 import { NumberOfEquipmentsCellRenderer } from './grid/number-of-equipments/number-of-equipments.component';
+import { selectContractOverviewcontractLineItems } from '../../../store/selectors/contract-overview.selector';
 
 export const booleanFormatter = (params: any) => {
   return params.value ? 'Yes' : 'No';
@@ -34,11 +35,17 @@ export const arrayFormatter = (params: any) => {
   providedIn: 'root',
 })
 export class ItemDetailsColDefs {
+  public totalLineSize!: number;
+
   constructor(
     private matDialog: MatDialog,
     private currencyPipe: CurrencyPipe,
     private store: Store
-  ) {}
+  ) {
+    this.store
+      .select(selectContractOverviewcontractLineItems)
+      .subscribe((lines) => (this.totalLineSize = lines.length));
+  }
 
   private openConfirmationDialog({
     title,
@@ -151,12 +158,13 @@ export class ItemDetailsColDefs {
           valueKey: 'value',
         } as DropdownRendererParams,
         onCellValueChanged: ({ colDef, newValue }) => {
-          this.openConfirmationDialog({
-            title: colDef.headerName as string,
-            description: 'Would you like to copy to all line items?',
-            field: colDef.field as string,
-            newValue,
-          });
+          if (this.totalLineSize > 1)
+            this.openConfirmationDialog({
+              title: colDef.headerName as string,
+              description: 'Would you like to copy to all line items?',
+              field: colDef.field as string,
+              newValue,
+            });
         },
       },
       {
@@ -173,12 +181,13 @@ export class ItemDetailsColDefs {
           valueKey: 'value',
         } as DropdownRendererParams,
         onCellValueChanged: ({ colDef, newValue }) => {
-          this.openConfirmationDialog({
-            title: colDef.headerName as string,
-            description: 'Would you like to copy to all line items?',
-            field: colDef.field as string,
-            newValue,
-          });
+          if (this.totalLineSize > 1)
+            this.openConfirmationDialog({
+              title: colDef.headerName as string,
+              description: 'Would you like to copy to all line items?',
+              field: colDef.field as string,
+              newValue,
+            });
         },
       },
       {
@@ -195,12 +204,13 @@ export class ItemDetailsColDefs {
           valueKey: 'value',
         } as DropdownRendererParams,
         onCellValueChanged: ({ colDef, newValue }) => {
-          this.openConfirmationDialog({
-            title: colDef.headerName as string,
-            description: 'Would you like to copy to all line items?',
-            field: colDef.field as string,
-            newValue,
-          });
+          if (this.totalLineSize > 1)
+            this.openConfirmationDialog({
+              title: colDef.headerName as string,
+              description: 'Would you like to copy to all line items?',
+              field: colDef.field as string,
+              newValue,
+            });
         },
       },
       {
@@ -217,12 +227,13 @@ export class ItemDetailsColDefs {
           valueKey: 'value',
         } as DropdownRendererParams,
         onCellValueChanged: ({ colDef, newValue }) => {
-          this.openConfirmationDialog({
-            title: colDef.headerName as string,
-            description: 'Would you like to copy to all line items?',
-            field: colDef.field as string,
-            newValue,
-          });
+          if (this.totalLineSize > 1)
+            this.openConfirmationDialog({
+              title: colDef.headerName as string,
+              description: 'Would you like to copy to all line items?',
+              field: colDef.field as string,
+              newValue,
+            });
         },
       },
       {

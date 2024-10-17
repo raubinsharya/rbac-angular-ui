@@ -22,7 +22,11 @@ export class UserManagementEffect {
       exhaustMap(({ email, name }) =>
         this.userManagementService.fetchUserRoles(email).pipe(
           map((userRoles) =>
-            fetchUserRolesSuccess({ userRoles: userRoles, name: name })
+            fetchUserRolesSuccess({
+              userRoles: userRoles,
+              name: name,
+              email: email,
+            })
           ),
           catchError((error) =>
             of(fetchUserRolesFailed({ error: error.message, name }))

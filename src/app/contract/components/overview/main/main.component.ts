@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { fetchContractOverview } from '../../../store/actions/contract-overview.action';
+import {
+  fetchContractOverview,
+  requestSimulation,
+} from '../../../store/actions/contract-overview.action';
 import { ActivatedRoute } from '@angular/router';
 import { QuoteDetailsType } from '../../../models/contract-overview.model';
 import {
   selectContractOverview,
   selectContractOverviewError,
   selectContractOverviewLoading,
+  selectEquipmentLoading,
+  selectSimulationLoading,
 } from '../../../store/selectors/contract-overview.selector';
 import {
   classNameMapping,
@@ -22,6 +27,8 @@ export class ContractOverviewMainComponent {
   public overview!: QuoteDetailsType | null;
   public loading!: boolean;
   public error!: any;
+  public quoteDetails!: QuoteDetailsType;
+  public simulationLoading!: boolean;
 
   get contractStatus(): string {
     return constractStatusMapping[
@@ -44,6 +51,9 @@ export class ContractOverviewMainComponent {
     this.store
       .select(selectContractOverviewError)
       .subscribe((result) => (this.error = result));
+    this.store
+      .select(selectSimulationLoading)
+      .subscribe((loading) => (this.simulationLoading = loading));
   }
 
   ngOnInit() {
@@ -54,5 +64,15 @@ export class ContractOverviewMainComponent {
         })
       );
     });
+  }
+
+  public simulateContract() {
+    this.store.dispatch(
+      requestSimulation({
+        payload: {
+          payload: this.overview as QuoteDetailsType,
+        },
+      })
+    );
   }
 }

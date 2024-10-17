@@ -3,10 +3,15 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { DueList } from '../models/duelist.model';
 import { ApiService } from '../../services/api.service';
 import { NotificationService } from '../../services/notification.service';
-import { QuoteDetailsType } from '../models/contract-overview.model';
+import {
+  CommercialContractType,
+  QuoteDetailsType,
+} from '../models/contract-overview.model';
 import { PartnerPayload } from '../store/actions/contract-overview.action';
 import { PartnerResponseType } from '../models/partner-response.model';
 import { EquipmentType } from '../models/equipment.model';
+import { ValidationResponse } from '../models/validation.model';
+import { SimulationResponseType } from '../models/SimulationResponse.model';
 
 @Injectable({
   providedIn: 'root',
@@ -48,6 +53,21 @@ export class ContractService {
   ): Observable<EquipmentType[]> {
     return this.api
       .getData(`/daasqq/equipment?equipmentNumber=${equipmentNumber}`)
+      .pipe(catchError(this.handleError));
+  }
+  public validateContract(
+    payload: QuoteDetailsType
+  ): Observable<ValidationResponse[]> {
+    return this.api
+      .postData(`/qqvalidator/validate`, payload)
+      .pipe(catchError(this.handleError));
+  }
+  public postSimulateContract(
+    payload: QuoteDetailsType | { simulatedBy: string },
+    url: string
+  ): Observable<SimulationResponseType> {
+    return this.api
+      .postData(url, { ...payload })
       .pipe(catchError(this.handleError));
   }
 

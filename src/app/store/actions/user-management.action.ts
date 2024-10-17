@@ -7,7 +7,11 @@ export const fetchUserRoles = createAction(
 );
 export const fetchUserRolesSuccess = createAction(
   '[USER][MANAGEMENT][FETCH][SUCCESS] FETCH ROLES SUCCESS',
-  props<{ userRoles: UserRoleInterface[]; name: string | undefined }>()
+  props<{
+    userRoles: UserRoleInterface[];
+    name: string | undefined;
+    email: string;
+  }>()
 );
 export const fetchUserRolesFailed = createAction(
   '[USER][MANAGEMENT][FETCH][FAILED] FETCH ROLES FAILED',

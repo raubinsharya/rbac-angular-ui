@@ -26,6 +26,7 @@ import { IncludedServicesComponent } from './components/included-services/includ
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FileChooserComponent } from './components/file-chooser/file-chooser.component';
+import { BasicValcheckDialogComponent } from './components/basic-valcheck-dialog/basic-valcheck-dialog.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { FileChooserComponent } from './components/file-chooser/file-chooser.com
     UnauthorizedComponent,
     NotFoundComponent,
     FileChooserComponent,
+    BasicValcheckDialogComponent,
   ],
   imports: [
     FormsModule,
@@ -82,6 +84,7 @@ import { FileChooserComponent } from './components/file-chooser/file-chooser.com
     UnauthorizedComponent,
     NotFoundComponent,
     FileChooserComponent,
+    BasicValcheckDialogComponent,
   ],
   providers: [provideNativeDateAdapter()],
 })

@@ -186,17 +186,18 @@ export function queryAndResetJSON(
     return updated;
   }
 
-  originalMatches.forEach((originalPath: any) => {
+  originalMatches.forEach((originalPath: string) => {
     const originalValue = JSONPath({
       path: originalPath,
       json: original,
       resultType: 'value',
     });
+
     const path = jsonPathToLodashPath(originalPath);
-    if (path) {
+    if (path && Array.isArray(path)) {
       if (!isEmpty(fields)) {
         fields?.forEach((field) => {
-          set(updated, `${path}.${field}`, originalValue[0]?.[field]);
+          set(updated, [...path, field], originalValue[0]?.[field]);
         });
       } else set(updated, path, originalValue[0]);
     }

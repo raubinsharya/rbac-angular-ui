@@ -1,9 +1,6 @@
 {
   "isUpdated": null,
   "commercialContract": {
-    "dealValue": "10000",
-    "isDealValueUpdated": null,
-    "division": null,
     "isDivisionUpdated": null,
     "isCustomerPurchaseOrderNumberUpdated": null,
     "isBillingBlockUpdated": null,
@@ -14,204 +11,133 @@
     "isCfdValidated": null,
     "isPoAcknowledged": null,
     "isHeaderUpdated": null,
-    "contractNumber": null,
-    "description": "Basic HPM POS payload test",
-    "fileName": null,
-    "quoteReferenceNumber": "JAPAN_T2_00017",
+    "contractNumber": "",
+    "description": "",
+    "fileName": "6156580",
+    "quoteReferenceNumber": "NAM_DEV_RT_02",
     "displayOnUi": "TRUE",
-    "salesOrgId": "NL90",
-    "poDate": "2024-09-13",
-    "poType": "ZAUT",
+    "salesOrgId": "US93",
+    "division": "CS",
+    "poDate": "2024-08-06",
+    "poType": "WARR",
     "poSubType": null,
-    "customerPurchaseOrderNumber": "TEST1239",
-    "accountCountry": "NL",
-    "currency": "EUR",
-    "netValueOfContract": "38948.67",
-    "customerAcceptanceDate": null,
-    "contractStartDate": "2024-12-12",
+    "customerPurchaseOrderNumber": "POTYPE_UPDAT",
+    "accountCountry": "US",
+    "currency": "USD",
+    "netValueOfContract": "358308.46",
+    "customerAcceptanceDate": "2024-08-06",
+    "contractStartDate": "2024-08-06",
     "isContractStartDateUpdated": null,
-    "contractEndDate": "2029-12-11",
+    "contractEndDate": "2034-07-31",
     "isContractEndDateUpdated": null,
-    "paymentTerms": "Z030",
+    "paymentTerms": "ZB60",
     "isPaymentTermsUpdated": null,
-    "indicator": null,
-    "salesDocType": "ZCQ",
-    "contractType": "POS",
-    "contractSource": "SOFON",
+    "indicator": "V1",
+    "salesDocType": "ZCSS",
+    "contractType": "NON-POS",
+    "contractSource": "NAM ZCSS AUTOMATION",
     "idpValStatus": "VAL_SUCCESS",
     "idpValDesc": null,
     "basicValStatus": "VAL_SUCCESS",
-    "basicValDesc": "[{\"checkName\":\"Material Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"PO Number or Quote Reference Number Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Business Partner Role Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Approver Name Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Quantity Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Technical Objects Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Annual Price Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Billing Period Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Billing Plan Rule Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Payment Terms Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"System Modality Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Contract Start and End Date Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Service Plan Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Net Value Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Contract PO Type Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Unit Of Measure Validation\",\"status\":true,\"errorMessage\":null}]",
+    "basicValDesc": "[{\"checkName\":\"Material Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"PO Number or Quote Reference Number Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Business Partner Role Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Quantity Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Annual Price Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Billing Period Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Billing Plan Type Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Billing Plan Rule Validation\",\"status\":true,\"errorMessage\":null},{\"checkName\":\"Payment Terms Validation\",\"status\":true,\"errorMessage\":null}]",
     "isTextsUpdated": null,
     "texts": [],
-    "approverName": "Pekka Juntunen",
-    "approverEmail": "partner.Manoj.Muddu@philips.com",
-    "billingBlock": null,
-    "billingBlockDesc": null,
+    "approverName": "Chetana G",
+    "approverEmail": "partner.chetana.gudaganatti@philips.com",
+    "billingBlock": "ZH",
+    "billingBlockDesc": "CS Auto BB Contr. H.",
     "businessPartnerRole": [
       {
-        "businessPartnerId": "0009400157",
-        "businessPartnerRoleId": "SP",
-        "businessPartnerDescription": "Sold To",
-        "address": {
-          "isStreet1Updated": null,
-          "isTelephoneNumberUpdated": null,
-          "businessPartnerName": "Catharina Ziekenhuis",
-          "street1": "Michelangelolaan 2",
-          "city": "Eindhoven",
-          "region": "Noord-Brabant",
-          "country": "Netherlands",
-          "postalCode": "5623 EJ",
-          "timezone": null,
-          "telephoneNumber": null,
-          "isPostalCodeUpdated": null
-        },
-        "timezone": null,
-        "version": "0",
-        "isBusinessPartnerRoleUpdated": null,
-        "isBusinessPartnerIdUpdated": null,
-        "isAddressUpdated": null,
-        "isTimezoneUpdated": null
-      },
-      {
-        "businessPartnerId": "0009400157",
+        "businessPartnerId": "0094325701",
         "businessPartnerRoleId": "SH",
         "businessPartnerDescription": "Ship To",
         "address": {
           "isStreet1Updated": null,
           "isTelephoneNumberUpdated": null,
-          "businessPartnerName": "Catharina Ziekenhuis",
-          "street1": "Michelangelolaan 2",
-          "city": "Eindhoven",
-          "region": "Noord-Brabant",
-          "country": "Netherlands",
-          "postalCode": "5623 EJ",
+          "businessPartnerName": "Montefiore Medical Center",
+          "street1": "Corporate Blvd S",
+          "city": "Yonkers",
+          "region": "NY",
+          "country": "US",
+          "postalCode": "10701-6805",
           "timezone": null,
-          "telephoneNumber": null,
+          "telephoneNumber": "",
           "isPostalCodeUpdated": null
         },
         "timezone": null,
-        "version": "0",
+        "version": "37",
         "isBusinessPartnerRoleUpdated": null,
         "isBusinessPartnerIdUpdated": null,
         "isAddressUpdated": null,
         "isTimezoneUpdated": null
       },
       {
-        "businessPartnerId": "0009400157",
+        "businessPartnerId": "0094325701",
+        "businessPartnerRoleId": "SP",
+        "businessPartnerDescription": "Sold To",
+        "address": {
+          "isStreet1Updated": null,
+          "isTelephoneNumberUpdated": null,
+          "businessPartnerName": "Montefiore Medical Center",
+          "street1": "Corporate Blvd S",
+          "city": "Yonkers",
+          "region": "NY",
+          "country": "US",
+          "postalCode": "10701-6805",
+          "timezone": null,
+          "telephoneNumber": "",
+          "isPostalCodeUpdated": null
+        },
+        "timezone": null,
+        "version": "37",
+        "isBusinessPartnerRoleUpdated": null,
+        "isBusinessPartnerIdUpdated": null,
+        "isAddressUpdated": null,
+        "isTimezoneUpdated": null
+      },
+      {
+        "businessPartnerId": "0094511876",
         "businessPartnerRoleId": "BP",
         "businessPartnerDescription": "Bill To",
         "address": {
           "isStreet1Updated": null,
           "isTelephoneNumberUpdated": null,
-          "businessPartnerName": "Catharina Ziekenhuis",
-          "street1": "Michelangelolaan 2",
-          "city": "Eindhoven",
-          "region": "Noord-Brabant",
-          "country": "Netherlands",
-          "postalCode": "5623 EJ",
+          "businessPartnerName": "Montefiore Einstein Advanced Care",
+          "street1": "S Broadway",
+          "city": "Tarrytown",
+          "region": "NY",
+          "country": "US",
+          "postalCode": "10591-6301",
           "timezone": null,
-          "telephoneNumber": null,
+          "telephoneNumber": "",
           "isPostalCodeUpdated": null
         },
         "timezone": null,
-        "version": "0",
+        "version": "37",
         "isBusinessPartnerRoleUpdated": null,
         "isBusinessPartnerIdUpdated": null,
         "isAddressUpdated": null,
         "isTimezoneUpdated": null
       },
       {
-        "businessPartnerId": "0009400157",
+        "businessPartnerId": "0094511876",
         "businessPartnerRoleId": "PY",
         "businessPartnerDescription": "Payer",
         "address": {
           "isStreet1Updated": null,
           "isTelephoneNumberUpdated": null,
-          "businessPartnerName": "Catharina Ziekenhuis",
-          "street1": "Michelangelolaan 2",
-          "city": "Eindhoven",
-          "region": "Noord-Brabant",
-          "country": "Netherlands",
-          "postalCode": "5623 EJ",
+          "businessPartnerName": "Montefiore Einstein Advanced Care",
+          "street1": "S Broadway",
+          "city": "Tarrytown",
+          "region": "NY",
+          "country": "US",
+          "postalCode": "10591-6301",
           "timezone": null,
-          "telephoneNumber": null,
+          "telephoneNumber": "",
           "isPostalCodeUpdated": null
         },
         "timezone": null,
-        "version": "0",
-        "isBusinessPartnerRoleUpdated": null,
-        "isBusinessPartnerIdUpdated": null,
-        "isAddressUpdated": null,
-        "isTimezoneUpdated": null
-      },
-      {
-        "businessPartnerId": "0000078923",
-        "businessPartnerRoleId": "Y1",
-        "businessPartnerDescription": "Main Project Manager",
-        "address": {
-          "isStreet1Updated": null,
-          "isTelephoneNumberUpdated": null,
-          "businessPartnerName": "John",
-          "street1": null,
-          "city": null,
-          "region": null,
-          "country": null,
-          "postalCode": null,
-          "timezone": null,
-          "telephoneNumber": null,
-          "isPostalCodeUpdated": null
-        },
-        "timezone": null,
-        "version": "0",
-        "isBusinessPartnerRoleUpdated": null,
-        "isBusinessPartnerIdUpdated": null,
-        "isAddressUpdated": null,
-        "isTimezoneUpdated": null
-      },
-      {
-        "businessPartnerId": "0000052289",
-        "businessPartnerRoleId": "Y9",
-        "businessPartnerDescription": "Order fulfill. Admin",
-        "address": {
-          "isStreet1Updated": null,
-          "isTelephoneNumberUpdated": null,
-          "businessPartnerName": "Peter",
-          "street1": null,
-          "city": null,
-          "region": null,
-          "country": null,
-          "postalCode": null,
-          "timezone": null,
-          "telephoneNumber": null,
-          "isPostalCodeUpdated": null
-        },
-        "timezone": null,
-        "version": "0",
-        "isBusinessPartnerRoleUpdated": null,
-        "isBusinessPartnerIdUpdated": null,
-        "isAddressUpdated": null,
-        "isTimezoneUpdated": null
-      },
-      {
-        "businessPartnerId": "0009400157",
-        "businessPartnerRoleId": "ZU",
-        "businessPartnerDescription": "Final User",
-        "address": {
-          "isStreet1Updated": null,
-          "isTelephoneNumberUpdated": null,
-          "businessPartnerName": "Catharina Ziekenhuis",
-          "street1": "Michelangelolaan 2",
-          "city": "Eindhoven",
-          "region": "Noord-Brabant",
-          "country": "Netherlands",
-          "postalCode": "5623 EJ",
-          "timezone": null,
-          "telephoneNumber": null,
-          "isPostalCodeUpdated": null
-        },
-        "timezone": null,
-        "version": "0",
+        "version": "37",
         "isBusinessPartnerRoleUpdated": null,
         "isBusinessPartnerIdUpdated": null,
         "isAddressUpdated": null,
@@ -220,71 +146,3947 @@
     ],
     "contractLineItems": [
       {
-        "contractLineItemNumber": "1000"
+        "customerPurchaseOrderNumber": "POTYPE_UPDAT",
+        "isCustomerPurchaseOrderNumberUpdated": null,
+        "lineType": "NON-POS",
+        "isBillingPeriodUpdated": null,
+        "isBillingBlockUpdated": null,
+        "isBillingDescUpdated": null,
+        "sapBusinessHoursName": "SERVICE_PROFILE_CM",
+        "sapBusinessHoursCode": "W12",
+        "sapPmBusinessHoursName": "SERVICE_PROFILE_PM",
+        "sapPmBusinessHoursCode": "ZPM-013",
+        "sapPriorityBusinessHoursName": null,
+        "sapPriorityBusinessHoursCode": null,
+        "sapPlannedMaintenanceName": "PM_COVERAGE_CON",
+        "sapPlannedMaintenanceCode": "PM_STD",
+        "sapAdditionalPmVisitsName": "PM_COVERAGE_CON",
+        "sapAdditionalPmVisitsCode": "PM_STD",
+        "sapUptimeName": "UPTIME",
+        "sapUptimeCode": "99_EXCL_PM",
+        "sapPartsDeliveryName": "PARTS_DELIVERY_3",
+        "sapPartsDeliveryCode": "SBDA",
+        "sapServiceLevelAgreementName": "IN_OS_RESPONSE_PROFILE",
+        "sapServiceLevelAgreementCode": "IN1-OS02",
+        "isPoTypeUpdated": null,
+        "isPmBusinessHoursUpdated": null,
+        "isBusinessHoursUpdated": null,
+        "isPriorityBusinessHoursUpdated": null,
+        "isMergeApplicable": null,
+        "isIsMergeApplicableUpdated": null,
+        "targetContractNumber": null,
+        "isTargetContractNumberUpdated": null,
+        "mergeStatus": null,
+        "mergedBy": null,
+        "serviceDateOverlapIndicator": null,
+        "isServiceDateOverlapIndicatorUpdated": null,
+        "isLineItemUpdated": null,
+        "isHigherLevelItem": "false",
+        "higherLevelItemNumber": "",
+        "productType": "SERVICES",
+        "productTypeDescription": "",
+        "businessPartnerRole": [
+          {
+            "businessPartnerId": "0094325701",
+            "businessPartnerRoleId": "SH",
+            "businessPartnerDescription": "Ship To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Medical Center",
+              "street1": "Corporate Blvd S",
+              "city": "Yonkers",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10701-6805",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094325701",
+            "businessPartnerRoleId": "SP",
+            "businessPartnerDescription": "Sold To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Medical Center",
+              "street1": "Corporate Blvd S",
+              "city": "Yonkers",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10701-6805",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "BP",
+            "businessPartnerDescription": "Bill To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "PY",
+            "businessPartnerDescription": "Payer",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          }
+        ],
+        "productDescription": "Uptime",
+        "totalValueContractLineItem": "76281.67",
+        "productId": "C_CSA_UPTIME",
+        "featureId": "",
+        "contractLineItemNumber": "10",
+        "sourceSystemHeaderId": "NAM_DEV_RT_02",
+        "sourceSystemLineItemId": "f870402f-4754-4683-b209-f8f380927f56",
+        "isTechnicalObjectsUpdated": null,
+        "technicalObjects": [
+          {
+            "equipmentNumber": "83301",
+            "mainEquipment": "true",
+            "materialCode": "781105",
+            "materialDescription": "Intera 1.5T Power/Pulsar",
+            "serialNumber": "8048",
+            "equipmentStatus": null
+          }
+        ],
+        "currency": "USD",
+        "profitCenter": null,
+        "contractLineStartDate": "2024-08-06",
+        "isContractStartDateUpdated": null,
+        "contractLineEndDate": "2024-12-05",
+        "isContractEndDateUpdated": null,
+        "customerAcceptanceDateLineItem": "2024-08-06",
+        "uom": "PCE",
+        "quantity": "1",
+        "pricingModel": "",
+        "price": "228845.00",
+        "priceType": "ZPYP",
+        "contractLineItemRefNumber": "",
+        "isPaymentTermsUpdated": null,
+        "paymentTerms": "ZB30",
+        "billingPlanType": "ZU",
+        "billingPeriod": "53",
+        "billingPlanRule": "Z1",
+        "billingInAdvance": "true",
+        "isBillingInAdvanceUpdated": null,
+        "billingBlock": null,
+        "billingBlockDesc": null,
+        "lineRejection": false,
+        "reasonForRejection": "",
+        "rejectionDescription": "",
+        "contractNumber": null,
+        "featureName": "",
+        "featureOptionId": "",
+        "featureOptionName": "",
+        "itemCategory": "",
+        "indexation": {
+          "isIndexationApplicable": false,
+          "indexUpliftStartDate": null,
+          "indexType": null,
+          "indexFormula": null,
+          "indexMonth": null,
+          "indexCustomerAcceptance": null,
+          "indexNoticePeriod": null,
+          "indexFixedDate": null,
+          "indexNotifyCustomer": null,
+          "indexInclLetter": null,
+          "indexCustConfirmation": null,
+          "sourceSystemHeaderId": "NAM_DEV_RT_02",
+          "sourceSystemLineItemId": "f870402f-4754-4683-b209-f8f380927f56"
+        },
+        "isTextsUpdated": null,
+        "texts": [],
+        "materialGroups": [],
+        "conditionGroups": [],
+        "servicePlan": "Uptime MR NA",
+        "businessHoursName": "ESMX-USC-GMT-05:00-08:00-21:00 M-F",
+        "businessHoursCode": "W12",
+        "pmBusinessHoursName": "ESMX-USC-GMT-05:00-07:00-24:00+Sa-17:00",
+        "pmBusinessHoursCode": "ZPM-013",
+        "priorityBusinessHoursName": null,
+        "priorityBusinessHoursCode": null,
+        "renewalTermName": "",
+        "renewalTermCode": "",
+        "plannedMaintenanceName": "PM_STD - Prevent./planned maint. (Std)",
+        "plannedMaintenanceCode": "PM_STD",
+        "additionalPmVisitsName": "",
+        "additionalPmVisitsCode": "PM_STD",
+        "customerExperienceNotes": "",
+        "uptimeName": "UPTIME",
+        "uptimeCode": "99",
+        "partsDeliveryName": "Same day / Expedited delivery time",
+        "partsDeliveryCode": "",
+        "serviceLevelAgreementName": "SLA for 1 hr initial response time and 2 hrs onsite",
+        "serviceLevelAgreementCode": "IN1-OS2",
+        "serviceContract": {
+          "partsDiscounts": [
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "120 - MR cryogens",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "120"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "121 - MR refrigeration Syst.",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "121"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "122 - MR magnet insurance",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "122"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "220 - Software updates",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "220"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "250 - Replacable product",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "250"
+            }
+          ],
+          "includedServices": [
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "MR",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote"
+            },
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "MR",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Updates"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "APAS",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Clinical Application Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "CMAI",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Incident Work Time"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "PMAI",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Predictive / Preventative Work Time"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RMSE",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote Service"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RPCL",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Bench Repair"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "SWSU",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "TESU",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Technical Phone Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "TRAV",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Travel Time"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_13",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate travel"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_6",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate HW"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_7",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate SW"
+            }
+          ]
+        },
+        "systemModality": "MR",
+        "poType": "RENU",
+        "characteristicConfigurations": [
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC05"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC07"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOU01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "61600125"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "65900124"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "77300052"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "77300053"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "TRAINING_COVERED_3",
+            "characteristicValue": null,
+            "characteristicCode": "APPLTRAIN_2"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_13"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_6"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_7"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_LC25"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "UPTIME",
+            "characteristicValue": "99",
+            "characteristicCode": "99_EXCL_PM"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "BUSINESS",
+            "characteristicValue": null,
+            "characteristicCode": "MR"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "ADMI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "APAS"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "APSE"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "BTRA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "CALQ"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "CMAI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "DGLA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "DIAG"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "FCOA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "FILL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "IN04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "MONI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PEAK"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PMAI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PTDP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMAD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMSE"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RPCL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RSNI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RTST"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SIOP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SPEC"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SSUP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SWSU"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "TESU"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "TRAV"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "UPGR"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "UTRA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "WAIT"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CSA_SERVICE_ENTITLEMENT",
+            "characteristicValue": null,
+            "characteristicCode": "FSL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CS_WINDOW_3",
+            "characteristicValue": null,
+            "characteristicCode": "W12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_02"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_08"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_11"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_28"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "IN_OS_RESPONSE_PROFILE",
+            "characteristicValue": null,
+            "characteristicCode": "IN1-OS02"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "010"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "050"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "060"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "061"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "062"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "063"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "064"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "065"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "120"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "121"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "122"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "220"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "250"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PARTS_DELIVERY_3",
+            "characteristicValue": null,
+            "characteristicCode": "SBDA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PM_COVERAGE_CON",
+            "characteristicValue": null,
+            "characteristicCode": "PM_STD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PRIORITY_RESPONSE",
+            "characteristicValue": null,
+            "characteristicCode": "PR1"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SERVICE_PROFILE_CM",
+            "characteristicValue": null,
+            "characteristicCode": "W12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SERVICE_PROFILE_PM",
+            "characteristicValue": null,
+            "characteristicCode": "ZPM-013"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01A"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01B"
+          }
+        ]
+      },
+      {
+        "customerPurchaseOrderNumber": "POTYPE_UPDAT",
+        "isCustomerPurchaseOrderNumberUpdated": null,
+        "lineType": "NON-POS",
+        "isBillingPeriodUpdated": null,
+        "isBillingBlockUpdated": null,
+        "isBillingDescUpdated": null,
+        "sapBusinessHoursName": "SERVICE_PROFILE_CM",
+        "sapBusinessHoursCode": "W01",
+        "sapPmBusinessHoursName": null,
+        "sapPmBusinessHoursCode": null,
+        "sapPriorityBusinessHoursName": null,
+        "sapPriorityBusinessHoursCode": null,
+        "sapPlannedMaintenanceName": null,
+        "sapPlannedMaintenanceCode": null,
+        "sapAdditionalPmVisitsName": null,
+        "sapAdditionalPmVisitsCode": null,
+        "sapUptimeName": null,
+        "sapUptimeCode": null,
+        "sapPartsDeliveryName": "PARTS_DELIVERY_3",
+        "sapPartsDeliveryCode": "NNBD",
+        "sapServiceLevelAgreementName": "IN_OS_RESPONSE_PROFILE",
+        "sapServiceLevelAgreementCode": "IN1-OS_ND",
+        "isPoTypeUpdated": null,
+        "isPmBusinessHoursUpdated": null,
+        "isBusinessHoursUpdated": null,
+        "isPriorityBusinessHoursUpdated": null,
+        "isMergeApplicable": null,
+        "isIsMergeApplicableUpdated": null,
+        "targetContractNumber": null,
+        "isTargetContractNumberUpdated": null,
+        "mergeStatus": null,
+        "mergedBy": null,
+        "serviceDateOverlapIndicator": null,
+        "isServiceDateOverlapIndicatorUpdated": null,
+        "isLineItemUpdated": null,
+        "isHigherLevelItem": "false",
+        "higherLevelItemNumber": "",
+        "productType": "SERVICES",
+        "productTypeDescription": "",
+        "businessPartnerRole": [
+          {
+            "businessPartnerId": "0094034813",
+            "businessPartnerRoleId": "SH",
+            "businessPartnerDescription": "Ship To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Moses Division",
+              "street1": "111 E 210th St",
+              "city": "BRONX",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10467-2401",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094325701",
+            "businessPartnerRoleId": "SP",
+            "businessPartnerDescription": "Sold To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Medical Center",
+              "street1": "Corporate Blvd S",
+              "city": "Yonkers",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10701-6805",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "BP",
+            "businessPartnerDescription": "Bill To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "PY",
+            "businessPartnerDescription": "Payer",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          }
+        ],
+        "productDescription": "Assist",
+        "totalValueContractLineItem": "8393.46",
+        "productId": "C_CSA_ASSIST",
+        "featureId": "",
+        "contractLineItemNumber": "20",
+        "sourceSystemHeaderId": "NAM_DEV_RT_02",
+        "sourceSystemLineItemId": "9a6c0f40-b930-49da-96dc-614d52f1c7ea",
+        "isTechnicalObjectsUpdated": null,
+        "technicalObjects": [
+          {
+            "equipmentNumber": "46043772",
+            "mainEquipment": "false",
+            "materialCode": "453561177102",
+            "materialDescription": "Transducer, L9-3",
+            "serialNumber": "02M1F5",
+            "equipmentStatus": null
+          },
+          {
+            "equipmentNumber": "52022168",
+            "mainEquipment": "true",
+            "materialCode": "795052",
+            "materialDescription": "iE33 Ultrasound System",
+            "serialNumber": "B00F3Z",
+            "equipmentStatus": null
+          },
+          {
+            "equipmentNumber": "46026887",
+            "mainEquipment": "false",
+            "materialCode": "453561176741",
+            "materialDescription": "Transducer, S5-1",
+            "serialNumber": "02YGDF",
+            "equipmentStatus": null
+          },
+          {
+            "equipmentNumber": "46030136",
+            "mainEquipment": "false",
+            "materialCode": "453561181011",
+            "materialDescription": "Transducer, S8-3",
+            "serialNumber": "02GR2J",
+            "equipmentStatus": null
+          },
+          {
+            "equipmentNumber": "46030138",
+            "mainEquipment": "false",
+            "materialCode": "453561176611",
+            "materialDescription": "Transducer (X3-1)",
+            "serialNumber": "02GT6Z",
+            "equipmentStatus": null
+          }
+        ],
+        "currency": "USD",
+        "profitCenter": null,
+        "contractLineStartDate": "2024-08-06",
+        "isContractStartDateUpdated": null,
+        "contractLineEndDate": "2024-08-07",
+        "isContractEndDateUpdated": null,
+        "customerAcceptanceDateLineItem": "2024-08-06",
+        "uom": "PCE",
+        "quantity": "1",
+        "pricingModel": "",
+        "price": "23333.00",
+        "priceType": "ZPYP",
+        "contractLineItemRefNumber": "",
+        "isPaymentTermsUpdated": null,
+        "paymentTerms": "ZB30",
+        "billingPlanType": "ZU",
+        "billingPeriod": "53",
+        "billingPlanRule": "Z1",
+        "billingInAdvance": "true",
+        "isBillingInAdvanceUpdated": null,
+        "billingBlock": null,
+        "billingBlockDesc": null,
+        "lineRejection": false,
+        "reasonForRejection": "",
+        "rejectionDescription": "",
+        "contractNumber": null,
+        "featureName": "",
+        "featureOptionId": "",
+        "featureOptionName": "",
+        "itemCategory": "",
+        "indexation": {
+          "isIndexationApplicable": false,
+          "indexUpliftStartDate": null,
+          "indexType": null,
+          "indexFormula": null,
+          "indexMonth": null,
+          "indexCustomerAcceptance": null,
+          "indexNoticePeriod": null,
+          "indexFixedDate": null,
+          "indexNotifyCustomer": null,
+          "indexInclLetter": null,
+          "indexCustConfirmation": null,
+          "sourceSystemHeaderId": "NAM_DEV_RT_02",
+          "sourceSystemLineItemId": "9a6c0f40-b930-49da-96dc-614d52f1c7ea"
+        },
+        "isTextsUpdated": null,
+        "texts": [],
+        "materialGroups": [],
+        "conditionGroups": [],
+        "servicePlan": "Assist IS_US NA",
+        "businessHoursName": "ESMX-USC-GMT-05:00-08:00-17:00 M-F",
+        "businessHoursCode": "W01",
+        "pmBusinessHoursName": "",
+        "pmBusinessHoursCode": "",
+        "priorityBusinessHoursName": null,
+        "priorityBusinessHoursCode": null,
+        "renewalTermName": "",
+        "renewalTermCode": "",
+        "plannedMaintenanceName": "",
+        "plannedMaintenanceCode": "",
+        "additionalPmVisitsName": "",
+        "additionalPmVisitsCode": "",
+        "customerExperienceNotes": "",
+        "uptimeName": "",
+        "uptimeCode": "",
+        "partsDeliveryName": "Next bus. day delivery time",
+        "partsDeliveryCode": "",
+        "serviceLevelAgreementName": "SLA for 1 hr initial response time and onsite Next Day",
+        "serviceLevelAgreementCode": "IN1-OSND",
+        "serviceContract": {
+          "partsDiscounts": [
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "220 - Software updates",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "220"
+            }
+          ],
+          "includedServices": [
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "ULTRASOUND",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote"
+            },
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "ULTRASOUND",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Updates"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RMSE",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote Service"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_13",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate travel"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_6",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate HW"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_7",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate SW"
+            }
+          ]
+        },
+        "systemModality": "US",
+        "poType": "WARR",
+        "characteristicConfigurations": [
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "BUSINESS",
+            "characteristicValue": null,
+            "characteristicCode": "ULTRASOUND"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "FCOA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMSE"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CSA_SERVICE_ENTITLEMENT",
+            "characteristicValue": null,
+            "characteristicCode": "FSL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CS_WINDOW_3",
+            "characteristicValue": null,
+            "characteristicCode": "W01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_02"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_03"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_28"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "IN_OS_RESPONSE_PROFILE",
+            "characteristicValue": null,
+            "characteristicCode": "IN1-OS_ND"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "220"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PARTS_DELIVERY_3",
+            "characteristicValue": null,
+            "characteristicCode": "NNBD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PRIORITY_RESPONSE",
+            "characteristicValue": null,
+            "characteristicCode": "PR1"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SERVICE_PROFILE_CM",
+            "characteristicValue": null,
+            "characteristicCode": "W01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC05"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOU01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_13"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_6"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_7"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_LC10"
+          }
+        ]
+      },
+      {
+        "customerPurchaseOrderNumber": "POTYPE_UPDAT",
+        "isCustomerPurchaseOrderNumberUpdated": null,
+        "lineType": "NON-POS",
+        "isBillingPeriodUpdated": null,
+        "isBillingBlockUpdated": null,
+        "isBillingDescUpdated": null,
+        "sapBusinessHoursName": "SERVICE_PROFILE_CM",
+        "sapBusinessHoursCode": "W12",
+        "sapPmBusinessHoursName": null,
+        "sapPmBusinessHoursCode": null,
+        "sapPriorityBusinessHoursName": null,
+        "sapPriorityBusinessHoursCode": null,
+        "sapPlannedMaintenanceName": "PM_COVERAGE_CON",
+        "sapPlannedMaintenanceCode": "PM_STD",
+        "sapAdditionalPmVisitsName": "PM_COVERAGE_CON",
+        "sapAdditionalPmVisitsCode": "PM_STD",
+        "sapUptimeName": "UPTIME",
+        "sapUptimeCode": "98_EXCL_PM",
+        "sapPartsDeliveryName": "PARTS_DELIVERY_3",
+        "sapPartsDeliveryCode": "ENBD",
+        "sapServiceLevelAgreementName": "IN_OS_RESPONSE_PROFILE",
+        "sapServiceLevelAgreementCode": "IN1-OS04",
+        "isPoTypeUpdated": null,
+        "isPmBusinessHoursUpdated": null,
+        "isBusinessHoursUpdated": null,
+        "isPriorityBusinessHoursUpdated": null,
+        "isMergeApplicable": null,
+        "isIsMergeApplicableUpdated": null,
+        "targetContractNumber": null,
+        "isTargetContractNumberUpdated": null,
+        "mergeStatus": null,
+        "mergedBy": null,
+        "serviceDateOverlapIndicator": null,
+        "isServiceDateOverlapIndicatorUpdated": null,
+        "isLineItemUpdated": null,
+        "isHigherLevelItem": "false",
+        "higherLevelItemNumber": "",
+        "productType": "SERVICES",
+        "productTypeDescription": "",
+        "businessPartnerRole": [
+          {
+            "businessPartnerId": "0094480394",
+            "businessPartnerRoleId": "SH",
+            "businessPartnerDescription": "Ship To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore New Rochelle Hospital",
+              "street1": "16 Guion Pl",
+              "city": "NEW ROCHELLE",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10801-5502",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094325701",
+            "businessPartnerRoleId": "SP",
+            "businessPartnerDescription": "Sold To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Medical Center",
+              "street1": "Corporate Blvd S",
+              "city": "Yonkers",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10701-6805",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "BP",
+            "businessPartnerDescription": "Bill To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "PY",
+            "businessPartnerDescription": "Payer",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          }
+        ],
+        "productDescription": "Protection",
+        "totalValueContractLineItem": "157633.33",
+        "productId": "C_CSA_PROTECT",
+        "featureId": "",
+        "contractLineItemNumber": "30",
+        "sourceSystemHeaderId": "NAM_DEV_RT_02",
+        "sourceSystemLineItemId": "a3a9cd34-df24-4212-a0d6-da5647d24537",
+        "isTechnicalObjectsUpdated": null,
+        "technicalObjects": [
+          {
+            "equipmentNumber": "73606190",
+            "mainEquipment": "true",
+            "materialCode": "781341",
+            "materialDescription": "Ingenia 1.5T",
+            "serialNumber": "84741",
+            "equipmentStatus": null
+          }
+        ],
+        "currency": "USD",
+        "profitCenter": null,
+        "contractLineStartDate": "2027-12-01",
+        "isContractStartDateUpdated": null,
+        "contractLineEndDate": "2034-07-31",
+        "isContractEndDateUpdated": null,
+        "customerAcceptanceDateLineItem": "2027-12-01",
+        "uom": "PCE",
+        "quantity": "1",
+        "pricingModel": "",
+        "price": "23645.00",
+        "priceType": "ZPYP",
+        "contractLineItemRefNumber": "",
+        "isPaymentTermsUpdated": null,
+        "paymentTerms": "ZB30",
+        "billingPlanType": "ZU",
+        "billingPeriod": "53",
+        "billingPlanRule": "Z1",
+        "billingInAdvance": "true",
+        "isBillingInAdvanceUpdated": null,
+        "billingBlock": null,
+        "billingBlockDesc": null,
+        "lineRejection": false,
+        "reasonForRejection": "",
+        "rejectionDescription": "",
+        "contractNumber": null,
+        "featureName": "",
+        "featureOptionId": "",
+        "featureOptionName": "",
+        "itemCategory": "",
+        "indexation": {
+          "isIndexationApplicable": false,
+          "indexUpliftStartDate": null,
+          "indexType": null,
+          "indexFormula": null,
+          "indexMonth": null,
+          "indexCustomerAcceptance": null,
+          "indexNoticePeriod": null,
+          "indexFixedDate": null,
+          "indexNotifyCustomer": null,
+          "indexInclLetter": null,
+          "indexCustConfirmation": null,
+          "sourceSystemHeaderId": "NAM_DEV_RT_02",
+          "sourceSystemLineItemId": "a3a9cd34-df24-4212-a0d6-da5647d24537"
+        },
+        "isTextsUpdated": null,
+        "texts": [],
+        "materialGroups": [],
+        "conditionGroups": [],
+        "servicePlan": "Protect MR NA",
+        "businessHoursName": "ESMX-USC-GMT-05:00-08:00-21:00 M-F",
+        "businessHoursCode": "W12",
+        "pmBusinessHoursName": "",
+        "pmBusinessHoursCode": "",
+        "priorityBusinessHoursName": null,
+        "priorityBusinessHoursCode": null,
+        "renewalTermName": "",
+        "renewalTermCode": "",
+        "plannedMaintenanceName": "PM_STD - Prevent./planned maint. (Std)",
+        "plannedMaintenanceCode": "PM_STD",
+        "additionalPmVisitsName": "",
+        "additionalPmVisitsCode": "PM_STD",
+        "customerExperienceNotes": "",
+        "uptimeName": "UPTIME",
+        "uptimeCode": "98",
+        "partsDeliveryName": "Next bus.day delivery time - Early morning",
+        "partsDeliveryCode": "",
+        "serviceLevelAgreementName": "SLA for 1 hr initial response time and 4 hrs onsite",
+        "serviceLevelAgreementCode": "IN1-OS4",
+        "serviceContract": {
+          "partsDiscounts": [
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "120 - MR cryogens",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "120"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "121 - MR refrigeration Syst.",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "121"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "122 - MR magnet insurance",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "122"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "220 - Software updates",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "220"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "250 - Replacable product",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "250"
+            }
+          ],
+          "includedServices": [
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "MR",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote"
+            },
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "MR",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Updates"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "APAS",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Clinical Application Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "CMAI",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Incident Work Time"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "PMAI",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Predictive / Preventative Work Time"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RMSE",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote Service"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RPCL",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Bench Repair"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "SWSU",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "TESU",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Technical Phone Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "TRAV",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Travel Time"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_13",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate travel"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_6",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate HW"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_7",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate SW"
+            }
+          ]
+        },
+        "systemModality": "MR",
+        "poType": "WARR",
+        "characteristicConfigurations": [
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "BUSINESS",
+            "characteristicValue": null,
+            "characteristicCode": "MR"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "ADMI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "APAS"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "APSE"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "BTRA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "CALQ"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "CMAI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "DGLA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "DIAG"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "FCOA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "FILL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "IN04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "MONI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PEAK"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PMAI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PTDP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMAD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMSE"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RPCL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RSNI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RTST"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SIOP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SPEC"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SSUP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SWSU"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "TESU"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "TRAV"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "UPGR"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "UTRA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "WAIT"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CSA_SERVICE_ENTITLEMENT",
+            "characteristicValue": null,
+            "characteristicCode": "FSL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CS_WINDOW_3",
+            "characteristicValue": null,
+            "characteristicCode": "W12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_02"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_09"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_11"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_28"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "IN_OS_RESPONSE_PROFILE",
+            "characteristicValue": null,
+            "characteristicCode": "IN1-OS04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "010"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "050"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "060"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "061"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "062"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "063"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "064"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "065"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "120"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "121"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "122"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "220"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "250"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PARTS_DELIVERY_3",
+            "characteristicValue": null,
+            "characteristicCode": "ENBD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PM_COVERAGE_CON",
+            "characteristicValue": null,
+            "characteristicCode": "PM_STD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PRIORITY_RESPONSE",
+            "characteristicValue": null,
+            "characteristicCode": "PR1"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SERVICE_PROFILE_CM",
+            "characteristicValue": null,
+            "characteristicCode": "W12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01A"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01B"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC05"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC07"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOU01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "61600125"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "65900124"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "77300052"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "77300053"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_13"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_6"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_7"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_LC20"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "UPTIME",
+            "characteristicValue": "98",
+            "characteristicCode": "98_EXCL_PM"
+          }
+        ]
+      },
+      {
+        "customerPurchaseOrderNumber": "POTYPE_UPDAT",
+        "isCustomerPurchaseOrderNumberUpdated": null,
+        "lineType": "NON-POS",
+        "isBillingPeriodUpdated": null,
+        "isBillingBlockUpdated": null,
+        "isBillingDescUpdated": null,
+        "sapBusinessHoursName": "SERVICE_PROFILE_CM",
+        "sapBusinessHoursCode": "W01",
+        "sapPmBusinessHoursName": null,
+        "sapPmBusinessHoursCode": null,
+        "sapPriorityBusinessHoursName": null,
+        "sapPriorityBusinessHoursCode": null,
+        "sapPlannedMaintenanceName": "PM_COVERAGE_CON",
+        "sapPlannedMaintenanceCode": "PM_STD",
+        "sapAdditionalPmVisitsName": "PM_COVERAGE_CON",
+        "sapAdditionalPmVisitsCode": "PM_STD",
+        "sapUptimeName": null,
+        "sapUptimeCode": null,
+        "sapPartsDeliveryName": "PARTS_DELIVERY_3",
+        "sapPartsDeliveryCode": "NNBD",
+        "sapServiceLevelAgreementName": "IN_OS_RESPONSE_PROFILE",
+        "sapServiceLevelAgreementCode": "IN2-OS_ND",
+        "isPoTypeUpdated": null,
+        "isPmBusinessHoursUpdated": null,
+        "isBusinessHoursUpdated": null,
+        "isPriorityBusinessHoursUpdated": null,
+        "isMergeApplicable": null,
+        "isIsMergeApplicableUpdated": null,
+        "targetContractNumber": null,
+        "isTargetContractNumberUpdated": null,
+        "mergeStatus": null,
+        "mergedBy": null,
+        "serviceDateOverlapIndicator": null,
+        "isServiceDateOverlapIndicatorUpdated": null,
+        "isLineItemUpdated": null,
+        "isHigherLevelItem": "false",
+        "higherLevelItemNumber": "",
+        "productType": "SERVICES",
+        "productTypeDescription": "",
+        "businessPartnerRole": [
+          {
+            "businessPartnerId": "0094053929",
+            "businessPartnerRoleId": "SH",
+            "businessPartnerDescription": "Ship To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Medical Center",
+              "street1": "Corporate Blvd S",
+              "city": "Yonkers",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10701-6805",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094325701",
+            "businessPartnerRoleId": "SP",
+            "businessPartnerDescription": "Sold To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Medical Center",
+              "street1": "Corporate Blvd S",
+              "city": "Yonkers",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10701-6805",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "BP",
+            "businessPartnerDescription": "Bill To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "PY",
+            "businessPartnerDescription": "Payer",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          }
+        ],
+        "productDescription": "Value Limited",
+        "totalValueContractLineItem": "116000.00",
+        "productId": "C_CSA_VALUE_LTD",
+        "featureId": "",
+        "contractLineItemNumber": "40",
+        "sourceSystemHeaderId": "NAM_DEV_RT_02",
+        "sourceSystemLineItemId": "9048dc1a-168c-4ac3-8918-af82282a083e",
+        "isTechnicalObjectsUpdated": null,
+        "technicalObjects": [
+          {
+            "equipmentNumber": "51635472",
+            "mainEquipment": "true",
+            "materialCode": "795052",
+            "materialDescription": "iE33 Ultrasound System",
+            "serialNumber": "B00DTP",
+            "equipmentStatus": null
+          }
+        ],
+        "currency": "USD",
+        "profitCenter": null,
+        "contractLineStartDate": "2027-12-01",
+        "isContractStartDateUpdated": null,
+        "contractLineEndDate": "2034-07-31",
+        "isContractEndDateUpdated": null,
+        "customerAcceptanceDateLineItem": "2027-12-01",
+        "uom": "PCE",
+        "quantity": "1",
+        "pricingModel": "",
+        "price": "17400.00",
+        "priceType": "ZPYP",
+        "contractLineItemRefNumber": "",
+        "isPaymentTermsUpdated": null,
+        "paymentTerms": "ZB30",
+        "billingPlanType": "ZU",
+        "billingPeriod": "53",
+        "billingPlanRule": "Z1",
+        "billingInAdvance": "true",
+        "isBillingInAdvanceUpdated": null,
+        "billingBlock": null,
+        "billingBlockDesc": null,
+        "lineRejection": false,
+        "reasonForRejection": "",
+        "rejectionDescription": "",
+        "contractNumber": null,
+        "featureName": "",
+        "featureOptionId": "",
+        "featureOptionName": "",
+        "itemCategory": "",
+        "indexation": {
+          "isIndexationApplicable": false,
+          "indexUpliftStartDate": null,
+          "indexType": null,
+          "indexFormula": null,
+          "indexMonth": null,
+          "indexCustomerAcceptance": null,
+          "indexNoticePeriod": null,
+          "indexFixedDate": null,
+          "indexNotifyCustomer": null,
+          "indexInclLetter": null,
+          "indexCustConfirmation": null,
+          "sourceSystemHeaderId": "NAM_DEV_RT_02",
+          "sourceSystemLineItemId": "9048dc1a-168c-4ac3-8918-af82282a083e"
+        },
+        "isTextsUpdated": null,
+        "texts": [],
+        "materialGroups": [],
+        "conditionGroups": [],
+        "servicePlan": "Value UL LTD NA",
+        "businessHoursName": "ESMX-USC-GMT-05:00-08:00-17:00 M-F",
+        "businessHoursCode": "W01",
+        "pmBusinessHoursName": "",
+        "pmBusinessHoursCode": "",
+        "priorityBusinessHoursName": null,
+        "priorityBusinessHoursCode": null,
+        "renewalTermName": "",
+        "renewalTermCode": "",
+        "plannedMaintenanceName": "PM_STD - Prevent./planned maint. (Std)",
+        "plannedMaintenanceCode": "PM_STD",
+        "additionalPmVisitsName": "",
+        "additionalPmVisitsCode": "PM_STD",
+        "customerExperienceNotes": "",
+        "uptimeName": "",
+        "uptimeCode": "",
+        "partsDeliveryName": "Next bus. day delivery time",
+        "partsDeliveryCode": "",
+        "serviceLevelAgreementName": "SLA for 2 hr initial response time and onsite Next Day",
+        "serviceLevelAgreementCode": "IN2-OSND",
+        "serviceContract": {
+          "partsDiscounts": [
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "220 - Software updates",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "220"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "250 - Replacable product",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "250"
+            },
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "260 - Printer",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "260"
+            }
+          ],
+          "includedServices": [
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "ULTRASOUND",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote"
+            },
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "ULTRASOUND",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Updates"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "APAS",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Clinical Application Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "CMAI",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Incident Work Time"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "PMAI",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Predictive / Preventative Work Time"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RMSE",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote Service"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RPCL",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Bench Repair"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "SWSU",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "TESU",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Technical Phone Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "TRAV",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Travel Time"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_13",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate travel"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_6",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate HW"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_7",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate SW"
+            }
+          ]
+        },
+        "systemModality": "US",
+        "poType": "WARR",
+        "characteristicConfigurations": [
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "BUSINESS",
+            "characteristicValue": null,
+            "characteristicCode": "ULTRASOUND"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "ADMI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "APAS"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "BTRA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "CALQ"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "CMAI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "DIAG"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "FCOA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "IN04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "MONI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PEAK"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PMAI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PTDP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMAD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMSE"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RPCL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RSNI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RTST"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SIOP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SPEC"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SSUP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SWSU"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "TESU"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "TRAV"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "UPGR"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "UTRA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "WAIT"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CS_WINDOW_3",
+            "characteristicValue": null,
+            "characteristicCode": "W01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_24"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_28"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "IN_OS_RESPONSE_PROFILE",
+            "characteristicValue": null,
+            "characteristicCode": "IN2-OS_ND"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "010"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "050"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "220"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "250"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "260"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PARTS_DELIVERY_3",
+            "characteristicValue": null,
+            "characteristicCode": "NNBD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PM_COVERAGE_CON",
+            "characteristicValue": null,
+            "characteristicCode": "PM_STD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PRIORITY_RESPONSE",
+            "characteristicValue": null,
+            "characteristicCode": "PR1"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SERVICE_PROFILE_CM",
+            "characteristicValue": null,
+            "characteristicCode": "W01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01B"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC07"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOU01"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "61600125"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "65900124"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "77300052"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "77300053"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_101"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_102"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_127"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_13"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_6"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_7"
+          }
+        ]
+      },
+      {
+        "customerPurchaseOrderNumber": "POTYPE_UPDAT",
+        "isCustomerPurchaseOrderNumberUpdated": null,
+        "lineType": "NON-POS",
+        "isBillingPeriodUpdated": null,
+        "isBillingBlockUpdated": null,
+        "isBillingDescUpdated": null,
+        "sapBusinessHoursName": "SERVICE_PROFILE_CM",
+        "sapBusinessHoursCode": "W12",
+        "sapPmBusinessHoursName": null,
+        "sapPmBusinessHoursCode": null,
+        "sapPriorityBusinessHoursName": null,
+        "sapPriorityBusinessHoursCode": null,
+        "sapPlannedMaintenanceName": "PM_COVERAGE_CON",
+        "sapPlannedMaintenanceCode": "PM_STD",
+        "sapAdditionalPmVisitsName": "PM_COVERAGE_CON",
+        "sapAdditionalPmVisitsCode": "PM_STD",
+        "sapUptimeName": "UPTIME",
+        "sapUptimeCode": "98_EXCL_PM",
+        "sapPartsDeliveryName": "PARTS_DELIVERY_3",
+        "sapPartsDeliveryCode": "ENBD",
+        "sapServiceLevelAgreementName": "IN_OS_RESPONSE_PROFILE",
+        "sapServiceLevelAgreementCode": "IN1-OS04",
+        "isPoTypeUpdated": null,
+        "isPmBusinessHoursUpdated": null,
+        "isBusinessHoursUpdated": null,
+        "isPriorityBusinessHoursUpdated": null,
+        "isMergeApplicable": null,
+        "isIsMergeApplicableUpdated": null,
+        "targetContractNumber": null,
+        "isTargetContractNumberUpdated": null,
+        "mergeStatus": null,
+        "mergedBy": null,
+        "serviceDateOverlapIndicator": null,
+        "isServiceDateOverlapIndicatorUpdated": null,
+        "isLineItemUpdated": null,
+        "isHigherLevelItem": "false",
+        "higherLevelItemNumber": "",
+        "productType": "SERVICES",
+        "productTypeDescription": "",
+        "businessPartnerRole": [
+          {
+            "businessPartnerId": "0094053929",
+            "businessPartnerRoleId": "SH",
+            "businessPartnerDescription": "Ship To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Medical Center",
+              "street1": "Corporate Blvd S",
+              "city": "Yonkers",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10701-6805",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094325701",
+            "businessPartnerRoleId": "SP",
+            "businessPartnerDescription": "Sold To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Medical Center",
+              "street1": "Corporate Blvd S",
+              "city": "Yonkers",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10701-6805",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "BP",
+            "businessPartnerDescription": "Bill To",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          },
+          {
+            "businessPartnerId": "0094511876",
+            "businessPartnerRoleId": "PY",
+            "businessPartnerDescription": "Payer",
+            "address": {
+              "isStreet1Updated": null,
+              "isTelephoneNumberUpdated": null,
+              "businessPartnerName": "Montefiore Einstein Advanced Care",
+              "street1": "S Broadway",
+              "city": "Tarrytown",
+              "region": "NY",
+              "country": "US",
+              "postalCode": "10591-6301",
+              "timezone": null,
+              "telephoneNumber": "",
+              "isPostalCodeUpdated": null
+            },
+            "timezone": null,
+            "version": "37",
+            "isBusinessPartnerRoleUpdated": null,
+            "isBusinessPartnerIdUpdated": null,
+            "isAddressUpdated": null,
+            "isTimezoneUpdated": null
+          }
+        ],
+        "productDescription": "Protection",
+        "totalValueContractLineItem": "0.00",
+        "productId": "C_CSA_PROTECT",
+        "featureId": "",
+        "contractLineItemNumber": "50",
+        "sourceSystemHeaderId": "NAM_DEV_RT_02",
+        "sourceSystemLineItemId": "ed463c86-4388-425d-aa2e-19728fa7f0f2",
+        "isTechnicalObjectsUpdated": null,
+        "technicalObjects": [
+          {
+            "equipmentNumber": "1390529",
+            "mainEquipment": "true",
+            "materialCode": "530651",
+            "materialDescription": "26 - 150 kVA UPS",
+            "serialNumber": "EH092CBC01",
+            "equipmentStatus": null
+          }
+        ],
+        "currency": "USD",
+        "profitCenter": null,
+        "contractLineStartDate": "2027-12-01",
+        "isContractStartDateUpdated": null,
+        "contractLineEndDate": "2034-07-31",
+        "isContractEndDateUpdated": null,
+        "customerAcceptanceDateLineItem": "2027-12-01",
+        "uom": "PCE",
+        "quantity": "1",
+        "pricingModel": "",
+        "price": "9500.00",
+        "priceType": "ZPYP",
+        "contractLineItemRefNumber": "",
+        "isPaymentTermsUpdated": null,
+        "paymentTerms": "ZB30",
+        "billingPlanType": "ZU",
+        "billingPeriod": "53",
+        "billingPlanRule": "Z1",
+        "billingInAdvance": "true",
+        "isBillingInAdvanceUpdated": null,
+        "billingBlock": null,
+        "billingBlockDesc": null,
+        "lineRejection": false,
+        "reasonForRejection": "",
+        "rejectionDescription": "",
+        "contractNumber": null,
+        "featureName": "",
+        "featureOptionId": "",
+        "featureOptionName": "",
+        "itemCategory": "",
+        "indexation": {
+          "isIndexationApplicable": false,
+          "indexUpliftStartDate": null,
+          "indexType": null,
+          "indexFormula": null,
+          "indexMonth": null,
+          "indexCustomerAcceptance": null,
+          "indexNoticePeriod": null,
+          "indexFixedDate": null,
+          "indexNotifyCustomer": null,
+          "indexInclLetter": null,
+          "indexCustConfirmation": null,
+          "sourceSystemHeaderId": "NAM_DEV_RT_02",
+          "sourceSystemLineItemId": "ed463c86-4388-425d-aa2e-19728fa7f0f2"
+        },
+        "isTextsUpdated": null,
+        "texts": [],
+        "materialGroups": [],
+        "conditionGroups": [],
+        "servicePlan": "Protect MV NA",
+        "businessHoursName": "ESMX-USC-GMT-05:00-08:00-21:00 M-F",
+        "businessHoursCode": "W12",
+        "pmBusinessHoursName": "",
+        "pmBusinessHoursCode": "",
+        "priorityBusinessHoursName": null,
+        "priorityBusinessHoursCode": null,
+        "renewalTermName": "",
+        "renewalTermCode": "",
+        "plannedMaintenanceName": "PM_STD - Prevent./planned maint. (Std)",
+        "plannedMaintenanceCode": "PM_STD",
+        "additionalPmVisitsName": "",
+        "additionalPmVisitsCode": "PM_STD",
+        "customerExperienceNotes": "",
+        "uptimeName": "UPTIME",
+        "uptimeCode": "98",
+        "partsDeliveryName": "Next bus.day delivery time - Early morning",
+        "partsDeliveryCode": "",
+        "serviceLevelAgreementName": "SLA for 1 hr initial response time and 4 hrs onsite",
+        "serviceLevelAgreementCode": "IN1-OS4",
+        "serviceContract": {
+          "partsDiscounts": [
+            {
+              "partsDiscount": null,
+              "partsDiscountCode": null,
+              "discountDescription": "250 - Replacable product",
+              "isDeleted": null,
+              "discountValue": "100",
+              "sapPartsDiscountName": "MATERIALS_COVERED",
+              "sapPartsDiscountCode": "250"
+            }
+          ],
+          "includedServices": [
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "MVS",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote"
+            },
+            {
+              "sapIncludedServiceName": "BUSINESS",
+              "sapIncludedServiceCode": "MVS",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Updates"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "APAS",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Clinical Application Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "CMAI",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Incident Work Time"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "PMAI",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Predictive / Preventative Work Time"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RMSE",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Remote Service"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "RPCL",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Bench Repair"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "SWSU",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Software Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "TESU",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Technical Phone Support"
+            },
+            {
+              "sapIncludedServiceName": "ACTIVITIES_COVERED",
+              "sapIncludedServiceCode": "TRAV",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Travel Time"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_13",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate travel"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_6",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate HW"
+            },
+            {
+              "sapIncludedServiceName": "T_M_DISCOUNTS_3",
+              "sapIncludedServiceCode": "TMD_7",
+              "serviceValue": "100",
+              "includedServiceCode": null,
+              "isDeleted": null,
+              "serviceType": null,
+              "serviceName": "Overtime prefered rate SW"
+            }
+          ]
+        },
+        "systemModality": "MV",
+        "poType": "WARR",
+        "characteristicConfigurations": [
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "BUSINESS",
+            "characteristicValue": null,
+            "characteristicCode": "MVS"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "ADMI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "APAS"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "APSE"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "BTRA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "CALQ"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "CMAI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "DGLA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "DIAG"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "FCOA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "FILL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "IN04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "MONI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PEAK"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PMAI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "PTDP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMAD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RMSE"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RPCL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RSNI"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "RTST"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SIOP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SPEC"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SSUP"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "SWSU"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "TESU"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "TRAV"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "UPGR"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "UTRA"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "ACTIVITIES_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "WAIT"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CSA_SERVICE_ENTITLEMENT",
+            "characteristicValue": null,
+            "characteristicCode": "FSL"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "CS_WINDOW_3",
+            "characteristicValue": null,
+            "characteristicCode": "W12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_02"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "EXTRA_COVERAGE_3",
+            "characteristicValue": null,
+            "characteristicCode": "EXTRACOV_09"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "IN_OS_RESPONSE_PROFILE",
+            "characteristicValue": null,
+            "characteristicCode": "IN1-OS04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "010"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "050"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "MATERIALS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "250"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PARTS_DELIVERY_3",
+            "characteristicValue": null,
+            "characteristicCode": "ENBD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PM_COVERAGE_CON",
+            "characteristicValue": null,
+            "characteristicCode": "PM_STD"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "PRIORITY_RESPONSE",
+            "characteristicValue": null,
+            "characteristicCode": "PR1"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SERVICE_PROFILE_CM",
+            "characteristicValue": null,
+            "characteristicCode": "W12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01A"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC01B"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC04"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC05"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "SOFTWARE_SUPPORT_3",
+            "characteristicValue": null,
+            "characteristicCode": "SOC07"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "61600125"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "65900124"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "77300052"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "THIRD_P_COSTS_COVERED",
+            "characteristicValue": null,
+            "characteristicCode": "77300053"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_12"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_13"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_6"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_7"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "T_M_DISCOUNTS_3",
+            "characteristicValue": null,
+            "characteristicCode": "TMD_LC20"
+          },
+          {
+            "featureName": null,
+            "featureCode": null,
+            "characteristicName": "UPTIME",
+            "characteristicValue": "98",
+            "characteristicCode": "98_EXCL_PM"
+          }
+        ]
       }
     ],
     "contractCreationStatus": "VALIDATION",
-    "distributionChannel": "NL",
-    "sourceSystemHeaderId": "ITAAP_JAPAN_T2_00017",
-    "version": "0",
-    "updatedBy": null,
-    "dateFormat": "MM/dd/yyyy",
-    "currencyFormat": "$###.###.###,##",
-    "csbrNumber": null,
-    "customerGroups": [
-      {
-        "number": "4",
-        "id": "009",
-        "description": "Med. Direct checked"
-      },
-      {
-        "number": "5",
-        "id": "E1",
-        "description": " Print, 1 copy"
-      }
-    ],
-    "conditionGroups": [
-      {
-        "number": "1",
-        "id": "G4",
-        "description": "Chapter Nett + Total"
-      }
-    ],
+    "distributionChannel": "US",
+    "sourceSystemHeaderId": "NAM_DEV_RT_02",
+    "version": "37",
+    "updatedBy": "partner.Raubinsh.Arya@philips.com",
+    "dateFormat": "MM-dd-yyyy",
+    "currencyFormat": "$#,##0.00",
+    "csbrNumber": "CSBR-106722",
+    "customerGroups": [],
+    "conditionGroups": [],
     "isSimulation": "TRUE",
-    "simulationStatus": "IN_PROGRESS",
+    "simulationStatus": "FAILURE",
     "simulationErrorLogs": {
       "successLogs": [],
-      "errorLogs": [],
-      "warningLogs": [],
-      "infoLogs": null
+      "errorLogs": [
+        {
+          "TYPE": "E",
+          "ID": "VP200",
+          "NUMBER": 200,
+          "MESSAGE": "No customer master record exists for customer 94511876",
+          "MESSAGE_V1": "94511876",
+          "PARAMETER": "SALES_HEADER_IN",
+          "SYSTEM": "MD4_990",
+          "MESSAGE_V2": null,
+          "ROW": 0,
+          "MESSAGE_V3": null,
+          "MESSAGE_V4": null
+        },
+        {
+          "TYPE": "E",
+          "ID": "V4219",
+          "NUMBER": 219,
+          "MESSAGE": "Sales document  was not changed",
+          "MESSAGE_V1": null,
+          "PARAMETER": null,
+          "SYSTEM": "MD4_990",
+          "MESSAGE_V2": null,
+          "ROW": 0,
+          "MESSAGE_V3": null,
+          "MESSAGE_V4": null
+        }
+      ],
+      "warningLogs": [
+        {
+          "TYPE": "W",
+          "ID": "V1",
+          "NUMBER": 555,
+          "MESSAGE": "The sales document is not yet complete: Edit data",
+          "MESSAGE_V1": "94511876",
+          "PARAMETER": "VBUVKOM",
+          "SYSTEM": "MD4_990",
+          "MESSAGE_V2": null,
+          "ROW": 0,
+          "MESSAGE_V3": null,
+          "MESSAGE_V4": null
+        }
+      ],
+      "infoLogs": [
+        {
+          "TYPE": "I",
+          "ID": "ZSD_CON",
+          "NUMBER": 43,
+          "MESSAGE": "Equipment 000000000052022168 in item no. 000020 is invalid",
+          "MESSAGE_V1": "000000000052022168",
+          "PARAMETER": null,
+          "SYSTEM": null,
+          "MESSAGE_V2": "000020",
+          "ROW": 0,
+          "MESSAGE_V3": null,
+          "MESSAGE_V4": null
+        },
+        {
+          "TYPE": "I",
+          "ID": "ZSD_CON",
+          "NUMBER": 43,
+          "MESSAGE": "Equipment 000000000073606190 in item no. 000030 is invalid",
+          "MESSAGE_V1": "000000000073606190",
+          "PARAMETER": null,
+          "SYSTEM": null,
+          "MESSAGE_V2": "000030",
+          "ROW": 0,
+          "MESSAGE_V3": null,
+          "MESSAGE_V4": null
+        },
+        {
+          "TYPE": "I",
+          "ID": "ZSD_CON",
+          "NUMBER": 43,
+          "MESSAGE": "Equipment 000000000001390529 in item no. 000050 is invalid",
+          "MESSAGE_V1": "000000000001390529",
+          "PARAMETER": null,
+          "SYSTEM": null,
+          "MESSAGE_V2": "000050",
+          "ROW": 0,
+          "MESSAGE_V3": null,
+          "MESSAGE_V4": null
+        }
+      ]
     },
-    "simulationTimestamp": "2024-09-13T11:23:17.350+00:00",
-    "simulationVersion": "0",
-    "simulatedBy": "partner.manoj.muddu@philips.com",
-    "recordTimestamp": "2024-09-13T11:10:17.252+00:00",
+    "simulationTimestamp": "2024-10-17T11:19:13.273+00:00",
+    "simulationVersion": "36",
+    "simulatedBy": "partner.Raubinsh.Arya@philips.com",
+    "recordTimestamp": "2024-09-27T09:28:32.964+00:00",
     "contractCreationInCompletionLogs": null,
     "headerOverlapIndicator": null,
     "isHeaderOverlapIndicatorUpdated": null,
     "overlapUrl": null,
     "downloadUrl": null,
     "partialIndicator": null,
-    "isMergeApplicable": null,
+    "isMergeApplicable": "true",
     "isIsMergeApplicableUpdated": null,
     "targetContractNumber": null,
     "isTargetContractNumberUpdated": null
   },
   "rsmDetails": [],
   "APIHeader": {
-    "correlationId": null,
-    "recordName": null,
-    "recordId": null,
+    "correlationId": "67620c68-6a18-4515-b023-b8a4097ec1b8",
+    "recordName": "",
+    "recordId": "",
     "consumer": null,
-    "provider": "SOFON",
+    "provider": "NAM ZCSS AUTOMATION",
     "consumerTimestamp": null,
     "testMode": null,
     "info1": null,
     "info2": null,
-    "info3": "ZCQ",
+    "info3": "ZCSS",
     "itemCategory": null,
     "reasonForRejection": null
   }

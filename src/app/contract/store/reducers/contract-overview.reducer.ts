@@ -12,6 +12,9 @@ import {
   fetchPartnerDetailsCancel,
   fetchPartnerDetailsFailed,
   fetchPartnerDetailsSuccess,
+  requestSimulation,
+  requestSimulationFailed,
+  requestSimulationSuccess,
   resetOverview,
   updateOverview,
 } from '../actions/contract-overview.action';
@@ -21,16 +24,19 @@ import {
   queryAndUpdateJSON,
   updateJSON,
 } from '../../../../utils';
+import { SimulationResponseType } from '../../models/SimulationResponse.model';
 
 export interface ContractOverviewState {
   overview: QuoteDetailsType;
   original: QuoteDetailsType;
   error: string | null;
   loading: boolean;
+  simulationLoading: boolean;
   partnerLoading: boolean;
   equipmentLoading: boolean;
   equipmentFetchError: string | null;
   partnerFetchError: string | null;
+  simulationResponse: SimulationResponseType | null;
 }
 
 export const initialState: ContractOverviewState = {
@@ -38,10 +44,12 @@ export const initialState: ContractOverviewState = {
   original: {} as QuoteDetailsType,
   error: null,
   loading: false,
+  simulationLoading: false,
   partnerLoading: false,
   equipmentLoading: false,
   partnerFetchError: null,
   equipmentFetchError: null,
+  simulationResponse: null,
 };
 
 export const contractOverviewReducer = createImmerReducer(
@@ -109,6 +117,19 @@ export const contractOverviewReducer = createImmerReducer(
   }),
   on(fetchPartnerDetailsCancel, (state) => {
     state.equipmentLoading = false;
+    return state;
+  }),
+  on(requestSimulation, (state) => {
+    state.simulationLoading = true;
+    return state;
+  }),
+  on(requestSimulationSuccess, (state, { simulationResponse }) => {
+    state.simulationLoading = false;
+    state.simulationResponse = simulationResponse;
+    return state;
+  }),
+  on(requestSimulationFailed, (state) => {
+    state.simulationLoading = false;
     return state;
   })
 );

@@ -2,6 +2,7 @@ import { createAction, props } from '@ngrx/store';
 import { QuoteDetailsType } from '../../models/contract-overview.model';
 import { PartnerResponseType } from '../../models/partner-response.model';
 import { EquipmentType } from '../../models/equipment.model';
+import { SimulationResponseType } from '../../models/SimulationResponse.model';
 
 export interface PartnerPayload {
   customer: string;
@@ -20,6 +21,10 @@ export interface EquipmentPayload {
   division: string;
   soldTo: string;
   idx?: number;
+}
+
+export interface SimulationPayload {
+  payload: QuoteDetailsType;
 }
 
 export const fetchContractOverview = createAction(
@@ -80,6 +85,23 @@ export const fetchEquipmentCancel = createAction(
 );
 
 // Equipment block End
+
+// Simulation
+// Equipments
+export const requestSimulation = createAction(
+  '[CONTRACT][OVERVIEW][REQUEST][SIMULATION] REQUEST SIMULATION',
+  props<{ payload: SimulationPayload }>()
+);
+
+export const requestSimulationSuccess = createAction(
+  '[CONTRACT][OVERVIEW][REQUEST][SIMULATION][SUCCESS] REQUEST SIMULATION SUCCESS',
+  props<{ simulationResponse: SimulationResponseType }>()
+);
+
+export const requestSimulationFailed = createAction(
+  '[CONTRACT][OVERVIEW][REQUEST][SIMULATION][FAILED] REQUEST SIMULATION FAILED',
+  props<{ error: string }>()
+);
 
 export const updateOverview = createAction(
   '[CONTRACT][OVERVIEW][UPDATE][HEADER] UPDATE HEADER',

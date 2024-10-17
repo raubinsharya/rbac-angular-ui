@@ -39,6 +39,10 @@ export const selectPartnerLoading = createSelector(
   selectContractState,
   (state) => state.overview.partnerLoading
 );
+export const selectSimulationLoading = createSelector(
+  selectContractState,
+  (state) => state.overview.simulationLoading
+);
 
 export const selectEquipmentLoading = createSelector(
   selectContractState,
@@ -78,6 +82,20 @@ export const selectContractOverviewLineItemPartner = (idx: number) =>
       state.overview.overview.commercialContract?.contractLineItems?.at(idx)
         ?.businessPartnerRole
   );
+
+export const selectContractOverviewLineIsHeaderUpdated = (idx: number) =>
+  createSelector(selectContractState, (state) => {
+    const lineItem =
+      state.overview.overview.commercialContract?.contractLineItems?.at(idx);
+    return (
+      lineItem?.isContractLineStartDateUpdated === 'Yes' ||
+      lineItem?.isContractLineEndDateUpdated === 'Yes' ||
+      lineItem?.isPoTypeUpdated === 'Yes' ||
+      lineItem?.isCustomerPurchaseOrderNumberUpdated === 'Yes' ||
+      lineItem?.isPaymentTermsUpdated === 'Yes' ||
+      lineItem?.isBillingPeriodUpdated === 'Yes'
+    );
+  });
 
 export const selectContractOverviewLineIsBusinesspartnerRoleUpdated = (
   idx: number

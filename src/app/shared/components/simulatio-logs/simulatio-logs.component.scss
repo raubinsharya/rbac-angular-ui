@@ -29,6 +29,10 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 0.5rem;
+  .accordian {
+    max-height: 31rem;
+    width: 100%;
+  }
   & p {
     color: #337fbf;
     font-size: 0.7rem;

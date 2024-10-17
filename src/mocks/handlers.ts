@@ -17,12 +17,12 @@ export const handlers = [
   //     return HttpResponse.json(DueListResponse);
   //   }
   // ),
-  // http.post(
-  //   `${environment.BASE_PATH}/qqoperator/quotedetails`,
-  //   () => {
-  //     return HttpResponse.json(QuoteDetailResponse);
-  //   }
-  // ),
+  http.post(
+    `${environment.BASE_PATH}/qqoperator/quotedetails`,
+    () => {
+      return HttpResponse.json(QuoteDetailResponse);
+    }
+  ),
   // http.post(
   //   `${environment.BASE_PATH}/qqvalidator/validate`,
   //   () => {
