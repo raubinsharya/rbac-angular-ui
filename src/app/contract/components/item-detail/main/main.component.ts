@@ -21,6 +21,9 @@ import {
   requestSimulation,
 } from '../../../store/actions/contract-overview.action';
 import { isEmpty } from 'lodash';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationService } from '../../../../services/notification.service';
+import { BookingDialogComponent } from '../../../../shared/components/booking-dialog/booking-dialog.component';
 
 @Component({
   selector: 'app-main',
@@ -34,7 +37,12 @@ export class ContractItemDetailsMainComponent {
   public loading!: boolean;
   public error!: any;
 
-  constructor(private store: Store, private route: ActivatedRoute) {
+  constructor(
+    private store: Store,
+    private route: ActivatedRoute,
+    private dialog: MatDialog,
+    private notification: NotificationService
+  ) {
     this.store
       .select(selectContractOverview)
       .subscribe((result) => (this.overview = result));
@@ -83,5 +91,16 @@ export class ContractItemDetailsMainComponent {
         },
       })
     );
+  }
+  public handleBooking() {
+    const dialogRef = this.dialog.open(BookingDialogComponent, {
+      minWidth: '500px',
+      minHeight: '300px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.notification.showSuccess('Contract Sent to SAP');
+      }
+    });
   }
 }
