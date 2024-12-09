@@ -49,6 +49,15 @@ export class UserManagementApiService {
       )
       .pipe(catchError(this.handleError));
   }
+  public createUser(email: string): Observable<any> {
+    return this.http
+      .post<any>(`${this.baseUrl}/user-management/employee`, {
+        email: email,
+        code1: '32100035',
+        sailpointAccessId: '83747AB',
+      })
+      .pipe(catchError(this.handleError));
+  }
   public addRolesToUser(
     roleIDs: Array<number>,
     email: string

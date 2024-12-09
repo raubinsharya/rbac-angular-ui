@@ -7,6 +7,7 @@ import {
   filter,
   map,
   mergeMap,
+  switchMap,
   toArray,
 } from 'rxjs/operators';
 import { concat, from, of, throwError } from 'rxjs';
@@ -15,6 +16,7 @@ import {
   addRolesToUserFailure,
   addRolesToUserSuccess,
   closeViewUserRoleDialog,
+  createUser,
   fetchRoles,
   fetchRolesFailure,
   fetchRoleSuccess,
@@ -41,7 +43,7 @@ export class UserManagementEffects {
   loadUsersLists$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fetchUsers),
-      mergeMap(({ applicationId }) =>
+      switchMap(({ applicationId }) =>
         this.userManagementService.fetchUsers(applicationId).pipe(
           map((usersList) => fetchUsersSuccess({ usersList })),
           catchError((error) => of(fetchUsersFailure({ error: error.message })))
@@ -52,10 +54,31 @@ export class UserManagementEffects {
   loadUsersRoles$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fetchRoles),
-      mergeMap(({ applicationId }) =>
+      switchMap(({ applicationId }) =>
         this.userManagementService.fetchRoles(applicationId).pipe(
           map((roles) => fetchRoleSuccess({ roles })),
           catchError((error) => of(fetchRolesFailure({ error: error.message })))
+        )
+      )
+    )
+  );
+
+  saveEmployee$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(createUser),
+      filter(({ roleIDs, email }) => !isEmpty(roleIDs) && !isEmpty(email)),
+      switchMap(({ roleIDs, email }) =>
+        this.userManagementService.createUser(email).pipe(
+          concatMap(() => {
+            this.notification.showSuccess('User Creation successful!', email);
+            return [addRolesToUser({ email: email, roleIDs }), fetchUsers({})];
+          }),
+          catchError((error) =>
+            of(
+              addRolesToUserFailure({ error: error.message }),
+              resetSaveButtonUserRoleDialog()
+            )
+          )
         )
       )
     )
@@ -93,7 +116,7 @@ export class UserManagementEffects {
     this.actions$.pipe(
       ofType(removeRolesToUser),
       filter(({ roleIDs, email }) => !isEmpty(roleIDs) && !isEmpty(email)),
-      mergeMap(({ roleIDs, email }) =>
+      switchMap(({ roleIDs, email }) =>
         from(roleIDs).pipe(
           concatMap((roleID) =>
             this.userManagementService.removeRoleToUser(roleID, email).pipe(

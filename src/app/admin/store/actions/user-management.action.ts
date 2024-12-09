@@ -33,6 +33,20 @@ export const fetchUsersFailure = createAction(
   '[USERMANAGEMENT][USERS] Fetch USERS Failure',
   props<{ error: string }>()
 );
+
+// create user
+export const createUser = createAction(
+  '[USERMANAGEMENT][CREATE][USER] CREATE USER',
+  props<{ email: string; roleIDs: Array<number> }>()
+);
+export const createUserSuccess = createAction(
+  '[USERMANAGEMENT][CREATE][USER][SUCCESS] CREATE USER SUCCESS',
+  props<{ createUserResponse: RoleAddResponse }>()
+);
+export const createUserFailure = createAction(
+  '[USERMANAGEMENT][CREATE][USER][FAILURE] CREATE USER FAILURE',
+  props<{ error: string }>()
+);
 // ADD ROLES TO USER
 export const addRolesToUser = createAction(
   '[USERMANAGEMENT][ROLES][ADD] ADD ROLES',

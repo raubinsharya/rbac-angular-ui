@@ -4,7 +4,10 @@ import { AddRoleDialogColDefs } from './colDefs.service';
 import { ColDef } from 'ag-grid-community';
 import { RoleType } from '../../model/role.model';
 import { selectUsersRoles } from '../../store/selectors/user-list.selector';
-import { addRolesToUser } from '../../store/actions/user-management.action';
+import {
+  addRolesToUser,
+  createUser,
+} from '../../store/actions/user-management.action';
 import { ErrorStateMatcher } from '@angular/material/core';
 import {
   FormControl,
@@ -58,7 +61,7 @@ export class AddUserDialogComponent {
   handleAdd() {
     const selected = this.selectedRows.map((row) => row.roleId);
     this.store.dispatch(
-      addRolesToUser({
+      createUser({
         roleIDs: selected,
         email: this.emailFormControl.value as string,
       })
