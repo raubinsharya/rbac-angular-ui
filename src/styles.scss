@@ -173,3 +173,14 @@ mat-form-field::before {
     transform: rotate(360deg);
   }
 }
+
+.mat-drawer,
+.mat-mdc-nav-list .mat-mdc-list-item {
+  border-radius: unset !important;
+}
+
+.mat-mdc-list-base {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.2rem !important;
+}

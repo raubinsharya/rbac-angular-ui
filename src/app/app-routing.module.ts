@@ -14,6 +14,11 @@ export const routes: Routes = [
     canActivate: [MsalGuard],
   },
   {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
     path: 'contract',
     loadChildren: () =>
       import('./contract/contract.module').then((m) => m.ContractModule),

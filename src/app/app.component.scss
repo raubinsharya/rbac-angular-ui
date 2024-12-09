@@ -15,3 +15,54 @@
     z-index: 1000;
   }
 }
+
+/* app.component.css */
+.drawer-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+mat-sidenav {
+  width: 250px; /* Set the width of the drawer */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Center the logo horizontally */
+  align-items: center; /* Center the logo vertically */
+  height: 64px; /* Set height for proper spacing */
+  background-color: #f5f5f5; /* Optional: Background color */
+  margin-bottom: 16px; /* Space below the logo */
+}
+
+.logo-container mat-icon {
+  width: 40px; /* Set a specific width for the icon */
+  height: 40px; /* Set a specific height for the icon */
+  fill: black !important;
+}
+
+.drawer-logo {
+  background-color: #164776;
+  color: white;
+  display: flex !important;
+  justify-content: center !important; /* Center the logo horizontally */
+  align-items: center !important; /* Center the logo vertically */
+
+  &span {
+    display: flex !important;
+    justify-content: center !important; /* Center the logo horizontally */
+    align-items: center !important; /* Center the logo vertically */
+  }
+}
+
+.mat-icon[svgicon] {
+  width: 6rem;
+  height: 2rem;
+}

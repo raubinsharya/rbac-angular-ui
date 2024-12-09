@@ -1,14 +1,17 @@
 <mat-toolbar>
   <div class="left-child">
-    <a routerLink="/">
+    <a routerLink="/" class="icon-link">
       <mat-icon
         svgIcon="philips-icon"
         aria-hidden="false"
         aria-label="Example thumbs up SVG icons"
       />
     </a>
-    <span>Philips Order and Contract Manager</span>
+    <span>
+      <ng-content />
+    </span>
   </div>
+
   <span class="spacer"></span>
   <div class="right-child">
     <span>EN</span>

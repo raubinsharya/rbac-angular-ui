@@ -1,0 +1,32 @@
+<span mat-dialog-title class="dialog-title">
+  User Roles ({{ userData?.userEmail }})
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</span>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <div class="grid-container">
+    <ag-grid-table
+      [rowData]="rowData"
+      [colDefs]="colDefs"
+      rowSelection="multiple"
+      [pagination]="true"
+      (gridReadyEvent)="onGridReady($event)"
+      (selectedRows)="handleSelectedRows($event)"
+    />
+  </div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button
+    cdkFocusInitial
+    class="mat-elevation-z1"
+    mat-flat-button
+    (click)="handleSave()"
+    [disabled]="!selectedRows.length"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

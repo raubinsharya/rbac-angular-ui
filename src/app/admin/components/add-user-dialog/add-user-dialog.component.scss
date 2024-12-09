@@ -2,6 +2,19 @@
   border-radius: 0.2rem;
 }
 
+.add-user-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100px;
+}
+
 .dialog-title {
   background-color: rgb(55, 130, 167);
   color: white;
@@ -12,18 +25,6 @@
   padding: unset;
   padding-block: 0.7rem;
   padding-inline: 1.25rem;
-
-  &.success {
-    background-color: rgb(59, 141, 186);
-  }
-
-  &.failed {
-    background-color: rgb(69, 22, 9);
-  }
-
-  &.pending {
-    background-color: rgb(62, 147, 162);
-  }
 
   button {
     color: white;
@@ -36,25 +37,29 @@
   padding: unset;
 }
 
-table {
-  width: 100%;
-}
-
-.status-cell {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  &.success {
-    color: green;
-  }
-  &.failed {
-    color: red;
-  }
-}
-
 :host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
   mat-dialog-actions button {
     border-radius: 0.2rem;
     height: 2rem;
   }
+  mat-dialog-content {
+    display: flex !important;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100% !important;
+  }
+}
+
+.form {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.full-width {
+  width: 100%;
+  padding-inline: 1rem;
 }

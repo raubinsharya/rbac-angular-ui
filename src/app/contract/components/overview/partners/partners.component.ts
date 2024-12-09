@@ -13,16 +13,14 @@ import {
   selectPartnerLoading,
 } from '../../../store/selectors/contract-overview.selector';
 
-import { NotificationService } from '../../../../services/notification.service';
 import {
   fetchPartnerDetailsCancel,
-  fetchPartnerDetailsSuccess,
   resetOverview,
   resetPartnerField,
   updateOverview,
   updatetPartnerField,
 } from '../../../store/actions/contract-overview.action';
-import { filter, firstValueFrom, takeUntil } from 'rxjs';
+import { filter, firstValueFrom } from 'rxjs';
 import { Actions, ofType } from '@ngrx/effects';
 import { queryAndResetJSON, queryAndUpdateJSON } from '../../../../../utils';
 import { HeaderPartnerColDefs } from './colDefs.service';

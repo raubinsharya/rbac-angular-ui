@@ -42,7 +42,6 @@ export class ApiService {
 
   // Error handling
   private handleError(error: HttpErrorResponse) {
-    console.info(error);
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {
       // Client-side error
