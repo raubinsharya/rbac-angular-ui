@@ -41,7 +41,7 @@ export const selectBaseURLAndApplicationId = createSelector(
   }
 );
 
-// export const selectUserRoleUpdate = createSelector(
-//   selectUsersListState,
-//   (state) => state.usersList
-// );
+export const selectUserRoleUpdate = createSelector(
+  selectUsersListState,
+  (state) => state.usersList.userRoleUpdateLoading
+);

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { ApiService } from '../../services/api.service';
 import { NotificationService } from '../../services/notification.service';
 import { UserListType } from '../model/user.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -20,15 +19,15 @@ export interface RoleAddResponse {
 @Injectable({
   providedIn: 'root',
 })
-export class UserManagementService {
+export class UserManagementApiService {
   private baseUrl!: string;
   private applicationId!: number;
   constructor(
     private http: HttpClient,
-    private notification: NotificationService,
-    private store: Store
+    private store: Store,
+    private notification: NotificationService
   ) {
-    store.select(selectBaseURLAndApplicationId).subscribe((url) => {
+    this.store.select(selectBaseURLAndApplicationId).subscribe((url) => {
       this.baseUrl = url.baseUrl;
       this.applicationId = url.applicationId;
     });
@@ -84,7 +83,7 @@ export class UserManagementService {
       .pipe(catchError(this.handleError));
   }
 
-  private handleError(error: HttpErrorResponse) {
+  private handleError = (error: HttpErrorResponse) => {
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {
       // Client-side error
@@ -97,5 +96,5 @@ export class UserManagementService {
     }
     this.notification.showError(errorMessage);
     return throwError(() => new Error(errorMessage));
-  }
+  };
 }

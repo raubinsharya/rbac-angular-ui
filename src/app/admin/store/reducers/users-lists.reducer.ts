@@ -2,10 +2,14 @@ import { createReducer, on } from '@ngrx/store';
 import { UserListType } from '../../model/user.model';
 import {
   addRolesToUser,
+  addRolesToUserFailure,
   addRolesToUserSuccess,
   fetchUsers,
   fetchUsersFailure,
   fetchUsersSuccess,
+  removeRolesToUser,
+  removeRolesToUserFailure,
+  removeRolesToUserSuccess,
   updateBaseUrl,
 } from '../actions/user-management.action';
 
@@ -53,10 +57,27 @@ export const UsersListStateReducer = createReducer(
   on(addRolesToUser, (state) => {
     return { ...state, userRoleUpdateLoading: true };
   }),
-  on(addRolesToUserSuccess, (state, { userAddResponse }) => {
+  on(addRolesToUserSuccess, (state) => {
     return { ...state, userRoleUpdateLoading: false };
   }),
-  on(addRolesToUserSuccess, (state, { userAddResponse }) => {
+  on(addRolesToUserFailure, (state, { error }) => {
+    return {
+      ...state,
+      userRoleUpdateLoading: false,
+      userRoleUpdateError: error,
+    };
+  }),
+  on(removeRolesToUser, (state) => {
+    return { ...state, userRoleUpdateLoading: true };
+  }),
+  on(removeRolesToUserSuccess, (state) => {
     return { ...state, userRoleUpdateLoading: false };
+  }),
+  on(removeRolesToUserFailure, (state, { error }) => {
+    return {
+      ...state,
+      userRoleUpdateLoading: false,
+      userRoleUpdateError: error,
+    };
   })
 );

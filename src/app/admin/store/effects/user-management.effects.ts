@@ -9,11 +9,12 @@ import {
   mergeMap,
   toArray,
 } from 'rxjs/operators';
-import { concat, from, of } from 'rxjs';
+import { concat, from, of, throwError } from 'rxjs';
 import {
   addRolesToUser,
   addRolesToUserFailure,
   addRolesToUserSuccess,
+  closeViewUserRoleDialog,
   fetchRoles,
   fetchRolesFailure,
   fetchRoleSuccess,
@@ -23,8 +24,9 @@ import {
   removeRolesToUser,
   removeRolesToUserFailure,
   removeRolesToUserSuccess,
+  resetSaveButtonUserRoleDialog,
 } from '../actions/user-management.action';
-import { UserManagementService } from '../../services/user-management.service';
+import { UserManagementApiService } from '../../services/user-management.service';
 import { isEmpty } from 'lodash';
 import { NotificationService } from '../../../services/notification.service';
 
@@ -32,7 +34,7 @@ import { NotificationService } from '../../../services/notification.service';
 export class UserManagementEffects {
   constructor(
     private actions$: Actions,
-    private userManagementService: UserManagementService,
+    private userManagementService: UserManagementApiService,
     private notification: NotificationService
   ) {}
 
@@ -70,10 +72,17 @@ export class UserManagementEffects {
               userAddResponse.message,
               userAddResponse.email
             );
-            return [addRolesToUserSuccess({ userAddResponse }), fetchUsers({})];
+            return [
+              addRolesToUserSuccess({ userAddResponse }),
+              closeViewUserRoleDialog(),
+              fetchUsers({}),
+            ];
           }),
           catchError((error) =>
-            of(addRolesToUserFailure({ error: error.message }))
+            of(
+              addRolesToUserFailure({ error: error.message }),
+              resetSaveButtonUserRoleDialog()
+            )
           )
         )
       )
@@ -86,27 +95,32 @@ export class UserManagementEffects {
       filter(({ roleIDs, email }) => !isEmpty(roleIDs) && !isEmpty(email)),
       mergeMap(({ roleIDs, email }) =>
         from(roleIDs).pipe(
-          mergeMap((roleID) =>
-            this.userManagementService
-              .removeRoleToUser(roleID, email)
-              .pipe(catchError((error) => of({ roleID, error })))
+          concatMap((roleID) =>
+            this.userManagementService.removeRoleToUser(roleID, email).pipe(
+              catchError(
+                (error) => throwError(() => new Error(error.message)) // Propagate the error
+              )
+            )
           ),
-          toArray(),
+          toArray(), // Collect all responses into an array
           concatMap((responses) => {
-            this.notification.showSuccess(
-              'Roles Removed Successfully',
-              'Role Removal'
-            );
+            this.notification.showSuccess('Roles Removal Successful!');
             return [
-              removeRolesToUserSuccess({
-                userRoleRemoveResponse: responses,
-              }),
+              removeRolesToUserSuccess({ userRoleRemoveResponse: responses }),
+              closeViewUserRoleDialog(),
               fetchUsers({}),
             ];
           }),
-          catchError((error) =>
-            of(removeRolesToUserFailure({ error: error.message }))
-          )
+          catchError((error) => {
+            this.notification.showError(
+              'Failed to Remove Roles',
+              'Role Removal'
+            );
+            return of(
+              removeRolesToUserFailure({ error: error.message }),
+              resetSaveButtonUserRoleDialog()
+            );
+          })
         )
       )
     )

@@ -59,3 +59,9 @@ export const removeRolesToUserFailure = createAction(
   '[USERMANAGEMENT][ROLES][REMOVE] REMOVE ROLES FAILURE',
   props<{ error: string }>()
 );
+export const closeViewUserRoleDialog = createAction(
+  '[USERMANAGEMENT][DIALOG][USER][ROLE] CLOSE USER ROLE DIALOG'
+);
+export const resetSaveButtonUserRoleDialog = createAction(
+  '[USERMANAGEMENT][DIALOG][USER][ROLE][RESET][SAVE][BUTTON] RESET SAVE BUTTON USER ROLE DIALOG'
+);

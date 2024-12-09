@@ -36,6 +36,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared/shared.module';
 import { UserManagementEffect } from './store/effects/user-management.effect';
 import { UnauthorizedComponent } from './shared/components/unauthorized/unauthorized.component';
+import { NotificationService } from './services/notification.service';
 
 export function initializeAuthService(
   authService: AuthService
@@ -90,6 +91,7 @@ export function initializeAuthService(
     provideAnimationsAsync(),
     MsalService,
     MsalGuard,
+    NotificationService,
     MsalBroadcastService,
     AuthService,
     {

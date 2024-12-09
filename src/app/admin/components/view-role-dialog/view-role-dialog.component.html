@@ -21,12 +21,15 @@
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Close</button>
   <button
-    cdkFocusInitial
-    class="mat-elevation-z1"
     mat-flat-button
+    class="equipment-btn mat-elevation-z1"
     (click)="handleSave()"
-    [disabled]="!selectedRows.length"
+    [disabled]="saveBtnDisabled || userRoleUpdateLoading"
   >
-    Save
+    @if(!userRoleUpdateLoading){ Save } @if (userRoleUpdateLoading) {
+    <mat-spinner [diameter]="20"></mat-spinner>
+    } @else {
+    <mat-icon> save </mat-icon>
+    }
   </button>
 </mat-dialog-actions>

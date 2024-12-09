@@ -11,6 +11,7 @@ import { UserManagementEffects } from './store/effects/user-management.effects';
 import { ViewRolesComponent } from './components/user-list/custom-cell/view-roles/view-roles.component';
 import { ViewRoleDialogComponent } from './components/view-role-dialog/view-role-dialog.component';
 import { AddUserDialogComponent } from './components/add-user-dialog/add-user-dialog.component';
+import { UserManagementApiService } from './services/user-management.service';
 
 @NgModule({
   declarations: [
@@ -30,5 +31,6 @@ import { AddUserDialogComponent } from './components/add-user-dialog/add-user-di
     ),
     EffectsModule.forFeature([UserManagementEffects]),
   ],
+  providers: [UserManagementApiService],
 })
 export class AdminModule {}
