@@ -21,10 +21,7 @@ export const fetchRolesFailure = createAction(
   props<{ error: string }>()
 );
 
-export const fetchUsers = createAction(
-  '[USERMANAGEMENT][USERS] Fetch USERS',
-  props<{ applicationId?: number }>()
-);
+export const fetchUsers = createAction('[USERMANAGEMENT][USERS] Fetch USERS');
 export const fetchUsersSuccess = createAction(
   '[USERMANAGEMENT][USERS] Fetch USERS Success',
   props<{ usersList: UserListType[] }>()

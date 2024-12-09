@@ -6,11 +6,10 @@ import {
   exhaustMap,
   filter,
   map,
-  mergeMap,
   switchMap,
   toArray,
 } from 'rxjs/operators';
-import { concat, from, of, throwError } from 'rxjs';
+import { from, of, throwError } from 'rxjs';
 import {
   addRolesToUser,
   addRolesToUserFailure,
@@ -43,8 +42,8 @@ export class UserManagementEffects {
   loadUsersLists$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fetchUsers),
-      switchMap(({ applicationId }) =>
-        this.userManagementService.fetchUsers(applicationId).pipe(
+      switchMap(() =>
+        this.userManagementService.fetchUsers().pipe(
           map((usersList) => fetchUsersSuccess({ usersList })),
           catchError((error) => of(fetchUsersFailure({ error: error.message })))
         )
@@ -71,7 +70,7 @@ export class UserManagementEffects {
         this.userManagementService.createUser(email).pipe(
           concatMap(() => {
             this.notification.showSuccess('User Creation successful!', email);
-            return [addRolesToUser({ email: email, roleIDs }), fetchUsers({})];
+            return [addRolesToUser({ email: email, roleIDs }), fetchUsers()];
           }),
           catchError((error) =>
             of(
@@ -98,7 +97,7 @@ export class UserManagementEffects {
             return [
               addRolesToUserSuccess({ userAddResponse }),
               closeViewUserRoleDialog(),
-              fetchUsers({}),
+              fetchUsers(),
             ];
           }),
           catchError((error) =>
@@ -131,7 +130,7 @@ export class UserManagementEffects {
             return [
               removeRolesToUserSuccess({ userRoleRemoveResponse: responses }),
               closeViewUserRoleDialog(),
-              fetchUsers({}),
+              fetchUsers(),
             ];
           }),
           catchError((error) => {

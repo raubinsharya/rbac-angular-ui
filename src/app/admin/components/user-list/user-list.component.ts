@@ -72,11 +72,7 @@ export class UserListComponent {
         applicationId: application as number,
       })
     );
-    this.store.dispatch(
-      fetchUsers({
-        applicationId: application as number,
-      })
-    );
+    this.store.dispatch(fetchUsers());
   }
 
   ngOnInit() {

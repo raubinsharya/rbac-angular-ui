@@ -40,12 +40,10 @@ export class UserManagementApiService {
       )
       .pipe(catchError(this.handleError));
   }
-  public fetchUsers(applicationId?: number): Observable<Array<UserListType>> {
+  public fetchUsers(): Observable<Array<UserListType>> {
     return this.http
       .get<Array<UserListType>>(
-        `${this.baseUrl}/user-management/employee-role/users?application-id=${
-          applicationId ?? this.applicationId
-        }`
+        `${this.baseUrl}/user-management/employee-role/users?application-id=${this.applicationId}`
       )
       .pipe(catchError(this.handleError));
   }
