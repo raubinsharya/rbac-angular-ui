@@ -26,31 +26,33 @@ export class GridTextCellRendererComponent {
   }
 
   public openMessageDialog() {
-    const dialogRef = this.dialog.open(MessageDialogComponent, {
-      minWidth: '600px',
-      minHeight: '300px',
-      data: {
-        title: `Line Text: ${this.params.data?.contractLineItemNumber}`,
-        data: this.params.value,
-        tabs: [
-          { name: 'Internal', icon: 'sms', fieldName: 'itemText' },
-          {
-            name: 'Customer Invoice',
-            icon: 'description',
-            fieldName: 'itemText',
-          },
-          {
-            name: 'Additional Info (SMAX)',
-            icon: 'domain_verification',
-            fieldName: 'itemText',
-          },
-        ],
-      } as MeMessageDialogComponentParams,
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this.params.node.setDataValue('texts', result);
-      }
-    });
+    this.dialog
+      .open(MessageDialogComponent, {
+        minWidth: '600px',
+        minHeight: '300px',
+        data: {
+          title: `Line Text: ${this.params.data?.contractLineItemNumber}`,
+          data: this.params.value,
+          tabs: [
+            { name: 'Internal', icon: 'security', fieldName: 'itemText' },
+            {
+              name: 'Customer Invoice',
+              icon: 'description',
+              fieldName: 'itemText',
+            },
+            {
+              name: 'Additional Info (SMAX)',
+              icon: 'domain_verification',
+              fieldName: 'itemText',
+            },
+          ],
+        } as MeMessageDialogComponentParams,
+      })
+      .afterClosed()
+      .subscribe((result) => {
+        if (result) {
+          this.params.node.setDataValue('texts', result);
+        }
+      });
   }
 }

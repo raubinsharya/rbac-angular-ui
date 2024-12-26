@@ -18,20 +18,40 @@
       >
     </div>
     <div class="right-section">
-      <button
-        mat-icon-button
-        class="contract-btn"
-        (click)="simulateContract()"
-        [disabled]="simulationLoading"
+      <span
+        [matTooltip]="simulationBtnDisabledAndToolTipText.toolTipText"
+        matTooltipPosition="above"
+        matTooltipShowDelay="200"
       >
-        @if (simulationLoading) {
-        <span class="spinner"></span>} @else {<mat-icon>rebase_edit</mat-icon>}
-        Simulate
-      </button>
-      <button mat-icon-button class="contract-btn" (click)="handleBooking()">
-        <mat-icon>task</mat-icon>
-        Book Contract
-      </button>
+        <button
+          mat-icon-button
+          class="contract-btn"
+          (click)="simulateContract()"
+          [disabled]="
+            simulationLoading || simulationBtnDisabledAndToolTipText.disabled
+          "
+        >
+          @if (simulationLoading) {
+          <span class="spinner"></span>} @else
+          {<mat-icon>rebase_edit</mat-icon>} Simulate
+        </button>
+      </span>
+      <span
+        [matTooltip]="bookingBtnDisabledAndToolTipText.toolTipText"
+        matTooltipPosition="above"
+        matTooltipShowDelay="200"
+        matTooltipClass="custom-tooltip"
+      >
+        <button
+          mat-icon-button
+          class="contract-btn"
+          (click)="handleBooking()"
+          [disabled]="bookingBtnDisabledAndToolTipText.disabled"
+        >
+          <mat-icon>task</mat-icon>
+          Book Contract
+        </button>
+      </span>
     </div>
   </div>
   <mat-divider></mat-divider>

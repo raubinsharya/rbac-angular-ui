@@ -5,6 +5,7 @@ import { ContractOverviewMainComponent } from './components/overview/main/main.c
 import { ContractDuelistGridComponent } from './components/duelist/duelistgrid/duelistgrid.component';
 import { ContractItemDetailsMainComponent } from './components/item-detail/main/main.component';
 import { ngxPermissionsGuard } from 'ngx-permissions';
+import { PermissionsGuardWithRoles } from '../guards/role-permission.guard';
 
 const routes: Routes = [
   {
@@ -29,15 +30,23 @@ const routes: Routes = [
           {
             path: ':idx',
             component: ContractItemDetailsMainComponent,
-            // canActivate: [ngxPermissionsGuard],
+            // canActivate: [PermissionsGuardWithRoles],
             data: {
               breadcrumb: 'Item Detail',
               permissions: {
                 only: ['system_admin_it_NL90'],
+                redirectTo: '/unauthorized',
               },
             },
           },
         ],
+      },
+      {
+        path: 'reports',
+        loadChildren: () =>
+          import('./components/reports/reports.module').then(
+            (m) => m.ReportsModule
+          ),
       },
     ],
   },

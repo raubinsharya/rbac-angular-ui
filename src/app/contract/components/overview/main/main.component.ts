@@ -10,7 +10,7 @@ import {
   selectContractOverview,
   selectContractOverviewError,
   selectContractOverviewLoading,
-  selectEquipmentLoading,
+  selectIsContractUpdated,
   selectSimulationLoading,
 } from '../../../store/selectors/contract-overview.selector';
 import {
@@ -32,6 +32,7 @@ export class ContractOverviewMainComponent {
   public error!: any;
   public quoteDetails!: QuoteDetailsType;
   public simulationLoading!: boolean;
+  public isContractUpdated!: boolean;
 
   get contractStatus(): string {
     return constractStatusMapping[
@@ -62,13 +63,100 @@ export class ContractOverviewMainComponent {
     this.store
       .select(selectSimulationLoading)
       .subscribe((loading) => (this.simulationLoading = loading));
+    this.store
+      .select(selectIsContractUpdated)
+      .subscribe((updated) => (this.isContractUpdated = updated));
+  }
+
+  get simulationBtnDisabledAndToolTipText(): {
+    disabled: boolean;
+    toolTipText: string;
+  } {
+    const status = this.getContractStatusDetails(
+      'Simulation',
+      'Simulation Disabled since Basic Validation Failed!',
+      'Simulation Already Done!',
+      'Simulate Contract'
+    );
+
+    // Add specific logic for simulation if needed
+    if (this.overview?.commercialContract?.contractCreationStatus === 'Booked') {
+      return {
+        disabled: true,
+        toolTipText: 'Contract Already Sent To SAP or Booked',
+      };
+    }
+
+    return status;
+  }
+
+  get bookingBtnDisabledAndToolTipText(): {
+    disabled: boolean;
+    toolTipText: string;
+  } {
+    return this.getContractStatusDetails(
+      'Booking',
+      'Booking Disabled since Basic Validation Failed!',
+      'Contract Already Sent To SAP or Booked',
+      'Book Contract'
+    );
+  }
+
+  private getContractStatusDetails(
+    action: 'Simulation' | 'Booking',
+    valFailedMessage: string,
+    doneMessage: string,
+    defaultMessage: string
+  ): { disabled: boolean; toolTipText: string } {
+    const { basicValStatus, isSimulation, contractCreationStatus } =
+      this.overview?.commercialContract || {};
+
+    // Common validation for basicValStatus
+    if (basicValStatus === 'VAL_FAILED' && !this.isContractUpdated) {
+      return {
+        disabled: true,
+        toolTipText: valFailedMessage,
+      };
+    }
+
+    // Action-specific logic
+    if (
+      action === 'Simulation' &&
+      isSimulation === 'TRUE' &&
+      !this.isContractUpdated
+    ) {
+      return {
+        disabled: true,
+        toolTipText: doneMessage,
+      };
+    }
+
+    if (contractCreationStatus === 'Booked') {
+      return {
+        disabled: true,
+        toolTipText: action === 'Simulation' ? '' : doneMessage,
+      };
+    }
+
+    // Default state
+    return {
+      disabled: false,
+      toolTipText: defaultMessage,
+    };
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
+      const sourceSystemHeaderId: string = params.get('source') as string;
+      if (
+        this.isContractUpdated &&
+        this.overview?.commercialContract.sourceSystemHeaderId ===
+          sourceSystemHeaderId
+      )
+        return;
       this.store.dispatch(
         fetchContractOverview({
-          sourceSystemHeaderId: params.get('source') as string,
+          sourceSystemHeaderId,
         })
       );
     });

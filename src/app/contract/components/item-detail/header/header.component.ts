@@ -35,15 +35,44 @@ import { EquipmentDialogComponent } from '../../../../shared/components/equipmen
 import { SimulatioLogsComponent } from '../../../../shared/components/simulatio-logs/simulatio-logs.component';
 import moment from 'moment';
 import { NotificationService } from '../../../../services/notification.service';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'item-detail-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  animations: [
+    trigger('expandable', [
+      state(
+        'collapsed',
+        style({
+          height: '0px',
+          opacity: 0,
+        })
+      ),
+      state(
+        'expanded',
+        style({
+          height: '*', // Automatically adjusts to content height
+          opacity: 1,
+        })
+      ),
+      transition('collapsed <=> expanded', [
+        animate('300ms ease-in-out'), // Duration and easing
+      ]),
+    ]),
+  ],
 })
 export class ItemDetailHeaderComponent {
   commercialContract!: CommercialContractType;
   isEditMode: boolean = false;
+  isExpanded: boolean = false;
   poTypes = poTypes;
   paymentTerms = paymentTerms;
   billingPeriod = billingPeriods;
@@ -219,7 +248,7 @@ export class ItemDetailHeaderComponent {
           title: `Line Text: ${this.contractLineItem?.contractLineItemNumber}`,
           data: this.contractLineItem?.texts,
           tabs: [
-            { name: 'Internal', icon: 'sms', fieldName: 'itemText' },
+            { name: 'Internal', icon: 'security', fieldName: 'itemText' },
             {
               name: 'Customer Invoice',
               icon: 'description',
@@ -295,5 +324,9 @@ export class ItemDetailHeaderComponent {
     let idx = parseInt(this.route.snapshot.paramMap.get('idx') as string, 10);
     idx = Math.max(0, Math.min(idx + step, this.totalLines - 1));
     this.router.navigate([`/contract/overview/${id}/${idx}`]);
+  }
+
+  public handleExpandHeader() {
+    this.isExpanded = !this.isExpanded;
   }
 }

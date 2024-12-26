@@ -1,0 +1,19 @@
+// Define breakpoints in a SCSS map
+$breakpoints: (
+  SM: 576px,
+  MD: 768px,
+  LG: 992px,
+  XL: 1200px,
+);
+
+// Mixin to handle media queries using the breakpoint map
+@mixin mq($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value {
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$breakpoint}` not found in $breakpoints map.";
+  }
+}

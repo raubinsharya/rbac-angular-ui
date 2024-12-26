@@ -5,6 +5,7 @@ export interface DropdownRendererParams {
   values: Array<any> | Array<{ [key: string]: any }>; // Mandatory: The array of values (either array of objects or simple array)
   displayKey?: string; // Optional: The key to display (required only if array of objects is used)
   valueKey?: string; // Optional: The key to use as the value (required only if array of objects is used)
+  toolTipValue?: string;
 }
 
 @Component({
@@ -17,6 +18,7 @@ export class CustomDropDownComponent {
   public options!: any[];
   public displayKey!: string | undefined;
   public valueKey!: string | undefined;
+  public toolTipValue!: string | undefined;
 
   private params: any; // Declare params property
 
@@ -28,12 +30,17 @@ export class CustomDropDownComponent {
     return this.displayKey ? option[this.displayKey] : option;
   }
 
+  getToolTipText(option: any): string {
+    return this.toolTipValue ? option[this.toolTipValue] : null;
+  }
+
   agInit(params: ICellRendererParams & DropdownRendererParams): void {
     this.selectedValue = params.value; // Initialize with the current cell value
     this.options = params.values;
     this.params = params;
     this.displayKey = params.displayKey;
     this.valueKey = params.valueKey;
+    this.toolTipValue = params.toolTipValue;
   }
 
   refresh(params: any): boolean {

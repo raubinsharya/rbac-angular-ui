@@ -68,7 +68,9 @@ export const selectContractOverviewIsHeaderUpdated = createSelector(
       'Yes' ||
     state.overview.overview?.commercialContract?.isContractEndDateUpdated ===
       'Yes' ||
-    state.overview.overview?.commercialContract?.isPaymentTermsUpdated === 'Yes'
+    state.overview.overview?.commercialContract?.isPaymentTermsUpdated ===
+      'Yes' ||
+    state.overview.overview?.commercialContract?.isTextsUpdated === 'Yes'
 );
 
 export const selectContractOverviewLineItem = (idx: number) =>
@@ -113,3 +115,8 @@ export const selectContractOverviewLinePartnerSoldTo = (idx: number) =>
       partners?.filter((item) => item.businessPartnerRoleId === 'SP') || [];
     return soldToPartyNo;
   });
+
+export const selectIsContractUpdated = createSelector(
+  selectContractState,
+  (state) => state.overview?.overview?.isUpdated === 'Yes'
+);

@@ -225,6 +225,7 @@ export class ItemDetailsColDefs {
           values: paymentTerms,
           displayKey: 'value',
           valueKey: 'value',
+          toolTipValue: 'description',
         } as DropdownRendererParams,
         onCellValueChanged: ({ colDef, newValue }) => {
           if (this.totalLineSize > 1)

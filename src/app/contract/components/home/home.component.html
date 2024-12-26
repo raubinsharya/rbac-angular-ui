@@ -1,4 +1,37 @@
 <app-app-bar> Philips Order and Contract Manager </app-app-bar>
+<mat-toolbar class="second-row-toolbar">
+  <button
+    routerLink="/contract"
+    mat-icon-button
+    class="book-contract-btn"
+    [hideOnRouteMatch]="['/contract']"
+  >
+    Contract Duelist
+    <mat-icon>list_alt</mat-icon>
+  </button>
+  <button
+    routerLink="#"
+    mat-icon-button
+    class="book-contract-btn"
+    [hideOnRouteStartingMatch]="['/contract/overview']"
+  >
+    Booked Contract
+    <mat-icon>beenhere</mat-icon>
+  </button>
+  <button routerLink="#" mat-icon-button class="book-contract-btn">
+    Change Contract
+    <mat-icon>update</mat-icon>
+  </button>
+  <button
+    routerLink="reports"
+    mat-icon-button
+    class="book-contract-btn"
+    [hideOnRouteStartingMatch]="['/contract/reports']"
+  >
+    Contract Reports
+    <mat-icon>receipt_long</mat-icon>
+  </button>
+</mat-toolbar>
 <div class="home-container">
   <app-breadcrumbs></app-breadcrumbs>
   <router-outlet></router-outlet>

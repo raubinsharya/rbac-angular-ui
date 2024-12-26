@@ -1,0 +1,57 @@
+:host {
+  align-self: flex-end;
+}
+
+.select-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: unset;
+  color: white;
+  gap: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  background-color: #1b5388;
+  padding-inline: 1rem;
+  box-shadow: 0 0.125rem 0.25rem #0c365c;
+  &:hover {
+    background-color: rgb(33, 87, 138);
+  }
+  &:active {
+    background-color: #185894;
+  }
+  ::ng-deep .mat-mdc-button-persistent-ripple {
+    display: none !important;
+  }
+  &:disabled {
+    background-color: gray;
+  }
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+
+  .between-dates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    .to-label {
+      font-weight: bold;
+      margin: 0 8px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+::ng-deep .mat-mdc-menu-content {
+  padding: unset !important;
+}

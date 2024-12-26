@@ -117,6 +117,7 @@
         [value]="contractLineItem?.higherLevelItemNumber"
       />
     </mat-form-field>
+
     <mat-form-field appearance="outline" label="Product Code">
       <input
         matInput
@@ -125,6 +126,7 @@
         [value]="contractLineItem?.productId"
       />
     </mat-form-field>
+
     <mat-form-field appearance="outline" label="Description">
       <input
         matInput
@@ -247,47 +249,69 @@
         }
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="outline" label="Billing Plan Type">
-      <input
-        matInput
-        type="text"
-        disabled
-        [value]="contractLineItem?.billingPlanType"
-      />
-    </mat-form-field>
-    <mat-form-field appearance="outline" label="Billing Plan Rule">
-      <input
-        matInput
-        type="text"
-        disabled
-        [value]="contractLineItem?.billingPlanRule"
-      />
-    </mat-form-field>
-    <mat-form-field appearance="outline" label="Billing Block">
-      <input
-        matInput
-        type="text"
-        disabled
-        [value]="contractLineItem?.billingBlock"
-      />
-    </mat-form-field>
-    <mat-form-field appearance="outline" label="Contract Type">
-      <input
-        matInput
-        type="text"
-        disabled
-        [value]="contractLineItem?.lineType | uppercase"
-      />
-    </mat-form-field>
-    <mat-form-field appearance="outline" label="Product Type">
-      <input
-        matInput
-        type="text"
-        disabled
-        [value]="contractLineItem?.productType | uppercase"
-      />
-    </mat-form-field>
+    <span
+      [@expandable]="isExpanded ? 'expanded' : 'collapsed'"
+      class="expandable"
+    >
+      <mat-form-field appearance="outline" label="Billing Plan Type">
+        <input
+          matInput
+          type="text"
+          disabled
+          [value]="contractLineItem?.billingPlanType"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" label="Billing Plan Rule">
+        <input
+          matInput
+          type="text"
+          disabled
+          [value]="contractLineItem?.billingPlanRule"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" label="Billing Block">
+        <input
+          matInput
+          type="text"
+          disabled
+          [value]="contractLineItem?.billingBlock"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" label="Contract Type">
+        <input
+          matInput
+          type="text"
+          disabled
+          [value]="contractLineItem?.lineType | uppercase"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" label="Product Type">
+        <input
+          matInput
+          type="text"
+          disabled
+          [value]="contractLineItem?.productType | uppercase"
+        />
+      </mat-form-field>
+    </span>
   </form>
+  <button mat-icon-button class="expand-btn" (click)="handleExpandHeader()">
+    @if (isExpanded) {
+    <mat-icon
+      matTooltip="Collapse Header"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+    >
+      keyboard_arrow_up
+    </mat-icon>
+    } @else {
+    <mat-icon
+      matTooltip="Expand Header"
+      matTooltipPosition="above"
+      matTooltipShowDelay="200"
+    >
+      keyboard_arrow_down
+    </mat-icon>
+    }
+  </button>
 </div>
-
-<!-- {{ contractLineItem | json }} -->

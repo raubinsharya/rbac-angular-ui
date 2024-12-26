@@ -1,0 +1,91 @@
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="menu"
+  #menuTrigger="matMenuTrigger"
+  class="select-date"
+  aria-label="Example icon-button with a menu"
+>
+  <mat-icon>calendar_month</mat-icon>
+  Select Date
+</button>
+<div class="filter-option">
+  <mat-menu #menu="matMenu" (closed)="onFilterChange()">
+    <div class="menu-content" (click)="$event.stopPropagation()">
+      <!-- Dropdown for Filter Conditions -->
+      <mat-form-field appearance="outline" class="condition-field">
+        <mat-select
+          [(value)]="condition"
+          (selectionChange)="onConditionChange()"
+          disableRipple
+        >
+          <mat-option value="equals">Equals</mat-option>
+          <mat-option value="notEquals">Does Not Equal</mat-option>
+          <mat-option value="before">Before</mat-option>
+          <mat-option value="after">After</mat-option>
+          <mat-option value="between">Between</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Single Date Picker for Simple Conditions -->
+      <mat-form-field
+        appearance="outline"
+        *ngIf="condition !== 'between'"
+        class="date-field"
+      >
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [(ngModel)]="selectedDate"
+          placeholder="Choose Date"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Date Pickers for "Between" Condition -->
+      <div *ngIf="condition === 'between'" class="between-dates">
+        <mat-form-field appearance="outline" class="date-field">
+          <input
+            matInput
+            [matDatepicker]="startPicker"
+            [(ngModel)]="startDate"
+            placeholder="Start Date"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="startPicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+        <span class="to-label">To</span>
+        <mat-form-field appearance="outline" class="date-field">
+          <input
+            matInput
+            [matDatepicker]="endPicker"
+            [(ngModel)]="endDate"
+            placeholder="End Date"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="endPicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="actions">
+        <button mat-raised-button color="warn" (click)="clearFilter()">
+          Clear
+          <mat-icon>clear</mat-icon>
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="applyFilter(menuTrigger)"
+        >
+          Apply
+          <mat-icon>done_all</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-menu>
+</div>

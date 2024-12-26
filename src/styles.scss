@@ -184,3 +184,24 @@ mat-form-field::before {
   flex-direction: column !important;
   gap: 0.2rem !important;
 }
+
+.mat-mdc-tooltip::before {
+  background-color: #2f2d2d;
+  height: 10px;
+  width: 10px;
+  rotate: 45deg;
+  right: 50% !important;
+  left: auto !important;
+  transform: translate(4px, -4px);
+}
+
+.mat-mdc-tooltip-panel-above .mat-mdc-tooltip::before {
+  top: auto;
+  bottom: -0.25rem !important;
+}
+
+.mat-mdc-tooltip-panel-below .mat-mdc-tooltip::before {
+  top: -0.2rem !important;
+  bottom: auto;
+}
+

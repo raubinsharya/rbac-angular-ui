@@ -27,6 +27,8 @@ import { UnauthorizedComponent } from './components/unauthorized/unauthorized.co
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FileChooserComponent } from './components/file-chooser/file-chooser.component';
 import { BasicValcheckDialogComponent } from './components/basic-valcheck-dialog/basic-valcheck-dialog.component';
+import { HideOnRouteDirective } from './directives/app-hide-on-routes-match.directive';
+import { DateFilterComponent } from './components/date-filter/date-filter.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { BasicValcheckDialogComponent } from './components/basic-valcheck-dialog
     NotFoundComponent,
     FileChooserComponent,
     BasicValcheckDialogComponent,
+    HideOnRouteDirective,
+    DateFilterComponent
   ],
   imports: [
     FormsModule,
@@ -85,6 +89,8 @@ import { BasicValcheckDialogComponent } from './components/basic-valcheck-dialog
     NotFoundComponent,
     FileChooserComponent,
     BasicValcheckDialogComponent,
+    DateFilterComponent,
+    HideOnRouteDirective,
   ],
   providers: [provideNativeDateAdapter()],
 })

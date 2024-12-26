@@ -101,6 +101,7 @@ export class ContractOverviewHeaderComponent implements OnInit {
           'contractStartDate',
           'contractEndDate',
           'paymentTerms',
+          'texts',
         ],
       })
     );
@@ -199,37 +200,39 @@ export class ContractOverviewHeaderComponent implements OnInit {
     this.isExpanded = !this.isExpanded;
   }
   openHeaderText() {
-    const dialogRef = this.dialog.open(MessageDialogComponent, {
-      minWidth: '600px',
-      minHeight: '300px',
-      data: {
-        title: `Header Text`,
-        data: this.commercialContract.texts,
-        tabs: [
-          { name: 'Internal', icon: 'sms', fieldName: 'itemText' },
-          {
-            name: 'Customer Invoice',
-            icon: 'description',
-            fieldName: 'itemText',
-          },
-          {
-            name: 'Additional Info (SMAX)',
-            icon: 'domain_verification',
-            fieldName: 'itemText',
-          },
-        ],
-      } as MeMessageDialogComponentParams,
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this.store.dispatch(
-          updateOverview({
-            query: '$.commercialContract',
-            targetFields: [{ field: 'texts', value: result }],
-          })
-        );
-      }
-    });
+    this.dialog
+      .open(MessageDialogComponent, {
+        minWidth: '600px',
+        minHeight: '300px',
+        data: {
+          title: `Header Text`,
+          data: this.commercialContract.texts,
+          tabs: [
+            { name: 'Internal', icon: 'security', fieldName: 'itemText' },
+            {
+              name: 'Customer Invoice',
+              icon: 'description',
+              fieldName: 'itemText',
+            },
+            {
+              name: 'Additional Info (SMAX)',
+              icon: 'domain_verification',
+              fieldName: 'itemText',
+            },
+          ],
+        } as MeMessageDialogComponentParams,
+      })
+      .afterClosed()
+      .subscribe((result) => {
+        if (result) {
+          this.store.dispatch(
+            updateOverview({
+              query: '$.commercialContract',
+              targetFields: [{ field: 'texts', value: result }],
+            })
+          );
+        }
+      });
   }
 
   openSimulationDialog() {
