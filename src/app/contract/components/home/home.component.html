@@ -10,15 +10,20 @@
     <mat-icon>list_alt</mat-icon>
   </button>
   <button
-    routerLink="#"
+    routerLink="/contract/booked-contract"
     mat-icon-button
     class="book-contract-btn"
-    [hideOnRouteStartingMatch]="['/contract/overview']"
+    [hideOnRouteStartingMatch]="['/contract/booked-contract']"
   >
     Booked Contract
     <mat-icon>beenhere</mat-icon>
   </button>
-  <button routerLink="#" mat-icon-button class="book-contract-btn">
+  <button
+    routerLink="/contract/change-contract"
+    mat-icon-button
+    class="book-contract-btn"
+    [hideOnRouteStartingMatch]="['/contract/change-contract']"
+  >
     Change Contract
     <mat-icon>update</mat-icon>
   </button>

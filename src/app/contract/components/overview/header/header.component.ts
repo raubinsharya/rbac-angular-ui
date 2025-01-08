@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  AbstractControlOptions,
   FormBuilder,
   FormGroup,
   ValidationErrors,
@@ -66,6 +67,11 @@ export class ContractOverviewHeaderComponent implements OnInit {
       .select(selectContractOverviewIsHeaderUpdated)
       .subscribe((isUpdated) => (this.isHeaderUpdated = isUpdated));
   }
+
+  formOptions: AbstractControlOptions = {
+    validators: dateRangeValidator('contractStartDate', 'contractEndDate'),
+  };
+
   ngOnInit(): void {
     this.overviewForm = this.fb.group(
       {
@@ -83,9 +89,7 @@ export class ContractOverviewHeaderComponent implements OnInit {
         contractEndDate: [{ value: '', disabled: true }, Validators.required],
         paymentTerms: [{ value: '', disabled: true }, Validators.required],
       },
-      {
-        validator: dateRangeValidator('contractStartDate', 'contractEndDate'),
-      }
+      this.formOptions
     );
     this.setFormValues(this.commercialContract);
   }

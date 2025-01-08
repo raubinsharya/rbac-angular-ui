@@ -6,6 +6,7 @@ import { ContractDuelistGridComponent } from './components/duelist/duelistgrid/d
 import { ContractItemDetailsMainComponent } from './components/item-detail/main/main.component';
 import { ngxPermissionsGuard } from 'ngx-permissions';
 import { PermissionsGuardWithRoles } from '../guards/role-permission.guard';
+import { DevelopmentProgressComponent } from './components/reports/shared/components/development-progress/development-progress.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,14 @@ const routes: Routes = [
           import('./components/reports/reports.module').then(
             (m) => m.ReportsModule
           ),
+      },
+      {
+        path: 'booked-contract',
+        component: DevelopmentProgressComponent,
+      },
+      {
+        path: 'change-contract',
+        component: DevelopmentProgressComponent,
       },
     ],
   },

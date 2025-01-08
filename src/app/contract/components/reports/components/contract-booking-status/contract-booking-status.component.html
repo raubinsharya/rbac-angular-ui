@@ -1,30 +1,28 @@
 <div class="header">
-  <form class="status-form">
+  <form class="status-form" [formGroup]="reportForm">
     <mat-form-field appearance="outline" label="Booked By">
-      <input matInput type="text" placeholder="Enter email..." />
+      <input
+        matInput
+        readonly
+        type="text"
+        placeholder="Enter email..."
+        formControlName="userEmail"
+      />
     </mat-form-field>
     <mat-form-field appearance="outline" label="Sales Org">
       <mat-select
-        [formControl]="toppings"
+        formControlName="salesOrg"
         multiple
-        placeholder="Enter Sales Org"
+        placeholder="Choose Sales Org"
       >
-        <mat-select-trigger>
-          {{toppings.value?.[0] || ''}}
-          @if ((toppings.value?.length || 0) > 1) {
-          <span class="example-additional-selection">
-            (+{{ (toppings.value?.length || 0) - 1 }}
-            {{ toppings.value?.length === 2 ? "other" : "others" }})
-          </span>
-          }
-        </mat-select-trigger>
-        @for (topping of toppingList; track topping) {
-        <mat-option [value]="topping">{{ topping }}</mat-option>
+        <!-- <mat-select-trigger> hi </mat-select-trigger> -->
+        @for (org of salesOrgs; track org) {
+        <mat-option [value]="org">{{ org }}</mat-option>
         }
       </mat-select>
     </mat-form-field>
-    <app-date-filter (onDateFilterApplied)="onDateFilterApplied($event)"></app-date-filter>
-    <button class="search-btn" mat-icon-button>
+    <app-date-filter formControlName="dateFilter"></app-date-filter>
+    <button class="search-btn" mat-icon-button (click)="handleSearch()">
       <mat-icon>search</mat-icon>
       Search
     </button>

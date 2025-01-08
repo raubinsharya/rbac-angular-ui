@@ -2,6 +2,8 @@ import { ColDef, ValueFormatterParams } from 'ag-grid-community';
 
 import { Injectable } from '@angular/core';
 import moment from 'moment';
+import { BasicvalCheckRenderComponent } from '../../../../duelist/duelistgrid/custom-cell/basicval/basicval.component';
+import { ContractstatusRenderComponent } from '../../../../duelist/duelistgrid/custom-cell/contractstatus/contractstatus.component';
 
 @Injectable({
   providedIn: 'root',
@@ -114,6 +116,7 @@ export class ReportGridColDefs {
         editable: false,
         filter: true,
         sortable: true,
+        cellRenderer: ContractstatusRenderComponent
       },
       {
         field: 'basicValCheck',
@@ -121,6 +124,7 @@ export class ReportGridColDefs {
         minWidth: 170,
         editable: false,
         filter: true,
+        cellRenderer: BasicvalCheckRenderComponent
       },
     ];
   }

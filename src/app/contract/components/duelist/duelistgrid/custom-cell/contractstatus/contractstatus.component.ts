@@ -17,12 +17,16 @@ export class ContractstatusRenderComponent {
     VALIDATION: 'LISTING',
     FAILED: 'FAILED',
     TEC_ERROR: 'TECH ERROR',
+    IN_PROGRESS: 'IN-PROGRESS',
+    SUCCESS: 'SUCCESS'
   };
   private classNameMapping: { [k: string]: string } = {
     VALIDATION: 'listing',
     FAILED: 'failed',
     TEC_ERROR: 'tech-error',
     IN_PROGRESS: 'progress',
+    SUCCESS: 'success'
+
   };
 
   agInit(params: ICellRendererParams): void {

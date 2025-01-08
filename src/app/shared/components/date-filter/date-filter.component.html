@@ -10,14 +10,14 @@
 </button>
 <div class="filter-option">
   <mat-menu #menu="matMenu" (closed)="onFilterChange()">
-    <div class="menu-content" (click)="$event.stopPropagation()">
+    <form
+      [formGroup]="filterForm"
+      class="menu-content"
+      (click)="$event.stopPropagation()"
+    >
       <!-- Dropdown for Filter Conditions -->
       <mat-form-field appearance="outline" class="condition-field">
-        <mat-select
-          [(value)]="condition"
-          (selectionChange)="onConditionChange()"
-          disableRipple
-        >
+        <mat-select formControlName="condition">
           <mat-option value="equals">Equals</mat-option>
           <mat-option value="notEquals">Does Not Equal</mat-option>
           <mat-option value="before">Before</mat-option>
@@ -29,13 +29,13 @@
       <!-- Single Date Picker for Simple Conditions -->
       <mat-form-field
         appearance="outline"
-        *ngIf="condition !== 'between'"
+        *ngIf="filterForm.get('condition')?.value !== 'between'"
         class="date-field"
       >
         <input
           matInput
           [matDatepicker]="picker"
-          [(ngModel)]="selectedDate"
+          formControlName="selectedDate"
           placeholder="Choose Date"
         />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -43,12 +43,15 @@
       </mat-form-field>
 
       <!-- Date Pickers for "Between" Condition -->
-      <div *ngIf="condition === 'between'" class="between-dates">
+      <div
+        *ngIf="filterForm.get('condition')?.value === 'between'"
+        class="between-dates"
+      >
         <mat-form-field appearance="outline" class="date-field">
           <input
             matInput
             [matDatepicker]="startPicker"
-            [(ngModel)]="startDate"
+            formControlName="startDate"
             placeholder="Start Date"
           />
           <mat-datepicker-toggle
@@ -62,7 +65,7 @@
           <input
             matInput
             [matDatepicker]="endPicker"
-            [(ngModel)]="endDate"
+            formControlName="endDate"
             placeholder="End Date"
           />
           <mat-datepicker-toggle
@@ -79,6 +82,7 @@
         </button>
         <button
           mat-raised-button
+          type="submit"
           color="primary"
           (click)="applyFilter(menuTrigger)"
         >
@@ -86,6 +90,6 @@
           <mat-icon>done_all</mat-icon>
         </button>
       </div>
-    </div>
+    </form>
   </mat-menu>
 </div>

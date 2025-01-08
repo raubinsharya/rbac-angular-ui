@@ -1,57 +1,136 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
-import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
+import { Component, EventEmitter, forwardRef, Output } from '@angular/core';
+import {
+  ControlValueAccessor,
+  FormBuilder,
+  FormGroup,
+  NG_VALUE_ACCESSOR,
+  Validators,
+} from '@angular/forms';
+import { MatMenuTrigger } from '@angular/material/menu';
+import moment from 'moment';
 
-export interface DateFilterType {
+// Interface for the date filter model
+export interface DateFilterModel {
   condition: string;
   selectedDate?: Date | null;
-  startDate?: string | null;
-  endDate?: string | null;
+  startDate?: Date | null;
+  endDate?: Date | null;
 }
 
 @Component({
   selector: 'app-date-filter',
   templateUrl: './date-filter.component.html',
-  styleUrl: './date-filter.component.scss',
+  styleUrls: ['./date-filter.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DateFilterComponent),
+      multi: true,
+    },
+  ],
 })
-export class DateFilterComponent {
-  condition: string = 'equals'; // Default filter condition
-  selectedDate: string | null = null; // Selected date for single conditions
-  startDate: string | null = null; // Start date for "between" condition
-  endDate: string | null = null; // End date for "between" condition
+export class DateFilterComponent implements ControlValueAccessor {
+  @Output() onDateFilterApplied = new EventEmitter<DateFilterModel>();
 
-  @Output() onDateFilterApplied = new EventEmitter<DateFilterType>();
+  filterForm!: FormGroup;
 
-  // Emit filter changes
-  onFilterChange() {
-    const filter = {
-      condition: this.condition,
-      date: this.condition === 'between' ? null : this.selectedDate,
-      startDate: this.condition === 'between' ? this.startDate : null,
-      endDate: this.condition === 'between' ? this.endDate : null,
-    };
-    this.onDateFilterApplied.emit(filter);
+  private onChange: (value: DateFilterModel) => void = () => {};
+  private onTouched: () => void = () => {};
+
+  constructor(private fb: FormBuilder) {
+    this.filterForm = this.fb.group({
+      condition: this.fb.control<string>('equals'),
+      selectedDate: this.fb.control<Date | null>(new Date()),
+      startDate: this.fb.control<Date | null>(null),
+      endDate: this.fb.control<Date | null>(null),
+    });
+    this.filterForm.get('condition')?.valueChanges.subscribe((condition) => {
+      this.filterForm.get('selectedDate')?.reset();
+      this.filterForm.get('startDate')?.reset();
+      this.filterForm.get('endDate')?.reset();
+      this.updateValidators(condition);
+    });
   }
 
-  // Handle condition changes
-  onConditionChange() {
-    // Reset irrelevant fields when condition changes
-    this.selectedDate = null;
-    this.startDate = null;
-    this.endDate = null;
-    this.onFilterChange();
+  private updateValidators(condition: string): void {
+    const startDateControl = this.filterForm.get('startDate');
+    const endDateControl = this.filterForm.get('endDate');
+    const selectedDateControl = this.filterForm.get('selectedDate');
+
+    if (condition === 'between') {
+      selectedDateControl?.clearValidators();
+      startDateControl?.setValidators(Validators.required);
+      endDateControl?.setValidators(Validators.required);
+    } else {
+      selectedDateControl?.setValidators(Validators.required);
+      startDateControl?.clearValidators();
+      endDateControl?.clearValidators();
+    }
+    startDateControl?.updateValueAndValidity();
+    endDateControl?.updateValueAndValidity();
+    selectedDateControl?.updateValueAndValidity();
+  }
+
+  // Called when any part of the filter changes
+  onFilterChange(): void {
+    const rawValue = this.filterForm.getRawValue();
+
+    // Convert dates to local time
+    const formattedValue: DateFilterModel = {
+      ...rawValue,
+      selectedDate: rawValue.selectedDate
+        ? moment(rawValue.selectedDate).local().format('YYYY-MM-DD')
+        : null,
+      startDate: rawValue.startDate
+        ? moment(rawValue.startDate).local().format('YYYY-MM-DD')
+        : null,
+      endDate: rawValue.endDate
+        ? moment(rawValue.endDate).local().format('YYYY-MM-DD')
+        : null,
+    };
+
+    this.onChange(formattedValue);
+    this.onDateFilterApplied.emit(formattedValue);
   }
 
   // Clear the filter
-  clearFilter() {
-    this.condition = 'equals';
-    this.selectedDate = null;
-    this.startDate = null;
-    this.endDate = null;
+  clearFilter(): void {
+    this.filterForm.reset({
+      condition: 'equals',
+      selectedDate: null,
+      startDate: null,
+      endDate: null,
+    });
     this.onFilterChange();
   }
 
-  applyFilter(menuTrigger: MatMenuTrigger) {
+  // Apply the filter and close the menu
+  applyFilter(menuTrigger: MatMenuTrigger): void {
+    if (this.filterForm.invalid) return;
     this.onFilterChange();
     menuTrigger.closeMenu();
+  }
+
+  // ControlValueAccessor methods
+  writeValue(value: DateFilterModel): void {
+    if (value) {
+      this.filterForm.patchValue(value, { emitEvent: false });
+    }
+  }
+
+  registerOnChange(fn: (value: DateFilterModel) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    if (isDisabled) {
+      this.filterForm.disable();
+    } else {
+      this.filterForm.enable();
+    }
   }
 }
