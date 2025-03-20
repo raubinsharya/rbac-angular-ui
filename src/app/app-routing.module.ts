@@ -14,6 +14,11 @@ export const routes: Routes = [
     canActivate: [ACLGuard],
     children: [
       {
+        path: '',
+        loadChildren: () =>
+          import('./users/users.module').then((m) => m.UsersModule),
+      },
+      {
         path: 'users',
         loadChildren: () =>
           import('./users/users.module').then((m) => m.UsersModule),

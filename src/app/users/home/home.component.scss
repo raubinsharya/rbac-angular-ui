@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.users-container {
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

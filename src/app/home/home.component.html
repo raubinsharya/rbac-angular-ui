@@ -1,12 +1,12 @@
 <app-app-bar (toggleSidenav)="toggleSidenav()"></app-app-bar>
 <div class="home-container">
   <mat-drawer-container class="drawer-container" autosize>
-    <mat-drawer #sidenav class="drawer" mode="side">
+    <mat-drawer #sidenav class="drawer" mode="side" opened="true">
       <mat-nav-list>
         <div mat-subheader class="menu-heading">RBAC Menu</div>
         <mat-divider></mat-divider>
         @for (folder of folders; track folder) {
-        <mat-list-item>
+        <mat-list-item [routerLink]="folder.url">
           <mat-icon matListItemIcon>folder</mat-icon>
           <div matListItemTitle>{{ folder.name }}</div>
         </mat-list-item>

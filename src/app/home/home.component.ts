@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 export interface Section {
   name: string;
+  url: string;
 }
 
 @Component({
@@ -16,12 +17,15 @@ export class HomeComponent {
   folders: Section[] = [
     {
       name: 'Users',
+      url: '/users',
     },
     {
       name: 'Roles',
+      url: '/roles',
     },
     {
       name: 'Permissions',
+      url: '/permissions',
     },
   ];
 
