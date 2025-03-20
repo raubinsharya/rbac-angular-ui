@@ -1,12 +1,15 @@
 <mat-toolbar>
   <div class="left-child">
-    <a routerLink="/" class="icon-link">
-      <mat-icon
-        svgIcon="philips-icon"
-        aria-hidden="false"
-        aria-label="Example thumbs up SVG icons"
-      />
-    </a>
+    <button
+      mat-icon-button
+      (click)="openSidenav()"
+      aria-hidden="false"
+      class="hamburger-icon"
+      aria-label="Example thumbs up SVG icons"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="logo">RBAC</h1>
     <span>
       <ng-content />
     </span>

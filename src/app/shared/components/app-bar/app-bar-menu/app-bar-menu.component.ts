@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../../services/auth.service';
 import { Store } from '@ngrx/store';
-import { selectUserRoleState } from '../../../../store/selectos/user-management.selector';
+import { selectUser } from '../../../../store/selectos/user.selector';
 import { extractInitials } from '../../../../../utils';
 
 @Component({
@@ -14,17 +13,14 @@ export class AppBarMenuComponent implements OnInit {
   public initialName!: string;
   public lastLoggedIn!: string;
 
-  constructor(private auth: AuthService, private store: Store) {}
-
-  ngOnInit(): void {
-    this.store.select(selectUserRoleState).subscribe((user) => {
-      this.lastLoggedIn = user.userRoles[0]?.lastLoggedIn;
-      this.userName = user.name;
+  constructor(private store: Store) {
+    this.store.select(selectUser).subscribe((user) => {
+      this.userName = user?.fullName;
       this.initialName = extractInitials(this.userName as string);
     });
   }
 
-  public logout() {
-    this.auth.logout();
-  }
+  ngOnInit(): void {}
+
+  public logout() {}
 }

@@ -2,7 +2,8 @@ import { JSONPath } from 'jsonpath-plus';
 import { isEmpty, set } from 'lodash';
 
 export function extractInitials(fullName: string) {
-  const names = fullName.trim().split(/\s+/);
+  if (isEmpty(fullName)) return '';
+  const names = fullName?.trim().split(/\s+/);
 
   let firstInitial = '';
   let lastInitial = '';
@@ -23,7 +24,7 @@ export function extractInitials(fullName: string) {
     lastInitial = names[lastNameIndex].charAt(0).toUpperCase();
   }
 
-  return `${lastInitial}${firstInitial}`;
+  return `${firstInitial}${lastInitial}`;
 }
 
 export function capitalize(str: string): string {

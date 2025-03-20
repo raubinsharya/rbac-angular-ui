@@ -1,19 +1,18 @@
-<app-app-bar></app-app-bar>
+<app-app-bar (toggleSidenav)="toggleSidenav()"></app-app-bar>
 <div class="home-container">
-  <span>Booking Console</span>
-  <div class="inner-container">
-    <h1>You want to work on</h1>
-    <div class="contract-grid">
-      <a routerLink="contract" class="contract mat-elevation-z8">
-        <div class="contract">
-          <mat-icon>groups</mat-icon>
-          Contract
-        </div>
-      </a>
-      <a class="order mat-elevation-z8" routerLink="#">
-        <mat-icon>interpreter_mode</mat-icon>
-        Order
-      </a>
-    </div>
-  </div>
+  <mat-drawer-container class="drawer-container" autosize>
+    <mat-drawer #sidenav class="drawer" mode="side">
+      <mat-nav-list>
+        <div mat-subheader class="menu-heading">RBAC Menu</div>
+        <mat-divider></mat-divider>
+        @for (folder of folders; track folder) {
+        <mat-list-item>
+          <mat-icon matListItemIcon>folder</mat-icon>
+          <div matListItemTitle>{{ folder.name }}</div>
+        </mat-list-item>
+        }
+      </mat-nav-list>
+    </mat-drawer>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>
 </div>

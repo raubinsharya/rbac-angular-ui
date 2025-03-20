@@ -1,35 +1,24 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { MsalGuard } from './guards/msal.guard';
 import { LoginComponent } from './login/login.component';
-import { AuthRedirectGuard } from './guards/auth-redirect.guard';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { UnauthorizedComponent } from './shared/components/unauthorized/unauthorized.component';
+import { ACLGuard } from './guards/acl.guard';
+import { AuthRedirectGuard } from './guards/auth-redirect.guard';
 
 export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [MsalGuard],
-  },
-  {
-    path: 'admin',
-    loadChildren: () =>
-      import('./admin/admin.module').then((m) => m.AdminModule),
-  },
-  {
-    path: 'contract',
-    loadChildren: () =>
-      import('./contract/contract.module').then((m) => m.ContractModule),
-    // canActivate: [MsalGuard, PermissionsGuardWithRoles],
-    canActivate: [MsalGuard],
-    data: {
-      permissions: {
-        only: ['system_admin_its', 'account_manager'],
-        redirectTo: '/unauthorized',
+    canActivate: [ACLGuard],
+    children: [
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./users/users.module').then((m) => m.UsersModule),
       },
-    },
+    ],
   },
   {
     path: 'login',

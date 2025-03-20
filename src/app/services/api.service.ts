@@ -47,11 +47,8 @@ export class ApiService {
       // Client-side error
       errorMessage = `Error: ${error.error.message}`;
     } else {
-      // Server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${
-        error.error?.errorDesc ?? 'Internal Server error...'
-      }`;
+      errorMessage = error.error.errors;
     }
-    return throwError(() => new Error(errorMessage));
+    return throwError(() => errorMessage);
   }
 }

@@ -1,9 +1,44 @@
-<div class="login-container">
-  <mat-icon
-    svgIcon="philips-logo"
-    aria-hidden="false"
-    aria-label="Example thumbs up SVG icons"
-  />
-  <h1>Philips Order and Contract Manager</h1>
-  <button mat-flat-button class="sign-in-btn" (click)="login()">Sign In</button>
+@if (loginLoading) {
+<div class="loading-box">
+  <app-loading></app-loading>
 </div>
+} @else {
+<div class="login-container">
+  <mat-card class="login-card">
+    <h1 class="login-title">Login</h1>
+    <form [formGroup]="loginForm" class="login-form">
+      <mat-form-field class="full-width" appearance="outline">
+        <input
+          matInput
+          formControlName="email"
+          placeholder="Enter your email"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <input
+          matInput
+          type="password"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="accent"
+        class="login-button"
+        (click)="login()"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+
+      <div class="social-login">
+        <button mat-raised-button><mat-icon>login</mat-icon> Google</button>
+        <button mat-stroked-button><mat-icon>github</mat-icon> GitHub</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+}

@@ -1,9 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
-import { selectUserRoleState } from '../../../store/selectos/user-management.selector';
+import {
+  selectUser,
+  selectUserState,
+} from '../../../store/selectos/user.selector';
 import { extractInitials } from '../../../../utils';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-app-bar',
@@ -11,6 +22,8 @@ import { extractInitials } from '../../../../utils';
   styleUrl: './app-bar.component.scss',
 })
 export class AppBarComponent implements OnInit {
+  @Output() toggleSidenav = new EventEmitter<void>();
+
   public userName!: string | undefined;
   public initialName!: string;
   public loading!: boolean;
@@ -29,10 +42,13 @@ export class AppBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.select(selectUserRoleState).subscribe((user) => {
-      this.userName = user.name;
-      this.loading = user.loading;
+    this.store.select(selectUser).subscribe((user) => {
+      this.userName = user?.fullName;
       this.initialName = extractInitials(this.userName as string);
     });
+  }
+
+  openSidenav() {
+    this.toggleSidenav.emit();
   }
 }

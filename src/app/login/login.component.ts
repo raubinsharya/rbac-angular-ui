@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { MsalService } from '@azure/msal-angular';
-import { Router } from '@angular/router';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { userLogin } from '../store/actions/user.action';
+import { selectLoginLoading } from '../store/selectos/user.selector';
 
 @Component({
   selector: 'app-login',
@@ -11,22 +10,25 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  constructor(
-    private auth: AuthService,
-    private msalService: MsalService,
-    private router: Router,
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
-  ) {
-    this.matIconRegistry.addSvgIcon(
-      'philips-logo',
-      this.domSanitizer.bypassSecurityTrustResourceUrl(
-        'assets/icons/philips-logo.svg'
-      )
-    );
+  public loginForm: FormGroup;
+  public loginLoading!: boolean;
+
+  constructor(private fb: FormBuilder, private readonly store: Store) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
   }
 
-  public login() {
-    this.auth.login();
+  ngOnInit() {
+    this.store
+      .select(selectLoginLoading)
+      .subscribe((loading) => (this.loginLoading = loading));
+  }
+
+  login() {
+    if (this.loginForm.valid) {
+      this.store.dispatch(userLogin(this.loginForm.value));
+    }
   }
 }

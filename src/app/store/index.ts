@@ -1,16 +1,13 @@
 import { isDevMode } from '@angular/core';
 import { ActionReducerMap, MetaReducer } from '@ngrx/store';
-import {
-  UserManagementState,
-  userRolesReducer,
-} from '../store/reducers/user-management.reducer';
+import { UserState, userReducer } from './reducers/user.reducer';
 
 export interface RootState {
-  userRoles: UserManagementState;
+  user: UserState;
 }
 
 export const reducers: ActionReducerMap<RootState> = {
-  userRoles: userRolesReducer,
+  user: userReducer,
 };
 
 export const metaReducers: MetaReducer<RootState>[] = isDevMode() ? [] : [];

@@ -4,36 +4,23 @@ import {
   HttpEvent,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { Observable, from, throwError } from 'rxjs';
-import { catchError, switchMap } from 'rxjs/operators';
-import { environment } from '../environments/environment';
-import { msalInstance } from '../config/auth.config';
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 export default function loggingInterceptor(
   req: HttpRequest<unknown>,
   next: HttpHandlerFn
 ): Observable<HttpEvent<unknown>> {
+  const router = inject(Router);
+
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      if (error.status === 401)
-        return from(
-          msalInstance.acquireTokenSilent({
-            scopes: [environment.APP_SCOPE],
-          })
-        ).pipe(
-          switchMap(({ accessToken }) => {
-            localStorage.setItem('token', accessToken);
-            const clonedRequest = req.clone({
-              setHeaders: {
-                Authorization: `Bearer ${accessToken}`,
-              },
-            });
-            return next(clonedRequest);
-          }),
-          catchError((retryError) => {
-            return throwError(() => retryError);
-          })
-        );
+      if (error.status === 401) {
+        localStorage.removeItem('token');
+        router.navigate(['/login']); // Redirect to login page
+      }
       return throwError(() => error);
     })
   );
