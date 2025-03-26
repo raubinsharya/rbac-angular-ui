@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { ColDef, GridApi, GridOptions } from 'ag-grid-community';
+import { ColDef, GridApi } from 'ag-grid-community';
 
 @Component({
   selector: 'ag-grid-table',
