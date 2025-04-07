@@ -19,8 +19,8 @@ export interface LoginResponseType {
 })
 export class UserService {
   constructor(
-    private api: ApiService,
-    private notification: NotificationService
+    private readonly api: ApiService,
+    private readonly notification: NotificationService
   ) {}
 
   public login(loginPayload: LoginPayloadType): Observable<LoginResponseType> {

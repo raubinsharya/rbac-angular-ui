@@ -8,9 +8,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl: string = environment.BASE_PATH;
+  private readonly baseUrl: string = environment.BASE_PATH;
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   // GET method to fetch data
   getData(endpoint: string): Observable<any> {

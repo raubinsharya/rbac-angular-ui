@@ -8,4 +8,5 @@ export interface UserProfileResponseType {
   createdAt: Date;
   updatedAt: Date;
   fullName: string;
+  status: string;
 }
