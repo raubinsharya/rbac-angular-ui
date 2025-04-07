@@ -25,6 +25,8 @@ import { FileChooserComponent } from './components/file-chooser/file-chooser.com
 
 import { HideOnRouteDirective } from './directives/app-hide-on-routes-match.directive';
 import { DateFilterComponent } from './components/date-filter/date-filter.component';
+import { SharedViewRolesComponent } from './components/view-roles/view-roles.component';
+import { SharedAddRolesComponent } from './components/add-roles/add-roles.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { DateFilterComponent } from './components/date-filter/date-filter.compon
     FileChooserComponent,
     HideOnRouteDirective,
     DateFilterComponent,
+    SharedViewRolesComponent,
+    SharedAddRolesComponent,
   ],
   imports: [
     FormsModule,
@@ -68,6 +72,8 @@ import { DateFilterComponent } from './components/date-filter/date-filter.compon
     EditableSelectComponent,
     CustomDropDownComponent,
     EditableDatePickerComponent,
+    SharedViewRolesComponent,
+    SharedAddRolesComponent,
     UnauthorizedComponent,
     NotFoundComponent,
     FileChooserComponent,

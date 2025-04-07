@@ -6,6 +6,14 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { NotificationService } from '../../../services/notification.service';
 import {
+  addRolesToUser,
+  deleteRolesToUser,
+  fetchRoles,
+  fetchRolesFailed,
+  fetchRolesSuccess,
+  fetchUserRoles,
+  fetchUserRolesFailed,
+  fetchUserRolesSuccess,
   fetchUsers,
   fetchUsersFailed,
   fetchUsersSuccess,
@@ -31,6 +39,60 @@ export class UsersEffect {
             return fetchUsersSuccess({ users: response });
           }),
           catchError((error) => of(fetchUsersFailed({ error: error.message })))
+        )
+      )
+    )
+  );
+  fetchUserRoles$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fetchUserRoles),
+      exhaustMap(({ id }) =>
+        this.usersService.fetchUserRoles(id).pipe(
+          map((response) => {
+            return fetchUserRolesSuccess({ roles: response });
+          }),
+          catchError((error) =>
+            of(fetchUserRolesFailed({ error: error.message }))
+          )
+        )
+      )
+    )
+  );
+  fetchRoles$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fetchRoles),
+      exhaustMap(() =>
+        this.usersService.fetchRoles().pipe(
+          map((response) => {
+            return fetchRolesSuccess({ roles: response });
+          }),
+          catchError((error) => of(fetchRolesFailed({ error: error.message })))
+        )
+      )
+    )
+  );
+  addRolesToUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(addRolesToUser),
+      exhaustMap(({ ids, userId }) =>
+        this.usersService.addRolesToUser(userId, ids).pipe(
+          map(() => {
+            return fetchUserRoles({ id: userId });
+          }),
+          catchError((error) => of(fetchRolesFailed({ error: error.message })))
+        )
+      )
+    )
+  );
+  deleteRolesToUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteRolesToUser),
+      exhaustMap(({ ids, userId }) =>
+        this.usersService.deleteRolesToUser(userId, ids).pipe(
+          map(() => {
+            return fetchUserRoles({ id: userId });
+          }),
+          catchError((error) => of(fetchRolesFailed({ error: error.message })))
         )
       )
     )

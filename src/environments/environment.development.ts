@@ -1,3 +1,3 @@
 export const environment = {
-  BASE_PATH: 'http://localhost:3333',
+  BASE_PATH: 'http://192.168.8.141:3333',
 };

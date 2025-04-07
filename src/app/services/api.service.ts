@@ -34,9 +34,11 @@ export class ApiService {
   }
 
   // DELETE method to remove data
-  deleteData(endpoint: string): Observable<any> {
+  deleteData(endpoint: string, payload: any): Observable<any> {
     return this.http
-      .delete(`${this.baseUrl}${endpoint}`)
+      .request('DELETE', `${this.baseUrl}${endpoint}`, {
+        body: payload,
+      })
       .pipe(catchError(this.handleError));
   }
 

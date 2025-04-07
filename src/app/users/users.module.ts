@@ -7,9 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { EffectsModule } from '@ngrx/effects';
 import { UsersEffect } from './store/effects/user.effect';
 import { StoreModule } from '@ngrx/store';
-import { usersReducer } from './store/reducers/users.reducer';
 import { ViewRolesComponent } from './user-grid/custom-cells/view-roles/view-roles.component';
 import { ViewPermissionsComponent } from './user-grid/custom-cells/view-permissions/view-permissions.component';
+import { usersRootreducers } from './store';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { ViewPermissionsComponent } from './user-grid/custom-cells/view-permissi
     UserRoutingModule,
     SharedModule,
     EffectsModule.forFeature([UsersEffect]),
-    StoreModule.forFeature('users', usersReducer),
+    StoreModule.forFeature('users', usersRootreducers),
   ],
 })
 export class UsersModule {}

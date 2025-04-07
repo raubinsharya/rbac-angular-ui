@@ -9,6 +9,7 @@ import {
   CustomDropDownComponent,
   DropdownRendererParams,
 } from '../../shared/components/grid/custom-drop-down/custom-drop-down.component';
+import { userStatusTypes } from '../../shared/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -78,15 +79,10 @@ export class UsersColDefs {
         filter: true,
         cellRenderer: CustomDropDownComponent,
         cellRendererParams: {
-          values: [
-            { key: 'Unauth', value: 'unauth' },
-            { key: 'Active', value: 'active' },
-            { key: 'Deactive', value: 'deactive' },
-            { key: 'Block', value: 'block' },
-          ],
+          values: userStatusTypes,
           displayKey: 'key',
           valueKey: 'value',
-          toolTipValue: 'key'
+          toolTipValue: 'key',
         } as DropdownRendererParams,
       },
       {

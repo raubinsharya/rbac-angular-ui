@@ -205,3 +205,27 @@ mat-form-field::before {
   bottom: auto;
 }
 
+.icon-btn {
+  display: flex !important;
+  align-items: center;
+  width: unset !important;
+  color: white !important;
+  padding-inline: 1rem !important;
+  gap: 0.5rem !important;
+  font-size: 1.2rem !important;
+  border-radius: 0.25rem !important;
+  background-color: #1b5388 !important;
+  box-shadow: 0 0.125rem 0.25rem #0c365c !important;
+  &:hover {
+    background-color: rgb(33, 87, 138) !important;
+  }
+  &:active {
+    background-color: #185894 !important;
+  }
+  ::ng-deep .mat-mdc-button-persistent-ripple {
+    display: none !important;
+  }
+  &:disabled {
+    background-color: gray !important;
+  }
+}
