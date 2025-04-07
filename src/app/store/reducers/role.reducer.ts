@@ -1,12 +1,4 @@
 import { createReducer, on } from '@ngrx/store';
-import {
-  fetchUserProfile,
-  fetchUserProfileFailed,
-  fetchUserProfileSuccess,
-  userLogin,
-  userLoginFailed,
-  userLoginSuccess,
-} from '../actions/user.action';
 import { RoleType } from '../../models/role.model';
 import {
   fetchRoles,

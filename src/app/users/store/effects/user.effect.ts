@@ -6,11 +6,19 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { NotificationService } from '../../../services/notification.service';
 import {
+  addPermissionsToUser,
   addRolesToUser,
+  deletePermissionsToUser,
   deleteRolesToUser,
+  fetchPermissions,
+  fetchPermissionsFailed,
+  fetchPermissionsSuccess,
   fetchRoles,
   fetchRolesFailed,
   fetchRolesSuccess,
+  fetchUserPermissions,
+  fetchUserPermissionsFailed,
+  fetchUserPermissionsSuccess,
   fetchUserRoles,
   fetchUserRolesFailed,
   fetchUserRolesSuccess,
@@ -93,6 +101,66 @@ export class UsersEffect {
             return fetchUserRoles({ id: userId });
           }),
           catchError((error) => of(fetchRolesFailed({ error: error.message })))
+        )
+      )
+    )
+  );
+  fetchUserPermissions$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fetchUserPermissions),
+      exhaustMap(({ id }) =>
+        this.usersService.fetchUserPermissions(id).pipe(
+          map((response) => {
+            return fetchUserPermissionsSuccess({ permissions: response });
+          }),
+          catchError((error) =>
+            of(fetchUserPermissionsFailed({ error: error.message }))
+          )
+        )
+      )
+    )
+  );
+  fetchPermissions$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fetchPermissions),
+      exhaustMap(() =>
+        this.usersService.fetchPermissions().pipe(
+          map((response) => {
+            return fetchPermissionsSuccess({ permissions: response });
+          }),
+          catchError((error) =>
+            of(fetchPermissionsFailed({ error: error.message }))
+          )
+        )
+      )
+    )
+  );
+  addPermissionsToUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(addPermissionsToUser),
+      exhaustMap(({ ids, userId }) =>
+        this.usersService.addPermissionsToUser(userId, ids).pipe(
+          map(() => {
+            return fetchUserPermissions({ id: userId });
+          }),
+          catchError((error) =>
+            of(fetchUserPermissionsFailed({ error: error.message }))
+          )
+        )
+      )
+    )
+  );
+  deletePermissionsToUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deletePermissionsToUser),
+      exhaustMap(({ ids, userId }) =>
+        this.usersService.deletePermissionsToUser(userId, ids).pipe(
+          map(() => {
+            return fetchUserPermissions({ id: userId });
+          }),
+          catchError((error) =>
+            of(fetchUserPermissionsFailed({ error: error.message }))
+          )
         )
       )
     )

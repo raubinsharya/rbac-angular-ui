@@ -4,17 +4,17 @@
   cdkDrag
   cdkDragRootElement=".cdk-overlay-pane"
 >
-  <h4>User Roles</h4>
+  <h4>User Permissions</h4>
   <div style="flex-grow: 1"></div>
   <div class="button-container">
-    <button mat-icon-button class="icon-btn add-btn" (click)="addRoles()">
+    <button mat-icon-button class="icon-btn add-btn" (click)="addPermissions()">
       Add
       <mat-icon> add </mat-icon>
     </button>
     <button
       mat-icon-button
       class="icon-btn remove-btn"
-      (click)="deleteRoles()"
+      (click)="deletePermissions()"
       [disabled]="!selectedRowIds.length"
     >
       Remove

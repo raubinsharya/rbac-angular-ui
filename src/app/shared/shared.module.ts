@@ -27,6 +27,8 @@ import { HideOnRouteDirective } from './directives/app-hide-on-routes-match.dire
 import { DateFilterComponent } from './components/date-filter/date-filter.component';
 import { SharedViewRolesComponent } from './components/view-roles/view-roles.component';
 import { SharedAddRolesComponent } from './components/add-roles/add-roles.component';
+import { SharedViewPermissionsComponent } from './components/view-permissions/shared-view-permissions.component';
+import { SharedAddPermissionsComponent } from './components/add-permissions/add-permissions.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { SharedAddRolesComponent } from './components/add-roles/add-roles.compon
     DateFilterComponent,
     SharedViewRolesComponent,
     SharedAddRolesComponent,
+    SharedViewPermissionsComponent,
+    SharedAddPermissionsComponent
   ],
   imports: [
     FormsModule,
@@ -72,6 +76,8 @@ import { SharedAddRolesComponent } from './components/add-roles/add-roles.compon
     EditableSelectComponent,
     CustomDropDownComponent,
     EditableDatePickerComponent,
+    SharedViewPermissionsComponent,
+    SharedAddPermissionsComponent,
     SharedViewRolesComponent,
     SharedAddRolesComponent,
     UnauthorizedComponent,

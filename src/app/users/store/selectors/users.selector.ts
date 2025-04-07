@@ -38,3 +38,23 @@ export const selectUserRolesError = createSelector(
   selectRolesState,
   (state) => state.error
 );
+
+// Permissions
+
+export const selectPermissionsState = createSelector(
+  selectUsersRootState,
+  (state) => state.userPermissions
+);
+
+export const selectUserPermissions = createSelector(
+  selectPermissionsState,
+  (state) => state.permissions
+);
+export const selectUserPermissionsLoading = createSelector(
+  selectPermissionsState,
+  (state) => state.loading
+);
+export const selectUserPermissionsError = createSelector(
+  selectPermissionsState,
+  (state) => state.error
+);

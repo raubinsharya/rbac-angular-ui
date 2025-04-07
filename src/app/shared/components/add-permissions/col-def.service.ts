@@ -1,15 +1,15 @@
 import { ColDef } from 'ag-grid-community';
 
 import { Injectable } from '@angular/core';
-import { RoleType } from '../../../models/role.model';
+import { PermissionType } from '../../../models/permission.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AddRolesColDefs {
+export class AddPermissionsColDefs {
   constructor() {}
 
-  getColDefs(): ColDef<RoleType>[] {
+  getColDefs(): ColDef<PermissionType>[] {
     return [
       {
         field: 'id',
