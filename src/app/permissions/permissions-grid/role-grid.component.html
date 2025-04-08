@@ -1,0 +1,28 @@
+<div class="users-list-container">
+  <div class="users-list-header">
+    <span>Roles List</span>
+    <div class="button-group">
+      <button
+        mat-icon-button
+        class="delete-btn"
+        (click)="deletePermissions()"
+        [disabled]="!selectedRowIds.length"
+      >
+        <mat-icon>delete</mat-icon>
+        Remove
+      </button>
+      <button mat-icon-button (click)="openCreateDialog()">
+        <mat-icon>person_add</mat-icon>
+        Add
+      </button>
+    </div>
+  </div>
+  <ag-grid-table
+    [pagination]="true"
+    rowSelection="multiple"
+    [colDefs]="colDefs"
+    [rowData]="rowData"
+    (cellValueChangedEvent)="onCellValueChanged($event)"
+    (selectedRows)="onRowSelectionChange($event)"
+  ></ag-grid-table>
+</div>

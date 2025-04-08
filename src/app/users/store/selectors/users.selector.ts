@@ -1,9 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { UsersRootState } from '..';
+import { UsersRootState } from '../reducers';
 
 export const selectUsersRootState =
   createFeatureSelector<UsersRootState>('users');
-
+// Users
 export const selectUsersState = createSelector(
   selectUsersRootState,
   (state) => state.users
@@ -20,41 +20,40 @@ export const selectUsersError = createSelector(
   selectUsersState,
   (state) => state.error
 );
-
-export const selectRolesState = createSelector(
+// Select User Roles
+export const selectUserRolesState = createSelector(
   selectUsersRootState,
   (state) => state.userRoles
 );
 
 export const selectUserRoles = createSelector(
-  selectRolesState,
-  (state) => state.roles
+  selectUserRolesState,
+  (state) => state.userRoles
 );
 export const selectUserRolesLoading = createSelector(
-  selectRolesState,
+  selectUserRolesState,
   (state) => state.loading
 );
 export const selectUserRolesError = createSelector(
-  selectRolesState,
+  selectUserRolesState,
   (state) => state.error
 );
 
-// Permissions
-
-export const selectPermissionsState = createSelector(
+//Select User Permissions
+export const selectUserPermissionsState = createSelector(
   selectUsersRootState,
   (state) => state.userPermissions
 );
 
 export const selectUserPermissions = createSelector(
-  selectPermissionsState,
-  (state) => state.permissions
+  selectUserPermissionsState,
+  (state) => state.userPermissions
 );
 export const selectUserPermissionsLoading = createSelector(
-  selectPermissionsState,
+  selectUserPermissionsState,
   (state) => state.loading
 );
 export const selectUserPermissionsError = createSelector(
-  selectPermissionsState,
+  selectUserPermissionsState,
   (state) => state.error
 );

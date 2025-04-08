@@ -2,20 +2,15 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { NotificationService } from '../../../services/notification.service';
 import {
   addPermissionsToUser,
+  addPermissionsToUserFailed,
   addRolesToUser,
+  addRolesToUserFailed,
   deletePermissionsToUser,
+  deletePermissionsToUserFailed,
   deleteRolesToUser,
-  fetchPermissions,
-  fetchPermissionsFailed,
-  fetchPermissionsSuccess,
-  fetchRoles,
-  fetchRolesFailed,
-  fetchRolesSuccess,
+  deleteRolesToUserFailed,
   fetchUserPermissions,
   fetchUserPermissionsFailed,
   fetchUserPermissionsSuccess,
@@ -25,6 +20,8 @@ import {
   fetchUsers,
   fetchUsersFailed,
   fetchUsersSuccess,
+  updateUserStatus,
+  updateUserStatusFailed,
 } from '../actions/user.action';
 import { UsersService } from '../../services/user.service';
 
@@ -32,9 +29,6 @@ import { UsersService } from '../../services/user.service';
 export class UsersEffect {
   constructor(
     private readonly actions$: Actions,
-    private readonly notificationService: NotificationService,
-    private readonly router: Router,
-    private readonly store: Store,
     private readonly usersService: UsersService
   ) {}
 
@@ -66,19 +60,6 @@ export class UsersEffect {
       )
     )
   );
-  fetchRoles$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(fetchRoles),
-      exhaustMap(() =>
-        this.usersService.fetchRoles().pipe(
-          map((response) => {
-            return fetchRolesSuccess({ roles: response });
-          }),
-          catchError((error) => of(fetchRolesFailed({ error: error.message })))
-        )
-      )
-    )
-  );
   addRolesToUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(addRolesToUser),
@@ -87,7 +68,9 @@ export class UsersEffect {
           map(() => {
             return fetchUserRoles({ id: userId });
           }),
-          catchError((error) => of(fetchRolesFailed({ error: error.message })))
+          catchError((error) =>
+            of(addRolesToUserFailed({ error: error.message }))
+          )
         )
       )
     )
@@ -100,7 +83,9 @@ export class UsersEffect {
           map(() => {
             return fetchUserRoles({ id: userId });
           }),
-          catchError((error) => of(fetchRolesFailed({ error: error.message })))
+          catchError((error) =>
+            of(deleteRolesToUserFailed({ error: error.message }))
+          )
         )
       )
     )
@@ -120,21 +105,6 @@ export class UsersEffect {
       )
     )
   );
-  fetchPermissions$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(fetchPermissions),
-      exhaustMap(() =>
-        this.usersService.fetchPermissions().pipe(
-          map((response) => {
-            return fetchPermissionsSuccess({ permissions: response });
-          }),
-          catchError((error) =>
-            of(fetchPermissionsFailed({ error: error.message }))
-          )
-        )
-      )
-    )
-  );
   addPermissionsToUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(addPermissionsToUser),
@@ -144,7 +114,7 @@ export class UsersEffect {
             return fetchUserPermissions({ id: userId });
           }),
           catchError((error) =>
-            of(fetchUserPermissionsFailed({ error: error.message }))
+            of(addPermissionsToUserFailed({ error: error.message }))
           )
         )
       )
@@ -159,7 +129,22 @@ export class UsersEffect {
             return fetchUserPermissions({ id: userId });
           }),
           catchError((error) =>
-            of(fetchUserPermissionsFailed({ error: error.message }))
+            of(deletePermissionsToUserFailed({ error: error.message }))
+          )
+        )
+      )
+    )
+  );
+  updateUsersStatus$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateUserStatus),
+      exhaustMap(({ id, status }) =>
+        this.usersService.updateUserStatus(id, status).pipe(
+          map(() => {
+            return fetchUsers();
+          }),
+          catchError((error) =>
+            of(updateUserStatusFailed({ error: error.message }))
           )
         )
       )

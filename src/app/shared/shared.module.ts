@@ -26,9 +26,13 @@ import { FileChooserComponent } from './components/file-chooser/file-chooser.com
 import { HideOnRouteDirective } from './directives/app-hide-on-routes-match.directive';
 import { DateFilterComponent } from './components/date-filter/date-filter.component';
 import { SharedViewRolesComponent } from './components/view-roles/view-roles.component';
-import { SharedAddRolesComponent } from './components/add-roles/add-roles.component';
+import { SharedAddRolesComponent } from './components/add-roles-user/add-roles.component';
 import { SharedViewPermissionsComponent } from './components/view-permissions/shared-view-permissions.component';
-import { SharedAddPermissionsComponent } from './components/add-permissions/add-permissions.component';
+import { SharedAddPermissionsComponent } from './components/add-permissions-user/add-permissions.component';
+import { SharedRoleViewPermissionsComponent } from './components/view-role-permissions/shared-view-permissions.component';
+import { SharedAddPermissionsRoleComponent } from './components/add-permissions-role/add-permissions-role.component';
+import { SharedCreateRoleComponent } from './components/create-role/create-role.component';
+import { SharedCreatePermissionComponent } from './components/create-permission/create-permission.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { SharedAddPermissionsComponent } from './components/add-permissions/add-
     SharedViewRolesComponent,
     SharedAddRolesComponent,
     SharedViewPermissionsComponent,
-    SharedAddPermissionsComponent
+    SharedAddPermissionsComponent,
+    SharedRoleViewPermissionsComponent,
+    SharedAddPermissionsRoleComponent,
+    SharedCreateRoleComponent,
+    SharedCreatePermissionComponent
   ],
   imports: [
     FormsModule,
@@ -78,6 +86,7 @@ import { SharedAddPermissionsComponent } from './components/add-permissions/add-
     EditableDatePickerComponent,
     SharedViewPermissionsComponent,
     SharedAddPermissionsComponent,
+    SharedRoleViewPermissionsComponent,
     SharedViewRolesComponent,
     SharedAddRolesComponent,
     UnauthorizedComponent,
@@ -85,6 +94,9 @@ import { SharedAddPermissionsComponent } from './components/add-permissions/add-
     FileChooserComponent,
     DateFilterComponent,
     HideOnRouteDirective,
+    SharedAddPermissionsRoleComponent,
+    SharedCreateRoleComponent,
+    SharedCreatePermissionComponent
   ],
   providers: [provideNativeDateAdapter()],
 })

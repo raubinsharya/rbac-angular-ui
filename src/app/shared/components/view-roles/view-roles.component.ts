@@ -11,7 +11,7 @@ import {
 } from '../../../users/store/selectors/users.selector';
 import { RoleType } from '../../../models/role.model';
 import { ColDef } from 'ag-grid-community';
-import { SharedAddRolesComponent } from '../add-roles/add-roles.component';
+import { SharedAddRolesComponent } from '../add-roles-user/add-roles.component';
 import { RoleColDefs } from './col-def.service';
 import {
   deleteRolesToUser,

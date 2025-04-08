@@ -18,8 +18,8 @@ import { Store } from '@ngrx/store';
 @Injectable()
 export class UserEffect {
   constructor(
-    private actions$: Actions,
-    private userService: UserService,
+    private readonly actions$: Actions,
+    private readonly userService: UserService,
     private readonly notificationService: NotificationService,
     private readonly router: Router,
     private readonly store: Store

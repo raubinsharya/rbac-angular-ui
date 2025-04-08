@@ -26,6 +26,32 @@ export const routes: Routes = [
     ],
   },
   {
+    path: 'roles',
+    component: HomeComponent,
+    canActivate: [ACLGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./roles/roles.module').then((m) => m.RolesModule),
+      },
+    ],
+  },
+  {
+    path: 'permissions',
+    component: HomeComponent,
+    canActivate: [ACLGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./permissions/permissions.module').then(
+            (m) => m.PermissionsModule
+          ),
+      },
+    ],
+  },
+  {
     path: 'login',
     component: LoginComponent,
     canActivate: [AuthRedirectGuard],

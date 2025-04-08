@@ -16,5 +16,6 @@
     [pagination]="true"
     [colDefs]="colDefs"
     [rowData]="rowData"
+    (cellValueChangedEvent)="onCellValueChanged($event)"
   ></ag-grid-table>
 </div>

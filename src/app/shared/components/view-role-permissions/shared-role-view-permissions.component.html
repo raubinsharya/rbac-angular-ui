@@ -1,0 +1,44 @@
+<div
+  mat-dialog-title
+  class="dialog-title-container"
+  cdkDrag
+  cdkDragRootElement=".cdk-overlay-pane"
+  cdkDragHandle="dialogTitle"
+>
+  <h4 #dialogTitle>Permissions</h4>
+  <div style="flex-grow: 1"></div>
+  <div class="button-container">
+    <button mat-icon-button class="icon-btn add-btn" (click)="addPermissions()">
+      Add
+      <mat-icon> add </mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="icon-btn remove-btn"
+      (click)="deletePermissions()"
+      [disabled]="!selectedRowIds.length"
+    >
+      Remove
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>
+@if (!loading) {
+<mat-dialog-content class="dialog-content">
+  <ag-grid-table
+    [colDefs]="colDefs"
+    [rowData]="rowData"
+    [pagination]="true"
+    rowSelection="multiple"
+    (selectedRows)="onRowSelectionChange($event)"
+  ></ag-grid-table>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
+
+} @else {
+<div class="loading-container">
+  <app-loading></app-loading>
+</div>
+}

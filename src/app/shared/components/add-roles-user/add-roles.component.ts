@@ -2,14 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { AddRolesColDefs } from './col-def.service';
 import { ColDef } from 'ag-grid-community';
 import { Store } from '@ngrx/store';
-import {
-  addRolesToUser,
-  fetchRoles,
-} from '../../../users/store/actions/user.action';
-import { selectRoles } from '../../../store/selectos/role.selector';
 import { RoleType } from '../../../models/role.model';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { isEmpty } from 'lodash';
+import { selectRoles } from '../../../users/store/selectors/roles.selector';
+import { addRolesToUser, fetchRoles } from '../../../users/store/actions/user.action';
 
 @Component({
   selector: 'app-add-roles',

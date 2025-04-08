@@ -3,8 +3,9 @@
   class="dialog-title-container"
   cdkDrag
   cdkDragRootElement=".cdk-overlay-pane"
+  cdkDragHandle="dialogTitle"
 >
-  <h4>User Permissions</h4>
+  <h4 #dialogTitle>User Permissions</h4>
   <div style="flex-grow: 1"></div>
   <div class="button-container">
     <button mat-icon-button class="icon-btn add-btn" (click)="addPermissions()">

@@ -1,26 +1,20 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ColDef } from 'ag-grid-community';
 import { Store } from '@ngrx/store';
-import {
-  addPermissionsToUser,
-  addRolesToUser,
-  fetchPermissions,
-  fetchRoles,
-} from '../../../users/store/actions/user.action';
-import { selectRoles } from '../../../store/selectos/role.selector';
 import { RoleType } from '../../../models/role.model';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { isEmpty } from 'lodash';
 import { AddPermissionsColDefs } from './col-def.service';
-import { selectPermissions } from '../../../store/selectos/permission.selector';
 import { PermissionType } from '../../../models/permission.model';
+import { addPermissionsToRole, fetchPermissions } from '../../../roles/store/actions/roles.action';
+import { selectPermissions } from '../../../roles/store/selectors/permissions.selector';
 
 @Component({
   selector: 'app-add-permissions',
-  templateUrl: './add-permissions.component.html',
-  styleUrl: './add-permissions.component.scss',
+  templateUrl: './add-permissions-role.component.html',
+  styleUrl: './add-permissions-role.component.scss',
 })
-export class SharedAddPermissionsComponent {
+export class SharedAddPermissionsRoleComponent {
   colDefs!: ColDef[];
   rowData!: RoleType[];
   public readonly dialogData: { selectedData: Array<string>; userId: string } =
@@ -50,9 +44,9 @@ export class SharedAddPermissionsComponent {
   addPermissions() {
     if (isEmpty(this.selectedRowIds)) return;
     this.store.dispatch(
-      addPermissionsToUser({
-        ids: this.selectedRowIds,
-        userId: this.dialogData.userId,
+      addPermissionsToRole({
+        permissions: this.selectedRowIds,
+        id: this.dialogData.userId,
       })
     );
   }

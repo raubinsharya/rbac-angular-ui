@@ -24,40 +24,54 @@ export const fetchUserRolesFailed = createAction(
   '[USERS][FETCH][ROLES] FETCH USERS ROLES FAILED',
   props<{ error: string }>()
 );
+// user status update
+export const updateUserStatus = createAction(
+  '[USERS][STATUS][UPDATE] USERS STATUS UPDATE',
+  props<{ id: number; status: string }>()
+);
+export const updateUserStatusSuccess = createAction(
+  '[USERS][STATUS][UPDATE][SUCCESS] USERS STATUS UPDATE SUCCESS',
+  props<{ roles: any }>()
+);
+export const updateUserStatusFailed = createAction(
+  '[USERS][STATUS][UPDATE][FAILED] USERS STATUS UPDATE FAILED',
+  props<{ error: string }>()
+);
+
 //Roles
-export const fetchRoles = createAction('[ROLES][FETCH][ROLES] FETCH ROLES');
+export const fetchRoles = createAction('[USERS][ROLES][FETCH][ROLES] FETCH ROLES');
 export const fetchRolesSuccess = createAction(
-  '[ROLES][FETCH][ROLES] FETCH ROLES SUCCESS',
+  '[USERS][ROLES][FETCH][ROLES] FETCH ROLES SUCCESS',
   props<{ roles: Array<RoleType> }>()
 );
 export const fetchRolesFailed = createAction(
-  '[ROLES][FETCH][ROLES] FETCH ROLES FAILED',
+  '[USERS][ROLES][FETCH][ROLES] FETCH ROLES FAILED',
   props<{ error: string }>()
 );
 //add Roles
 export const addRolesToUser = createAction(
-  '[ADD][ROLES][USER] ADD ROLES TO USER',
+  '[USERS][ADD][ROLES][USER] ADD ROLES TO USER',
   props<{ userId: string; ids: Array<string> }>()
 );
 export const addRolesToUserSuccess = createAction(
-  '[ADD][ROLES][USER][SUCCESS] ADD ROLES TO USER SUCCESS',
+  '[USERS][ADD][ROLES][USER][SUCCESS] ADD ROLES TO USER SUCCESS',
   props<{ roles: Array<RoleType> }>()
 );
 export const addRolesToUserFailed = createAction(
-  '[ADD][ROLES][USER][FAILED] ADD ROLES TO USER FAILED',
+  '[USERS][ADD][ROLES][USER][FAILED] ADD ROLES TO USER FAILED',
   props<{ error: string }>()
 );
 //delete Roles
 export const deleteRolesToUser = createAction(
-  '[DELETE][ROLES][USER] DELETE ROLES TO USER',
+  '[USERS][DELETE][ROLES][USER] DELETE ROLES TO USER',
   props<{ userId: string; ids: Array<string> }>()
 );
 export const deleteRolesToUserSuccess = createAction(
-  '[DELETE][ROLES][USER][SUCCESS] DELETE ROLES TO USER SUCCESS',
+  '[USERS][DELETE][ROLES][USER][SUCCESS] DELETE ROLES TO USER SUCCESS',
   props<{ roles: Array<RoleType> }>()
 );
 export const deleteRolesToUserFailed = createAction(
-  '[DELETE][ROLES][USER][FAILED] DELETE ROLES TO USER FAILED',
+  '[USERS][DELETE][ROLES][USER][FAILED] DELETE ROLES TO USER FAILED',
   props<{ error: string }>()
 );
 
@@ -76,40 +90,40 @@ export const fetchUserPermissionsFailed = createAction(
 );
 // fetch permissions
 export const fetchPermissions = createAction(
-  '[PERMISSIONS][FETCH][PERMISSIONS] FETCH PERMISSIONS'
+  '[USERS][PERMISSIONS][FETCH][PERMISSIONS] FETCH PERMISSIONS'
 );
 export const fetchPermissionsSuccess = createAction(
-  '[PERMISSIONS][FETCH][PERMISSIONS][SUCCESS] FETCH PERMISSIONS SUCCESS',
+  '[USERS][PERMISSIONS][FETCH][PERMISSIONS][SUCCESS] FETCH PERMISSIONS SUCCESS',
   props<{ permissions: Array<RoleType> }>()
 );
 export const fetchPermissionsFailed = createAction(
-  '[PERMISSIONS][FETCH][PERMISSIONS][FAILED] FETCH PERMISSIONS FAILED',
+  '[USERS][PERMISSIONS][FETCH][PERMISSIONS][FAILED] FETCH PERMISSIONS FAILED',
   props<{ error: string }>()
 );
 
 //add permissions to user
 export const addPermissionsToUser = createAction(
-  '[ADD][PERMISSIONS][USER] ADD PERMISSIONS TO USER',
+  '[USERS][ADD][PERMISSIONS][USER] ADD PERMISSIONS TO USER',
   props<{ userId: string; ids: Array<string> }>()
 );
 export const addPermissionsToUserSuccess = createAction(
-  '[ADD][PERMISSIONS][USER][SUCCESS] ADD PERMISSIONS TO USER SUCCESS',
+  '[USERS][ADD][PERMISSIONS][USER][SUCCESS] ADD PERMISSIONS TO USER SUCCESS',
   props<{ permissions: Array<PermissionType> }>()
 );
 export const addPermissionsToUserFailed = createAction(
-  '[ADD][PERMISSIONS][USER][FAILED] ADD PERMISSIONS TO USER FAILED',
+  '[USERS][ADD][PERMISSIONS][USER][FAILED] ADD PERMISSIONS TO USER FAILED',
   props<{ error: string }>()
 );
 //delete Permissions from user
 export const deletePermissionsToUser = createAction(
-  '[DELETE][PERMISSIONS][USER] DELETE PERMISSIONS TO USER',
+  '[USERS][DELETE][PERMISSIONS][USER] DELETE PERMISSIONS TO USER',
   props<{ userId: string; ids: Array<string> }>()
 );
 export const deletePermissionsToUserSuccess = createAction(
-  '[DELETE][PERMISSIONS][USER][SUCCESS] DELETE PERMISSIONS TO USER SUCCESS',
+  '[USERS][DELETE][PERMISSIONS][USER][SUCCESS] DELETE PERMISSIONS TO USER SUCCESS',
   props<{ permissions: Array<RoleType> }>()
 );
 export const deletePermissionsToUserFailed = createAction(
-  '[DELETE][PERMISSIONS][USER][FAILED] DELETE PERMISSIONS TO USER FAILED',
+  '[USERS][DELETE][PERMISSIONS][USER][FAILED] DELETE PERMISSIONS TO USER FAILED',
   props<{ error: string }>()
 );

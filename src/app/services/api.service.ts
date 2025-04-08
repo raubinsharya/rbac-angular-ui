@@ -41,6 +41,13 @@ export class ApiService {
       })
       .pipe(catchError(this.handleError));
   }
+  patchData(endpoint: string, payload: any): Observable<any> {
+    return this.http
+      .request('PATCH', `${this.baseUrl}${endpoint}`, {
+        body: payload,
+      })
+      .pipe(catchError(this.handleError));
+  }
 
   // Error handling
   private handleError(error: HttpErrorResponse) {

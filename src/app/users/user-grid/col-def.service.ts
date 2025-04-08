@@ -10,12 +10,14 @@ import {
   DropdownRendererParams,
 } from '../../shared/components/grid/custom-drop-down/custom-drop-down.component';
 import { userStatusTypes } from '../../shared/constants';
+import { Store } from '@ngrx/store';
+import { updateUserStatus } from '../store/actions/user.action';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersColDefs {
-  constructor() {}
+  constructor(private readonly store: Store) {}
 
   getColDefs(): ColDef<UserProfileResponseType>[] {
     return [
@@ -82,8 +84,13 @@ export class UsersColDefs {
           values: userStatusTypes,
           displayKey: 'key',
           valueKey: 'value',
-          toolTipValue: 'key',
         } as DropdownRendererParams,
+        onCellValueChanged: ({ newValue, data }) => {
+          console.info('here we go grid', newValue);
+          this.store.dispatch(
+            updateUserStatus({ id: data.id, status: newValue })
+          );
+        },
       },
       {
         field: 'id',

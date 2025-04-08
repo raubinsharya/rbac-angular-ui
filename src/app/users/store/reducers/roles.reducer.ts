@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
 import { RoleType } from '../../../models/role.model';
 import {
-  fetchUserRoles,
-  fetchUserRolesFailed,
-  fetchUserRolesSuccess,
+  fetchRoles,
+  fetchRolesFailed,
+  fetchRolesSuccess,
 } from '../actions/user.action';
 
 export interface RolesState {
@@ -20,15 +20,16 @@ export const initialState: RolesState = {
 
 export const rolesReducer = createReducer(
   initialState,
-  on(fetchUserRoles, (state) => ({ ...state, loading: true })),
-  on(fetchUserRolesSuccess, (state, { roles }) => ({
+  on(fetchRoles, (state) => ({ ...state, loading: true, roles: [] })),
+  on(fetchRolesSuccess, (state, { roles }) => ({
     ...state,
     loading: false,
     roles,
   })),
-  on(fetchUserRolesFailed, (state, { error }) => ({
+  on(fetchRolesFailed, (state, { error }) => ({
     ...state,
     loading: false,
     error,
+    roles: [],
   }))
 );

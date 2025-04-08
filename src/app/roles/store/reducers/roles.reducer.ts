@@ -1,24 +1,25 @@
 import { createReducer, on } from '@ngrx/store';
-import { RoleType } from '../../models/role.model';
+import { RoleType } from '../../../models/role.model';
 import {
+  createRolesSuccess,
   fetchRoles,
   fetchRolesFailed,
   fetchRolesSuccess,
-} from '../../users/store/actions/user.action';
+} from '../actions/roles.action';
 
-export interface RoleState {
+export interface RolesState {
   error: string | null;
   loading: boolean;
-  roles: RoleType[] | null;
+  roles: Array<RoleType> | null;
 }
 
-export const initialState: RoleState = {
+export const initialState: RolesState = {
   error: null,
   loading: false,
   roles: null,
 };
 
-export const roleReducer = createReducer(
+export const rolesReducer = createReducer(
   initialState,
   on(fetchRoles, (state) => ({ ...state, loading: true })),
   on(fetchRolesSuccess, (state, { roles }) => ({

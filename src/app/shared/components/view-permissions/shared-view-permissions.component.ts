@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -8,22 +8,17 @@ import { Store } from '@ngrx/store';
 import {
   selectUserPermissions,
   selectUserPermissionsLoading,
-  selectUserRoles,
-  selectUserRolesLoading,
 } from '../../../users/store/selectors/users.selector';
 import { RoleType } from '../../../models/role.model';
 import { ColDef } from 'ag-grid-community';
-import { SharedAddRolesComponent } from '../add-roles/add-roles.component';
 import {
   deletePermissionsToUser,
-  deleteRolesToUser,
   fetchUserPermissions,
-  fetchUserRoles,
 } from '../../../users/store/actions/user.action';
 import { isEmpty } from 'lodash';
 import { PermissionColDefs } from './col-def.service';
 import { PermissionType } from '../../../models/permission.model';
-import { SharedAddPermissionsComponent } from '../add-permissions/add-permissions.component';
+import { SharedAddPermissionsComponent } from '../add-permissions-user/add-permissions.component';
 @Component({
   selector: 'app-shared-view-permissions',
   templateUrl: './shared-view-permissions.component.html',

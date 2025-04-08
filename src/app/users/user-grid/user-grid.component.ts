@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersColDefs } from './col-def.service';
-import { ColDef } from 'ag-grid-community';
+import { CellValueChangedEvent, ColDef } from 'ag-grid-community';
 import { Store } from '@ngrx/store';
 import { fetchUsers } from '../store/actions/user.action';
 import { selectUsers } from '../store/selectors/users.selector';
@@ -23,11 +23,16 @@ export class UserGridComponent implements OnInit {
     this.store
       .select(selectUsers)
       .subscribe(
-        (users) => (this.rowData = users as UserProfileResponseType[])
+        (users) =>
+          (this.rowData = structuredClone(users) as UserProfileResponseType[])
       );
   }
 
   ngOnInit() {
     this.store.dispatch(fetchUsers());
+  }
+
+  onCellValueChanged(props: CellValueChangedEvent) {
+    console.info('here we go', props);
   }
 }

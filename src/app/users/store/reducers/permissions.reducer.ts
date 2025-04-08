@@ -1,8 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
 import {
-  fetchUserPermissions,
-  fetchUserPermissionsFailed,
-  fetchUserPermissionsSuccess,
+  fetchPermissions,
+  fetchPermissionsFailed,
+  fetchPermissionsSuccess,
 } from '../actions/user.action';
 import { PermissionType } from '../../../models/permission.model';
 
@@ -20,15 +20,20 @@ export const initialState: PermissionsState = {
 
 export const permissionsReducer = createReducer(
   initialState,
-  on(fetchUserPermissions, (state) => ({ ...state, loading: true })),
-  on(fetchUserPermissionsSuccess, (state, { permissions }) => ({
+  on(fetchPermissions, (state) => ({
+    ...state,
+    loading: true,
+    permissions: [],
+  })),
+  on(fetchPermissionsSuccess, (state, { permissions }) => ({
     ...state,
     loading: false,
     permissions,
   })),
-  on(fetchUserPermissionsFailed, (state, { error }) => ({
+  on(fetchPermissionsFailed, (state, { error }) => ({
     ...state,
     loading: false,
+    permissions: [],
     error,
   }))
 );

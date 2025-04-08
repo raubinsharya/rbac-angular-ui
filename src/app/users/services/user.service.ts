@@ -82,6 +82,13 @@ export class UsersService {
       })
       .pipe(catchError(this.handleError));
   }
+  public updateUserStatus(userId: number, status: string): Observable<any> {
+    return this.api
+      .patchData(`/api/v1/admin/users/${userId}/status`, {
+        status,
+      })
+      .pipe(catchError(this.handleError));
+  }
 
   handleError = (errors: string) => {
     if (Array.isArray(errors)) {
