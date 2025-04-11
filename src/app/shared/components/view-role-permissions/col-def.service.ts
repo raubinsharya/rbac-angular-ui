@@ -23,6 +23,7 @@ export class RolePermissionColDefs {
         sort: 'asc',
         checkboxSelection: true,
         headerCheckboxSelection: true,
+        valueGetter: ({ data }) => Number(data?.id),
       },
       {
         field: 'slug',

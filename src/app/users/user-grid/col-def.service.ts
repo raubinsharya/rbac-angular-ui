@@ -31,6 +31,7 @@ export class UsersColDefs {
         filter: true,
         sort: 'asc',
         checkboxSelection: true,
+        valueGetter: ({ data }) => Number(data?.id),
       },
       {
         field: 'firstName',
@@ -84,6 +85,7 @@ export class UsersColDefs {
           values: userStatusTypes,
           displayKey: 'key',
           valueKey: 'value',
+          permissions: ['update_user_status'],
         } as DropdownRendererParams,
         onCellValueChanged: ({ newValue, data }) => {
           console.info('here we go grid', newValue);

@@ -6,12 +6,19 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 import { UnauthorizedComponent } from './shared/components/unauthorized/unauthorized.component';
 import { ACLGuard } from './guards/acl.guard';
 import { AuthRedirectGuard } from './guards/auth-redirect.guard';
+import { ngxPermissionsGuard as NgxPermissionGuard } from 'ngx-permissions';
 
 export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [ACLGuard],
+    canActivate: [ACLGuard, NgxPermissionGuard],
+    data: {
+      permissions: {
+        only: ['view_users', 'view_roles', 'view_permissions', 'root_admin'],
+        redirectTo: 'unauthorized',
+      },
+    },
     children: [
       {
         path: '',

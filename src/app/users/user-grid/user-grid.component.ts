@@ -14,6 +14,7 @@ import { UserProfileResponseType } from '../../models/user.model';
 export class UserGridComponent implements OnInit {
   public colDefs!: ColDef[];
   public rowData!: UserProfileResponseType[];
+  public permissions!: string[];
 
   constructor(
     private readonly colDef: UsersColDefs,

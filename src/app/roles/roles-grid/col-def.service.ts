@@ -26,6 +26,7 @@ export class RolesColDefs {
         sort: 'asc',
         checkboxSelection: true,
         headerCheckboxSelection: true,
+        valueGetter: ({ data }) => Number(data?.id),
       },
       {
         field: 'slug',

@@ -33,6 +33,7 @@ import { SharedRoleViewPermissionsComponent } from './components/view-role-permi
 import { SharedAddPermissionsRoleComponent } from './components/add-permissions-role/add-permissions-role.component';
 import { SharedCreateRoleComponent } from './components/create-role/create-role.component';
 import { SharedCreatePermissionComponent } from './components/create-permission/create-permission.component';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { SharedCreatePermissionComponent } from './components/create-permission/
     SharedRoleViewPermissionsComponent,
     SharedAddPermissionsRoleComponent,
     SharedCreateRoleComponent,
-    SharedCreatePermissionComponent
+    SharedCreatePermissionComponent,
   ],
   imports: [
     FormsModule,
@@ -69,6 +70,7 @@ import { SharedCreatePermissionComponent } from './components/create-permission/
     ReactiveFormsModule,
     SharedMaterialModule,
     RouterModule.forChild([]),
+    NgxPermissionsModule.forChild(),
   ],
   exports: [
     FormsModule,
@@ -96,7 +98,7 @@ import { SharedCreatePermissionComponent } from './components/create-permission/
     HideOnRouteDirective,
     SharedAddPermissionsRoleComponent,
     SharedCreateRoleComponent,
-    SharedCreatePermissionComponent
+    SharedCreatePermissionComponent,
   ],
   providers: [provideNativeDateAdapter()],
 })

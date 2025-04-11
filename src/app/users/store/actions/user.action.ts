@@ -10,7 +10,7 @@ export const fetchUsersSuccess = createAction(
 );
 export const fetchUsersFailed = createAction(
   '[USERS][FETCH] FETCH USERS FAILED',
-  props<{ error: string }>()
+  props<{ errors: Array<{ message: string }> | null }>()
 );
 export const fetchUserRoles = createAction(
   '[USERS][FETCH][ROLES] FETCH USERS ROLES',
@@ -22,7 +22,7 @@ export const fetchUserRolesSuccess = createAction(
 );
 export const fetchUserRolesFailed = createAction(
   '[USERS][FETCH][ROLES] FETCH USERS ROLES FAILED',
-  props<{ error: string }>()
+  props<{ errors: Array<{ message: string }> }>()
 );
 // user status update
 export const updateUserStatus = createAction(
@@ -39,7 +39,9 @@ export const updateUserStatusFailed = createAction(
 );
 
 //Roles
-export const fetchRoles = createAction('[USERS][ROLES][FETCH][ROLES] FETCH ROLES');
+export const fetchRoles = createAction(
+  '[USERS][ROLES][FETCH][ROLES] FETCH ROLES'
+);
 export const fetchRolesSuccess = createAction(
   '[USERS][ROLES][FETCH][ROLES] FETCH ROLES SUCCESS',
   props<{ roles: Array<RoleType> }>()

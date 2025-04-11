@@ -10,6 +10,7 @@ import { ViewPermissionsComponent } from './roles-grid/custom-cells/view-permiss
 import { RolesEffect } from './store/effects/roles.effect';
 import { rolesRootreducers } from './store/reducers';
 import { RolesPermissionsEffect } from './store/effects/permissions.effect';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   declarations: [HomeComponent, RoleGridComponent, ViewPermissionsComponent],
@@ -17,6 +18,7 @@ import { RolesPermissionsEffect } from './store/effects/permissions.effect';
     CommonModule,
     RolesRoutingModule,
     SharedModule,
+    NgxPermissionsModule.forChild(),
     EffectsModule.forFeature([RolesEffect, RolesPermissionsEffect]),
     StoreModule.forFeature('roles', rolesRootreducers),
   ],

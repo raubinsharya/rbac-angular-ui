@@ -20,7 +20,7 @@ export const initialState: RolesState = {
 
 export const rolesReducer = createReducer(
   initialState,
-  on(fetchRoles, (state) => ({ ...state, loading: true, roles: [] })),
+  on(fetchRoles, (state) => ({ ...state, loading: true, roles: null })),
   on(fetchRolesSuccess, (state, { roles }) => ({
     ...state,
     loading: false,
@@ -30,6 +30,6 @@ export const rolesReducer = createReducer(
     ...state,
     loading: false,
     error,
-    roles: [],
+    roles: null,
   }))
 );

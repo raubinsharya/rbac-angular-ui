@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, exhaustMap, map } from 'rxjs/operators';
+import { catchError, exhaustMap, map, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import {
@@ -10,10 +10,12 @@ import {
   fetchUserProfile,
   fetchUserProfileSuccess,
   fetchUserProfileFailed,
+  fetchUserProfilePermissions,
+  fetchUserProfilePermissionsSuccess,
+  fetchUserProfilePermissionsFailed,
 } from '../actions/user.action';
 import { NotificationService } from '../../services/notification.service';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 
 @Injectable()
 export class UserEffect {
@@ -21,8 +23,7 @@ export class UserEffect {
     private readonly actions$: Actions,
     private readonly userService: UserService,
     private readonly notificationService: NotificationService,
-    private readonly router: Router,
-    private readonly store: Store
+    private readonly router: Router
   ) {}
 
   userLogin$ = createEffect(() =>
@@ -30,11 +31,21 @@ export class UserEffect {
       ofType(userLogin),
       exhaustMap(({ email, password }) =>
         this.userService.login({ email, password }).pipe(
-          map((response) => {
+          switchMap((response) => {
             localStorage.setItem('token', response.token);
             this.notificationService.showSuccess('Login Successful', 'Success');
-            this.router.navigate(['/']);
-            return userLoginSuccess({ user: response.user });
+            return this.userService.fetchUserProfilePermissions().pipe(
+              tap({
+                next: () => {
+                  this.router.navigate(['/']);
+                },
+                error: () => {
+                  this.router.navigate(['/']);
+                },
+              }),
+              map(() => userLoginSuccess({ user: response.user })),
+              catchError(() => of(userLoginSuccess({ user: response.user })))
+            );
           }),
           catchError((error) => of(userLoginFailed({ error: error.message })))
         )
@@ -49,8 +60,21 @@ export class UserEffect {
           map((profile) => {
             return fetchUserProfileSuccess({ user: profile });
           }),
+          catchError((error) => of(fetchUserProfileFailed({ errors: error })))
+        )
+      )
+    )
+  );
+  fetchUserProfilePermissions$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fetchUserProfilePermissions),
+      exhaustMap(() =>
+        this.userService.fetchUserProfilePermissions().pipe(
+          map((permissions) => {
+            return fetchUserProfilePermissionsSuccess({ permissions });
+          }),
           catchError((error) =>
-            of(fetchUserProfileFailed({ error: error.message }))
+            of(fetchUserProfilePermissionsFailed({ errors: error }))
           )
         )
       )

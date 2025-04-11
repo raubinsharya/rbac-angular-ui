@@ -23,6 +23,7 @@ export class AddPermissionsColDefs {
         checkboxSelection: true,
         headerCheckboxSelection: true,
         showDisabledCheckboxes: true,
+        valueGetter: ({ data }) => Number(data?.id),
       },
       {
         field: 'slug',
@@ -35,6 +36,22 @@ export class AddPermissionsColDefs {
       {
         field: 'title',
         headerName: 'Role Name',
+        sortable: true,
+        editable: false,
+        minWidth: 170,
+        filter: true,
+      },
+      {
+        field: 'allowed',
+        headerName: 'Allowed',
+        sortable: true,
+        editable: false,
+        minWidth: 170,
+        filter: true,
+      },
+      {
+        field: 'scope',
+        headerName: 'Scope',
         sortable: true,
         editable: false,
         minWidth: 170,

@@ -7,29 +7,29 @@ import {
 } from '../actions/user.action';
 
 export interface UserRolesState {
-  error: string | null;
+  errors: Array<{ message: string }> | null;
   loading: boolean;
   userRoles: Array<RoleType> | null;
 }
 
 export const initialState: UserRolesState = {
-  error: null,
+  errors: null,
   loading: false,
   userRoles: null,
 };
 
 export const userRolesReducer = createReducer(
   initialState,
-  on(fetchUserRoles, (state) => ({ ...state, loading: true, userRoles: [] })),
+  on(fetchUserRoles, (state) => ({ ...state, loading: true, userRoles: null })),
   on(fetchUserRolesSuccess, (state, { roles }) => ({
     ...state,
     loading: false,
     userRoles: roles,
   })),
-  on(fetchUserRolesFailed, (state, { error }) => ({
+  on(fetchUserRolesFailed, (state, { errors }) => ({
     ...state,
     loading: false,
-    error,
-    userRoles: [],
+    errors,
+    userRoles: null,
   }))
 );

@@ -26,7 +26,7 @@ export const rolePermissionsReducer = createReducer(
   on(fetchRolePermissions, (state) => ({
     ...state,
     loading: true,
-    rolePermissions: [],
+    rolePermissions: null,
   })),
   on(fetchRolePermissionsSuccess, (state, { permissions }) => ({
     ...state,
@@ -37,6 +37,6 @@ export const rolePermissionsReducer = createReducer(
     ...state,
     loading: false,
     error,
-    rolePermissions: [],
+    rolePermissions: null,
   }))
 );

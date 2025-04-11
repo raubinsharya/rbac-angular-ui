@@ -40,7 +40,7 @@ export class UsersEffect {
           map((response) => {
             return fetchUsersSuccess({ users: response });
           }),
-          catchError((error) => of(fetchUsersFailed({ error: error.message })))
+          catchError((error) => of(fetchUsersFailed({ errors: error })))
         )
       )
     )
@@ -53,9 +53,7 @@ export class UsersEffect {
           map((response) => {
             return fetchUserRolesSuccess({ roles: response });
           }),
-          catchError((error) =>
-            of(fetchUserRolesFailed({ error: error.message }))
-          )
+          catchError((error) => of(fetchUserRolesFailed({ errors: error })))
         )
       )
     )
@@ -68,9 +66,7 @@ export class UsersEffect {
           map(() => {
             return fetchUserRoles({ id: userId });
           }),
-          catchError((error) =>
-            of(addRolesToUserFailed({ error: error.message }))
-          )
+          catchError((error) => of(addRolesToUserFailed({ error: error })))
         )
       )
     )
@@ -83,9 +79,7 @@ export class UsersEffect {
           map(() => {
             return fetchUserRoles({ id: userId });
           }),
-          catchError((error) =>
-            of(deleteRolesToUserFailed({ error: error.message }))
-          )
+          catchError((error) => of(deleteRolesToUserFailed({ error: error })))
         )
       )
     )
@@ -99,7 +93,7 @@ export class UsersEffect {
             return fetchUserPermissionsSuccess({ permissions: response });
           }),
           catchError((error) =>
-            of(fetchUserPermissionsFailed({ error: error.message }))
+            of(fetchUserPermissionsFailed({ error: error }))
           )
         )
       )
@@ -114,7 +108,7 @@ export class UsersEffect {
             return fetchUserPermissions({ id: userId });
           }),
           catchError((error) =>
-            of(addPermissionsToUserFailed({ error: error.message }))
+            of(addPermissionsToUserFailed({ error: error }))
           )
         )
       )
@@ -129,7 +123,7 @@ export class UsersEffect {
             return fetchUserPermissions({ id: userId });
           }),
           catchError((error) =>
-            of(deletePermissionsToUserFailed({ error: error.message }))
+            of(deletePermissionsToUserFailed({ error: error }))
           )
         )
       )
@@ -144,7 +138,7 @@ export class UsersEffect {
             return fetchUsers();
           }),
           catchError((error) =>
-            of(updateUserStatusFailed({ error: error.message }))
+            of(updateUserStatusFailed({ error: error }), fetchUsers())
           )
         )
       )

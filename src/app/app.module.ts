@@ -1,8 +1,13 @@
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { NgModule, provideZoneChangeDetection, isDevMode } from '@angular/core';
+import {
+  NgModule,
+  provideZoneChangeDetection,
+  isDevMode,
+  APP_INITIALIZER,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { NgxPermissionsModule } from 'ngx-permissions';
+import { NgxPermissionsModule, NgxPermissionsService } from 'ngx-permissions';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +23,28 @@ import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared/shared.module';
 import { UserEffect } from './store/effects/user.effect';
 import { NotificationService } from './services/notification.service';
-import { JwtModule } from '@auth0/angular-jwt';
+import { UserService } from './services/user.service';
+import { catchError, firstValueFrom, map, of } from 'rxjs';
+import { PermissionType } from './models/permission.model';
+
+export function loadPermissionsFactory(
+  us: UserService,
+  permissionsService: NgxPermissionsService
+) {
+  return () => {
+    return firstValueFrom(
+      us.fetchUserProfilePermissions().pipe(
+        map((permissions: PermissionType[]) => {
+          permissionsService.loadPermissions(permissions.map((p) => p.slug));
+        }),
+        catchError(() => {
+          permissionsService.flushPermissions();
+          return of(null);
+        })
+      )
+    );
+  };
+}
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, LoginComponent],
@@ -45,6 +71,13 @@ import { JwtModule } from '@auth0/angular-jwt';
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideAnimationsAsync(),
     NotificationService,
+    UserService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: loadPermissionsFactory,
+      deps: [UserService, NgxPermissionsService],
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

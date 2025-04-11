@@ -23,7 +23,7 @@ export const userPermissionsReducer = createReducer(
   on(fetchUserPermissions, (state) => ({
     ...state,
     loading: true,
-    userPermissions: [],
+    userPermissions: null,
   })),
   on(fetchUserPermissionsSuccess, (state, { permissions }) => ({
     ...state,
@@ -33,7 +33,7 @@ export const userPermissionsReducer = createReducer(
   on(fetchUserPermissionsFailed, (state, { error }) => ({
     ...state,
     loading: false,
-    userPermissions: [],
+    userPermissions: null,
     error,
   }))
 );

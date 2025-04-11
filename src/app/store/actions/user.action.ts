@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { UserProfileResponseType } from '../../models/user.model';
+import { PermissionType } from '../../models/permission.model';
 
 export const userLogin = createAction(
   '[USER][LOGIN] LOGIN',
@@ -22,5 +23,17 @@ export const fetchUserProfileSuccess = createAction(
 );
 export const fetchUserProfileFailed = createAction(
   '[FETCH][USER][PROFILE][FAILED] USER PROFILE FAILED',
-  props<{ error: string }>()
+  props<{ errors: Array<{ message: string }> }>()
+);
+
+export const fetchUserProfilePermissions = createAction(
+  '[FETCH][USER][PROFILE][PERMISSIONS] USER PROFILE PERMISSIONS'
+);
+export const fetchUserProfilePermissionsSuccess = createAction(
+  '[FETCH][USER][PROFILE][PERMISSIONS][SUCCESS] USER PROFILE PERMISSIONS SUCCESS',
+  props<{ permissions: PermissionType[] }>()
+);
+export const fetchUserProfilePermissionsFailed = createAction(
+  '[FETCH][USER][PROFILE][PERMISSIONS][FAILED] USER PROFILE PERMISSIONS FAILED',
+  props<{ errors: Array<{ message: string }> }>()
 );

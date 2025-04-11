@@ -18,7 +18,7 @@ export const selectUsersLoading = createSelector(
 );
 export const selectUsersError = createSelector(
   selectUsersState,
-  (state) => state.error
+  (state) => state.errors
 );
 // Select User Roles
 export const selectUserRolesState = createSelector(
@@ -36,7 +36,7 @@ export const selectUserRolesLoading = createSelector(
 );
 export const selectUserRolesError = createSelector(
   selectUserRolesState,
-  (state) => state.error
+  (state) => state.errors
 );
 
 //Select User Permissions

@@ -7,28 +7,29 @@ import {
 } from '../actions/user.action';
 
 export interface UsersState {
-  error: string | null;
+  errors: Array<{ message: string }> | null;
   loading: boolean;
   users: Array<UserProfileResponseType> | null;
 }
 
 export const initialState: UsersState = {
-  error: null,
+  errors: null,
   loading: false,
   users: null,
 };
 
 export const usersReducer = createReducer(
   initialState,
-  on(fetchUsers, (state) => ({ ...state, loading: true })),
+  on(fetchUsers, (state) => ({ ...state, loading: true, users: null })),
   on(fetchUsersSuccess, (state, { users }) => ({
     ...state,
     loading: false,
     users,
   })),
-  on(fetchUsersFailed, (state, { error }) => ({
+  on(fetchUsersFailed, (state, { errors }) => ({
     ...state,
     loading: false,
-    error,
+    errors,
+    users: null,
   }))
 );

@@ -10,13 +10,13 @@ import {
 import { UserProfileResponseType } from '../../models/user.model';
 
 export interface UserState {
-  error: string | null;
+  errors: Array<{ message: string }> | null;
   loading: boolean;
   user: UserProfileResponseType | null;
 }
 
 export const initialState: UserState = {
-  error: null,
+  errors: null,
   loading: false,
   user: null,
 };
@@ -43,9 +43,9 @@ export const userReducer = createReducer(
     loading: false,
     user,
   })),
-  on(fetchUserProfileFailed, (state, { error }) => ({
+  on(fetchUserProfileFailed, (state, { errors }) => ({
     ...state,
     loading: false,
-    error,
+    errors,
   }))
 );

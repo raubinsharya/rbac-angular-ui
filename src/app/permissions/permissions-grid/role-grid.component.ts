@@ -32,7 +32,7 @@ export class PermissionsGridComponent {
     this.store
       .select(selectPermissions)
       .subscribe(
-        (roles) => (this.rowData = structuredClone(roles) as RoleType[])
+        (permissions) => (this.rowData = structuredClone(permissions) as RoleType[])
       );
   }
 

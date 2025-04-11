@@ -12,6 +12,7 @@ import { ViewPermissionsComponent } from './user-grid/custom-cells/view-permissi
 import { usersRootreducers } from './store/reducers';
 import { UsersRolesEffect } from './store/effects/roles.effect';
 import { UsersPermissionsEffect } from './store/effects/permissoins.effect';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { UsersPermissionsEffect } from './store/effects/permissoins.effect';
     CommonModule,
     UserRoutingModule,
     SharedModule,
+    NgxPermissionsModule.forChild(),
     EffectsModule.forFeature([
       UsersEffect,
       UsersRolesEffect,

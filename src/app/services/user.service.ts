@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, of, throwError } from 'rxjs';
 import { ApiService } from './api.service';
 import { NotificationService } from './notification.service';
 import { UserProfileResponseType } from '../models/user.model';
+import { PermissionType } from '../models/permission.model';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 export interface LoginPayloadType {
   email: string;
@@ -20,7 +22,8 @@ export interface LoginResponseType {
 export class UserService {
   constructor(
     private readonly api: ApiService,
-    private readonly notification: NotificationService
+    private readonly notification: NotificationService,
+    private readonly ngxPermission: NgxPermissionsService
   ) {}
 
   public login(loginPayload: LoginPayloadType): Observable<LoginResponseType> {
@@ -35,6 +38,24 @@ export class UserService {
     return this.api
       .getData(`/api/v1/user/profile`)
       .pipe(catchError(this.handleError));
+  }
+
+  public fetchUserProfilePermissions(): Observable<PermissionType[]> {
+    if (!this.isLoggedIn()) return of([]);
+    return this.api.getData('/api/v1/user/permissions').pipe(
+      catchError(this.handleError),
+      map((permissions: PermissionType[]) => {
+        this.ngxPermission.loadPermissions(
+          permissions.map((permission) => permission.slug)
+        );
+        return permissions;
+      })
+    );
+  }
+
+  public isLoggedIn(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token;
   }
 
   handleError = (errors: string) => {

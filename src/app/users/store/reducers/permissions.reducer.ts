@@ -23,7 +23,7 @@ export const permissionsReducer = createReducer(
   on(fetchPermissions, (state) => ({
     ...state,
     loading: true,
-    permissions: [],
+    permissions: null,
   })),
   on(fetchPermissionsSuccess, (state, { permissions }) => ({
     ...state,
@@ -33,7 +33,7 @@ export const permissionsReducer = createReducer(
   on(fetchPermissionsFailed, (state, { error }) => ({
     ...state,
     loading: false,
-    permissions: [],
+    permissions: null,
     error,
   }))
 );
