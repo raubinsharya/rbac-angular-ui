@@ -23,6 +23,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatTabsModule } from '@angular/material/tabs';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [],
@@ -49,6 +50,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     CdkAccordionModule,
     MatTabsModule,
     MatButtonToggleModule,
+    DragDropModule,
   ],
 })
 export class SharedMaterialModule {}

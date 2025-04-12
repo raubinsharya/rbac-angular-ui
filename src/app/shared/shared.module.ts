@@ -25,6 +25,15 @@ import { FileChooserComponent } from './components/file-chooser/file-chooser.com
 
 import { HideOnRouteDirective } from './directives/app-hide-on-routes-match.directive';
 import { DateFilterComponent } from './components/date-filter/date-filter.component';
+import { SharedViewRolesComponent } from './components/view-roles/view-roles.component';
+import { SharedAddRolesComponent } from './components/add-roles-user/add-roles.component';
+import { SharedViewPermissionsComponent } from './components/view-permissions/shared-view-permissions.component';
+import { SharedAddPermissionsComponent } from './components/add-permissions-user/add-permissions.component';
+import { SharedRoleViewPermissionsComponent } from './components/view-role-permissions/shared-view-permissions.component';
+import { SharedAddPermissionsRoleComponent } from './components/add-permissions-role/add-permissions-role.component';
+import { SharedCreateRoleComponent } from './components/create-role/create-role.component';
+import { SharedCreatePermissionComponent } from './components/create-permission/create-permission.component';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   declarations: [
@@ -45,6 +54,14 @@ import { DateFilterComponent } from './components/date-filter/date-filter.compon
     FileChooserComponent,
     HideOnRouteDirective,
     DateFilterComponent,
+    SharedViewRolesComponent,
+    SharedAddRolesComponent,
+    SharedViewPermissionsComponent,
+    SharedAddPermissionsComponent,
+    SharedRoleViewPermissionsComponent,
+    SharedAddPermissionsRoleComponent,
+    SharedCreateRoleComponent,
+    SharedCreatePermissionComponent,
   ],
   imports: [
     FormsModule,
@@ -53,6 +70,7 @@ import { DateFilterComponent } from './components/date-filter/date-filter.compon
     ReactiveFormsModule,
     SharedMaterialModule,
     RouterModule.forChild([]),
+    NgxPermissionsModule.forChild(),
   ],
   exports: [
     FormsModule,
@@ -68,11 +86,19 @@ import { DateFilterComponent } from './components/date-filter/date-filter.compon
     EditableSelectComponent,
     CustomDropDownComponent,
     EditableDatePickerComponent,
+    SharedViewPermissionsComponent,
+    SharedAddPermissionsComponent,
+    SharedRoleViewPermissionsComponent,
+    SharedViewRolesComponent,
+    SharedAddRolesComponent,
     UnauthorizedComponent,
     NotFoundComponent,
     FileChooserComponent,
     DateFilterComponent,
     HideOnRouteDirective,
+    SharedAddPermissionsRoleComponent,
+    SharedCreateRoleComponent,
+    SharedCreatePermissionComponent,
   ],
   providers: [provideNativeDateAdapter()],
 })

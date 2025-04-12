@@ -1,0 +1,56 @@
+<ng-container *ngxPermissionsOnly="['view_roles', 'root_admin']; else noAccess">
+  <div class="users-list-container">
+    <div class="users-list-header">
+      <span>Roles List</span>
+      <div class="button-group">
+        <button
+          mat-icon-button
+          class="delete-btn"
+          (click)="deleteRoles()"
+          [disabled]="!selectedRowIds.length"
+          *ngxPermissionsOnly="['delete_roles', 'root_admin']; else deleteElse"
+        >
+          <mat-icon>delete</mat-icon>
+          Remove
+        </button>
+        <button
+          mat-icon-button
+          (click)="openCreateDialog()"
+          *ngxPermissionsOnly="['create_roles', 'root_admin']; else addElse"
+        >
+          <mat-icon>person_add</mat-icon>
+          Add
+        </button>
+      </div>
+    </div>
+    <ag-grid-table
+      [pagination]="true"
+      rowSelection="multiple"
+      [colDefs]="colDefs"
+      [rowData]="rowData"
+      (cellValueChangedEvent)="onCellValueChanged($event)"
+      (selectedRows)="onRowSelectionChange($event)"
+    ></ag-grid-table>
+  </div>
+</ng-container>
+
+<ng-template #noAccess>
+  <app-unauthorized />
+</ng-template>
+
+<ng-template #deleteElse>
+  <span matTooltip="You don't have permissions" matTooltipPosition="above">
+    <button mat-icon-button class="delete-btn" disabled>
+      <mat-icon>delete</mat-icon>
+      Remove
+    </button>
+  </span>
+</ng-template>
+<ng-template #addElse>
+  <span matTooltip="You don't have permissions" matTooltipPosition="above">
+    <button mat-icon-button disabled>
+      <mat-icon>person_add</mat-icon>
+      Add
+    </button>
+  </span>
+</ng-template>

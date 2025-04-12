@@ -1,20 +1,9 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
-import {
-  selectUser,
-  selectUserState,
-} from '../../../store/selectos/user.selector';
+import { selectUser } from '../../../store/selectos/user.selector';
 import { extractInitials } from '../../../../utils';
-import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-app-bar',
@@ -29,9 +18,9 @@ export class AppBarComponent implements OnInit {
   public loading!: boolean;
 
   constructor(
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer,
-    private store: Store
+    private readonly matIconRegistry: MatIconRegistry,
+    private readonly domSanitizer: DomSanitizer,
+    private readonly store: Store
   ) {
     this.matIconRegistry.addSvgIcon(
       'philips-icon',

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { Store } from '@ngrx/store';
+import { fetchUserProfilePermissions } from '../store/actions/user.action';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +12,10 @@ import { environment } from '../../environments/environment';
 export class ApiService {
   private readonly baseUrl: string = environment.BASE_PATH;
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(
+    private readonly http: HttpClient,
+    private readonly store: Store
+  ) {}
 
   // GET method to fetch data
   getData(endpoint: string): Observable<any> {
@@ -34,14 +39,26 @@ export class ApiService {
   }
 
   // DELETE method to remove data
-  deleteData(endpoint: string): Observable<any> {
+  deleteData(endpoint: string, payload: any): Observable<any> {
     return this.http
-      .delete(`${this.baseUrl}${endpoint}`)
+      .request('DELETE', `${this.baseUrl}${endpoint}`, {
+        body: payload,
+      })
+      .pipe(catchError(this.handleError));
+  }
+  patchData(endpoint: string, payload: any): Observable<any> {
+    return this.http
+      .request('PATCH', `${this.baseUrl}${endpoint}`, {
+        body: payload,
+      })
       .pipe(catchError(this.handleError));
   }
 
   // Error handling
-  private handleError(error: HttpErrorResponse) {
+  private readonly handleError = (error: HttpErrorResponse) => {
+    if (error.status === 403) {
+      this.store.dispatch(fetchUserProfilePermissions());
+    }
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {
       // Client-side error
@@ -50,5 +67,5 @@ export class ApiService {
       errorMessage = error.error.errors;
     }
     return throwError(() => errorMessage);
-  }
+  };
 }

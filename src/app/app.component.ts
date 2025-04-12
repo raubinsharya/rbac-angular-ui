@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { NgxPermissionsService } from 'ngx-permissions';
 import { MatSidenav } from '@angular/material/sidenav';
 import { fetchUserProfile } from './store/actions/user.action';
+import { isEmpty } from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,12 @@ import { fetchUserProfile } from './store/actions/user.action';
 export class AppComponent {
   @ViewChild('drawer') drawer!: MatSidenav;
   public userRoleError!: string | null;
-  constructor(
-    private ngxPermission: NgxPermissionsService,
-    private store: Store
-  ) {}
+
+  constructor(private readonly store: Store) {}
 
   ngOnInit() {
+    const token = localStorage.getItem('token');
+    if (isEmpty(token)) return;
     this.store.dispatch(fetchUserProfile());
   }
 }

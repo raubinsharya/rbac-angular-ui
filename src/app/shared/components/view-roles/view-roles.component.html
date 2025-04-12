@@ -1,0 +1,78 @@
+<ng-container
+  *ngxPermissionsOnly="['view_user_roles', 'root_admin']; else noAccess"
+>
+  <div
+    mat-dialog-title
+    class="dialog-title-container"
+    cdkDrag
+    cdkDragRootElement=".cdk-overlay-pane"
+  >
+    <h4>User Roles</h4>
+    <div style="flex-grow: 1"></div>
+    <div class="button-container">
+      <button
+        mat-icon-button
+        class="icon-btn add-btn"
+        (click)="addRoles()"
+        *ngxPermissionsOnly="['add_user_roles', 'root_admin']; else addElse"
+      >
+        Add
+        <mat-icon> add </mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        class="icon-btn remove-btn"
+        (click)="deleteRoles()"
+        *ngxPermissionsOnly="
+          ['delete_user_roles', 'root_admin'];
+          else removeElse
+        "
+        [disabled]="!selectedRowIds.length"
+      >
+        Remove
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  @if (!loading) {
+  <mat-dialog-content class="dialog-content">
+    <ag-grid-table
+      [colDefs]="colDefs"
+      [rowData]="rowData"
+      [pagination]="true"
+      rowSelection="multiple"
+      (selectedRows)="onRowSelectionChange($event)"
+    ></ag-grid-table>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+
+  } @else {
+  <div class="loading-container">
+    <app-loading></app-loading>
+  </div>
+  }
+</ng-container>
+<ng-template #noAccess>
+  <app-unauthorized></app-unauthorized>
+</ng-template>
+
+<ng-template #addElse>
+  <span matTooltip="You don't have permission" matTooltipPosition="above">
+    <button mat-icon-button class="icon-btn add-btn" disabled>
+      Add
+      <mat-icon> add </mat-icon>
+    </button>
+  </span>
+</ng-template>
+
+<ng-template #removeElse>
+  <span matTooltip="You don't have permission" matTooltipPosition="above">
+    <button mat-icon-button class="icon-btn remove-btn" disabled>
+      Remove
+      <mat-icon>delete</mat-icon>
+    </button>
+  </span>
+</ng-template>

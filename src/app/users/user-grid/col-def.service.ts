@@ -9,12 +9,19 @@ import {
   CustomDropDownComponent,
   DropdownRendererParams,
 } from '../../shared/components/grid/custom-drop-down/custom-drop-down.component';
+import { userStatusTypes } from '../../shared/constants';
+import { Store } from '@ngrx/store';
+import { updateUserStatus } from '../store/actions/user.action';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersColDefs {
-  constructor() {}
+  constructor(
+    private readonly store: Store,
+    private readonly ngxPermission: NgxPermissionsService
+  ) {}
 
   getColDefs(): ColDef<UserProfileResponseType>[] {
     return [
@@ -28,6 +35,7 @@ export class UsersColDefs {
         filter: true,
         sort: 'asc',
         checkboxSelection: true,
+        valueGetter: ({ data }) => Number(data?.id),
       },
       {
         field: 'firstName',
@@ -78,16 +86,21 @@ export class UsersColDefs {
         filter: true,
         cellRenderer: CustomDropDownComponent,
         cellRendererParams: {
-          values: [
-            { key: 'Unauth', value: 'unauth' },
-            { key: 'Active', value: 'active' },
-            { key: 'Deactive', value: 'deactive' },
-            { key: 'Block', value: 'block' },
-          ],
+          values: userStatusTypes,
           displayKey: 'key',
           valueKey: 'value',
-          toolTipValue: 'key'
+          permissions: ['update_user_status'],
         } as DropdownRendererParams,
+        onCellValueChanged: ({ newValue, data }) => {
+          this.ngxPermission
+            .hasPermission(['root_admin', 'update_user_status'])
+            .then((has) => {
+              if (has)
+                this.store.dispatch(
+                  updateUserStatus({ id: data.id, status: newValue })
+                );
+            });
+        },
       },
       {
         field: 'id',

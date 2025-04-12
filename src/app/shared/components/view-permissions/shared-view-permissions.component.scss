@@ -1,0 +1,87 @@
+::ng-deep .mat-mdc-dialog-surface {
+  border-radius: 0.2rem;
+}
+
+.dialog-title {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: unset;
+  padding-block: 0.7rem;
+  padding-inline: 1.25rem;
+  font-weight: 500;
+
+  button {
+    color: black;
+  }
+  &::before {
+    display: none;
+  }
+}
+.mat-mdc-dialog-content {
+  padding-inline: 1.25rem;
+  display: flex !important;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100% !important;
+  & p {
+    color: #337fbf;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  & h6 {
+    font-weight: 500;
+  }
+  ::ng-deep mat-checkbox label {
+    font-weight: 500;
+    font-weight: 1rem;
+  }
+}
+
+.mat-mdc-dialog-actions {
+  padding-block: 0 !important;
+}
+
+:host {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1;
+  mat-dialog-actions button {
+    border-radius: 0.2rem;
+    height: 2rem;
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.dialog-title-container {
+  display: flex !important;
+  align-items: center !important;
+  & h4 {
+    margin: unset !important;
+  }
+  .button-container {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    & .icon-btn.remove-btn {
+      background-color: #f44336 !important;
+      &:disabled {
+        background-color: gray !important;
+      }
+    }
+    & .icon-btn.save-btn {
+      background-color: #4caf50 !important;
+    }
+  }
+}

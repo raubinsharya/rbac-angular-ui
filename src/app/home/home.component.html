@@ -7,7 +7,7 @@
         <mat-divider></mat-divider>
         @for (folder of folders; track folder) {
         <mat-list-item [routerLink]="folder.url">
-          <mat-icon matListItemIcon>folder</mat-icon>
+          <mat-icon matListItemIcon>{{ folder.icon }}</mat-icon>
           <div matListItemTitle>{{ folder.name }}</div>
         </mat-list-item>
         }

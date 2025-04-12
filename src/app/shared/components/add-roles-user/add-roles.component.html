@@ -1,0 +1,32 @@
+<ng-container
+  *ngxPermissionsOnly="['add_user_roles', 'root_admin']; else noAccess"
+>
+  <h4 mat-dialog-title>Add Roles</h4>
+  <mat-dialog-content class="dialog-content">
+    <ag-grid-table
+      [colDefs]="colDefs"
+      [rowData]="rowData"
+      rowSelection="multiple"
+      [pagination]="true"
+      (selectedRows)="onRowSelectionChange($event)"
+    >
+    </ag-grid-table>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button
+      mat-icon-button
+      class="icon-btn"
+      mat-dialog-close
+      (click)="addRoles()"
+      [disabled]="!selectedRowIds.length"
+    >
+      Confirm
+      <mat-icon color="secondary">check_circle</mat-icon>
+    </button>
+  </mat-dialog-actions>
+</ng-container>
+
+<ng-template #noAccess>
+  <app-unauthorized></app-unauthorized>
+</ng-template>
