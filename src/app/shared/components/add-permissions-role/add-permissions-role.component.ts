@@ -6,8 +6,12 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { isEmpty } from 'lodash';
 import { AddPermissionsColDefs } from './col-def.service';
 import { PermissionType } from '../../../models/permission.model';
-import { addPermissionsToRole, fetchPermissions } from '../../../roles/store/actions/roles.action';
+import {
+  addPermissionsToRole,
+  fetchPermissions,
+} from '../../../roles/store/actions/roles.action';
 import { selectPermissions } from '../../../roles/store/selectors/permissions.selector';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-add-permissions',
@@ -23,12 +27,17 @@ export class SharedAddPermissionsRoleComponent {
 
   constructor(
     private readonly addColDef: AddPermissionsColDefs,
-    private readonly store: Store
+    private readonly store: Store,
+    private readonly ngxPermission: NgxPermissionsService
   ) {
-    this.store.dispatch(fetchPermissions());
     this.colDefs = this.addColDef.getColDefs();
   }
   ngOnInit() {
+    this.ngxPermission
+      .hasPermission(['root_admin', 'add_role_permissions'])
+      .then((has) => {
+        if (has) this.store.dispatch(fetchPermissions());
+      });
     this.store.select(selectPermissions).subscribe((permissions) => {
       if (isEmpty(permissions)) return;
       this.rowData = (permissions as PermissionType[]).filter(

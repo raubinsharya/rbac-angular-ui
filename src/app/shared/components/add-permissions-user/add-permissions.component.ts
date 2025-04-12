@@ -11,6 +11,7 @@ import { isEmpty } from 'lodash';
 import { AddPermissionsColDefs } from './col-def.service';
 import { PermissionType } from '../../../models/permission.model';
 import { selectPermissions } from '../../../users/store/selectors/permissions.selector';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-add-permissions',
@@ -26,12 +27,17 @@ export class SharedAddPermissionsComponent {
 
   constructor(
     private readonly addColDef: AddPermissionsColDefs,
-    private readonly store: Store
+    private readonly store: Store,
+    private readonly ngxPermission: NgxPermissionsService
   ) {
-    this.store.dispatch(fetchPermissions());
     this.colDefs = this.addColDef.getColDefs();
   }
   ngOnInit() {
+    this.ngxPermission
+      .hasPermission(['root_admin', 'add_user_permissions'])
+      .then((has) => {
+        if (has) this.store.dispatch(fetchPermissions());
+      });
     this.store.select(selectPermissions).subscribe((permissions) => {
       if (isEmpty(permissions)) return;
       this.rowData = (permissions as PermissionType[]).filter(

@@ -6,7 +6,11 @@ import { RoleType } from '../../../models/role.model';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { isEmpty } from 'lodash';
 import { selectRoles } from '../../../users/store/selectors/roles.selector';
-import { addRolesToUser, fetchRoles } from '../../../users/store/actions/user.action';
+import {
+  addRolesToUser,
+  fetchRoles,
+} from '../../../users/store/actions/user.action';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-add-roles',
@@ -22,12 +26,17 @@ export class SharedAddRolesComponent implements OnInit {
 
   constructor(
     private readonly addColDef: AddRolesColDefs,
-    private readonly store: Store
+    private readonly store: Store,
+    private readonly ngxPermission: NgxPermissionsService
   ) {
-    this.store.dispatch(fetchRoles());
     this.colDefs = this.addColDef.getColDefs();
   }
   ngOnInit() {
+    this.ngxPermission
+      .hasPermission(['root_admin', 'add_user_roles'])
+      .then((has) => {
+        if (has) this.store.dispatch(fetchRoles());
+      });
     this.store.select(selectRoles).subscribe((roles) => {
       if (isEmpty(roles)) return;
       this.rowData = (roles as RoleType[]).filter(

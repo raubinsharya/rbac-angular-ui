@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { createRoles } from '../../../roles/store/actions/roles.action';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-create-role',
@@ -16,7 +17,11 @@ export class SharedCreateRoleComponent {
 
   public createRoleForm!: FormGroup;
 
-  constructor(private readonly store: Store, private readonly fb: FormBuilder) {
+  constructor(
+    private readonly store: Store,
+    private readonly fb: FormBuilder,
+    private readonly ngxPermission: NgxPermissionsService
+  ) {
     this.createRoleForm = this.fb.group({
       slug: ['', Validators.required],
       title: ['', Validators.required],
@@ -25,6 +30,13 @@ export class SharedCreateRoleComponent {
 
   createRole() {
     if (!this.createRoleForm.valid) return;
-    this.store.dispatch(createRoles({ roles: [this.createRoleForm.value] }));
+    this.ngxPermission
+      .hasPermission(['root_admin', 'create_roles'])
+      .then((has) => {
+        if (has)
+          this.store.dispatch(
+            createRoles({ roles: [this.createRoleForm.value] })
+          );
+      });
   }
 }

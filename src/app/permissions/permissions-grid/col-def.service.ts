@@ -5,12 +5,16 @@ import moment from 'moment';
 import { Store } from '@ngrx/store';
 import { RoleType } from '../../models/role.model';
 import { updatePermissionsStatus } from '../store/actions/permissions.action';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PermissionsColDefs {
-  constructor(private readonly store: Store) {}
+  constructor(
+    private readonly store: Store,
+    private readonly ngxPermission: NgxPermissionsService
+  ) {}
 
   getColDefs(): ColDef<RoleType>[] {
     return [
@@ -51,11 +55,16 @@ export class PermissionsColDefs {
         minWidth: 150,
         filter: true,
         onCellValueChanged: ({ newValue, data }) => {
-          this.store.dispatch(
-            updatePermissionsStatus({
-              permissions: [{ permission: data.slug, status: newValue }],
-            })
-          );
+          this.ngxPermission
+            .hasPermission(['root_admin', 'update_permissions_status'])
+            .then((has) => {
+              if (has)
+                this.store.dispatch(
+                  updatePermissionsStatus({
+                    permissions: [{ permission: data.slug, status: newValue }],
+                  })
+                );
+            });
         },
       },
       {

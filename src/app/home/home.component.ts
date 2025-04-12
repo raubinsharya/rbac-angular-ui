@@ -4,6 +4,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 export interface Section {
   name: string;
   url: string;
+  icon: string;
 }
 
 @Component({
@@ -18,14 +19,17 @@ export class HomeComponent {
     {
       name: 'Users',
       url: '/users',
+      icon: 'group',
     },
     {
       name: 'Roles',
       url: '/roles',
+      icon: 'badge',
     },
     {
       name: 'Permissions',
       url: '/permissions',
+      icon: 'lock',
     },
   ];
 

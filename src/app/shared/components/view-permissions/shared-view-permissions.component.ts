@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -19,12 +19,13 @@ import { isEmpty } from 'lodash';
 import { PermissionColDefs } from './col-def.service';
 import { PermissionType } from '../../../models/permission.model';
 import { SharedAddPermissionsComponent } from '../add-permissions-user/add-permissions.component';
+import { NgxPermissionsService } from 'ngx-permissions';
 @Component({
   selector: 'app-shared-view-permissions',
   templateUrl: './shared-view-permissions.component.html',
   styleUrl: './shared-view-permissions.component.scss',
 })
-export class SharedViewPermissionsComponent {
+export class SharedViewPermissionsComponent implements OnInit {
   private readonly dialogRef = inject(
     MatDialogRef<SharedViewPermissionsComponent>
   );
@@ -37,9 +38,9 @@ export class SharedViewPermissionsComponent {
   constructor(
     private readonly store: Store,
     private readonly permissionColDefs: PermissionColDefs,
-    private readonly dialog: MatDialog
+    private readonly dialog: MatDialog,
+    private readonly ngxPermission: NgxPermissionsService
   ) {
-    this.store.dispatch(fetchUserPermissions({ id: this.rowId }));
     this.colDefs = this.permissionColDefs.getColDefs();
   }
 
@@ -51,6 +52,12 @@ export class SharedViewPermissionsComponent {
   }
 
   ngOnInit(): void {
+    this.ngxPermission
+      .hasPermission(['root_admin', 'view_user_permissions'])
+      .then((has) => {
+        if (has) this.store.dispatch(fetchUserPermissions({ id: this.rowId }));
+      });
+
     this.store.select(selectUserPermissions).subscribe((roles) => {
       this.rowData = roles as PermissionType[];
       this.selectedRowIds = [];

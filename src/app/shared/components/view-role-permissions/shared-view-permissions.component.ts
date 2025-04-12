@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -18,12 +18,13 @@ import {
 } from '../../../roles/store/actions/roles.action';
 import { selectRolePermissions } from '../../../roles/store/selectors/roles.selector';
 import { SharedAddPermissionsRoleComponent } from '../add-permissions-role/add-permissions-role.component';
+import { NgxPermissionsService } from 'ngx-permissions';
 @Component({
   selector: 'app-shared-role-view-permissions',
   templateUrl: './shared-role-view-permissions.component.html',
   styleUrl: './shared-role-view-permissions.component.scss',
 })
-export class SharedRoleViewPermissionsComponent {
+export class SharedRoleViewPermissionsComponent implements OnInit {
   private readonly dialogRef = inject(
     MatDialogRef<SharedRoleViewPermissionsComponent>
   );
@@ -36,9 +37,9 @@ export class SharedRoleViewPermissionsComponent {
   constructor(
     private readonly store: Store,
     private readonly permissionColDefs: RolePermissionColDefs,
-    private readonly dialog: MatDialog
+    private readonly dialog: MatDialog,
+    private readonly ngxPermission: NgxPermissionsService
   ) {
-    this.store.dispatch(fetchRolePermissions({ id: this.rowId }));
     this.colDefs = this.permissionColDefs.getColDefs();
   }
 
@@ -50,6 +51,12 @@ export class SharedRoleViewPermissionsComponent {
   }
 
   ngOnInit(): void {
+    this.ngxPermission
+      .hasPermission(['root_admin', 'view_role_permissions'])
+      .then((has) => {
+        if (has) this.store.dispatch(fetchRolePermissions({ id: this.rowId }));
+      });
+
     this.store.select(selectRolePermissions).subscribe((roles) => {
       this.rowData = roles as PermissionType[];
       this.selectedRowIds = [];

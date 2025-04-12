@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CellValueChangedEvent, ColDef } from 'ag-grid-community';
 import { Store } from '@ngrx/store';
 import { RoleType } from '../../models/role.model';
@@ -11,13 +11,14 @@ import {
 } from '../store/actions/permissions.action';
 import { selectPermissions } from '../store/selectors/permissions.selector';
 import { SharedCreatePermissionComponent } from '../../shared/components/create-permission/create-permission.component';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'roles-role-grid',
   templateUrl: './role-grid.component.html',
   styleUrl: './role-grid.component.scss',
 })
-export class PermissionsGridComponent {
+export class PermissionsGridComponent implements OnInit {
   public colDefs!: ColDef[];
   public rowData!: RoleType[];
   public selectedRowIds: Array<string> = [];
@@ -25,15 +26,24 @@ export class PermissionsGridComponent {
   constructor(
     private readonly colDef: PermissionsColDefs,
     private readonly store: Store,
-    private readonly dialog: MatDialog
+    private readonly dialog: MatDialog,
+    private readonly ngxPermission: NgxPermissionsService
   ) {
-    this.store.dispatch(fetchPermissions());
     this.colDefs = this.colDef.getColDefs();
     this.store
       .select(selectPermissions)
       .subscribe(
-        (permissions) => (this.rowData = structuredClone(permissions) as RoleType[])
+        (permissions) =>
+          (this.rowData = structuredClone(permissions) as RoleType[])
       );
+  }
+
+  ngOnInit(): void {
+    this.ngxPermission
+      .hasPermission(['root_admin', 'view_permissions'])
+      .then((has) => {
+        if (has) this.store.dispatch(fetchPermissions());
+      });
   }
 
   onCellValueChanged(props: CellValueChangedEvent) {}
@@ -49,6 +59,11 @@ export class PermissionsGridComponent {
   }
 
   deletePermissions() {
-    this.store.dispatch(deletePermissions({ ids: this.selectedRowIds }));
+    this.ngxPermission
+      .hasPermission(['root_admin', 'delete_permissions'])
+      .then((has) => {
+        if (has)
+          this.store.dispatch(deletePermissions({ ids: this.selectedRowIds }));
+      });
   }
 }

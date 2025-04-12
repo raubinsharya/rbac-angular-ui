@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { fetchUsers } from '../store/actions/user.action';
 import { selectUsers } from '../store/selectors/users.selector';
 import { UserProfileResponseType } from '../../models/user.model';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'users-user-grid',
@@ -18,7 +19,8 @@ export class UserGridComponent implements OnInit {
 
   constructor(
     private readonly colDef: UsersColDefs,
-    private readonly store: Store
+    private readonly store: Store,
+    private readonly ngxPermission: NgxPermissionsService
   ) {
     this.colDefs = this.colDef.getColDefs();
     this.store
@@ -30,10 +32,12 @@ export class UserGridComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(fetchUsers());
+    this.ngxPermission
+      .hasPermission(['view_users', 'root_admin'])
+      .then((has) => {
+        if (has) this.store.dispatch(fetchUsers());
+      });
   }
 
-  onCellValueChanged(props: CellValueChangedEvent) {
-    console.info('here we go', props);
-  }
+  onCellValueChanged(props: CellValueChangedEvent) {}
 }

@@ -6,12 +6,16 @@ import { Store } from '@ngrx/store';
 import { RoleType } from '../../models/role.model';
 import { ViewPermissionsComponent } from './custom-cells/view-permissions/view-permissions.component';
 import { updateRoleStatus } from '../store/actions/roles.action';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RolesColDefs {
-  constructor(private readonly store: Store) {}
+  constructor(
+    private readonly store: Store,
+    private readonly ngxPermission: NgxPermissionsService
+  ) {}
 
   getColDefs(): ColDef<RoleType>[] {
     return [
@@ -52,9 +56,16 @@ export class RolesColDefs {
         minWidth: 150,
         filter: true,
         onCellValueChanged: ({ newValue, data }) => {
-          this.store.dispatch(
-            updateRoleStatus({ roles: [{ role: data.slug, status: newValue }] })
-          );
+          this.ngxPermission
+            .hasPermission(['root_admin', 'update_role_status'])
+            .then((has) => {
+              if (has)
+                this.store.dispatch(
+                  updateRoleStatus({
+                    roles: [{ role: data.slug, status: newValue }],
+                  })
+                );
+            });
         },
       },
       {

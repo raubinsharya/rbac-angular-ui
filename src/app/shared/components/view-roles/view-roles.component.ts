@@ -19,6 +19,7 @@ import {
   fetchUserRoles,
 } from '../../../users/store/actions/user.action';
 import { isEmpty } from 'lodash';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'roles-view-roles',
@@ -36,9 +37,9 @@ export class SharedViewRolesComponent implements OnInit {
   constructor(
     private readonly store: Store,
     private readonly roleColDefs: RoleColDefs,
-    private readonly dialog: MatDialog
+    private readonly dialog: MatDialog,
+    private readonly ngxPermission: NgxPermissionsService
   ) {
-    this.store.dispatch(fetchUserRoles({ id: this.rowId }));
     this.colDefs = this.roleColDefs.getColDefs();
   }
 
@@ -50,6 +51,12 @@ export class SharedViewRolesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.ngxPermission
+      .hasPermission(['root_admin', 'view_user_roles'])
+      .then((has) => {
+        if (has) this.store.dispatch(fetchUserRoles({ id: this.rowId }));
+      });
+
     this.store.select(selectUserRoles).subscribe((roles) => {
       this.rowData = roles as RoleType[];
       this.selectedRowIds = [];

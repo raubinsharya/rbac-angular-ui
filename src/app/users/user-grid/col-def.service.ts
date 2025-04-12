@@ -12,12 +12,16 @@ import {
 import { userStatusTypes } from '../../shared/constants';
 import { Store } from '@ngrx/store';
 import { updateUserStatus } from '../store/actions/user.action';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersColDefs {
-  constructor(private readonly store: Store) {}
+  constructor(
+    private readonly store: Store,
+    private readonly ngxPermission: NgxPermissionsService
+  ) {}
 
   getColDefs(): ColDef<UserProfileResponseType>[] {
     return [
@@ -88,10 +92,14 @@ export class UsersColDefs {
           permissions: ['update_user_status'],
         } as DropdownRendererParams,
         onCellValueChanged: ({ newValue, data }) => {
-          console.info('here we go grid', newValue);
-          this.store.dispatch(
-            updateUserStatus({ id: data.id, status: newValue })
-          );
+          this.ngxPermission
+            .hasPermission(['root_admin', 'update_user_status'])
+            .then((has) => {
+              if (has)
+                this.store.dispatch(
+                  updateUserStatus({ id: data.id, status: newValue })
+                );
+            });
         },
       },
       {
